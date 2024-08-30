@@ -3,7 +3,7 @@
 import * as React from "react";
 import Image from "next/image";
 import {Avatar} from "@mui/material";
-import AvatarPayment from "@/app/ui/AvatarPayment";
+import FastPaymentButton from "@/app/ui/FastPaymentButton";
 
 export default function FastPayment() {
     return (
@@ -23,14 +23,20 @@ export default function FastPayment() {
                     Все (7)
                 </p>
             </div>
+
+
             <div
                 style={{
                     display: 'flex',
                     flexDirection: 'row',
                 }}
             >
-                <AvatarPayment text='Новый перевод' picture='new'/>
-                <AvatarPayment text='Ирина Юрьевна Е.'/>
+                <FastPaymentButton text='Новый перевод' picture='new'/>
+                <FastPaymentButton text='Ирина Юрьевна Е.'/>
+                <FastPaymentButton text='Полина Петровна...'/>
+                <FastPaymentButton text='Леша Досов' picture='/public/images/main/myAvatar.svg'/>
+                <FastPaymentButton text='Полина Петровна...'/>
+                <FastPaymentButton text='Somebody'/>
             </div>
 
         </div>

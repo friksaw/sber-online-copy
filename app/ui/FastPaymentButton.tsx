@@ -4,7 +4,7 @@ import * as React from "react";
 import {Avatar} from "@mui/material";
 import Image from "next/image";
 
-export default function AvatarPayment({ text, picture }) {
+export default function FastPaymentButton({ text, picture }) {
     return (
         <div
             style={{
@@ -13,7 +13,7 @@ export default function AvatarPayment({ text, picture }) {
                 alignItems: 'center',
                 textAlign: 'center',
                 margin: '0 16px',
-                width: 67
+                width: 68
             }}
         >
             {
@@ -25,7 +25,8 @@ export default function AvatarPayment({ text, picture }) {
                             height={67}
                         />
                     </Avatar> :
-                    (!picture) ? '' :
+                    (!picture) ?
+                        <Avatar>РФ</Avatar>:
                         <Avatar>
                             <Image
                                 src='/images/main/newTransaction.svg'
@@ -35,17 +36,6 @@ export default function AvatarPayment({ text, picture }) {
                             <p>FG</p>
                         </Avatar>
             }
-            <Avatar>
-                <Image
-                    src={
-                        (picture === 'new') ? '/images/main/newTransaction.svg' :
-                            picture ? '' : ''
-                    }
-                    width={67}
-                    height={67}
-                />
-                <p>sefef</p>
-            </Avatar>
             <p
                 className='pGrey'
                 style={{

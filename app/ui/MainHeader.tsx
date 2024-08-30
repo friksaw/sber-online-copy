@@ -159,6 +159,7 @@ export default function MainHeader() {
                     <div
                         className='card'
                         style={{
+                            justifyContent: 'space-between',
                             backgroundColor: '#305474',
                             padding: '18px 12px',
                             margin: '0 8px',
@@ -175,11 +176,16 @@ export default function MainHeader() {
                             <p>
                                 462,40 ₽
                             </p>
-                            <div>
-                                <p>
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    flexDirection: 'row',
+                                }}
+                            >
+                                <p className='pGrey'>
                                     MasterC...
                                 </p>
-                                <p>
+                                <p className='pGrey'>
                                     0467
                                 </p>
                             </div>
@@ -189,6 +195,7 @@ export default function MainHeader() {
                     <div
                         className='card'
                         style={{
+                            justifyContent: 'space-between',
                             backgroundColor: '#305474',
                             padding: '18px 12px',
                             width: 134,
@@ -196,15 +203,15 @@ export default function MainHeader() {
                         }}
                     >
                         <div>
-                            <p>
+                            <p className='pGrey'>
                                 Кредитная СберКарта
                             </p>
                         </div>
                         <div>
-                            <p>
+                            <p style={{ opacity: 0.5 }}>
                                 50 000 ₽
                             </p>
-                            <p>
+                            <p style={{ color: '#5FCD76', textWrap: 'nowrap' }}>
                                 Узнать условия
                             </p>
                         </div>
