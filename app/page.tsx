@@ -13,7 +13,7 @@ export default function Home() {
     const [currentPage, setCurrentPage]: any = React.useState(0);
     const ref: any = React.useRef(null);
     const [messages, setMessages]: any = React.useState(0);
-    const onChangePage = (newPage) => {
+    const onChangePage: any = (newPage: any) => {
         setCurrentPage(newPage)
     }
 
