@@ -22,7 +22,8 @@ export default function FastPaymentButton({ text, picture }) {
                         <Image
                             src='/images/main/newTransaction.svg'
                             width={80}
-                            height={80}
+                            height={80}                                alt=''
+
                         />
                     </Avatar> :
                     (!picture) ?
@@ -31,7 +32,8 @@ export default function FastPaymentButton({ text, picture }) {
                             <Image
                                 src={picture}
                                 width={80}
-                                height={80}
+                                height={80}                                alt=''
+
                             />
                         </Avatar>
             }

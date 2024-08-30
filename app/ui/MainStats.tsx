@@ -52,7 +52,8 @@ export default function MainStats() {
                         <Image
                             src="/images/main/allExpenses.svg"
                             width={43}
-                            height={42}
+                            height={42}                                alt=''
+
                         />
                         <div>
                             <h3>
@@ -82,7 +83,8 @@ export default function MainStats() {
                         <Image
                             src="/images/main/allExpenses.svg"
                             width={43}
-                            height={42}
+                            height={42}                                alt=''
+
                         />
                         <div>
                             <p
@@ -113,7 +115,8 @@ export default function MainStats() {
                         <Image
                             src="/images/main/allExpenses.svg"
                             width={43}
-                            height={42}
+                            height={42}                                alt=''
+
                         />
                         <div>
                             <p

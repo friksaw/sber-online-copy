@@ -40,7 +40,8 @@ export default function HistoryFilters() {
                         height={4}
                         style={{
                             marginLeft: 16
-                        }}
+                        }}                                alt=''
+
                     />
                 </div>
                 <div
@@ -67,7 +68,8 @@ export default function HistoryFilters() {
                         height={4}
                         style={{
                             marginLeft: 16
-                        }}
+                        }}                                alt=''
+
                     />
                 </div>
                 <div
@@ -93,7 +95,8 @@ export default function HistoryFilters() {
                         height={4}
                         style={{
                             marginLeft: 16
-                        }}
+                        }}                                alt=''
+
                     />
                 </div>
             </div>

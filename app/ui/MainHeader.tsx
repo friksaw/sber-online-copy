@@ -25,6 +25,8 @@ export default function MainHeader() {
                     src="/images/main/myAvatar.svg"
                     width={37}
                     height={37}
+                    alt=''
+
                 />
                 <div
                     style={{
@@ -45,6 +47,8 @@ export default function MainHeader() {
                     src="/images/main/cart.svg"
                     width={84}
                     height={38}
+                    alt=''
+
                 />
             </div>
 
@@ -73,6 +77,8 @@ export default function MainHeader() {
                         style={{
                             marginLeft: 16
                         }}
+                        alt=''
+
                     />
                 </div>
                 <div
@@ -85,6 +91,7 @@ export default function MainHeader() {
                         src="/images/main/noEye.svg"
                         width={31}
                         height={22}
+                        alt=''
                     />
                     <Image
                         src="/images/main/3dots.svg"
@@ -93,6 +100,8 @@ export default function MainHeader() {
                         style={{
                             marginLeft: 16
                         }}
+                        alt=''
+
                     />
                 </div>
 
@@ -129,6 +138,7 @@ export default function MainHeader() {
                             src="/images/main/qr.svg"
                             width={35}
                             height={35}
+                            alt=''
                         />
                     </div>
                     <div
@@ -146,6 +156,7 @@ export default function MainHeader() {
                             src="/images/main/shield.svg"
                             width={32}
                             height={32}
+                            alt=''
                         />
                     </div>
                 </div>
