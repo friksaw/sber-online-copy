@@ -16,7 +16,8 @@ export default function HistoryHeader() {
                 <Image
                     src="/images/main/myAvatar.svg"
                     width={37}
-                    height={37}
+                    height={37}                                alt=''
+
                 />
                 <div
                     style={{
@@ -79,7 +80,8 @@ export default function HistoryHeader() {
                         <Image
                             src="/images/history/docs.svg"
                             width={32}
-                            height={32}
+                            height={32}                                alt=''
+
                         />
                         <p style={{fontSize: 12, marginTop: 16}}>
                             Выписки и справки

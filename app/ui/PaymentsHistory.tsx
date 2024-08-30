@@ -42,7 +42,8 @@ export default function PaymentsHistory() {
                                     height={32}
                                     style={{
                                         marginTop: 4,
-                                    }}
+                                    }}                                alt=''
+
                                 />
                             </div>
                         </div>
