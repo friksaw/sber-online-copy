@@ -43,6 +43,7 @@ export default function BottomNav({ children, currentPage, onChangePage }: any) 
                                 src="/images/bottomNav/home.svg"
                                 width={27}
                                 height={22}
+                                alt=''
                             />
                         }
                         sx={{
@@ -57,6 +58,7 @@ export default function BottomNav({ children, currentPage, onChangePage }: any) 
                                 src="/images/bottomNav/capital.svg"
                                 width={27}
                                 height={22}
+                                alt=''
                             />
                         }
                         sx={{
@@ -83,8 +85,9 @@ export default function BottomNav({ children, currentPage, onChangePage }: any) 
                         icon={
                             <Image
                                 src="/images/bottomNav/payments.svg"
-                                width={27}
-                                height={22}
+                                width={24}
+                                height={16}
+                                alt=''
                             />
                         }
                         sx={{
@@ -97,8 +100,9 @@ export default function BottomNav({ children, currentPage, onChangePage }: any) 
                         icon={
                             <Image
                                 src="/images/bottomNav/history.svg"
-                                width={27}
-                                height={22}
+                                width={25}
+                                height={20}
+                                alt=''
                             />
                         }
                         sx={{
