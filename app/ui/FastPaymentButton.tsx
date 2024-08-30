@@ -4,7 +4,7 @@ import * as React from "react";
 import {Avatar} from "@mui/material";
 import Image from "next/image";
 
-export default function FastPaymentButton({ text, picture }) {
+export default function FastPaymentButton({ text, picture }: any) {
     return (
         <div
             style={{
