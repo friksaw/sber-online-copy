@@ -7,7 +7,7 @@ export default function HistoryFilters() {
     return (
         <div
             style={{
-                padding: '40px 18px 36px 18px',
+                padding: '40px 18px 4px 18px',
             }}
         >
             <div

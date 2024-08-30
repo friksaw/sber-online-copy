@@ -10,14 +10,14 @@ import Payments from "@/app/components/Payments";
 import History from "@/app/components/History";
 
 export default function Home() {
-    const [currentPage, setCurrentPage] = React.useState(0);
+    const [currentPage, setCurrentPage]: any = React.useState(0);
     const ref: any = React.useRef(null);
-    const [messages, setMessages] = React.useState(0);
+    const [messages, setMessages]: any = React.useState(0);
     const onChangePage = (newPage) => {
         setCurrentPage(newPage)
     }
 
-    const renderPage = () => {
+    const renderPage: any = () => {
         switch (currentPage) {
             case 0:
                 return <Main />; // Возвращаем компонент
