@@ -182,6 +182,8 @@ export default function MainHeader() {
                             src="/images/main/card.svg"
                             width={32}
                             height={32}
+                            alt=''
+
                         />
                         <div>
                             <p>
