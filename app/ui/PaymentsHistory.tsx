@@ -10,7 +10,7 @@ export default function PaymentsHistory() {
 
         >
             <List>
-                {history.map(({ name, desc, sum, person }, index) => (
+                {history.map(({ name, desc, sum, person }: any, index: any) => (
                     <ListItemButton key={index + person}>
                         <ListItemAvatar sx={{alignSelf: 'start'}}>
                             <Avatar alt="Profile Picture" src={person} />
