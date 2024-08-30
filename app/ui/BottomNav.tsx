@@ -73,6 +73,8 @@ export default function BottomNav({ children, currentPage, onChangePage }: any) 
                                 src="/images/bottomNav/assistant.svg"
                                 width={27}
                                 height={22}
+                                alt=''
+
                             />
                         }
                         sx={{
