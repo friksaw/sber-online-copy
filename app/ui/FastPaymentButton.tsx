@@ -21,19 +21,18 @@ export default function FastPaymentButton({ text, picture }) {
                     <Avatar>
                         <Image
                             src='/images/main/newTransaction.svg'
-                            width={67}
-                            height={67}
+                            width={80}
+                            height={80}
                         />
                     </Avatar> :
                     (!picture) ?
                         <Avatar>РФ</Avatar>:
                         <Avatar>
                             <Image
-                                src='/images/main/newTransaction.svg'
-                                width={67}
-                                height={67}
+                                src={picture}
+                                width={80}
+                                height={80}
                             />
-                            <p>FG</p>
                         </Avatar>
             }
             <p

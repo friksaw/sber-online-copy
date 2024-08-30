@@ -211,7 +211,7 @@ export default function MainHeader() {
                             <p style={{ opacity: 0.5 }}>
                                 50 000 ₽
                             </p>
-                            <p style={{ color: '#5FCD76', textWrap: 'nowrap' }}>
+                            <p style={{ color: '#5FCD76', textWrap: 'nowrap', fontSize: 12 }}>
                                 Узнать условия
                             </p>
                         </div>
