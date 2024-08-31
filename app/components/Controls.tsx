@@ -5,7 +5,7 @@ import Image from "next/image";
 import {Card, FormControl, InputLabel, MenuItem, Select, Slider, TextField} from "@mui/material";
 
 
-export default function Controls({ isOpen }) {
+export default function Controls({ isOpen }: any) {
     return (
         <Card
             sx={{
