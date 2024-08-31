@@ -9,18 +9,21 @@ import Image from 'next/image'
 
 
 
-export default function BottomNav({ children, currentPage, onChangePage }: any) {
+export default function BottomNav({ children, currentPage, onChangePage, pageWidth }: any) {
 
     return (
-        <Box sx={{ pb: 7 }}>
+        <Box
+            sx={{
+                pb: 1,
+            }}
+        >
             {children}
             <Paper
                 sx={{
                     position: 'fixed',
-                    bottom: 0,
                     left: 0,
                     right: 0,
-                    maxWidth: 420,
+                    maxWidth: pageWidth,
                     width: '100%',
                     margin: '0 auto',
                 }}
@@ -34,6 +37,7 @@ export default function BottomNav({ children, currentPage, onChangePage }: any) 
                     }}
                     sx={{
                         backgroundColor: '#1E1E1E',
+                        maxWidth: pageWidth,
                     }}
                 >
                     <BottomNavigationAction
@@ -47,8 +51,13 @@ export default function BottomNav({ children, currentPage, onChangePage }: any) 
                             />
                         }
                         sx={{
-                            opacity: 'lightgrey',
+                            color: 'white',
+                            opacity: 0.4,
                             fontSize: 10,
+                            width: 20,
+                            '& .MuiSlider-thumb': {
+                                borderRadius: '5px',
+                            },
                         }}
                     />
                     <BottomNavigationAction
@@ -62,7 +71,8 @@ export default function BottomNav({ children, currentPage, onChangePage }: any) 
                             />
                         }
                         sx={{
-                            color: 'lightgrey',
+                            color: 'white',
+                            opacity: 0.4,
                             fontSize: 10,
                         }}
                     />
@@ -78,7 +88,8 @@ export default function BottomNav({ children, currentPage, onChangePage }: any) 
                             />
                         }
                         sx={{
-                            color: 'lightgrey',
+                            color: 'white',
+                            opacity: 0.4,
                             fontSize: 10,
                         }}
                     />
@@ -93,7 +104,8 @@ export default function BottomNav({ children, currentPage, onChangePage }: any) 
                             />
                         }
                         sx={{
-                            color: 'lightgrey',
+                            color: 'white',
+                            opacity: 0.4,
                             fontSize: 10,
                         }}
                     />
@@ -108,7 +120,8 @@ export default function BottomNav({ children, currentPage, onChangePage }: any) 
                             />
                         }
                         sx={{
-                            color: 'lightgrey',
+                            color: 'white',
+                            opacity: 0.4,
                             fontSize: 10,
                         }}
                     />

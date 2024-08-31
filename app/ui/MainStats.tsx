@@ -15,7 +15,7 @@ export default function MainStats() {
                     display: 'flex',
                     flexDirection: 'row',
                     justifyContent: 'space-between',
-                    margin: '32px 16px'
+                    margin: '32px 16px 12px 16px'
                 }}
             >
                 <h3>
