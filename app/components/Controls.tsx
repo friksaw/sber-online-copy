@@ -39,7 +39,6 @@ export default function Controls({ isOpen }: any) {
                         id="demo-simple-select"
                         value={2}
                         label="Age"
-                        onChange=''
                     >
                         <MenuItem value={0}>Январь</MenuItem>
                         <MenuItem value={1}>Февраль</MenuItem>
