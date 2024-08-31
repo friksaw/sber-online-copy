@@ -7,7 +7,7 @@ export default function MainHeader() {
     return (
         <div
             style={{
-                backgroundImage: 'url("/images/main/mainHeaderBg.svg")',
+                backgroundImage: 'url("/images/bgs/mainHeaderBg.svg")',
                 backgroundSize: 'contain',
                 backgroundRepeat: 'no-repeat',
                 width: '100%',

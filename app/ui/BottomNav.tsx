@@ -25,10 +25,9 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                     left: 0,
                     right: 0,
                     maxWidth: pageWidth,
-                    width: '100%',
                     margin: '0 auto',
                 }}
-                elevation={3}
+                elevation={0}
             >
                 <BottomNavigation
                     showLabels
@@ -56,8 +55,8 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                             opacity: 0.4,
                             fontSize: 10,
                             width: 20,
-                            '& .MuiSlider-thumb': {
-                                borderRadius: '5px',
+                            'MuiBottomNavigationAction-label  css-imwso6-MuiBottomNavigationAction-label': {
+                                backgroundColor: 'red',
                             },
                         }}
                     />

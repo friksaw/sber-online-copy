@@ -46,14 +46,14 @@ export default function MainStats() {
                             padding: '18px 12px',
                             width: 148,
                             height: 163,
-                            margin: '0 4px'
+                            marginRight: 4
                         }}
                     >
                         <Image
-                            src="/images/main/allExpenses.svg"
+                            src="/images/stats/allExpenses.svg"
                             width={43}
-                            height={42}                                alt=''
-
+                            height={42}
+                            alt=''
                         />
                         <div>
                             <h3>
@@ -81,10 +81,10 @@ export default function MainStats() {
                         }}
                     >
                         <Image
-                            src="/images/main/allExpenses.svg"
-                            width={43}
-                            height={42}                                alt=''
-
+                            src="/images/stats/peopleExpenses.svg"
+                            width={48}
+                            height={42}
+                            alt=''
                         />
                         <div>
                             <p
@@ -113,10 +113,10 @@ export default function MainStats() {
                         }}
                     >
                         <Image
-                            src="/images/main/allExpenses.svg"
+                            src="/images/stats/allExpenses.svg"
                             width={43}
-                            height={42}                                alt=''
-
+                            height={42}
+                            alt=''
                         />
                         <div>
                             <p
@@ -133,8 +133,6 @@ export default function MainStats() {
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
     );

@@ -9,10 +9,13 @@ import Capital from "@/app/components/Capital";
 import Payments from "@/app/components/Payments";
 import History from "@/app/components/History";
 import {useEffect, useState} from "react";
+import Controls from "@/app/components/Controls";
 
 export default function Home() {
     const [currentPage, setCurrentPage]: any = useState(0);
-    const [scale, setScale] = useState(1);    const pageWidth = 363
+    const [isControlsOpen, setIsControlsOpen]: any = useState(1);
+    const [scale, setScale] = useState(1);
+    const pageWidth = 363
     const pageHeight = 807
 
     const onChangePage: any = (newPage: any) => {
@@ -56,27 +59,34 @@ export default function Home() {
     };
 
     return (
-      <Box
-        sx={{
-            margin: '0 auto',
-            backgroundImage: 'url("/images/bg1.svg")',
-            backgroundSize: 'cover',
-            width: pageWidth,
-            height: pageHeight,
-            overflow: 'hidden',
-            alignSelf: 'center',
+        <Box
+            sx={{
+                margin: '0 auto',
+                alignSelf: 'center',
+            }}
+        >
+            <Controls isOpen={isControlsOpen} />
 
-            transform: `scale(${scale})`,
-        }}
-      >
+            <div
+                style={{
+                    backgroundImage: 'url("/images/bgs/bg1.svg")',
+                    backgroundSize: 'cover',
+                    width: pageWidth,
+                    height: pageHeight,
+                    overflow: 'hidden',
+                    transform: `scale(${scale})`,
+                }}
+            >
 
-          <BottomNav
-              currentPage={currentPage}
-              onChangePage={onChangePage}
-              pageWidth={pageWidth}
-          >
-              <div>{renderPage()}</div>
-          </BottomNav>
-      </Box>
+                <BottomNav
+                    currentPage={currentPage}
+                    onChangePage={onChangePage}
+                    pageWidth={pageWidth}
+                >
+                    <div>{renderPage()}</div>
+                </BottomNav>
+            </div>
+        </Box>
+
     );
 }

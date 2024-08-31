@@ -13,34 +13,54 @@ export default function FastPaymentButton({ text, picture }: any) {
                 alignItems: 'center',
                 textAlign: 'center',
                 margin: '0 16px',
-                width: 68
+                maxWidth: 68,
+                maxHeight: 115,
             }}
         >
             {
                 (picture === 'new') ?
-                    <Avatar>
                         <Image
                             src='/images/main/newTransaction.svg'
                             width={80}
-                            height={80}                                alt=''
-
+                            height={80}
+                            alt=''
                         />
-                    </Avatar> :
+                     :
                     (!picture) ?
-                        <Avatar>РФ</Avatar>:
-                        <Avatar>
+                        <Avatar
+                            sx={{
+                                width: 48,
+                                height: 48
+                            }}
+                        >
+                            РФ
+                        </Avatar>:
+                        <Avatar
+                            sx={{
+                                width: 48,
+                                height: 48
+                            }}
+                        >
                             <Image
                                 src={picture}
                                 width={80}
-                                height={80}                                alt=''
-
+                                height={80}
+                                alt=''
                             />
                         </Avatar>
             }
             <p
                 className='pGrey'
                 style={{
+                    display: '-webkit-box',
+                    WebkitLineClamp: '2',
+                    WebkitBoxOrient: 'vertical',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+
                     marginTop: 8,
+                    fontSize: 12,
+                    width: 52,
                 }}
             >
                 { text }
