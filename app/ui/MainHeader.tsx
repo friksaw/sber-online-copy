@@ -8,7 +8,7 @@ export default function MainHeader() {
         <div
             style={{
                 backgroundImage: 'url("/images/main/mainHeaderBg.svg")',
-                backgroundSize: 'cover',
+                backgroundSize: 'contain',
                 backgroundRepeat: 'no-repeat',
                 width: '100%',
                 borderRadius: '0 0 30px 30px',
@@ -18,7 +18,7 @@ export default function MainHeader() {
                 style={{
                     display: 'flex',
                     flexDirection: 'row',
-                    padding: '48px 18px 36px 18px',
+                    padding: '45px 6px 36px 18px',
                 }}
             >
                 <Image
@@ -32,14 +32,17 @@ export default function MainHeader() {
                     style={{
                         borderRadius: 100,
                         backgroundColor: '#02385E',
-                        width: '100%',
+                        width: 199,
                         height: 36,
-                        padding: '8px 12px',
-                        fontSize: 13,
+                        padding: '9px 12px 0 16px',
                         margin: '0 4px 0 14px'
                     }}
                 >
-                    <p>
+                    <p
+                        style={{
+                            fontSize: 13,
+                        }}
+                    >
                         Поиск
                     </p>
                 </div>
@@ -170,37 +173,67 @@ export default function MainHeader() {
                     <div
                         className='card'
                         style={{
-                            justifyContent: 'space-between',
                             backgroundColor: '#305474',
-                            padding: '18px 12px',
                             margin: '0 8px',
                             width: 141,
                             height: 145,
                         }}
                     >
-                        <Image
-                            src="/images/main/card.svg"
-                            width={32}
-                            height={32}
-                            alt=''
+                        <div
+                            style={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                height: '100%',
+                                justifyContent: 'space-between',
+                                margin: 16,
+                            }}
+                        >
+                            <Image
+                                src="/images/main/card.svg"
+                                width={32}
+                                height={32}
+                                alt=''
 
-                        />
-                        <div>
-                            <p>
-                                462,40 ₽
-                            </p>
-                            <div
-                                style={{
-                                    display: 'flex',
-                                    flexDirection: 'row',
-                                }}
-                            >
-                                <p className='pGrey'>
-                                    MasterC...
-                                </p>
-                                <p className='pGrey'>
-                                    0467
-                                </p>
+                            />
+                                <div>
+                                    <p>
+                                        462,40 ₽
+                                    </p>
+                                    <div
+                                        style={{
+                                            display: 'flex',
+                                            flexDirection: 'row',
+                                        }}
+                                    >
+                                    <p className='pGrey'>
+                                        MasterC...
+                                    </p>
+                                    <div
+                                        style={{
+                                            display: 'flex',
+                                            flexDirection: 'row',
+                                            alignItems: 'center',
+                                            margin: '0 4px'
+                                        }}
+                                    >
+                                        <Image
+                                            src="/images/lil-dot.svg"
+                                            width={4}
+                                            height={4}
+                                            alt=''
+
+                                        />
+                                        <Image
+                                            src="/images/lil-dot.svg"
+                                            width={4}
+                                            height={4}
+                                            alt=''
+                                        />
+                                    </div>
+                                    <p className='pGrey'>
+                                        0467
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -215,10 +248,25 @@ export default function MainHeader() {
                             height: 145,
                         }}
                     >
-                        <div>
+                        <div
+                            style={{
+                                display: 'flex',
+                                flexDirection: 'row',
+                                justifyContent: 'space-between',
+                            }}
+                        >
                             <p className='pGrey'>
                                 Кредитная СберКарта
                             </p>
+                            <Image
+                                src="/images/cross.svg"
+                                width={19}
+                                height={19}
+                                alt=''
+                                style={{
+                                    alignSelf: 'start'
+                                }}
+                            />
                         </div>
                         <div>
                             <p style={{ opacity: 0.5 }}>
