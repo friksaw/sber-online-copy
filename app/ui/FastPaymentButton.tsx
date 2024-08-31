@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from "react";
-import {Avatar} from "@mui/material";
+import {Avatar, Badge} from "@mui/material";
 import Image from "next/image";
 
 export default function FastPaymentButton({ text, picture }: any) {
@@ -27,27 +27,70 @@ export default function FastPaymentButton({ text, picture }: any) {
                         />
                      :
                     (!picture) ?
-                        <Avatar
-                            sx={{
-                                width: 48,
-                                height: 48
-                            }}
-                        >
-                            РФ
-                        </Avatar>:
-                        <Avatar
-                            sx={{
-                                width: 48,
-                                height: 48
+                        <div
+                            style={{
+                                position: 'relative',
                             }}
                         >
                             <Image
-                                src={picture}
-                                width={80}
-                                height={80}
+                                src="/images/cross.svg"
+                                width={19}
+                                height={19}
                                 alt=''
+                                style={{
+                                    position: 'absolute',
+                                    top: -8,
+                                    right: -16,
+                                }}
                             />
-                        </Avatar>
+                            <Avatar
+                                sx={{
+                                    width: 48,
+                                    height: 48,
+                                    backgroundColor: '#383838'
+                                }}
+                            >
+                                <p
+                                    style={{
+                                        opacity: 0.4
+                                    }}
+                                >
+                                    ПП
+
+                                </p>
+                            </Avatar>
+                        </div>
+                        :
+                        <Badge
+                            color="secondary"
+                            overlap="circular"
+                            badgeContent="3"
+                            sx={{
+                                '& .MuiBadge-badge': {
+                                    border: '2px solid #181414',
+                                    marginTop: 4,
+                                    height: 20,
+                                    width: 8,
+                                    backgroundColor: '#d45c24',
+                                    fontSize: 12,
+                                },
+
+                            }}
+                        >
+                            <Avatar
+                                sx={{
+                                    width: 48,
+                                    height: 48
+                                }}
+                            >
+                                <Image
+                                    src={picture}
+                                    width={80}
+                                    height={80}
+                                    alt=''
+                                />
+                            </Avatar>
+                        </Badge>
             }
             <p
                 className='pGrey'

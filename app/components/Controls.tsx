@@ -2,16 +2,14 @@
 
 import * as React from "react";
 import Image from "next/image";
-import {Card} from "@mui/material";
+import {Card, FormControl, InputLabel, MenuItem, Select, Slider, TextField} from "@mui/material";
+
 
 export default function Controls({ isOpen }) {
     return (
         <Card
             sx={{
-                height: 100,
                 width: 300,
-                backgroundColor: '#1D2225',
-                color: 'white',
                 position: 'absolute',
                 right: 20,
                 top: 20,
@@ -19,9 +17,71 @@ export default function Controls({ isOpen }) {
                 padding: '12px 20px'
             }}
         >
-          <p>
-              Imitate reload
-          </p>
+            <div
+                style={{
+                    margin: '20px 0'
+                }}
+            >
+                <FormControl
+                    fullWidth>
+                    <InputLabel
+                        id="demo-simple-select-label"
+                        sx={{
+                            backgroundColor: 'white',
+                            borderRadius: 4,
+
+                        }}
+                    >
+                        Текущий месяц
+                    </InputLabel>
+                    <Select
+                        labelId="demo-simple-select-label"
+                        id="demo-simple-select"
+                        value={2}
+                        label="Age"
+                        onChange=''
+                    >
+                        <MenuItem value={0}>Январь</MenuItem>
+                        <MenuItem value={1}>Февраль</MenuItem>
+                        <MenuItem value={2}>Март</MenuItem>
+                    </Select>
+                </FormControl>
+            </div>
+            <div
+                style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                }}
+            >
+
+                <TextField
+                    id="outlined-basic"
+                    label="Баланс"
+                    variant="outlined"
+                />
+                <TextField
+                    id="outlined-basic"
+                    label="Расходы"
+                    variant="outlined"
+                />
+            </div>
+
+            <div
+                style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                }}
+            >
+                <Slider
+                    defaultValue={30}
+                    aria-label="Disabled slider"
+                    sx={{
+
+                    }}
+                />
+            </div>
         </Card>
     );
 }

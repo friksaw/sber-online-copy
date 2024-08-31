@@ -22,7 +22,7 @@ export default function MainHeader() {
                 }}
             >
                 <Image
-                    src="/images/main/myAvatar.svg"
+                    src="/images/avatars/myAvatar.svg"
                     width={37}
                     height={37}
                     alt=''
@@ -272,7 +272,13 @@ export default function MainHeader() {
                             <p style={{ opacity: 0.5 }}>
                                 50 000 ₽
                             </p>
-                            <p style={{ color: '#5FCD76', textWrap: 'nowrap', fontSize: 12 }}>
+                            <p
+                                style={{
+                                    color: '#5FCD76',
+                                    textWrap: 'nowrap',
+                                    fontSize: 12
+                                }}
+                            >
                                 Узнать условия
                             </p>
                         </div>

@@ -34,7 +34,7 @@ export default function FastPayment() {
                 <FastPaymentButton text='Новый перевод' picture='new'/>
                 <FastPaymentButton text='Ирина Юрьевна Е.'/>
                 <FastPaymentButton text='Полина Петровна...'/>
-                <FastPaymentButton text='Леша Досов' picture='/images/main/myAvatar.svg'/>
+                <FastPaymentButton text='Леша Досов' picture='/images/avatars/example.jpg'/>
                 <FastPaymentButton text='Полина Петровна...'/>
                 <FastPaymentButton text='Somebody'/>
             </div>
