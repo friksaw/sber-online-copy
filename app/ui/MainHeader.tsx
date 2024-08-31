@@ -70,9 +70,9 @@ export default function MainHeader() {
                         alignItems: 'center',
                     }}
                 >
-                    <h2>
+                    <h1>
                         Кошелёк
-                    </h2>
+                    </h1>
                     <Image
                         src="/images/main/arrowRight.svg"
                         width={9}
@@ -81,7 +81,6 @@ export default function MainHeader() {
                             marginLeft: 16
                         }}
                         alt=''
-
                     />
                 </div>
                 <div
@@ -107,7 +106,6 @@ export default function MainHeader() {
 
                     />
                 </div>
-
             </div>
 
 
@@ -196,7 +194,11 @@ export default function MainHeader() {
 
                             />
                                 <div>
-                                    <p>
+                                    <p
+                                        style={{
+                                            fontSize: 18,
+                                        }}
+                                    >
                                         462,40 ₽
                                     </p>
                                     <div
@@ -269,7 +271,13 @@ export default function MainHeader() {
                             />
                         </div>
                         <div>
-                            <p style={{ opacity: 0.5 }}>
+                            <p
+                                style={{
+                                    opacity: 0.5,
+                                    fontSize: 16,
+                                    fontWeight: 300,
+                                }}
+                            >
                                 50 000 ₽
                             </p>
                             <p

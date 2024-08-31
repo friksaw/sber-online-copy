@@ -51,12 +51,18 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                             />
                         }
                         sx={{
-                            color: 'white',
-                            opacity: 0.4,
-                            fontSize: 10,
-                            width: 20,
-                            'MuiBottomNavigationAction-label  css-imwso6-MuiBottomNavigationAction-label': {
-                                backgroundColor: 'red',
+                            '&.MuiButtonBase-root': {
+                                color: 'white',
+                                fontSize: 10,
+                                opacity: 0.4,
+                                justifyContent: 'space-between'
+                            },
+                            '&.MuiBottomNavigationAction-root': {
+                                fontSize: 10,
+                            },
+                            '&.Mui-selected': {
+                                color: 'white',
+                                opacity: 1,
                             },
                         }}
                     />
@@ -71,9 +77,19 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                             />
                         }
                         sx={{
-                            color: 'white',
-                            opacity: 0.4,
-                            fontSize: 10,
+                            '&.MuiButtonBase-root': {
+                                color: 'white',
+                                fontSize: 10,
+                                opacity: 0.4,
+                                justifyContent: 'space-between'
+                            },
+                            '&.MuiBottomNavigationAction-root': {
+                                fontSize: 10,
+                            },
+                            '&.Mui-selected': {
+                                color: 'white',
+                                opacity: 1,
+                            },
                         }}
                     />
                     <BottomNavigationAction
@@ -91,6 +107,13 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                             color: 'white',
                             opacity: 0.4,
                             fontSize: 10,
+                            '&.MuiButtonBase-root': {
+                                fontSize: 10,
+                                justifyContent: 'space-between'
+                            },
+                            '&.Mui-selected': {
+                                color: 'white',
+                            },
                         }}
                     />
                     <BottomNavigationAction
@@ -104,9 +127,19 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                             />
                         }
                         sx={{
-                            color: 'white',
-                            opacity: 0.4,
-                            fontSize: 10,
+                            '&.MuiButtonBase-root': {
+                                color: 'white',
+                                fontSize: 10,
+                                opacity: 0.4,
+                                justifyContent: 'space-between'
+                            },
+                            '&.MuiBottomNavigationAction-root': {
+                                fontSize: 10,
+                            },
+                            '&.Mui-selected': {
+                                color: 'white',
+                                opacity: 1,
+                            },
                         }}
                     />
                     <BottomNavigationAction
@@ -120,9 +153,19 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                             />
                         }
                         sx={{
-                            color: 'white',
-                            opacity: 0.4,
-                            fontSize: 10,
+                            '&.MuiButtonBase-root': {
+                                color: 'white',
+                                fontSize: 10,
+                                opacity: 0.4,
+                                justifyContent: 'space-between'
+                            },
+                            '&.MuiBottomNavigationAction-root': {
+                                fontSize: 10,
+                            },
+                            '&.Mui-selected': {
+                                color: 'white',
+                                opacity: 1,
+                            },
                         }}
                     />
                 </BottomNavigation>
