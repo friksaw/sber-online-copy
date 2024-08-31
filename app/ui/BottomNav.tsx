@@ -21,6 +21,7 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
             <Paper
                 sx={{
                     position: 'fixed',
+                    bottom: 0,
                     left: 0,
                     right: 0,
                     maxWidth: pageWidth,
