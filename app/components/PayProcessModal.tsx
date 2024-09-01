@@ -10,7 +10,7 @@ const PayProcessModal = ({ isOpen, handleModal, paySum, changePaySum, changePayN
 
 
     const handleSuccessPayModal = () => {
-        setIsSuccessPayModalOpen(isSuccessPayModalOpen => !isSuccessPayModalOpen);
+        setIsSuccessPayModalOpen((isSuccessPayModalOpen: any) => !isSuccessPayModalOpen);
         doPay()
     };
 
