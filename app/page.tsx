@@ -19,8 +19,8 @@ export default function Home() {
     const [expenses, setExpenses]: any = useState('72 048');
 
     const [scale, setScale]: any = useState(1);
-    const pageWidth = 363
-    const pageHeight = 807
+    const pageWidth: any = 363
+    const pageHeight: any = 807
 
     const onChangePage: any = (newPage: any) => {
         setCurrentPage(newPage)
