@@ -59,14 +59,14 @@ export default function Controls({ isOpen, balance, changeBalance, expenses, cha
                     label="Баланс"
                     variant="outlined"
                     value={balance}
-                    onChange={(): any => changeBalance(event.target.value)}
+                    onChange={(event): any => changeBalance(event?.target.value)}
                 />
                 <TextField
                     id="outlined-basic"
                     label="Расходы"
                     variant="outlined"
                     value={expenses}
-                    onChange={(): any => changeExpenses(event.target.value)}
+                    onChange={(event): any => changeExpenses(event?.target.value)}
                 />
             </div>
 
