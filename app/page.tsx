@@ -14,13 +14,24 @@ import Controls from "@/app/components/Controls";
 export default function Home() {
     const [currentPage, setCurrentPage]: any = useState(0);
     const [isControlsOpen, setIsControlsOpen]: any = useState(1);
-    const [scale, setScale] = useState(1);
+
+    const [balance, setBalance]: any = useState('4 062,00');
+    const [expenses, setExpenses]: any = useState('72 048');
+
+    const [scale, setScale]: any = useState(1);
     const pageWidth = 363
     const pageHeight = 807
 
     const onChangePage: any = (newPage: any) => {
         setCurrentPage(newPage)
     }
+
+    const changeBalance: any = (newBalance: any) => {
+        setBalance(newBalance);
+    };
+    const changeExpenses: any = (newExpenses: any) => {
+        setExpenses(newExpenses);
+    };
 
     useEffect(() => {
         const updateScale = () => {
@@ -44,7 +55,7 @@ export default function Home() {
     const renderPage: any = () => {
         switch (currentPage) {
             case 0:
-                return <Main />; // Возвращаем компонент
+                return <Main balance={balance} expenses={expenses} />; // Возвращаем компонент
             case 1:
                 return <Capital />;
             case 2:
@@ -65,7 +76,13 @@ export default function Home() {
                 alignSelf: 'center',
             }}
         >
-            <Controls isOpen={isControlsOpen} />
+            <Controls
+                isOpen={isControlsOpen}
+                balance={balance}
+                changeBalance={changeBalance}
+                expenses={expenses}
+                changeExpenses={changeExpenses}
+            />
 
             <div
                 style={{

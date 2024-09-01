@@ -5,7 +5,7 @@ import Image from "next/image";
 import {Card, FormControl, InputLabel, MenuItem, Select, Slider, TextField} from "@mui/material";
 
 
-export default function Controls({ isOpen }: any) {
+export default function Controls({ isOpen, balance, changeBalance, expenses, changeExpenses }: any) {
     return (
         <Card
             sx={{
@@ -58,11 +58,15 @@ export default function Controls({ isOpen }: any) {
                     id="outlined-basic"
                     label="Баланс"
                     variant="outlined"
+                    value={balance}
+                    onChange={() => changeBalance(event.target.value)}
                 />
                 <TextField
                     id="outlined-basic"
                     label="Расходы"
                     variant="outlined"
+                    value={expenses}
+                    onChange={() => changeExpenses(event.target.value)}
                 />
             </div>
 

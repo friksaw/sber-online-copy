@@ -6,12 +6,12 @@ import MainHeader from "@/app/ui/MainHeader";
 import FastPayment from "@/app/ui/FastPayment";
 import MainStats from "@/app/ui/MainStats";
 
-export default function Main() {
+export default function Main({ balance, expenses }: any) {
     return (
         <div>
-            <MainHeader />
+            <MainHeader balance={balance} />
             <FastPayment />
-            <MainStats />
+            <MainStats expenses={expenses} />
         </div>
     );
 }

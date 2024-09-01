@@ -3,7 +3,7 @@
 import * as React from "react";
 import Image from "next/image";
 
-export default function MainHeader() {
+export default function MainHeader({ balance }: any) {
     return (
         <div
             style={{
@@ -199,7 +199,7 @@ export default function MainHeader() {
                                             fontSize: 18,
                                         }}
                                     >
-                                        462,40 ₽
+                                        {balance} ₽
                                     </p>
                                     <div
                                         style={{
