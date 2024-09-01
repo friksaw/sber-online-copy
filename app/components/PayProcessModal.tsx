@@ -5,7 +5,7 @@ import PayProcessBox from "@/app/components/PaySuccessBox";
 
 
 
-const PayProcessModal = ({ isOpen, handleModal, paySum, changePaySum, changePayName, payName, doPay }: any) => {
+const PayProcessModal = ({ isOpen, handleModal, paySum, changePaySum, changePayName, payName, doPay, pageWidth }: any) => {
     const [isSuccessPayModalOpen, setIsSuccessPayModalOpen]: any = useState(false);
 
 
@@ -27,19 +27,21 @@ const PayProcessModal = ({ isOpen, handleModal, paySum, changePaySum, changePayN
                         timeout: 50,
                     },
                 }}
+                sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                }}
             >
                 <Slide direction="left" in={isOpen} mountOnEnter unmountOnExit>
-                    <Box sx={{
-                        width: '400px',
-                        height: 'calc(100% - 57px)',
-                        position: 'absolute',
-                        top: 0,
-                        left: '50%',
-                        transform: 'translate(-20%, -50%)',  // Выравнивание по центру
-                        bgcolor: 'background.paper',
-                        boxShadow: 24,
-                        p: 4,
-                    }}>
+                    <Box
+                        sx={{
+                            width: `calc(${pageWidth}px + 60px)`,
+                            height: 'calc(100% - 57px)',
+                            bgcolor: 'background.paper',
+                            boxShadow: 24,
+                            p: 4,
+                        }}
+                    >
 
                         <TextField
                             id="outlined-basic"
@@ -74,20 +76,25 @@ const PayProcessModal = ({ isOpen, handleModal, paySum, changePaySum, changePayN
                         timeout: 50,
                     },
                 }}
+                sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                }}
             >
                 <Slide direction="left" in={isSuccessPayModalOpen} mountOnEnter unmountOnExit>
-                    <Box sx={{
-                        width: '400px',
-                        height: 'calc(100% - 57px)',
-                        position: 'absolute',
-                        top: 0,
-                        left: '50%',
-                        transform: 'translate(-20%, -50%)',
-                        backgroundImage: 'url("/images/bgs/pay-success-bg.png")',
-                        backgroundSize: 'cover',
-                        boxShadow: 24,
-                        p: 4,
-                    }}>
+                    <Box
+                        sx={{
+                            transform: 'translate(-20%, -50%)',
+                            backgroundImage: 'url("/images/bgs/pay-success-bg.png")',
+                            backgroundSize: 'cover',
+
+                            width: `calc(${pageWidth}px + 60px)`,
+                            height: 'calc(100% - 57px)',
+                            bgcolor: 'background.paper',
+                            boxShadow: 24,
+                            p: 4,
+                        }}
+                    >
                         <div
 
                             style={{
@@ -111,7 +118,7 @@ const PayProcessModal = ({ isOpen, handleModal, paySum, changePaySum, changePayN
                                 {paySum} ₽
                             </h3>
                             <p>
-                                Александр Владимирович Х.
+                                { payName }
                             </p>
                         </div>
                     </Box>

@@ -4,13 +4,32 @@ import * as React from "react";
 import {Avatar, List, ListItemAvatar, ListItemButton, ListItemText} from "@mui/material";
 import Image from "next/image";
 
-export default function PaymentsHistory() {
+export default function PaymentsHistory({ paymentsYesterday, sumYesterday }: any) {
     return (
-        <div
+        <div>
+            <div
+                style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    padding: '0 18px 4px 18px',
 
-        >
+                }}
+            >
+                <h3>Вчера</h3>
+
+                <p
+                    className='pGrey'
+                    style={{
+                        fontSize: 18
+                    }}
+                >
+                    {sumYesterday} ₽
+                </p>
+
+            </div>
             <List>
-                {history.map(({ name, desc, sum, person }: any, index: any) => (
+                {paymentsYesterday.map(({name, desc, sum, person}: any, index: any) => (
                     <ListItemButton
                         key={index + person}
                         sx={{
@@ -19,7 +38,7 @@ export default function PaymentsHistory() {
                         }}
                     >
                         <ListItemAvatar sx={{alignSelf: 'start'}}>
-                            <Avatar alt="Profile Picture" src={person} />
+                            <Avatar alt="Profile Picture" src={person}/>
                         </ListItemAvatar>
                         <div
                             style={{
@@ -35,15 +54,15 @@ export default function PaymentsHistory() {
                             }}
                         >
                             <div>
-                                <p>{ name }</p>
-                                <p className='pGrey' style={{ marginTop: 4 }}>{ desc }</p>
+                                <p>{name}</p>
+                                <p className='pGrey' style={{marginTop: 4}}>{desc}</p>
                             </div>
                             <div
                                 style={{
                                     marginLeft: 12,
                                 }}
                             >
-                                <p>{ sum } ₽</p>
+                                <p>{sum} ₽</p>
                                 <Image
                                     src="/images/history/repeat.svg"
                                     width={32}
@@ -61,42 +80,3 @@ export default function PaymentsHistory() {
         </div>
     );
 }
-
-const history: any = [
-    {
-        name: 'Александр Александрович Ж.',
-        desc: 'Клиенту Сбера',
-        sum: '889',
-        person: '/images/history/sber.svg',
-    },
-    {
-        name: 'Марина Сергеевна И.',
-        desc: 'В другой банк',
-        sum: '600',
-        person: '/public/images/history/sber.svg',
-    },
-    {
-        name: 'Георгий Янович П.',
-        desc: 'Клиенту Сбера',
-        sum: '889',
-        person: '/images/history/sber.svg',
-    },
-    {
-        name: 'Афанасий Александрович Ж.',
-        desc: 'Клиенту Сбера',
-        sum: '889',
-        person: '/images/history/sber.svg',
-    },
-    {
-        name: 'Владимир Дмитриевич Д.',
-        desc: 'Клиенту Сбера',
-        sum: '889',
-        person: '/images/history/sber.svg',
-    },
-    {
-        name: 'Александр Александрович Ж.',
-        desc: 'Клиенту Сбера',
-        sum: '889',
-        person: '/images/history/sber.svg',
-    },
-];

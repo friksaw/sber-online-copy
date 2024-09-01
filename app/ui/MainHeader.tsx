@@ -8,7 +8,7 @@ export default function MainHeader({ balance, handleControl }: any) {
         <div
             style={{
                 backgroundImage: 'url("/images/bgs/mainHeaderBg.svg")',
-                backgroundSize: 'contain',
+                backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',
                 width: '100%',
                 borderRadius: '0 0 30px 30px',

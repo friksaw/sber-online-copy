@@ -12,6 +12,49 @@ import {useEffect, useState} from "react";
 import Controls from "@/app/components/Controls";
 import PayProcessModal from "@/app/components/PayProcessModal";
 
+
+
+
+
+const paymentsYesterday: any = [
+    {
+        name: 'Александр Александрович Ж.',
+        desc: 'Клиенту Сбера',
+        sum: '889',
+        person: '/images/history/sber.svg',
+    },
+    {
+        name: 'Марина Сергеевна И.',
+        desc: 'В другой банк',
+        sum: '600',
+        person: '/public/images/history/sber.svg',
+    },
+    {
+        name: 'Георгий Янович П.',
+        desc: 'Клиенту Сбера',
+        sum: '889',
+        person: '/images/history/sber.svg',
+    },
+    {
+        name: 'Афанасий Александрович Ж.',
+        desc: 'Клиенту Сбера',
+        sum: '889',
+        person: '/images/history/sber.svg',
+    },
+    {
+        name: 'Владимир Дмитриевич Д.',
+        desc: 'Клиенту Сбера',
+        sum: '889',
+        person: '/images/history/sber.svg',
+    },
+    {
+        name: 'Александр Александрович Ж.',
+        desc: 'Клиенту Сбера',
+        sum: '889',
+        person: '/images/history/sber.svg',
+    },
+];
+
 export default function Home() {
     const [currentPage, setCurrentPage]: any = useState(0);
     const [isControlsOpen, setIsControlsOpen]: any = useState(1);
@@ -20,10 +63,13 @@ export default function Home() {
     const [expenses, setExpenses]: any = useState('72 048');
     const [paySum, setPaySum]: any = useState('0');
     const [payName, setPayName]: any = useState('');
+    const [month, setMonth]: any = useState('сентябре');
+    const [sumYesterday, setSumYesterday]: any = useState(0);
 
     const [scale, setScale]: any = useState(1);
 
     const [isPayProcessModalOpen, setIsPayProcessModalOpen]: any = useState(false);
+
 
     const handlePayProcessModal = () => {
         setIsPayProcessModalOpen((isOpen: any) => !isOpen);
@@ -32,10 +78,6 @@ export default function Home() {
     const handleControl = () => {
         setIsControlsOpen((isOpen: any) => !isOpen);
     };
-
-
-    const pageWidth: any = 363
-    const pageHeight: any = 807
 
     const onChangePage: any = (newPage: any) => {
         setCurrentPage(newPage)
@@ -53,6 +95,9 @@ export default function Home() {
 
     const changePayName: any = (newName: any) => {
         setPayName(newName);
+    };
+    const changeMonth: any = (newMonth: any) => {
+        setMonth(newMonth);
     };
 
     const doPay = () => {
@@ -74,6 +119,28 @@ export default function Home() {
     };
 
 
+
+    const useScreenWidth = () => {
+        const [screenWidth, setScreenWidth]: any = useState(363);
+
+        useEffect(() => {
+            const handleResize = () => {
+                setScreenWidth(window.innerWidth < 700 ? window.innerWidth : 363);
+            };
+
+            handleResize(); // Initial setup on component mount
+            window.addEventListener('resize', handleResize);
+
+            return () => window.removeEventListener('resize', handleResize);
+        }, []);
+
+        return screenWidth;
+    };
+
+    const pageWidth: any = useScreenWidth();
+    const pageHeight: any = 807
+
+
     useEffect(() => {
         const updateScale = () => {
             const screenWidth = window.innerWidth;
@@ -92,6 +159,14 @@ export default function Home() {
         return () => window.removeEventListener('resize', updateScale);
     }, []);
 
+
+    function shuffleYesterdayMessages() {
+        for (let i = paymentsYesterday.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [paymentsYesterday[i], paymentsYesterday[j]] = [paymentsYesterday[j], paymentsYesterday[i]];
+        }
+    }
+
     const renderPage: any = () => {
         switch (currentPage) {
             case 0:
@@ -102,6 +177,7 @@ export default function Home() {
                     isPayProcessModalOpen={isPayProcessModalOpen}
                     paySum={paySum}
                     handleControl={handleControl}
+                    month={month}
                 />;
             case 1:
                 return <Capital />;
@@ -110,7 +186,10 @@ export default function Home() {
             case 3:
                 return <Payments />;
             case 4:
-                return <History />;
+                return <History
+                    paymentsYesterday={paymentsYesterday}
+                    sumYesterday={sumYesterday}
+                />;
             default:
                 return <Main
                     balance={balance}
@@ -119,9 +198,13 @@ export default function Home() {
                     isPayProcessModalOpen={isPayProcessModalOpen}
                     paySum={paySum}
                     handleControl={handleControl}
+                    month={month}
                 />;
         }
     };
+
+
+
 
     return (
         <Box
@@ -136,19 +219,21 @@ export default function Home() {
                 changeBalance={changeBalance}
                 expenses={expenses}
                 changeExpenses={changeExpenses}
+                month={month}
+                changeMonth={changeMonth}
+                shuffleYesterdayMessages={shuffleYesterdayMessages}
             />
 
             <div
                 style={{
                     backgroundImage: 'url("/images/bgs/bg1.svg")',
-                    backgroundSize: 'cover',
+                    backgroundSize: 'contain',
                     width: pageWidth,
                     height: pageHeight,
                     overflow: 'hidden',
                     transform: `scale(${scale})`,
                 }}
             >
-
                 <BottomNav
                     currentPage={currentPage}
                     onChangePage={onChangePage}
@@ -162,6 +247,7 @@ export default function Home() {
                         payName={payName}
                         changePayName={changePayName}
                         doPay={doPay}
+                        pageWidth={pageWidth}
                     />
                     <div>{renderPage()}</div>
                 </BottomNav>

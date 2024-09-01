@@ -3,7 +3,7 @@
 import * as React from "react";
 import Image from "next/image";
 
-export default function MainStats({ expenses }: any) {
+export default function MainStats({ expenses, month }: any) {
     return (
         <div
             style={{
@@ -19,7 +19,7 @@ export default function MainStats({ expenses }: any) {
                 }}
             >
                 <h3>
-                    Расходы в августе
+                    Расходы в {month}
                 </h3>
                 <p className='pGreen'>
                     Все

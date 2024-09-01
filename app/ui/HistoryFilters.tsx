@@ -100,25 +100,6 @@ export default function HistoryFilters() {
                     />
                 </div>
             </div>
-            <div
-                style={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                }}
-            >
-                <h3>Вчера</h3>
-
-                <p
-                    className='pGrey'
-                    style={{
-                        fontSize: 18
-                    }}
-                >
-                    2 654 ₽
-                </p>
-
-            </div>
         </div>
     );
 }
