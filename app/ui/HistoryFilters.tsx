@@ -31,7 +31,7 @@ export default function HistoryFilters() {
                         padding: '8px 16px',
                     }}
                 >
-                    <p style={{ fontSize: 12 }}>
+                    <p style={{fontSize: 12}}>
                         Тип операции
                     </p>
                     <Image
@@ -39,9 +39,9 @@ export default function HistoryFilters() {
                         width={7}
                         height={4}
                         style={{
-                            marginLeft: 16
-                        }}                                alt=''
-
+                            marginLeft: 10
+                        }}
+                        alt=''
                     />
                 </div>
                 <div
@@ -67,9 +67,9 @@ export default function HistoryFilters() {
                         width={7}
                         height={4}
                         style={{
-                            marginLeft: 16
-                        }}                                alt=''
-
+                            marginLeft: 10
+                        }}
+                        alt=''
                     />
                 </div>
                 <div
@@ -87,20 +87,38 @@ export default function HistoryFilters() {
                     }}
                 >
                     <p style={{fontSize: 12}}>
-                        Карта или чета
+                        Карта или счет
                     </p>
                     <Image
                         src="/images/history/filtersArrow.svg"
                         width={7}
                         height={4}
                         style={{
-                            marginLeft: 16
-                        }}                                alt=''
-
+                            marginLeft: 10
+                        }}
+                        alt=''
                     />
                 </div>
             </div>
-            <h3>Вчера</h3>
+            <div
+                style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                }}
+            >
+                <h3>Вчера</h3>
+
+                <p
+                    className='pGrey'
+                    style={{
+                        fontSize: 18
+                    }}
+                >
+                    2 654 ₽
+                </p>
+
+            </div>
         </div>
     );
 }

@@ -11,7 +11,13 @@ export default function PaymentsHistory() {
         >
             <List>
                 {history.map(({ name, desc, sum, person }: any, index: any) => (
-                    <ListItemButton key={index + person}>
+                    <ListItemButton
+                        key={index + person}
+                        sx={{
+
+                            height: 64,
+                        }}
+                    >
                         <ListItemAvatar sx={{alignSelf: 'start'}}>
                             <Avatar alt="Profile Picture" src={person} />
                         </ListItemAvatar>
@@ -20,10 +26,12 @@ export default function PaymentsHistory() {
                                 display: 'flex',
                                 flexDirection: 'row',
                                 justifyContent: 'space-between',
+                                alignItems: 'center',
                                 width: '100%',
-                                height: 64,
-                                borderBottom: '1px solid #323232',
                                 paddingBottom: 12,
+
+                                borderBottom: '1px solid #323232',
+
                             }}
                         >
                             <div>
@@ -42,8 +50,8 @@ export default function PaymentsHistory() {
                                     height={32}
                                     style={{
                                         marginTop: 4,
-                                    }}                                alt=''
-
+                                    }}
+                                    alt=''
                                 />
                             </div>
                         </div>
