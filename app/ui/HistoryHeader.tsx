@@ -82,8 +82,6 @@ export default function HistoryHeader() {
                 </div>
                 <div
                     style={{
-                        display: 'flex',
-                        flexDirection: 'row',
                     }}
                 >
                     <div
@@ -109,6 +107,7 @@ export default function HistoryHeader() {
                                     display: 'flex',
                                     flexDirection: 'row',
                                     justifyContent: 'space-between',
+                                    width: 96
                                 }}
                             >
                                 <Image
@@ -122,6 +121,9 @@ export default function HistoryHeader() {
                                     width={19}
                                     height={19}
                                     alt=''
+                                    style={{
+                                        marginRight: 8,
+                                    }}
                                 />
                             </div>
 
@@ -153,6 +155,7 @@ export default function HistoryHeader() {
                                     display: 'flex',
                                     flexDirection: 'row',
                                     justifyContent: 'space-between',
+                                    width:  192
                                 }}
                             >
                                 <p className='pGrey'>
@@ -163,6 +166,9 @@ export default function HistoryHeader() {
                                     width={9}
                                     height={11}
                                     alt=''
+                                    style={{
+                                        alignSelf: 'start',
+                                    }}
                                 />
                             </div>
                             <p
@@ -176,6 +182,7 @@ export default function HistoryHeader() {
                                 style={{
                                     display: 'flex',
                                     flexDirection: 'row',
+                                    marginTop: 16,
                                 }}
                             >
                                 <p
