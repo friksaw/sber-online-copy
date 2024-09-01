@@ -5,12 +5,13 @@ import PayProcessBox from "@/app/components/PaySuccessBox";
 
 
 
-const PayProcessModal = ({ isOpen, handleModal, paySum, changePaySum }: any) => {
+const PayProcessModal = ({ isOpen, handleModal, paySum, changePaySum, changePayName, payName, doPay }: any) => {
     const [isSuccessPayModalOpen, setIsSuccessPayModalOpen]: any = useState(false);
 
 
     const handleSuccessPayModal = () => {
         setIsSuccessPayModalOpen(isSuccessPayModalOpen => !isSuccessPayModalOpen);
+        doPay()
     };
 
     return (
@@ -47,6 +48,13 @@ const PayProcessModal = ({ isOpen, handleModal, paySum, changePaySum }: any) => 
                             value={paySum}
                             onChange={(event): any => changePaySum(event?.target.value)}
                         />
+                        <TextField
+                            id="outlined-basic"
+                            label="Кому перевести"
+                            variant="outlined"
+                            value={payName}
+                            onChange={(event): any => changePayName(event?.target.value)}
+                        />
                         <a onClick={handleSuccessPayModal} style={{color: 'black'}}>
                             перевести
                         </a>
@@ -76,6 +84,7 @@ const PayProcessModal = ({ isOpen, handleModal, paySum, changePaySum }: any) => 
                         left: '50%',
                         transform: 'translate(-20%, -50%)',
                         backgroundImage: 'url("/images/bgs/pay-success-bg.png")',
+                        backgroundSize: 'cover',
                         boxShadow: 24,
                         p: 4,
                     }}>
