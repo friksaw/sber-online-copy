@@ -26,7 +26,11 @@ export default function Home() {
     const [isPayProcessModalOpen, setIsPayProcessModalOpen]: any = useState(false);
 
     const handlePayProcessModal = () => {
-        setIsPayProcessModalOpen((isPayProcessModalOpen: any) => !isPayProcessModalOpen);
+        setIsPayProcessModalOpen((isOpen: any) => !isOpen);
+    };
+
+    const handleControl = () => {
+        setIsControlsOpen((isOpen: any) => !isOpen);
     };
 
 
@@ -77,16 +81,15 @@ export default function Home() {
             const scaleX = screenWidth / pageWidth;
             const scaleY = screenHeight / pageHeight;
 
-            // Выбираем наименьший коэффициент масштабирования, чтобы компонент поместился на экране
             const newScale = Math.min(scaleX, scaleY);
             setScale(newScale);
         };
 
-        updateScale(); // Вызываем функцию при монтировании компонента
+        updateScale();
 
-        window.addEventListener('resize', updateScale); // Обновляем масштаб при изменении размера окна
+        window.addEventListener('resize', updateScale);
 
-        return () => window.removeEventListener('resize', updateScale); // Очищаем обработчик
+        return () => window.removeEventListener('resize', updateScale);
     }, []);
 
     const renderPage: any = () => {
@@ -98,6 +101,7 @@ export default function Home() {
                     handlePayProcessModal={handlePayProcessModal}
                     isPayProcessModalOpen={isPayProcessModalOpen}
                     paySum={paySum}
+                    handleControl={handleControl}
                 />;
             case 1:
                 return <Capital />;
@@ -112,7 +116,9 @@ export default function Home() {
                     balance={balance}
                     expenses={expenses}
                     handlePayProcessModal={handlePayProcessModal}
+                    isPayProcessModalOpen={isPayProcessModalOpen}
                     paySum={paySum}
+                    handleControl={handleControl}
                 />;
         }
     };

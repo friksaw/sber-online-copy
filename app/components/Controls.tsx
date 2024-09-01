@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Image from "next/image";
-import {Card, FormControl, InputLabel, MenuItem, Select, Slider, TextField} from "@mui/material";
+import {Button, Card, FormControl, InputLabel, MenuItem, Select, Slider, TextField} from "@mui/material";
 
 
 export default function Controls({ isOpen, balance, changeBalance, expenses, changeExpenses }: any) {
@@ -14,7 +14,8 @@ export default function Controls({ isOpen, balance, changeBalance, expenses, cha
                 right: 20,
                 top: 20,
                 display: isOpen ? '' : 'none',
-                padding: '12px 20px'
+                padding: '12px 20px',
+                zIndex: 10000000000000000
             }}
         >
             <div
@@ -70,6 +71,19 @@ export default function Controls({ isOpen, balance, changeBalance, expenses, cha
                 />
             </div>
 
+            <div
+                style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                }}
+            >
+                <Slider
+                    defaultValue={30}
+                    aria-label="Disabled slider"
+                    sx={{}}
+                />
+            </div>
 
             <div
                 style={{
@@ -96,20 +110,20 @@ export default function Controls({ isOpen, balance, changeBalance, expenses, cha
                 />
             </div>
 
+
             <div
                 style={{
                     display: 'flex',
-                    flexDirection: 'row',
+                    flexDirection: 'column',
                     justifyContent: 'space-between',
                 }}
             >
-                <Slider
-                    defaultValue={30}
-                    aria-label="Disabled slider"
-                    sx={{
-
-                    }}
-                />
+                <Button>
+                    добавить зачисление
+                </Button>
+                <Button>
+                    рандом
+                </Button>
             </div>
         </Card>
     );

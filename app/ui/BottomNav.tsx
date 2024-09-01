@@ -28,6 +28,7 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                     maxWidth: pageWidth,
                     margin: '0 auto',
                     maxHeight: 57,
+                    zIndex: 10000000000000
                 }}
                 elevation={0}
             >
@@ -41,6 +42,7 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                         backgroundColor: '#1E1E1E',
                         maxWidth: pageWidth,
                         maxHeight: 57,
+                        zIndex: 10000000000000
 
                     }}
                 >

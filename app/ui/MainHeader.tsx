@@ -3,7 +3,7 @@
 import * as React from "react";
 import Image from "next/image";
 
-export default function MainHeader({ balance }: any) {
+export default function MainHeader({ balance, handleControl }: any) {
     return (
         <div
             style={{
@@ -21,13 +21,15 @@ export default function MainHeader({ balance }: any) {
                     padding: '45px 6px 36px 18px',
                 }}
             >
-                <Image
-                    src="/images/avatars/myAvatar.svg"
-                    width={37}
-                    height={37}
-                    alt=''
+                <a onClick={handleControl}>
+                    <Image
+                        src="/images/avatars/myAvatar.svg"
+                        width={37}
+                        height={37}
+                        alt=''
+                    />
+                </a>
 
-                />
                 <div
                     style={{
                         borderRadius: 100,

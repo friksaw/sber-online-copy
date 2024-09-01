@@ -24,7 +24,7 @@ const PayProcessModal = ({ isOpen, handleModal, paySum, changePaySum, changePayN
                 closeAfterTransition
                 slotProps={{
                     backdrop: {
-                        timeout: 100,
+                        timeout: 50,
                     },
                 }}
             >
@@ -71,7 +71,7 @@ const PayProcessModal = ({ isOpen, handleModal, paySum, changePaySum, changePayN
                 closeAfterTransition
                 slotProps={{
                     backdrop: {
-                        timeout: 100,
+                        timeout: 50,
                     },
                 }}
             >
