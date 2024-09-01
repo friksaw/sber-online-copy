@@ -15,6 +15,7 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
         <Box
             sx={{
                 pb: 1,
+                maxHeight: 57,
             }}
         >
             {children}
@@ -26,6 +27,7 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                     right: 0,
                     maxWidth: pageWidth,
                     margin: '0 auto',
+                    maxHeight: 57,
                 }}
                 elevation={0}
             >
@@ -38,6 +40,8 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                     sx={{
                         backgroundColor: '#1E1E1E',
                         maxWidth: pageWidth,
+                        maxHeight: 57,
+
                     }}
                 >
                     <BottomNavigationAction
@@ -56,7 +60,6 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                                 fontSize: 10,
                                 opacity: 0.4,
                                 justifyContent: 'space-between',
-                                padding: '8px 0',
                             },
                             '&.Mui-selected': {
                                 color: 'white',

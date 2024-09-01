@@ -10,6 +10,7 @@ import Payments from "@/app/components/Payments";
 import History from "@/app/components/History";
 import {useEffect, useState} from "react";
 import Controls from "@/app/components/Controls";
+import PayProcessModal from "@/app/components/PayProcessModal";
 
 export default function Home() {
     const [currentPage, setCurrentPage]: any = useState(0);
@@ -17,8 +18,17 @@ export default function Home() {
 
     const [balance, setBalance]: any = useState('4 062,00');
     const [expenses, setExpenses]: any = useState('72 048');
+    const [paySum, setPaySum]: any = useState('0');
 
     const [scale, setScale]: any = useState(1);
+
+    const [isPayProcessModalOpen, setIsPayProcessModalOpen]: any = useState(false);
+
+    const handlePayProcessModal = () => {
+        setIsPayProcessModalOpen(isPayProcessModalOpen => !isPayProcessModalOpen);
+    };
+
+
     const pageWidth: any = 363
     const pageHeight: any = 807
 
@@ -32,6 +42,11 @@ export default function Home() {
     const changeExpenses: any = (newExpenses: any) => {
         setExpenses(newExpenses);
     };
+    const changePaySum: any = (newSum: any) => {
+        console.log(0)
+        setPaySum(newSum);
+    };
+
 
     useEffect(() => {
         const updateScale = () => {
@@ -55,7 +70,13 @@ export default function Home() {
     const renderPage: any = () => {
         switch (currentPage) {
             case 0:
-                return <Main balance={balance} expenses={expenses} />; // Возвращаем компонент
+                return <Main
+                    balance={balance}
+                    expenses={expenses}
+                    handlePayProcessModal={handlePayProcessModal}
+                    isPayProcessModalOpen={isPayProcessModalOpen}
+                    paySum={paySum}
+                />;
             case 1:
                 return <Capital />;
             case 2:
@@ -65,7 +86,12 @@ export default function Home() {
             case 4:
                 return <History />;
             default:
-                return <Main />;
+                return <Main
+                    balance={balance}
+                    expenses={expenses}
+                    handlePayProcessModal={handlePayProcessModal}
+                    paySum={paySum}
+                />;
         }
     };
 
@@ -100,6 +126,12 @@ export default function Home() {
                     onChangePage={onChangePage}
                     pageWidth={pageWidth}
                 >
+                    <PayProcessModal
+                        isOpen={isPayProcessModalOpen}
+                        handleModal={handlePayProcessModal}
+                        paySum={paySum}
+                        changePaySum={changePaySum}
+                    />
                     <div>{renderPage()}</div>
                 </BottomNav>
             </div>

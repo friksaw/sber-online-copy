@@ -70,6 +70,32 @@ export default function Controls({ isOpen, balance, changeBalance, expenses, cha
                 />
             </div>
 
+
+            <div
+                style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    marginTop: 24
+                }}
+            >
+
+                <TextField
+                    id="outlined-basic"
+                    label="Расходы вчера"
+                    variant="outlined"
+                    value={balance}
+                    onChange={(event): any => changeBalance(event?.target.value)}
+                />
+                <TextField
+                    id="outlined-basic"
+                    label="Расходы сегодня"
+                    variant="outlined"
+                    value={expenses}
+                    onChange={(event): any => changeExpenses(event?.target.value)}
+                />
+            </div>
+
             <div
                 style={{
                     display: 'flex',

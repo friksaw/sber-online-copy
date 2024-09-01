@@ -5,7 +5,7 @@ import Image from "next/image";
 import {Avatar} from "@mui/material";
 import FastPaymentButton from "@/app/ui/FastPaymentButton";
 
-export default function FastPayment() {
+export default function FastPayment({ handlePayProcessModal, isPayProcessModalOpen, paySum, changePaySum, doPayment }: any) {
     return (
         <div>
             <div
@@ -31,7 +31,15 @@ export default function FastPayment() {
                     flexDirection: 'row',
                 }}
             >
-                <FastPaymentButton text='Новый перевод' picture='new'/>
+                <FastPaymentButton
+                    handlePayProcessModal={handlePayProcessModal}
+                    isPayProcessModalOpen={isPayProcessModalOpen}
+                    paySum={paySum}
+                    changePaySum={changePaySum}
+                    doPayment={doPayment}
+                    text='Новый перевод'
+                    picture='new'
+                />
                 <FastPaymentButton text='Ирина Юрьевна Е.'/>
                 <FastPaymentButton text='Полина Петровна...'/>
                 <FastPaymentButton text='Леша Досов' picture='/images/avatars/example.jpg'/>

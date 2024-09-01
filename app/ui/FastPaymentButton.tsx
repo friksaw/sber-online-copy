@@ -4,7 +4,7 @@ import * as React from "react";
 import {Avatar, Badge} from "@mui/material";
 import Image from "next/image";
 
-export default function FastPaymentButton({ text, picture }: any) {
+export default function FastPaymentButton({ text, picture, handlePayProcessModal }: any) {
     return (
         <div
             style={{
@@ -19,12 +19,16 @@ export default function FastPaymentButton({ text, picture }: any) {
         >
             {
                 (picture === 'new') ?
-                        <Image
-                            src='/images/main/newTransaction.svg'
-                            width={80}
-                            height={80}
-                            alt=''
-                        />
+                        <button
+                            onClick={handlePayProcessModal}
+                        >
+                            <Image
+                                src='/images/main/newTransaction.svg'
+                                width={80}
+                                height={80}
+                                alt=''
+                            />
+                        </button>
                      :
                     (!picture) ?
                         <div
