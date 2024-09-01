@@ -55,14 +55,13 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                                 color: 'white',
                                 fontSize: 10,
                                 opacity: 0.4,
-                                justifyContent: 'space-between'
-                            },
-                            '&.MuiBottomNavigationAction-root': {
-                                fontSize: 10,
+                                justifyContent: 'space-between',
+                                padding: '8px 0',
                             },
                             '&.Mui-selected': {
                                 color: 'white',
                                 opacity: 1,
+                                transform: 'none',
                             },
                         }}
                     />
@@ -81,14 +80,13 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                                 color: 'white',
                                 fontSize: 10,
                                 opacity: 0.4,
-                                justifyContent: 'space-between'
-                            },
-                            '&.MuiBottomNavigationAction-root': {
-                                fontSize: 10,
+                                justifyContent: 'space-between',
+                                padding: '8px 0',
                             },
                             '&.Mui-selected': {
                                 color: 'white',
                                 opacity: 1,
+                                transform: 'none',
                             },
                         }}
                     />
@@ -104,15 +102,17 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                             />
                         }
                         sx={{
-                            color: 'white',
-                            opacity: 0.4,
-                            fontSize: 10,
                             '&.MuiButtonBase-root': {
+                                color: 'white',
                                 fontSize: 10,
-                                justifyContent: 'space-between'
+                                opacity: 0.4,
+                                justifyContent: 'space-between',
+                                padding: '8px 0',
                             },
                             '&.Mui-selected': {
                                 color: 'white',
+                                opacity: 1,
+                                transform: 'none',
                             },
                         }}
                     />
@@ -131,14 +131,13 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                                 color: 'white',
                                 fontSize: 10,
                                 opacity: 0.4,
-                                justifyContent: 'space-between'
-                            },
-                            '&.MuiBottomNavigationAction-root': {
-                                fontSize: 10,
+                                justifyContent: 'space-between',
+                                padding: '8px 0',
                             },
                             '&.Mui-selected': {
                                 color: 'white',
                                 opacity: 1,
+                                transform: 'none',
                             },
                         }}
                     />
@@ -157,14 +156,13 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                                 color: 'white',
                                 fontSize: 10,
                                 opacity: 0.4,
-                                justifyContent: 'space-between'
-                            },
-                            '&.MuiBottomNavigationAction-root': {
-                                fontSize: 10,
+                                justifyContent: 'space-between',
+                                padding: '8px 0',
                             },
                             '&.Mui-selected': {
                                 color: 'white',
                                 opacity: 1,
+                                transform: 'none',
                             },
                         }}
                     />
