@@ -26,7 +26,7 @@ export default function Home() {
     const [isPayProcessModalOpen, setIsPayProcessModalOpen]: any = useState(false);
 
     const handlePayProcessModal = () => {
-        setIsPayProcessModalOpen(isPayProcessModalOpen => !isPayProcessModalOpen);
+        setIsPayProcessModalOpen((isPayProcessModalOpen: any) => !isPayProcessModalOpen);
     };
 
 
