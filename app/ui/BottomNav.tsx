@@ -12,22 +12,18 @@ import Image from 'next/image'
 export default function BottomNav({ children, currentPage, onChangePage, pageWidth }: any) {
 
     return (
-        <Box
-            sx={{
-                pb: 1,
-                maxHeight: 57,
-            }}
-        >
+        <Box>
             {children}
             <Paper
                 sx={{
+
+                    height: 57,
+
                     position: 'fixed',
-                    bottom: 0,
+                    bottom: -4,
                     left: 0,
                     right: 0,
                     maxWidth: pageWidth,
-                    margin: '0 auto',
-                    maxHeight: 57,
                     zIndex: 10000000000000
                 }}
                 elevation={0}
@@ -42,8 +38,7 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                         backgroundColor: '#1E1E1E',
                         maxWidth: pageWidth,
                         maxHeight: 57,
-                        zIndex: 10000000000000
-
+                        zIndex: 10000000000000,
                     }}
                 >
                     <BottomNavigationAction
@@ -51,12 +46,13 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                         icon={
                             <Image
                                 src="/images/bottomNav/home.svg"
-                                width={27}
+                                width={26}
                                 height={22}
                                 alt=''
                             />
                         }
                         sx={{
+                            padding: '6px 0 8px 28px',
                             '&.MuiButtonBase-root': {
                                 color: 'white',
                                 fontSize: 10,
@@ -75,8 +71,8 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                         icon={
                             <Image
                                 src="/images/bottomNav/capital.svg"
-                                width={27}
-                                height={22}
+                                width={18}
+                                height={18}
                                 alt=''
                             />
                         }
@@ -100,19 +96,23 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                         icon={
                             <Image
                                 src="/images/bottomNav/assistant.svg"
-                                width={27}
-                                height={22}
+                                width={25}
+                                height={27}
                                 alt=''
+                                style={{
+                                    marginTop: 4
+                                }}
 
                             />
                         }
                         sx={{
+                            paddingBottom: 1,
+
                             '&.MuiButtonBase-root': {
                                 color: 'white',
                                 fontSize: 10,
                                 opacity: 0.4,
                                 justifyContent: 'space-between',
-                                padding: '8px 0',
                             },
                             '&.Mui-selected': {
                                 color: 'white',
@@ -151,18 +151,20 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                         icon={
                             <Image
                                 src="/images/bottomNav/history.svg"
-                                width={25}
-                                height={20}
+                                width={18}
+                                height={18}
                                 alt=''
                             />
                         }
                         sx={{
+
                             '&.MuiButtonBase-root': {
                                 color: 'white',
                                 fontSize: 10,
                                 opacity: 0.4,
                                 justifyContent: 'space-between',
                                 padding: '8px 0',
+                                transform: 'none',
                             },
                             '&.Mui-selected': {
                                 color: 'white',

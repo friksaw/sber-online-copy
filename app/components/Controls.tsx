@@ -64,20 +64,6 @@ export default function Controls({ isOpen, balance, changeBalance, expenses, cha
                 />
             </div>
 
-            <div
-                style={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                }}
-            >
-                <Slider
-                    defaultValue={30}
-                    aria-label="Disabled slider"
-                    sx={{}}
-                />
-            </div>
-
 
 
             <div
@@ -85,6 +71,7 @@ export default function Controls({ isOpen, balance, changeBalance, expenses, cha
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'space-between',
+                    marginTop: 20
                 }}
             >
                 <Button>
