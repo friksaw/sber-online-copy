@@ -61,13 +61,13 @@ export default function Home() {
         {
             name: 'Владимир Дмитриевич Д.',
             desc: 'Клиенту Сбера',
-            sum: '889',
+            sum: '500',
             person: '/images/history/sber.svg',
         },
         {
             name: 'Александр Александрович Ж.',
             desc: 'Клиенту Сбера',
-            sum: '900',
+            sum: '500',
             person: '/images/history/sber.svg',
         },
     ])

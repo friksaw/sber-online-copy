@@ -43,7 +43,7 @@ export default function PaymentsHistory({ paymentsYesterday, sumYesterday }: any
                                 justifyContent: 'space-between',
                                 alignItems: 'center',
                                 width: '100%',
-                                paddingBottom: 12,
+                                paddingBottom: 4,
                                 height: 64,
 
                                 borderBottom: '1px solid #323232',
@@ -63,7 +63,7 @@ export default function PaymentsHistory({ paymentsYesterday, sumYesterday }: any
                                     flexDirection: 'column',
                                 }}
                             >
-                                <p>{sum} ₽</p>
+                                <p style={{ textWrap: 'nowrap' }}>{sum} ₽</p>
                                 <Image
                                     src="/images/history/repeat.svg"
                                     width={32}
