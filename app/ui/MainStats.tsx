@@ -2,8 +2,45 @@
 
 import * as React from "react";
 import Image from "next/image";
+import {useEffect, useState} from "react";
 
 export default function MainStats({ expenses, month }: any) {
+    const [transactionsPart, setTransactionsPart]: any = useState('');
+    const [eduPart, setEduPart]: any = useState('');
+
+    useEffect(() => {
+        // Calculate transactionsPart whenever expenses changes
+        const calculateTransactionsPart = () => {
+            const parsedExpenses = Math.floor(parseFloat(expenses.replace(/\s/g, '')));
+            const newTransactionsPart = 0.7 * parsedExpenses;
+            const newEduPart = parsedExpenses - newTransactionsPart;
+
+            const formattedTransactionsPart = newTransactionsPart.toLocaleString('ru-RU', {
+                useGrouping: true, // Enable thousands separator
+                separator: ' ' // Set space as the separator
+            });
+            const formattedEduPart = newEduPart.toLocaleString('ru-RU', {
+                useGrouping: true, // Enable thousands separator
+                separator: ' ' // Set space as the separator
+            });
+            setTransactionsPart(formattedTransactionsPart);
+            setEduPart(formattedEduPart);
+        };
+
+        // Initial calculation
+        calculateTransactionsPart();
+
+        // Update transactionsPart when expenses changes
+        const expensesChangeListener = () => {
+            calculateTransactionsPart();
+        }
+        window.addEventListener('resize', expensesChangeListener);
+
+        // Clean up the event listener when the component unmounts
+        return () => window.removeEventListener('resize', expensesChangeListener);
+
+    }, [expenses]);
+
     return (
         <div
             style={{
@@ -96,7 +133,7 @@ export default function MainStats({ expenses, month }: any) {
                                 Переводы людям
                             </p>
                             <h4>
-                                8 100 ₽
+                                {transactionsPart} ₽
                             </h4>
 
                         </div>
@@ -128,7 +165,7 @@ export default function MainStats({ expenses, month }: any) {
                                 Образование
                             </p>
                             <p>
-                                3 330 ₽
+                                {eduPart} ₽
                             </p>
                         </div>
                     </div>

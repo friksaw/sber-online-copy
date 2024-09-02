@@ -114,9 +114,11 @@ export default function Home() {
     const doPay = () => {
         const balanceNumeric = parseFloat(balance.replace(/\s/g, '').replace(',', '.'));
         const sumTodayNumeric = parseFloat(sumToday.replace(/\s/g, '').replace(',', '.'));
+        const expensesNumeric = parseFloat(expenses.replace(/\s/g, '').replace(',', '.'));
         const paySumNumeric = parseFloat(paySum.replace(/\s/g, '').replace(',', '.'));
 
         const newBalance = balanceNumeric - paySumNumeric;
+        const newExpenses = expensesNumeric + paySumNumeric;
 
         const formattedBalance = newBalance.toLocaleString('ru-RU', {
             minimumFractionDigits: 2,
@@ -124,6 +126,10 @@ export default function Home() {
         });
 
         const formattedSumToday = paySumNumeric.toLocaleString('ru-RU', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+        });
+        const formattedExpensesSum = newExpenses.toLocaleString('ru-RU', {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2,
         });
@@ -139,6 +145,7 @@ export default function Home() {
         setBalance(formattedBalance);
         setSumToday(formattedSumToday);
         setPaymentsToday((prevPayments) => [...prevPayments, newPayment]);
+        setExpenses(formattedExpensesSum);
     };
 
 
