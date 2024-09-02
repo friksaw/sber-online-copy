@@ -59,7 +59,7 @@ export default function PaymentsHistory({ paymentsYesterday, sumYesterday, payme
                                     <div
                                         style={{
                                             marginLeft: 12,
-                                            width: 56,
+                                            width: 64,
                                             textWrap: 'nowrap',
                                             textAlign: 'right',
                                             display: 'flex',
@@ -67,16 +67,7 @@ export default function PaymentsHistory({ paymentsYesterday, sumYesterday, payme
                                         }}
                                     >
                                         <p style={{textWrap: 'nowrap'}}>{sum} ₽</p>
-                                        <Image
-                                            src="/images/history/repeat.svg"
-                                            width={32}
-                                            height={32}
-                                            style={{
-                                                marginTop: 4,
-                                                alignSelf: 'end',
-                                            }}
-                                            alt=''
-                                        />
+
                                     </div>
                                 </div>
                             </ListItemButton>

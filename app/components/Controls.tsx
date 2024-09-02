@@ -5,7 +5,7 @@ import Image from "next/image";
 import {Button, Card, FormControl, InputLabel, MenuItem, Select, Slider, TextField} from "@mui/material";
 
 
-export default function Controls({ isOpen, balance, changeBalance, expenses, changeExpenses, month, changeMonth, sumYesterday, changeSumYesterday, shuffleYesterdayMessages }: any) {
+export default function Controls({ isOpen, balance, changeBalance, expenses, changeExpenses, month, changeMonth, sumYesterday, changeSumYesterday, shuffleYesterdayMessages, addDeposit }: any) {
     return (
         <Card
             sx={{
@@ -74,7 +74,7 @@ export default function Controls({ isOpen, balance, changeBalance, expenses, cha
                     marginTop: 20
                 }}
             >
-                <Button>
+                <Button onClick={addDeposit}>
                     добавить зачисление
                 </Button>
                 <Button onClick={shuffleYesterdayMessages}>

@@ -11,6 +11,7 @@ import History from "@/app/components/History";
 import {useEffect, useState} from "react";
 import Controls from "@/app/components/Controls";
 import PayProcessModal from "@/app/components/PayProcessModal";
+import {any} from "prop-types";
 
 
 
@@ -139,6 +140,27 @@ export default function Home() {
         setPaymentsToday((prevPayments) => [...prevPayments, newPayment]);
     };
 
+
+    function getRandomNumber({ min, max }: any): any {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    const addDeposit: any = () => {
+        const randomSum = getRandomNumber({ min: 500, max: 20000 });
+
+        // Convert to string and remove decimals
+        const formattedSumToday = Math.floor(randomSum).toString();
+
+        const newPayment: any = {
+            name: 'Геннадий Ефимов Г.',
+            desc: 'Клиент Сбера',
+            sum: '+ ' + formattedSumToday,
+            person: '/images/history/sber.svg',
+        };
+
+        setPaymentsToday((prevPayments) => [...prevPayments, newPayment]);
+    };
+
     const useScreenWidth = () => {
         const [screenWidth, setScreenWidth] = useState<number>(0);
 
@@ -251,6 +273,7 @@ export default function Home() {
                 sumYesterday={sumYesterday}
                 changeSumYesterday={changeSumYesterday}
                 shuffleYesterdayMessages={shuffleYesterdayMessages}
+                addDeposit={addDeposit}
             />
 
             <div
