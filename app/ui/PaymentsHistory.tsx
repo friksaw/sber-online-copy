@@ -4,11 +4,11 @@ import * as React from "react";
 import {Avatar, List, ListItemAvatar, ListItemButton, ListItemText} from "@mui/material";
 import Image from "next/image";
 
-export default function PaymentsHistory({ paymentsYesterday, sumYesterday, paymentsToday, sumToday }: any) {
+export default function PaymentsHistory({ paymentsYesterday, sumYesterday, paymentsToday, sumToday, depositsToday }: any) {
     return (
         <div>
             {
-                paymentsToday &&
+                (parseInt(sumToday) || (parseInt(depositsToday))) ?
                 <div
                     style={{
                         marginBottom: 12
@@ -90,7 +90,7 @@ export default function PaymentsHistory({ paymentsYesterday, sumYesterday, payme
                         </ListItemButton>
                     ))}
                     </List>
-                </div>
+                </div> : ''
             }
             <div
                 style={{

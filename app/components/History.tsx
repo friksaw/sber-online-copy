@@ -15,6 +15,7 @@ export default function History({ paymentsYesterday, sumYesterday, paymentsToday
                 sumYesterday={sumYesterday}
                 paymentsToday={paymentsToday}
                 sumToday={sumToday}
+                depositsToday={depositsToday}
             />
         </div>
     );

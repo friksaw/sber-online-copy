@@ -191,7 +191,7 @@ export default function HistoryHeader({ sumToday, depositsToday }: any) {
                                         fontSize: 12,
                                     }}
                                 >
-                                    +{depositsToday} ₽
+                                    + {depositsToday} ₽
                                 </p>
                                 <p
                                     style={{
