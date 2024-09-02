@@ -36,7 +36,7 @@ const PayProcessModal = ({ isOpen, handleModal, paySum, changePaySum, changePayN
                     <Box
                         sx={{
                             width: `calc(${pageWidth}px + 60px)`,
-                            height: 'calc(100% - 57px)',
+                            height: '100%',
                             bgcolor: 'background.paper',
                             boxShadow: 24,
                             p: 4,
@@ -89,7 +89,7 @@ const PayProcessModal = ({ isOpen, handleModal, paySum, changePaySum, changePayN
                             backgroundSize: 'cover',
 
                             width: `calc(${pageWidth}px + 60px)`,
-                            height: 'calc(100% - 57px)',
+                            height: '100%',
                             bgcolor: 'background.paper',
                             boxShadow: 24,
                             p: 4,

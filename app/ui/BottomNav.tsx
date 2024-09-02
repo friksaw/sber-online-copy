@@ -64,7 +64,7 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                                 color: 'white',
                                 opacity: 1,
                                 transform: 'none',
-                                fontSize: 10,
+                                fontSize: 8,
                                 scale: 0.88,
                             },
                         }}
@@ -92,7 +92,7 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                                 color: 'white',
                                 opacity: 1,
                                 transform: 'none',
-                                fontSize: 10,
+                                fontSize: 8,
                                 scale: 0.88,
                             },
                         }}
@@ -106,7 +106,7 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                                 height={27}
                                 alt=''
                                 style={{
-                                    marginBottom: -4
+                                    marginTop: -4
                                 }}
 
                             />
@@ -114,7 +114,7 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                         sx={{
                             '&.MuiButtonBase-root': {
                                 color: 'white',
-                                fontSize: 10,
+                                fontSize: 8,
                                 opacity: 0.4,
                                 justifyContent: 'space-between',
                                 padding: '8px 0',
@@ -150,7 +150,7 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                                 color: 'white',
                                 opacity: 1,
                                 transform: 'none',
-                                fontSize: 10,
+                                fontSize: 8,
                                 scale: 0.88,
                             },
                         }}
@@ -178,7 +178,7 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                                 color: 'white',
                                 opacity: 1,
                                 transform: 'none',
-                                fontSize: 10,
+                                fontSize: 8,
                                 scale: 0.88,
                             },
                         }}
