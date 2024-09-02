@@ -41,7 +41,7 @@ export default function Home() {
     const [checkData, setCheckData]: any = useState([]);
 
 
-    const [paymentsYesterday, setPaymentsYesterday] = useState([
+    const [paymentsYesterday, setPaymentsYesterday]: any = useState([
         {
             name: 'Александр Александрович Ж.',
             desc: 'Клиенту Сбера',
@@ -83,14 +83,14 @@ export default function Home() {
 
     const [paymentsToday, setPaymentsToday]: any = useState([])
 
-    const handleOpenCheck = () => {
+    const handleOpenCheck: any = () => {
         setIsCheckOpen((isOpen: any) => !isOpen);
     };
-    const handlePayProcessModal = () => {
+    const handlePayProcessModal: any = () => {
         setIsPayProcessModalOpen((isOpen: any) => !isOpen);
     };
 
-    const handleControl = () => {
+    const handleControl: any = () => {
         setIsControlsOpen((isOpen: any) => !isOpen);
     };
 
@@ -120,26 +120,26 @@ export default function Home() {
 
 
     const doPay = () => {
-        const balanceNumeric = parseFloat(balance.replace(/\s/g, '').replace(',', '.'));
-        const sumTodayNumeric = parseFloat(sumToday.replace(/\s/g, '').replace(',', '.'));
-        const expensesNumeric = parseFloat(expenses.replace(/\s/g, '').replace(',', '.'));
-        const paySumNumeric = parseFloat(paySum.replace(/\s/g, '').replace(',', '.'));
+        const balanceNumeric: any = parseFloat(balance.replace(/\s/g, '').replace(',', '.'));
+        const sumTodayNumeric: any = parseFloat(sumToday.replace(/\s/g, '').replace(',', '.'));
+        const expensesNumeric: any = parseFloat(expenses.replace(/\s/g, '').replace(',', '.'));
+        const paySumNumeric: any = parseFloat(paySum.replace(/\s/g, '').replace(',', '.'));
 
-        const newBalance = balanceNumeric - paySumNumeric;
-        const newExpenses = expensesNumeric + paySumNumeric;
+        const newBalance: any = balanceNumeric - paySumNumeric;
+        const newExpenses: any = expensesNumeric + paySumNumeric;
 
-        const formattedBalance = newBalance.toLocaleString('ru-RU', {
+        const formattedBalance: any = newBalance.toLocaleString('ru-RU', {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2,
         });
 
 
 
-        const formattedSumToday = paySumNumeric.toLocaleString('ru-RU', {
+        const formattedSumToday: any = paySumNumeric.toLocaleString('ru-RU', {
             useGrouping: true, // Enable thousands separator
             separator: ' ' // Set space as the separator
         });
-        const formattedExpensesSum = newExpenses.toLocaleString('ru-RU', {
+        const formattedExpensesSum: any = newExpenses.toLocaleString('ru-RU', {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2,
         });
@@ -166,20 +166,20 @@ export default function Home() {
 
 
     const addDeposit: any = () => {
-        const randomSum = getRandomNumber({ min: 500, max: 20000 });
-        const newSumToday = Math.floor(randomSum);
+        const randomSum: any = getRandomNumber({ min: 500, max: 20000 });
+        const newSumToday: any = Math.floor(randomSum);
 
         // Convert to integers for calculation
-        const depositsSumNumeric = Math.floor(parseFloat(depositsToday.replace(/\s/g, '').replace(',', '.')));
-        const newDepositsToday = depositsSumNumeric + randomSum;
+        const depositsSumNumeric: any = Math.floor(parseFloat(depositsToday.replace(/\s/g, '').replace(',', '.')));
+        const newDepositsToday: any = depositsSumNumeric + randomSum;
 
         // Format with space as thousands separator and no decimals
-        const formattedDepositsSum = newDepositsToday.toLocaleString('ru-RU', {
+        const formattedDepositsSum: any = newDepositsToday.toLocaleString('ru-RU', {
             useGrouping: true, // Enable thousands separator
             separator: ' ' // Set space as the separator
         });
         // Format with space as thousands separator and no decimals
-        const formattedSumToday = newSumToday.toLocaleString('ru-RU', {
+        const formattedSumToday: any = newSumToday.toLocaleString('ru-RU', {
             useGrouping: true, // Enable thousands separator
             separator: ' ' // Set space as the separator
         });
@@ -191,15 +191,15 @@ export default function Home() {
             person: '/images/history/sber.svg',
         };
 
-        setPaymentsToday((prevPayments) => [...prevPayments, newPayment]);
+        setPaymentsToday((prevPayments: any) => [...prevPayments, newPayment]);
         setDepositsToday(formattedDepositsSum);
     };
 
     const useScreenWidth = () => {
-        const [screenWidth, setScreenWidth] = useState<number>(0);
+        const [screenWidth, setScreenWidth]: any = useState<number>(0);
 
         useEffect(() => {
-            const handleResize = () => {
+            const handleResize: any = () => {
                 setScreenWidth(window.innerWidth < 500 ? window.innerWidth : 363);
             };
 
@@ -213,18 +213,18 @@ export default function Home() {
     };
 
 // Define pageWidth and pageHeight outside useEffect
-    const pageWidth = useScreenWidth();
-    const pageHeight = 807;
+    const pageWidth: any = useScreenWidth();
+    const pageHeight: any = 807;
 
 // Your scaling logic
     useEffect(() => {
         const updateScale = () => {
-            const screenWidth = window.innerWidth;
-            const screenHeight = window.innerHeight;
-            const scaleX = screenWidth / pageWidth;
-            const scaleY = screenHeight / pageHeight;
+            const screenWidth: any = window.innerWidth;
+            const screenHeight: any = window.innerHeight;
+            const scaleX: any = screenWidth / pageWidth;
+            const scaleY: any = screenHeight / pageHeight;
 
-            const newScale = Math.min(scaleX, scaleY);
+            const newScale: any = Math.min(scaleX, scaleY);
 
 
             // Assuming you have a 'setScale' function defined elsewhere
