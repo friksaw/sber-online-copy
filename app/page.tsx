@@ -16,44 +16,7 @@ import PayProcessModal from "@/app/components/PayProcessModal";
 
 
 
-const paymentsYesterday: any = [
-    {
-        name: 'Александр Александрович Ж.',
-        desc: 'Клиенту Сбера',
-        sum: '889',
-        person: '/images/history/sber.svg',
-    },
-    {
-        name: 'Марина Сергеевна И.',
-        desc: 'В другой банк',
-        sum: '600',
-        person: '/public/images/history/sber.svg',
-    },
-    {
-        name: 'Георгий Янович П.',
-        desc: 'Клиенту Сбера',
-        sum: '889',
-        person: '/images/history/sber.svg',
-    },
-    {
-        name: 'Афанасий Александрович Ж.',
-        desc: 'Клиенту Сбера',
-        sum: '889',
-        person: '/images/history/sber.svg',
-    },
-    {
-        name: 'Владимир Дмитриевич Д.',
-        desc: 'Клиенту Сбера',
-        sum: '889',
-        person: '/images/history/sber.svg',
-    },
-    {
-        name: 'Александр Александрович Ж.',
-        desc: 'Клиенту Сбера',
-        sum: '889',
-        person: '/images/history/sber.svg',
-    },
-];
+
 
 export default function Home() {
     const [currentPage, setCurrentPage]: any = useState(0);
@@ -70,6 +33,44 @@ export default function Home() {
 
     const [isPayProcessModalOpen, setIsPayProcessModalOpen]: any = useState(false);
 
+    const [paymentsYesterday, setPaymentsYesterday] = useState([
+        {
+            name: 'Александр Александрович Ж.',
+            desc: 'Клиенту Сбера',
+            sum: '9 000',
+            person: '/images/history/sber.svg',
+        },
+        {
+            name: 'Марина Сергеевна И.',
+            desc: 'В другой банк',
+            sum: '600',
+            person: '/public/images/history/sber.svg',
+        },
+        {
+            name: 'Георгий Янович П.',
+            desc: 'Клиенту Сбера',
+            sum: '1 220',
+            person: '/images/history/sber.svg',
+        },
+        {
+            name: 'Афанасий Александрович Ж.',
+            desc: 'Клиенту Сбера',
+            sum: '120',
+            person: '/images/history/sber.svg',
+        },
+        {
+            name: 'Владимир Дмитриевич Д.',
+            desc: 'Клиенту Сбера',
+            sum: '889',
+            person: '/images/history/sber.svg',
+        },
+        {
+            name: 'Александр Александрович Ж.',
+            desc: 'Клиенту Сбера',
+            sum: '900',
+            person: '/images/history/sber.svg',
+        },
+    ])
 
     const handlePayProcessModal = () => {
         setIsPayProcessModalOpen((isOpen: any) => !isOpen);
@@ -160,12 +161,16 @@ export default function Home() {
     }, []);
 
 
-    function shuffleYesterdayMessages() {
-        for (let i = paymentsYesterday.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [paymentsYesterday[i], paymentsYesterday[j]] = [paymentsYesterday[j], paymentsYesterday[i]];
+    const shuffleYesterdayMessages: any = () => {
+        const shuffledPayments: any = [...paymentsYesterday];
+
+        for (let i: any = shuffledPayments.length - 1; i > 0; i--) {
+            const j: any = Math.floor(Math.random() * (i + 1));
+            [shuffledPayments[i], shuffledPayments[j]] = [shuffledPayments[j], shuffledPayments[i]];
         }
-    }
+
+        setPaymentsYesterday(shuffledPayments);
+    };
 
     const renderPage: any = () => {
         switch (currentPage) {

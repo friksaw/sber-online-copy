@@ -13,15 +13,13 @@ export default function PaymentsHistory({ paymentsYesterday, sumYesterday }: any
                     flexDirection: 'row',
                     justifyContent: 'space-between',
                     padding: '0 18px 4px 18px',
-
                 }}
             >
                 <h3>Вчера</h3>
-
                 <p
                     className='pGrey'
                     style={{
-                        fontSize: 18
+                        fontSize: 18,
                     }}
                 >
                     {sumYesterday} ₽
@@ -33,7 +31,6 @@ export default function PaymentsHistory({ paymentsYesterday, sumYesterday }: any
                     <ListItemButton
                         key={index + person}
                         sx={{
-
                             height: 64,
                         }}
                     >
