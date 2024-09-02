@@ -9,7 +9,11 @@ export default function PaymentsHistory({ paymentsYesterday, sumYesterday, payme
         <div>
             {
                 paymentsToday &&
-                <div>
+                <div
+                    style={{
+                        marginBottom: 12
+                    }}
+                >
                     <div
                         style={{
                             display: 'flex',
@@ -28,50 +32,63 @@ export default function PaymentsHistory({ paymentsYesterday, sumYesterday, payme
                             {sumToday} ₽
                         </p>
                     </div>
-                    <List>
-                        {paymentsToday.map(({name, desc, sum, person}: any, index: any) => (
-                            <ListItemButton
-                                key={index + person}
-                                sx={{
+                    <List>{paymentsToday.slice().reverse().map(({ name, desc, sum, person }: any, index: any) => (
+                        <ListItemButton
+                            key={index + person}
+                            sx={{
+                                height: 64,
+                            }}
+                        >
+                            <ListItemAvatar sx={{ alignSelf: 'start' }}>
+                                <Avatar alt="Profile Picture" src={person} />
+                            </ListItemAvatar>
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    flexDirection: 'row',
+                                    justifyContent: 'space-between',
+                                    alignItems: 'center',
+                                    width: '100%',
+                                    paddingBottom: 4,
                                     height: 64,
+                                    borderBottom: '1px solid #323232',
                                 }}
                             >
-                                <ListItemAvatar sx={{alignSelf: 'start'}}>
-                                    <Avatar alt="Profile Picture" src={person}/>
-                                </ListItemAvatar>
+                                <div>
+                                    <p style={{ textWrap: 'nowrap' }}>{name}</p>
+                                    <p className="pGrey" style={{ marginTop: 4 }}>
+                                        {desc}
+                                    </p>
+                                </div>
                                 <div
                                     style={{
+                                        marginLeft: 12,
+                                        width: 64,
+                                        textWrap: 'nowrap',
+                                        textAlign: 'right',
                                         display: 'flex',
-                                        flexDirection: 'row',
-                                        justifyContent: 'space-between',
-                                        alignItems: 'center',
-                                        width: '100%',
-                                        paddingBottom: 4,
-                                        height: 64,
-
-                                        borderBottom: '1px solid #323232',
+                                        flexDirection: 'column',
                                     }}
                                 >
-                                    <div>
-                                        <p style={{textWrap: 'nowrap'}}>{name}</p>
-                                        <p className='pGrey' style={{marginTop: 4}}>{desc}</p>
-                                    </div>
-                                    <div
-                                        style={{
-                                            marginLeft: 12,
-                                            width: 64,
-                                            textWrap: 'nowrap',
-                                            textAlign: 'right',
-                                            display: 'flex',
-                                            flexDirection: 'column',
-                                        }}
-                                    >
-                                        <p style={{textWrap: 'nowrap'}}>{sum} ₽</p>
-
-                                    </div>
+                                    <p style={{ textWrap: 'nowrap' }}>
+                                        {sum} ₽
+                                    </p>
+                                    {!sum.startsWith('+') && (
+                                        <Image
+                                            src="/images/history/repeat.svg"
+                                            width={32}
+                                            height={32}
+                                            style={{
+                                                marginTop: 4,
+                                                alignSelf: 'end',
+                                            }}
+                                            alt=""
+                                        />
+                                    )}
                                 </div>
-                            </ListItemButton>
-                        ))}
+                            </div>
+                        </ListItemButton>
+                    ))}
                     </List>
                 </div>
             }
