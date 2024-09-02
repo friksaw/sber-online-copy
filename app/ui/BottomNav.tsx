@@ -80,6 +80,7 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                             />
                         }
                         sx={{
+                            margin: '0 -4px 0 -4px',
                             '&.MuiButtonBase-root': {
                                 color: 'white',
                                 fontSize: 10,
@@ -112,6 +113,7 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                             />
                         }
                         sx={{
+
                             '&.MuiButtonBase-root': {
                                 color: 'white',
                                 fontSize: 8,
@@ -138,6 +140,8 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                             />
                         }
                         sx={{
+                            margin: '0 -4px 0 -4px',
+
                             '&.MuiButtonBase-root': {
                                 color: 'white',
                                 fontSize: 10,
@@ -166,6 +170,8 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                             />
                         }
                         sx={{
+                            margin: '0 -4px 0 -8px',
+
                             '&.MuiButtonBase-root': {
                                 color: 'white',
                                 fontSize: 10,
