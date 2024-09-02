@@ -281,8 +281,6 @@ const PayProcessModal = ({
                             display: 'flex',
                             flexDirection: 'column',
                             transform: 'translate(-20%, -50%)',
-                            backgroundImage: 'url("/images/bgs/pay-success-bg.svg")',
-                            backgroundSize: 'cover',
 
                             width: `calc(${pageWidth}px + 60px)`,
                             height: '100%',
@@ -292,11 +290,37 @@ const PayProcessModal = ({
                     >
                         <div
                             style={{
-                                height: 52,
+                                display: 'flex',
+                                flexDirection: 'row',
+                                alignItems: 'center',
+                                height: 56,
                                 backgroundColor: '#1E1E1E',
+                                paddingTop: 8,
                             }}
                         >
-                            <p>
+                            <a
+                                onClick={handleOpenCheck}
+                                style={{
+                                    cursor: 'pointer'
+                                }}
+                            >
+                                <Image
+                                    src="/images/payment/check-arrow.svg"
+                                    width={15}
+                                    height={21}
+                                    alt=''
+                                    style={{
+                                        marginLeft: 12,
+                                    }}
+                                />
+                            </a>
+                            <p
+                                style={{
+                                    fontSize: 18,
+                                    fontWeight: 400,
+                                    marginLeft: 28
+                                }}
+                            >
                                 Сохранить чек
                             </p>
                         </div>
@@ -305,7 +329,10 @@ const PayProcessModal = ({
                                 display: 'flex',
                                 flexDirection: 'column',
                                 width: '100%',
+                                height: '100%',
                                 padding: '12px',
+                                backgroundColor: '#000000',
+                                paddingTop: 30,
                             }}
                         >
                             <div
@@ -313,80 +340,176 @@ const PayProcessModal = ({
                                     display: 'flex',
                                     flexDirection: 'column',
                                     padding: '24px 20px',
-                                    height: 614,
+                                    height: '100%',
                                     width: '100%',
                                     backgroundColor: '#ffffff',
                                     borderRadius: 5,
                                     color: '#000000',
                                 }}
                             >
-                                <div>
-                                    <p className='pGrey'>
+                                <div
+                                    style={{
+                                        borderBottom: '1px dashed #707070',
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                        paddingBottom: 8
+                                    }}
+                                >
+
+                                    <Image
+                                        src="/images/payment/full-sber.svg"
+                                        width={146}
+                                        height={31}
+                                        alt=''
+                                        style={{
+                                            marginBottom: 10
+                                        }}
+                                    />
+
+                                    <p
+                                        className='pGrey'
+                                        style={{
+                                            fontSize: 14,
+                                        }}
+                                    >
+                                        Чек по операции
+                                    </p>
+                                    <p
+                                        className='pGrey'
+                                        style={{
+                                            fontSize: 14,
+                                        }}
+                                    >
+                                        26 августа 2024 15:55:14 (МСК)
+                                    </p>
+                                </div>
+                                <div
+                                    style={{
+                                        borderBottom: '1px dashed #707070',
+                                        paddingBottom: 30,
+                                        marginBottom: 18,
+                                    }}
+                                >
+                                    <p
+                                        className='pGrey'
+                                        style={{
+                                            marginTop: 20,
+                                            fontSize: 14,
+                                        }}
+                                    >
                                         Операция
                                     </p>
                                     <p>
                                         Перевод клиенту Сбербанка
                                     </p>
-                                    <p className='pGrey'>
+                                    <p
+                                        className='pGrey'
+                                        style={{
+                                            marginTop: 20,
+                                            fontSize: 14,
+                                        }}
+                                    >
                                         ФИО Получателя
                                     </p>
                                     <p>
-                                    Александр Владимирович Х.
+                                        Александр Владимирович Х.
                                     </p>
-                                    <p>
+                                    <p
+                                        className='pGrey'
+                                        style={{
+                                            fontSize: 14,
+                                        }}
+                                    >
                                         Телефон получателя
                                     </p>
                                     <p>
                                         +7(905) 034-24-85
                                     </p>
-                                    <p>
+                                    <p
+                                        className='pGrey'
+                                        style={{
+                                            fontSize: 14,
+                                        }}
+                                    >
                                         Номер счёта получателя
                                     </p>
                                     <p>
                                         8465
                                     </p>
-                                    <p>
+                                    <p
+                                        className='pGrey'
+                                        style={{
+                                            marginTop: 20,
+                                            fontSize: 14,
+                                        }}
+                                    >
                                         ФИО отправителя
                                     </p>
                                     <p>
                                         Людмила Олеговна Д.
                                     </p>
-                                    <p>
+                                    <p
+                                        className='pGrey'
+                                        style={{
+                                            fontSize: 14,
+                                        }}
+                                    >
                                         Счёт отправителя
                                     </p>
                                     <p>
                                         2820
                                     </p>
-                                    <p>
+                                    <p
+                                        className='pGrey'
+                                        style={{
+                                            fontSize: 14,
+                                        }}
+                                    >
                                         Сумма перевода
                                     </p>
                                     <p>
                                         {paySum}
                                     </p>
-                                    <p>
+                                    <p
+                                        className='pGrey'
+                                        style={{
+                                            fontSize: 14,
+                                        }}
+                                    >
                                         Комиссия
                                     </p>
                                     <p>
-                                        0,00 ₽
+                                    0,00 ₽
                                     </p>
-                                    <p>
+                                    <p
+                                        className='pGrey'
+                                        style={{
+                                            marginTop: 20,
+                                            fontSize: 14,
+                                        }}
+                                    >
                                         Номер документа
                                     </p>
                                     <p>
                                         8792950631
                                     </p>
-                                    <p>
+                                    <p
+                                        className='pGrey'
+                                        style={{
+                                            fontSize: 14,
+                                        }}
+                                    >
                                         Код авторизации
                                     </p>
                                     <p>
-                                        111083
+                                    111083
                                     </p>
                                 </div>
                             </div>
 
                                 <a
                                     style={{
-
                                         backgroundColor: isCheckLoaded ? '#1E1E1E' : '#148F2A',
 
                                         borderRadius: 12,
