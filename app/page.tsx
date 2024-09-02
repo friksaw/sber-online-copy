@@ -146,18 +146,25 @@ export default function Home() {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
+
+
     const addDeposit: any = () => {
         const randomSum = getRandomNumber({ min: 500, max: 20000 });
+        const newSumToday = Math.floor(randomSum);
 
-        // Convert to string and remove decimals
-        const formattedSumToday = Math.floor(randomSum).toString();
-        const depositsSumNumeric = parseFloat(depositsToday);
-
+        // Convert to integers for calculation
+        const depositsSumNumeric = Math.floor(parseFloat(depositsToday.replace(/\s/g, '').replace(',', '.')));
         const newDepositsToday = depositsSumNumeric + randomSum;
 
+        // Format with space as thousands separator and no decimals
         const formattedDepositsSum = newDepositsToday.toLocaleString('ru-RU', {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2,
+            useGrouping: true, // Enable thousands separator
+            separator: ' ' // Set space as the separator
+        });
+        // Format with space as thousands separator and no decimals
+        const formattedSumToday = newSumToday.toLocaleString('ru-RU', {
+            useGrouping: true, // Enable thousands separator
+            separator: ' ' // Set space as the separator
         });
 
         const newPayment: any = {
@@ -168,7 +175,7 @@ export default function Home() {
         };
 
         setPaymentsToday((prevPayments) => [...prevPayments, newPayment]);
-        setDepositsToday(formattedDepositsSum)
+        setDepositsToday(formattedDepositsSum);
     };
 
     const useScreenWidth = () => {
