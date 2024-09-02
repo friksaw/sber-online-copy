@@ -14,7 +14,7 @@ const PayProcessBox = ({ payToName, paySum }: any) => {
             top: 0,
             left: '50%',
             transform: 'translate(-20%, -50%)',
-            backgroundImage: 'url("/images/bgs/pay-success-bg.png")',
+            backgroundImage: 'url("/images/bgs/pay-success-bg.svg")',
             boxShadow: 24,
             p: 4,
         }}>

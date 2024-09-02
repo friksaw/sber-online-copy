@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {Button, Fade, makeStyles, Modal, Slide, TextField} from "@mui/material";
 import Box from "@mui/material/Box";
 import PayProcessBox from "@/app/components/PaySuccessBox";
+import Image from "next/image";
 
 
 
@@ -84,26 +85,30 @@ const PayProcessModal = ({ isOpen, handleModal, paySum, changePaySum, changePayN
                 <Slide direction="left" in={isSuccessPayModalOpen} mountOnEnter unmountOnExit>
                     <Box
                         sx={{
+                            display: 'flex',
                             transform: 'translate(-20%, -50%)',
-                            backgroundImage: 'url("/images/bgs/pay-success-bg.png")',
+                            backgroundImage: 'url("/images/bgs/pay-success-bg.svg")',
                             backgroundSize: 'cover',
 
                             width: `calc(${pageWidth}px + 60px)`,
                             height: '100%',
                             bgcolor: 'background.paper',
                             boxShadow: 24,
-                            p: 4,
+                            p: 8,
                         }}
                     >
                         <div
-
                             style={{
+                                alignSelf: 'center',
                                 display: 'flex',
                                 flexDirection: 'column',
                                 justifyContent: 'center',
                                 alignContent: 'center',
                                 textAlign: 'center',
-                                height: '100%',
+                                height: 371,
+                                width: 306,
+                                backgroundColor: '#0E0E0E',
+                                borderRadius: 16,
                             }}
 
                         >
@@ -112,14 +117,74 @@ const PayProcessModal = ({ isOpen, handleModal, paySum, changePaySum, changePayN
                             </h3>
                             <h3
                                 style={{
-                                    fontSize: 28
+                                    fontSize: 28,
+                                    marginTop: 4,
                                 }}
                             >
                                 {paySum} ₽
                             </h3>
-                            <p>
-                                { payName }
+                            <p
+                                style={{
+                                    fontSize: 16,
+                                    opacity: 0.4,
+                                    marginTop: 10,
+                                }}
+                            >
+                                Комиссия 0 ₽
                             </p>
+                            <p
+                                style={{
+                                    fontSize: 16,
+                                    opacity: 0.4,
+                                }}
+                            >
+                                {payName}
+                            </p>
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    flexDirection: 'row',
+                                    marginTop: 40,
+                                    fontSize: 16,
+
+                                }}
+                            >
+                                <a
+                                    style={{
+
+                                        backgroundColor: '#1C1C1C',
+
+                                        borderRadius: 12,
+                                        height: 45,
+                                        width: 135,
+                                        textAlign: 'center',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        marginLeft: 8
+                                    }}
+                                >
+
+
+                                    Чек
+                                </a>
+                                <a
+                                    style={{
+                                        borderRadius: 12,
+                                        backgroundColor: '#C4C4C4',
+                                        height: 45,
+                                        width: 135,
+                                        textAlign: 'center',
+                                        color: '#0E0E0E',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        marginLeft: 8
+                                    }}
+                                >
+                                    В историю
+                                </a>
+                            </div>
                         </div>
                     </Box>
                 </Slide>
