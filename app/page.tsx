@@ -126,9 +126,17 @@ export default function Home() {
             maximumFractionDigits: 2,
         });
 
+        const newPayment: any = {
+            name: payName, // Assuming you have a 'payName' variable available
+            desc: 'Клиенту Сбера', // You can make this dynamic if needed
+            sum: formattedSumToday,
+            person: '/images/history/sber.svg',
+        };
+
         // Update the state with the formatted balance
         setBalance(formattedBalance);
-        setSumToday(formattedSumToday)
+        setSumToday(formattedSumToday);
+        setPaymentsToday((prevPayments) => [...prevPayments, newPayment]);
     };
 
     const useScreenWidth = () => {
