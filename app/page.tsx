@@ -30,6 +30,7 @@ export default function Home() {
     const [month, setMonth]: any = useState('сентябре');
     const [sumYesterday, setSumYesterday]: any = useState('16 700');
     const [sumToday, setSumToday]: any = useState('0');
+    const [depositsToday, setDepositsToday]: any = useState('0');
 
     const [scale, setScale]: any = useState(1);
 
@@ -150,6 +151,14 @@ export default function Home() {
 
         // Convert to string and remove decimals
         const formattedSumToday = Math.floor(randomSum).toString();
+        const depositsSumNumeric = parseFloat(depositsToday);
+
+        const newDepositsToday = depositsSumNumeric + randomSum;
+
+        const formattedDepositsSum = newDepositsToday.toLocaleString('ru-RU', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+        });
 
         const newPayment: any = {
             name: 'Геннадий Ефимов Г.',
@@ -159,6 +168,7 @@ export default function Home() {
         };
 
         setPaymentsToday((prevPayments) => [...prevPayments, newPayment]);
+        setDepositsToday(formattedDepositsSum)
     };
 
     const useScreenWidth = () => {
@@ -238,6 +248,7 @@ export default function Home() {
                     sumYesterday={sumYesterday}
                     paymentsToday={paymentsToday}
                     sumToday={sumToday}
+                    depositsToday={depositsToday}
                 />;
             default:
                 return <Main
