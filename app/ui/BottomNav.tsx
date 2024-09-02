@@ -52,17 +52,20 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                             />
                         }
                         sx={{
-                            padding: '6px 0 8px 28px',
                             '&.MuiButtonBase-root': {
                                 color: 'white',
                                 fontSize: 10,
                                 opacity: 0.4,
                                 justifyContent: 'space-between',
+                                padding: '8px 0',
+                                transform: 'none',
                             },
                             '&.Mui-selected': {
                                 color: 'white',
                                 opacity: 1,
                                 transform: 'none',
+                                fontSize: 10,
+                                scale: 0.88,
                             },
                         }}
                     />
@@ -83,11 +86,14 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                                 opacity: 0.4,
                                 justifyContent: 'space-between',
                                 padding: '8px 0',
+                                transform: 'none',
                             },
                             '&.Mui-selected': {
                                 color: 'white',
                                 opacity: 1,
                                 transform: 'none',
+                                fontSize: 10,
+                                scale: 0.88,
                             },
                         }}
                     />
@@ -100,19 +106,19 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                                 height={27}
                                 alt=''
                                 style={{
-                                    marginTop: 4
+                                    marginBottom: -4
                                 }}
 
                             />
                         }
                         sx={{
-                            paddingBottom: 1,
-
                             '&.MuiButtonBase-root': {
                                 color: 'white',
                                 fontSize: 10,
                                 opacity: 0.4,
                                 justifyContent: 'space-between',
+                                padding: '8px 0',
+                                transform: 'none',
                             },
                             '&.Mui-selected': {
                                 color: 'white',
@@ -138,11 +144,14 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                                 opacity: 0.4,
                                 justifyContent: 'space-between',
                                 padding: '8px 0',
+                                transform: 'none',
                             },
                             '&.Mui-selected': {
                                 color: 'white',
                                 opacity: 1,
                                 transform: 'none',
+                                fontSize: 10,
+                                scale: 0.88,
                             },
                         }}
                     />
@@ -157,7 +166,6 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                             />
                         }
                         sx={{
-
                             '&.MuiButtonBase-root': {
                                 color: 'white',
                                 fontSize: 10,
@@ -170,6 +178,8 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                                 color: 'white',
                                 opacity: 1,
                                 transform: 'none',
+                                fontSize: 10,
+                                scale: 0.88,
                             },
                         }}
                     />
@@ -179,12 +189,3 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
     );
 }
 
-
-
-const messageExamples: any = [
-    '1',
-    '2',
-    '3',
-    '4',
-    '5',
-];
