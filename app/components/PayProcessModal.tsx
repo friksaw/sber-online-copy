@@ -1,61 +1,10 @@
 import React, { useState } from 'react';
-import {Button, Fade, keyframes, makeStyles, Modal, Slide, styled, TextField} from "@mui/material";
+import {Button, Fade, keyframes, makeStyles, Modal, Slide, TextField} from "@mui/material";
 import Box from "@mui/material/Box";
 import PayProcessBox from "@/app/components/PaySuccessBox";
 import Image from "next/image";
 
-const growDownAnimation = {
-    '0%': { transform: 'scaleY(0)' },
-    '100%': { transform: 'scaleY(1)' },
-};
 
-const StyledSvg = styled('svg')({
-    animation: `$growDownAnimation 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards`,
-    width: '103px',
-    height: '73px',
-});
-
-const SvgComponent: React.FC = () => {
-    const [isVisible, setIsVisible] = useState(false);
-
-    const toggleVisibility = () => {
-        setIsVisible(!isVisible);
-    };
-
-    return (
-        <div>
-            <button onClick={toggleVisibility}>Toggle SVG</button>
-            {isVisible && (
-                <StyledSvg
-                    viewBox="0 0 103 73"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M33.0385 68.9393C37.1391 73.0398 43.7873 73.0398 47.8878 68.9393C51.9884 64.8388 51.9883 58.1906 47.8878 54.0901L18.8964 25.0988C14.7958 20.9983 8.14759 20.9983 4.04707 25.0988C-0.0534503 29.1993 -0.0534495 35.8475 4.04707 39.948L33.0385 68.9393Z"
-                        fill="url(#paint0_linear_51_10702)"
-                    />
-                    <defs>
-                        <linearGradient
-                            id="paint0_linear_51_10702"
-                            x1="17.9304"
-                            y1="34.8969"
-                            x2="93.9779"
-                            y2="34.8969"
-                            gradientUnits="userSpaceOnUse"
-                        >
-                            <stop stopColor="#9DBB01" />
-                            <stop offset="0.479" stopColor="#1CA327" />
-                            <stop offset="1" stopColor="#199EA4" />
-                        </linearGradient>
-                    </defs>
-                </StyledSvg>
-            )}
-        </div>
-    );
-};
 
 const PayProcessModal = ({
                              isOpen,
@@ -68,7 +17,34 @@ const PayProcessModal = ({
                              pageWidth
                          }: any) => {
     const [isSuccessPayModalOpen, setIsSuccessPayModalOpen]: any = useState(false);
+    const [expanded1, setExpanded1] = useState(false);
+    const [expanded2, setExpanded2] = useState(false);
 
+    const toggleExpand = () => {
+        setExpanded1(!expanded1);
+        setExpanded2(!expanded2);
+    };
+
+    const gradientStyle1 = {
+        background: 'linear-gradient(45deg, #9DBB01, #1CA327, #199EA4)',
+        height: expanded1 ? '50px' : '23px',
+        width: '23px',
+        transform: 'rotate(-45deg)',
+        transition: 'height 0.5s ease',
+        borderRadius: 36,
+        marginTop: 24,
+        marginRight: -42,
+    };
+    const gradientStyle2 = {
+        background: 'linear-gradient(45deg, #9DBB01, #1CA327, #199EA4 75%)',
+        height: expanded2 ? '80px' : 0,
+        width: '23px',
+        transform: 'rotate(45deg)',
+        translate: 50,
+        transition: 'height 0.5s ease',
+        borderRadius: 36,
+
+    };
 
     const handleSuccessPayModal = () => {
         setIsSuccessPayModalOpen((isSuccessPayModalOpen: any) => !isSuccessPayModalOpen);
@@ -173,7 +149,17 @@ const PayProcessModal = ({
                             }}
 
                         >
-                            <SvgComponent />
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    flexDirection: 'row',
+                                }}
+                            >
+
+                                <button onClick={toggleExpand}>анимация тест</button>
+                                <div style={gradientStyle1}></div>
+                                <div style={gradientStyle2}></div>
+                            </div>
                             <div>
                                 <h3>
                                     Перевод доставлен
