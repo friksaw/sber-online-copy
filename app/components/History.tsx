@@ -5,12 +5,17 @@ import HistoryHeader from "@/app/ui/HistoryHeader";
 import HistoryFilters from "@/app/ui/HistoryFilters";
 import PaymentsHistory from "@/app/ui/PaymentsHistory";
 
-export default function History({ paymentsYesterday, sumYesterday, sumToday }: any) {
+export default function History({ paymentsYesterday, sumYesterday, paymentsToday, sumToday }: any) {
     return (
         <div>
             <HistoryHeader sumToday={sumToday} />
             <HistoryFilters />
-            <PaymentsHistory paymentsYesterday={paymentsYesterday} sumYesterday={sumYesterday} />
+            <PaymentsHistory
+                paymentsYesterday={paymentsYesterday}
+                sumYesterday={sumYesterday}
+                paymentsToday={paymentsToday}
+                sumToday={sumToday}
+            />
         </div>
     );
 }

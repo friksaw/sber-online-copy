@@ -73,6 +73,9 @@ export default function Home() {
         },
     ])
 
+
+    const [paymentsToday, setPaymentsToday]: any = useState([])
+
     const handlePayProcessModal = () => {
         setIsPayProcessModalOpen((isOpen: any) => !isOpen);
     };
@@ -203,6 +206,7 @@ export default function Home() {
                 return <History
                     paymentsYesterday={paymentsYesterday}
                     sumYesterday={sumYesterday}
+                    paymentsToday={paymentsToday}
                     sumToday={sumToday}
                 />;
             default:
