@@ -17,6 +17,11 @@ const PayProcessModal = ({
                              pageWidth,
                              renderPage,
                              onChangePage,
+
+                             isCheckLoaded,
+                             isCheckOpen,
+                             handleOpenCheck,
+                             checkData,
                          }: any) => {
     const [isSuccessPayModalOpen, setIsSuccessPayModalOpen]: any = useState(false);
     const [expanded1, setExpanded1] = useState(false);
@@ -223,6 +228,7 @@ const PayProcessModal = ({
                                             justifyContent: 'center',
                                             cursor: 'pointer',
                                         }}
+                                        onClick={handleOpenCheck}
                                     >
                                         Чек
                                     </a>
@@ -246,7 +252,156 @@ const PayProcessModal = ({
                                     </a>
                                 </div>
                             </div>
+                        </div>
+                    </Box>
+                </Slide>
+            </Modal>
 
+
+
+            <Modal
+                aria-labelledby="transition-modal-title"
+                aria-describedby="transition-modal-description"
+                open={isCheckOpen}
+                onClose={handleOpenCheck}
+                closeAfterTransition
+                slotProps={{
+                    backdrop: {
+                        timeout: 50,
+                    },
+                }}
+                sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                }}
+            >
+                <Slide direction="left" in={isCheckOpen} mountOnEnter unmountOnExit>
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            transform: 'translate(-20%, -50%)',
+                            backgroundImage: 'url("/images/bgs/pay-success-bg.svg")',
+                            backgroundSize: 'cover',
+
+                            width: `calc(${pageWidth}px + 60px)`,
+                            height: '100%',
+                            bgcolor: 'background.paper',
+                            boxShadow: 24,
+                        }}
+                    >
+                        <div
+                            style={{
+                                height: 52,
+                                backgroundColor: '#1E1E1E',
+                            }}
+                        >
+                            <p>
+                                Сохранить чек
+                            </p>
+                        </div>
+                        <div
+                            style={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                width: '100%',
+                                padding: '12px',
+                            }}
+                        >
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    padding: '24px 20px',
+                                    height: 614,
+                                    width: '100%',
+                                    backgroundColor: '#ffffff',
+                                    borderRadius: 5,
+                                    color: '#000000',
+                                }}
+                            >
+                                <div>
+                                    <p className='pGrey'>
+                                        Операция
+                                    </p>
+                                    <p>
+                                        Перевод клиенту Сбербанка
+                                    </p>
+                                    <p className='pGrey'>
+                                        ФИО Получателя
+                                    </p>
+                                    <p>
+                                    Александр Владимирович Х.
+                                    </p>
+                                    <p>
+                                        Телефон получателя
+                                    </p>
+                                    <p>
+                                        +7(905) 034-24-85
+                                    </p>
+                                    <p>
+                                        Номер счёта получателя
+                                    </p>
+                                    <p>
+                                        8465
+                                    </p>
+                                    <p>
+                                        ФИО отправителя
+                                    </p>
+                                    <p>
+                                        Людмила Олеговна Д.
+                                    </p>
+                                    <p>
+                                        Счёт отправителя
+                                    </p>
+                                    <p>
+                                        2820
+                                    </p>
+                                    <p>
+                                        Сумма перевода
+                                    </p>
+                                    <p>
+                                        {paySum}
+                                    </p>
+                                    <p>
+                                        Комиссия
+                                    </p>
+                                    <p>
+                                        0,00 ₽
+                                    </p>
+                                    <p>
+                                        Номер документа
+                                    </p>
+                                    <p>
+                                        8792950631
+                                    </p>
+                                    <p>
+                                        Код авторизации
+                                    </p>
+                                    <p>
+                                        111083
+                                    </p>
+                                </div>
+                            </div>
+
+                                <a
+                                    style={{
+
+                                        backgroundColor: isCheckLoaded ? '#1E1E1E' : '#148F2A',
+
+                                        borderRadius: 12,
+                                        height: 48,
+                                        margin: '8px 0 56px 0',
+                                        width: '100%',
+                                        textAlign: 'center',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        cursor: 'pointer',
+                                    }}
+                                >
+                                    Сохранить или отправить
+                                </a>
                         </div>
                     </Box>
                 </Slide>

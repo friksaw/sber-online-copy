@@ -36,6 +36,11 @@ export default function Home() {
 
     const [isPayProcessModalOpen, setIsPayProcessModalOpen]: any = useState(false);
 
+    const [isCheckLoaded, setIsCheckLoaded]: any = useState(1);
+    const [isCheckOpen, setIsCheckOpen]: any = useState(1);
+    const [checkData, setCheckData]: any = useState([]);
+
+
     const [paymentsYesterday, setPaymentsYesterday] = useState([
         {
             name: 'Александр Александрович Ж.',
@@ -78,6 +83,9 @@ export default function Home() {
 
     const [paymentsToday, setPaymentsToday]: any = useState([])
 
+    const handleOpenCheck = () => {
+        setIsCheckOpen((isOpen: any) => !isOpen);
+    };
     const handlePayProcessModal = () => {
         setIsPayProcessModalOpen((isOpen: any) => !isOpen);
     };
@@ -329,6 +337,11 @@ export default function Home() {
                         pageWidth={pageWidth}
                         renderPage={renderPage}
                         onChangePage={onChangePage}
+
+                        isCheckLoaded={isCheckLoaded}
+                        isCheckOpen={isCheckOpen}
+                        handleOpenCheck={handleOpenCheck}
+                        checkData={checkData}
 
                     />
                     <div>{renderPage()}</div>
