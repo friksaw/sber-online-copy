@@ -14,7 +14,9 @@ const PayProcessModal = ({
                              changePayName,
                              payName,
                              doPay,
-                             pageWidth
+                             pageWidth,
+                             renderPage,
+                             onChangePage,
                          }: any) => {
     const [isSuccessPayModalOpen, setIsSuccessPayModalOpen]: any = useState(false);
     const [expanded1, setExpanded1] = useState(false);
@@ -52,6 +54,12 @@ const PayProcessModal = ({
     };
     const closeSuccessPayModal = () => {
         setIsSuccessPayModalOpen((isSuccessPayModalOpen: any) => !isSuccessPayModalOpen);
+    };
+    const goToHistory = () => {
+        setIsSuccessPayModalOpen((isSuccessPayModalOpen: any) => !isSuccessPayModalOpen);
+        handleModal()
+        renderPage()
+        onChangePage(4)
     };
 
     return (
@@ -213,6 +221,7 @@ const PayProcessModal = ({
                                             display: 'flex',
                                             alignItems: 'center',
                                             justifyContent: 'center',
+                                            cursor: 'pointer',
                                         }}
                                     >
                                         Чек
@@ -228,8 +237,10 @@ const PayProcessModal = ({
                                             display: 'flex',
                                             alignItems: 'center',
                                             justifyContent: 'center',
-                                            marginLeft: 8
+                                            marginLeft: 8,
+                                            cursor: 'pointer',
                                         }}
+                                        onClick={goToHistory}
                                     >
                                         В историю
                                     </a>

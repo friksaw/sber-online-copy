@@ -327,6 +327,9 @@ export default function Home() {
                         changePayName={changePayName}
                         doPay={doPay}
                         pageWidth={pageWidth}
+                        renderPage={renderPage}
+                        onChangePage={onChangePage}
+
                     />
                     <div>{renderPage()}</div>
                 </BottomNav>
