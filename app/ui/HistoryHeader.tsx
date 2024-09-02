@@ -3,7 +3,7 @@
 import * as React from "react";
 import Image from "next/image";
 
-export default function HistoryHeader() {
+export default function HistoryHeader({ sumToday }: any) {
     return (
         <div>
             <div
@@ -176,7 +176,7 @@ export default function HistoryHeader() {
                                     fontSize: 18,
                                 }}
                             >
-                                14 330 ₽
+                                {sumToday} ₽
                             </p>
                             <div
                                 style={{

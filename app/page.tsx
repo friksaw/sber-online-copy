@@ -107,21 +107,25 @@ export default function Home() {
 
 
     const doPay = () => {
-        // Remove non-numeric characters and replace comma with period for parsing
         const balanceNumeric = parseFloat(balance.replace(/\s/g, '').replace(',', '.'));
+        const sumTodayNumeric = parseFloat(sumToday.replace(/\s/g, '').replace(',', '.'));
         const paySumNumeric = parseFloat(paySum.replace(/\s/g, '').replace(',', '.'));
 
-        // Perform subtraction
         const newBalance = balanceNumeric - paySumNumeric;
 
-        // Format the result back into the string with comma as decimal separator
         const formattedBalance = newBalance.toLocaleString('ru-RU', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+        });
+
+        const formattedSumToday = paySumNumeric.toLocaleString('ru-RU', {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2,
         });
 
         // Update the state with the formatted balance
         setBalance(formattedBalance);
+        setSumToday(formattedSumToday)
     };
 
 
@@ -199,6 +203,7 @@ export default function Home() {
                 return <History
                     paymentsYesterday={paymentsYesterday}
                     sumYesterday={sumYesterday}
+                    sumToday={sumToday}
                 />;
             default:
                 return <Main

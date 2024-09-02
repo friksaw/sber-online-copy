@@ -15,7 +15,7 @@ export default function Controls({ isOpen, balance, changeBalance, expenses, cha
                 top: 20,
                 display: isOpen ? '' : 'none',
                 padding: '12px 20px',
-                zIndex: 10000000000000000
+                zIndex: 10000000000
             }}
         >
             <div
@@ -40,7 +40,6 @@ export default function Controls({ isOpen, balance, changeBalance, expenses, cha
                     value={balance}
                     onChange={(event): any => changeBalance(event?.target.value)}
                 />
-
             </div>
             <div
                 style={{
@@ -49,8 +48,6 @@ export default function Controls({ isOpen, balance, changeBalance, expenses, cha
                     justifyContent: 'space-between',
                 }}
             >
-
-
                 <TextField
                     id="outlined-basic"
                     label="Расходы"
@@ -94,7 +91,7 @@ export default function Controls({ isOpen, balance, changeBalance, expenses, cha
                     добавить зачисление
                 </Button>
                 <Button onClick={shuffleYesterdayMessages}>
-                    рандом
+                    рандом вчера
                 </Button>
             </div>
         </Card>
