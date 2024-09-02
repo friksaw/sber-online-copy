@@ -50,6 +50,9 @@ const PayProcessModal = ({
         setIsSuccessPayModalOpen((isSuccessPayModalOpen: any) => !isSuccessPayModalOpen);
         doPay()
     };
+    const closeSuccessPayModal = () => {
+        setIsSuccessPayModalOpen((isSuccessPayModalOpen: any) => !isSuccessPayModalOpen);
+    };
 
     return (
         <div>
@@ -106,7 +109,7 @@ const PayProcessModal = ({
                 aria-labelledby="transition-modal-title"
                 aria-describedby="transition-modal-description"
                 open={isSuccessPayModalOpen}
-                onClose={handleSuccessPayModal}
+                onClose={closeSuccessPayModal}
                 closeAfterTransition
                 slotProps={{
                     backdrop: {

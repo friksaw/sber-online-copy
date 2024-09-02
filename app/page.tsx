@@ -128,14 +128,12 @@ export default function Home() {
         setSumToday(formattedSumToday)
     };
 
-
-
     const useScreenWidth = () => {
-        const [screenWidth, setScreenWidth]: any = useState(363);
+        const [screenWidth, setScreenWidth] = useState<number>(0);
 
         useEffect(() => {
             const handleResize = () => {
-                setScreenWidth(window.innerWidth < 700 ? window.innerWidth : 363);
+                setScreenWidth(window.innerWidth < 500 ? window.innerWidth : 363);
             };
 
             handleResize(); // Initial setup on component mount
@@ -147,10 +145,11 @@ export default function Home() {
         return screenWidth;
     };
 
-    const pageWidth: any = useScreenWidth();
-    const pageHeight: any = 807
+// Define pageWidth and pageHeight outside useEffect
+    const pageWidth = useScreenWidth();
+    const pageHeight = 807;
 
-
+// Your scaling logic
     useEffect(() => {
         const updateScale = () => {
             const screenWidth = window.innerWidth;
@@ -159,16 +158,17 @@ export default function Home() {
             const scaleY = screenHeight / pageHeight;
 
             const newScale = Math.min(scaleX, scaleY);
+
+
+            // Assuming you have a 'setScale' function defined elsewhere
             setScale(newScale);
         };
 
-        updateScale();
-
+        updateScale(); // Initial setup on component mount
         window.addEventListener('resize', updateScale);
 
         return () => window.removeEventListener('resize', updateScale);
     }, []);
-
 
     const shuffleYesterdayMessages: any = () => {
         const shuffledPayments: any = [...paymentsYesterday];
@@ -244,7 +244,7 @@ export default function Home() {
             <div
                 style={{
                     backgroundImage: 'url("/images/bgs/bg1.svg")',
-                    backgroundSize: 'contain',
+                    backgroundSize: 'cover',
                     width: pageWidth,
                     height: pageHeight,
                     overflow: 'hidden',
