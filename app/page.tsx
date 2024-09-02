@@ -125,9 +125,11 @@ export default function Home() {
             maximumFractionDigits: 2,
         });
 
+
+
         const formattedSumToday = paySumNumeric.toLocaleString('ru-RU', {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2,
+            useGrouping: true, // Enable thousands separator
+            separator: ' ' // Set space as the separator
         });
         const formattedExpensesSum = newExpenses.toLocaleString('ru-RU', {
             minimumFractionDigits: 2,
