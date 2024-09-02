@@ -133,8 +133,6 @@ export default function Home() {
             maximumFractionDigits: 2,
         });
 
-
-
         const formattedSumToday: any = paySumNumeric.toLocaleString('ru-RU', {
             useGrouping: true, // Enable thousands separator
             separator: ' ' // Set space as the separator
@@ -200,7 +198,7 @@ export default function Home() {
 
         useEffect(() => {
             const handleResize: any = () => {
-                setScreenWidth(window.innerWidth < 500 ? window.innerWidth : 363);
+                setScreenWidth(window.innerWidth < 480 ? 'calc(100vw - 66px)' : 363);
             };
 
             handleResize(); // Initial setup on component mount
@@ -223,8 +221,14 @@ export default function Home() {
             const screenHeight: any = window.innerHeight;
             const scaleX: any = screenWidth / pageWidth;
             const scaleY: any = screenHeight / pageHeight;
+            let newScale: any = Math.min(scaleX, scaleY);
 
-            const newScale: any = Math.min(scaleX, scaleY);
+            if (window.innerWidth < 480) {
+                newScale = Math.min(scaleX, 1);
+            } else {
+                newScale = Math.min(scaleX, scaleY);
+
+            }
 
 
             // Assuming you have a 'setScale' function defined elsewhere
@@ -235,7 +239,7 @@ export default function Home() {
         window.addEventListener('resize', updateScale);
 
         return () => window.removeEventListener('resize', updateScale);
-    }, []);
+    }, [window.innerWidth]);
 
     const shuffleYesterdayMessages: any = () => {
         const shuffledPayments: any = [...paymentsYesterday];
