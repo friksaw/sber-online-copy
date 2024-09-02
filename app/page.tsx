@@ -27,7 +27,8 @@ export default function Home() {
     const [paySum, setPaySum]: any = useState('0');
     const [payName, setPayName]: any = useState('');
     const [month, setMonth]: any = useState('сентябре');
-    const [sumYesterday, setSumYesterday]: any = useState(0);
+    const [sumYesterday, setSumYesterday]: any = useState('16 700');
+    const [sumToday, setSumToday]: any = useState('0');
 
     const [scale, setScale]: any = useState(1);
 
@@ -100,6 +101,10 @@ export default function Home() {
     const changeMonth: any = (newMonth: any) => {
         setMonth(newMonth);
     };
+    const changeSumYesterday: any = (sumYesterday: any) => {
+        setSumYesterday(sumYesterday);
+    };
+
 
     const doPay = () => {
         // Remove non-numeric characters and replace comma with period for parsing
@@ -226,6 +231,8 @@ export default function Home() {
                 changeExpenses={changeExpenses}
                 month={month}
                 changeMonth={changeMonth}
+                sumYesterday={sumYesterday}
+                changeSumYesterday={changeSumYesterday}
                 shuffleYesterdayMessages={shuffleYesterdayMessages}
             />
 

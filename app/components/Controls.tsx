@@ -5,7 +5,7 @@ import Image from "next/image";
 import {Button, Card, FormControl, InputLabel, MenuItem, Select, Slider, TextField} from "@mui/material";
 
 
-export default function Controls({ isOpen, balance, changeBalance, expenses, changeExpenses, month, changeMonth, shuffleYesterdayMessages }: any) {
+export default function Controls({ isOpen, balance, changeBalance, expenses, changeExpenses, month, changeMonth, sumYesterday, changeSumYesterday, shuffleYesterdayMessages }: any) {
     return (
         <Card
             sx={{
@@ -62,8 +62,8 @@ export default function Controls({ isOpen, balance, changeBalance, expenses, cha
                     id="outlined-basic"
                     label="Расходы вчера"
                     variant="outlined"
-                    value={expenses}
-                    onChange={(event): any => changeExpenses(event?.target.value)}
+                    value={sumYesterday}
+                    onChange={(event): any => changeSumYesterday(event?.target.value)}
                 />
             </div>
 
