@@ -154,7 +154,7 @@ export default function Home() {
         // Update the state with the formatted balance
         setBalance(formattedBalance);
         setSumToday(formattedSumToday);
-        setPaymentsToday((prevPayments) => [...prevPayments, newPayment]);
+        setPaymentsToday((prevPayments: any) => [...prevPayments, newPayment]);
         setExpenses(formattedExpensesSum);
     };
 
