@@ -24,7 +24,6 @@ export default function PaymentsHistory({ paymentsYesterday, sumYesterday }: any
                 >
                     {sumYesterday} ₽
                 </p>
-
             </div>
             <List>
                 {paymentsYesterday.map(({name, desc, sum, person}: any, index: any) => (
@@ -45,18 +44,23 @@ export default function PaymentsHistory({ paymentsYesterday, sumYesterday }: any
                                 alignItems: 'center',
                                 width: '100%',
                                 paddingBottom: 12,
+                                height: 64,
 
                                 borderBottom: '1px solid #323232',
-
                             }}
                         >
                             <div>
-                                <p>{name}</p>
+                                <p style={{ textWrap: 'nowrap' }}>{name}</p>
                                 <p className='pGrey' style={{marginTop: 4}}>{desc}</p>
                             </div>
                             <div
                                 style={{
                                     marginLeft: 12,
+                                    width: 56,
+                                    textWrap: 'nowrap',
+                                    textAlign: 'right',
+                                    display: 'flex',
+                                    flexDirection: 'column',
                                 }}
                             >
                                 <p>{sum} ₽</p>
@@ -66,6 +70,7 @@ export default function PaymentsHistory({ paymentsYesterday, sumYesterday }: any
                                     height={32}
                                     style={{
                                         marginTop: 4,
+                                        alignSelf: 'end',
                                     }}
                                     alt=''
                                 />

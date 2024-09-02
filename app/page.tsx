@@ -44,13 +44,13 @@ export default function Home() {
             name: 'Марина Сергеевна И.',
             desc: 'В другой банк',
             sum: '600',
-            person: '/public/images/history/sber.svg',
+            person: '',
         },
         {
             name: 'Георгий Янович П.',
-            desc: 'Клиенту Сбера',
+            desc: 'В другой банк',
             sum: '1 220',
-            person: '/images/history/sber.svg',
+            person: '',
         },
         {
             name: 'Афанасий Александрович Ж.',
