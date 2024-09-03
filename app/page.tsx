@@ -478,7 +478,7 @@ export default function Home() {
                 >
                     <Image
                         src="/images/bgs/pbg2.png"
-                        width={124}
+                        width={132}
                         height={36}
                         alt=''
                         style={{
