@@ -5,7 +5,7 @@ import Image from "next/image";
 import {Avatar} from "@mui/material";
 import FastPaymentButton from "@/app/ui/FastPaymentButton";
 
-export default function FastPayment({ handlePayProcessModal, isPayProcessModalOpen, paySum, changePaySum, doPayment }: any) {
+export default function FastPayment({ fastPayments, setFastPayments, handlePayProcessModal, isPayProcessModalOpen, paySum, changePaySum, doPayment }: any) {
     return (
         <div>
             <div
@@ -44,36 +44,25 @@ export default function FastPayment({ handlePayProcessModal, isPayProcessModalOp
                         textWrap: 'nowrap',
                         marginLeft: -4,
 
+
                     }}>Новый<br/>перевод</p>}
                     picture='new'
                 />
-                <FastPaymentButton text={<p style={{
-                    textAlign: 'center',
-                    fontSize: 12,
-                    width: 72,
-                    textWrap: 'nowrap',
-                    marginLeft: -8,
-                }}>Ирина<br/>Юрьевна Е.</p>}/>
-                <FastPaymentButton text={<p style={{
-                    textAlign: 'center',
-                    fontSize: 12,
-                    width: 72,
-                    marginLeft: -7,
-
-                }}>Полина<br/>Петровна...</p>} />
-                <FastPaymentButton text={<p style={{
-                    textAlign: 'center',
-                    fontSize: 12,
-                    marginLeft: -7,
-                    width: 72,
-                    textWrap: 'nowrap'
-                }}>Павел<br/>Рунов</p>} picture='/images/avatars/example.jpg'/>
-                <FastPaymentButton text={<p style={{
-                    textAlign: 'center',
-                    fontSize: 12,
-                    width: 72,
-                    textWrap: 'nowrap'
-                }}>Марина</p>}/>
+                {
+                    fastPayments.map((payment, id) =>
+                        <FastPaymentButton
+                            key={id}
+                            text={<p style={{
+                                textAlign: 'center',
+                                fontSize: 12,
+                                width: 84,
+                                marginLeft: -9,
+                            }}>{payment.name}</p>}
+                            picture={payment.person}
+                            isBadged={payment.isBadged}
+                        />
+                    )
+                }
             </div>
 
         </div>

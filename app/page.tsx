@@ -57,42 +57,76 @@ export default function Home() {
             name: 'Ирина Юрьевна Е.',
             desc: 'Клиенту Сбера',
             sum: '9 000',
-            person: '/images/avatars/sber.svg',
+            person: '/images/avatars/myAvatar.svg',
+            payMethod: 0,
+            isBadged: 1
         },
         {
             name: 'Полина Петровна И.',
             desc: 'В другой банк',
             sum: '600',
             person: '',
+            payMethod: 1,
         },
         {
             name: 'Георгий Янович П.',
             desc: 'В другой банк',
             sum: '1 220',
             person: '',
+            payMethod: 1,
         },
         {
             name: 'Ирина Юрьевна Е.',
             desc: 'Клиенту Сбера',
             sum: '120',
             person: '/images/history/sber.svg',
+            payMethod: 0,
         },
         {
             name: 'Владимир Дмитриевич Д.',
             desc: 'Клиенту Сбера',
             sum: '500',
             person: '/images/avatars/example1.jpg',
+            payMethod: 0,
+            isBadged: 1
         },
         {
             name: 'Полина Петровна И.',
             desc: 'Клиенту Сбера',
             sum: '500',
             person: '/images/history/sber.svg',
+            payMethod: 0,
         },
     ])
 
 
-    const [paymentsToday, setPaymentsToday]: any = useState([])
+    const [paymentsToday, setPaymentsToday]: any = useState([]);
+
+
+
+
+    const [fastPayments, setFastPayments]: any = useState([]);
+
+    useEffect(() => {
+        // Function to filter payments and update fastPayments
+        const filterPayments: any = () => {
+            const filteredPayments: any = paymentsYesterday.filter(payment => payment.payMethod === 0);
+            // Ensure only the last 5 items are kept
+            const limitedPayments: any = filteredPayments.slice(-5);
+            setFastPayments(limitedPayments);
+        };
+
+        // Call filterPayments whenever paymentsYesterday changes
+        filterPayments();
+    }, [paymentsYesterday, paymentsToday]);
+
+
+
+
+
+
+
+
 
     const handleOpenCheck: any = () => {
         if (!isCheckLoaded) {
@@ -182,10 +216,11 @@ export default function Home() {
         });
 
         const newPayment: any = {
-            name: payName, // Assuming you have a 'payName' variable available
-            desc: 'Клиенту Сбера', // You can make this dynamic if needed
+            name: payName,
+            desc: payMethod ? 'В другой банк' : 'Клиенту Сбера',
             sum: formattedSumToday,
-            person: '/images/history/sber.svg',
+            person: payMethod ? '' : '/images/history/sber.svg',
+            payMethod: payMethod,
         };
 
         // Update the state with the formatted balance
@@ -301,6 +336,9 @@ export default function Home() {
                     paySum={paySum}
                     handleControl={handleControl}
                     month={month}
+
+                    fastPayments={fastPayments}
+                    setFastPayments={setFastPayments}
                 />;
             case 1:
                 return <div></div>;
@@ -330,6 +368,9 @@ export default function Home() {
                     paySum={paySum}
                     handleControl={handleControl}
                     month={month}
+
+                    fastPayments={fastPayments}
+                    setFastPayments={setFastPayments}
                 />;
         }
     };
