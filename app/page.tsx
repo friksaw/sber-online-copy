@@ -97,6 +97,42 @@ export default function Home() {
             person: '/images/history/sber.svg',
             payMethod: 0,
         },
+        {
+            name: 'Полина Петровна И.',
+            desc: 'В другой банк',
+            sum: '600',
+            person: '',
+            payMethod: 1,
+        },
+        {
+            name: 'Георгий Янович П.',
+            desc: 'В другой банк',
+            sum: '1 220',
+            person: '',
+            payMethod: 1,
+        },
+        {
+            name: 'Ирина Юрьевна Е.',
+            desc: 'Клиенту Сбера',
+            sum: '120',
+            person: '/images/history/sber.svg',
+            payMethod: 0,
+        },
+        {
+            name: 'Владимир Дмитриевич Д.',
+            desc: 'Клиенту Сбера',
+            sum: '500',
+            person: '/images/avatars/example1.jpg',
+            payMethod: 0,
+            isBadged: 1
+        },
+        {
+            name: 'Полина Петровна И.',
+            desc: 'Клиенту Сбера',
+            sum: '500',
+            person: '/images/history/sber.svg',
+            payMethod: 0,
+        },
     ])
 
 
@@ -357,6 +393,8 @@ export default function Home() {
                     handleOpenCheck={handleOpenCheck}
                     handleControl={handleControl}
 
+                    pageHeight={pageHeight}
+
                 />;
             default:
                 return <Main
@@ -412,6 +450,14 @@ export default function Home() {
                     transform: `scale(${scale})`,
                 }}
             >
+                <div
+                    style={{
+                        height: 24,
+                        width: pageWidth,
+                        backgroundColor: 'black',
+                    }}
+                >
+                </div>
                 <BottomNav
                     currentPage={currentPage}
                     onChangePage={onChangePage}

@@ -4,7 +4,7 @@ import * as React from "react";
 import {Avatar, Badge} from "@mui/material";
 import Image from "next/image";
 
-export default function FastPaymentButton({ isBadged, text, picture, handlePayProcessModal }: any) {
+export default function FastPaymentButton({ text, picture, handlePayProcessModal }: any) {
     return (
         <div
             style={{
@@ -12,10 +12,9 @@ export default function FastPaymentButton({ isBadged, text, picture, handlePayPr
                 flexDirection: 'column',
                 alignItems: 'center',
                 textAlign: 'center',
-                margin: '0 8px',
-                width: 92,
+                margin: '0 14px',
+                width: 72,
                 maxHeight: 115,
-                overflow: 'hidden',
             }}
         >
             {
@@ -40,7 +39,7 @@ export default function FastPaymentButton({ isBadged, text, picture, handlePayPr
                     </a>
 
                      :
-                    (!isBadged) ?
+                    (!picture) ?
                         <div
                             style={{
                                 position: 'relative',
@@ -112,10 +111,10 @@ export default function FastPaymentButton({ isBadged, text, picture, handlePayPr
                     marginTop: 8,
                     fontSize: 12,
                     width: 52,
+                    textWrap: 'nowrap',
                     marginLeft: -8,
                     opacity: (picture === 'new') ? 0.4 : 1,
-                    color: '#ffffff',
-                    textAlign: 'center'
+                    color: '#ffffff'
                 }}
             >
                 { text }

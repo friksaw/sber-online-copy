@@ -6,7 +6,12 @@
 
 }
 
-
+.scrollHistory {
+  &::-webkit-scrollbar {
+    display: none;
+    scroll-behavior: smooth;
+  }
+}
 body {
   color: white;
   display: flex;

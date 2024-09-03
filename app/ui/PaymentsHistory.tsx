@@ -4,6 +4,7 @@ import * as React from "react";
 import {Avatar, CircularProgress, List, ListItemAvatar, ListItemButton, ListItemText, Skeleton} from "@mui/material";
 import Image from "next/image";
 import {fontWeight} from "@mui/system";
+import Paper from "@mui/material/Paper";
 
 export default function PaymentsHistory({ isPageLoaded, paymentsYesterday, sumYesterday, paymentsToday, sumToday, depositsToday, handleOpenCheck }: any) {
     return (
@@ -15,7 +16,7 @@ export default function PaymentsHistory({ isPageLoaded, paymentsYesterday, sumYe
                 (parseInt(sumToday) || (parseInt(depositsToday))) ?
                 <div
                     style={{
-                        marginBottom: 12
+                        marginBottom: 12,
                     }}
                 >
                     <div
