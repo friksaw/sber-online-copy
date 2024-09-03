@@ -45,19 +45,21 @@ export default function Home() {
     const [paySenderName, setPaySenderName]: any = useState('3456');
     const [paySenderBankNum, setPaySenderBankNum]: any = useState('5423');
 
+    const [paySenderBankName, setPaySenderBankName]: any = useState('Тинькофф Банк');
+
 
     const [payMethod, setPayMethod]: any = useState(0);
 
 
     const [paymentsYesterday, setPaymentsYesterday]: any = useState([
         {
-            name: 'Александр Александрович Ж.',
+            name: 'Ирина Юрьевна Е.',
             desc: 'Клиенту Сбера',
             sum: '9 000',
             person: '/images/history/sber.svg',
         },
         {
-            name: 'Марина Сергеевна И.',
+            name: 'Полина Петровна И.',
             desc: 'В другой банк',
             sum: '600',
             person: '',
@@ -69,7 +71,7 @@ export default function Home() {
             person: '',
         },
         {
-            name: 'Афанасий Александрович Ж.',
+            name: 'Ирина Юрьевна Е.',
             desc: 'Клиенту Сбера',
             sum: '120',
             person: '/images/history/sber.svg',
@@ -81,7 +83,7 @@ export default function Home() {
             person: '/images/history/sber.svg',
         },
         {
-            name: 'Александр Александрович Ж.',
+            name: 'Полина Петровна И.',
             desc: 'Клиенту Сбера',
             sum: '500',
             person: '/images/history/sber.svg',
@@ -128,6 +130,9 @@ export default function Home() {
 
     const changePayName: any = (newName: any) => {
         setPayName(newName);
+    };
+    const changePaySenderBankName: any = (newBankName: any) => {
+        paySenderBankName(newBankName);
     };
     const changeMonth: any = (newMonth: any) => {
         setMonth(newMonth);
@@ -394,6 +399,9 @@ export default function Home() {
 
                         changePayMethod={changePayMethod}
                         payMethod={payMethod}
+
+                        changePaySenderBankName={changePaySenderBankName}
+                        paySenderBankName={paySenderBankName}
 
                     />
                     <div>{renderPage()}</div>
