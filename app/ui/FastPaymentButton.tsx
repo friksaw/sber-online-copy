@@ -19,23 +19,24 @@ export default function FastPaymentButton({ text, picture, handlePayProcessModal
         >
             {
                 (picture === 'new') ?
-                    <Avatar
+                    <a
                         onClick={handlePayProcessModal}
-
-                        sx={{
+                        style={{
                             width: 56,
-                            height: 56
+                            height: '100%',
                         }}
+
                     >
                         <Image
                             src='/images/main/newTransaction.svg'
-                            width={67}
-                            height={67}
+                            width={80}
+                            height={80}
                             alt=''
                             style={{
+                                width: '100%',
                             }}
                         />
-                    </Avatar>
+                    </a>
 
                      :
                     (!picture) ?

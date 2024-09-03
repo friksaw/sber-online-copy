@@ -42,6 +42,8 @@ export default function FastPayment({ handlePayProcessModal, isPayProcessModalOp
                         fontSize: 12,
                         width: 72,
                         textWrap: 'nowrap',
+                        marginLeft: -8,
+
                     }}>Новый<br/>перевод</p>}
                     picture='new'
                 />
@@ -49,17 +51,21 @@ export default function FastPayment({ handlePayProcessModal, isPayProcessModalOp
                     textAlign: 'center',
                     fontSize: 12,
                     width: 72,
-                    textWrap: 'nowrap'
+                    textWrap: 'nowrap',
+                    marginLeft: -8,
+
                 }}>Ирина<br/>Юрьевна Е.</p>}/>
                 <FastPaymentButton text={<p style={{
                     textAlign: 'center',
                     fontSize: 12,
                     width: 72,
+                    marginLeft: -8,
+
                 }}>Полина<br/>Петровна...</p>} />
                 <FastPaymentButton text={<p style={{
                     textAlign: 'center',
                     fontSize: 12,
-                    marginLeft: -4,
+                    marginLeft: -8,
                     width: 72,
                     textWrap: 'nowrap'
                 }}>Леша<br/>Досов</p>} picture='/images/avatars/example.jpg'/>
