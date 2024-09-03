@@ -304,6 +304,8 @@ export default function Home() {
                     sumToday={sumToday}
                     depositsToday={depositsToday}
                     handleOpenCheck={handleOpenCheck}
+                    handleControl={handleControl}
+
                 />;
             default:
                 return <Main

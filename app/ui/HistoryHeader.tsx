@@ -4,7 +4,7 @@ import * as React from "react";
 import Image from "next/image";
 import {Skeleton} from "@mui/material";
 
-export default function HistoryHeader({ sumToday, depositsToday, isPageLoaded }: any) {
+export default function HistoryHeader({ sumToday, depositsToday, isPageLoaded, handleControl }: any) {
     return (
         <div>
             <div
@@ -14,12 +14,15 @@ export default function HistoryHeader({ sumToday, depositsToday, isPageLoaded }:
                     padding: '45px 6px 36px 18px',
                 }}
             >
-                <Image
-                    src="/images/avatars/myAvatar.svg"
-                    width={37}
-                    height={37}
-                    alt=''
-                />
+                <a onClick={handleControl}>
+                    <Image
+                        src="/images/avatars/myAvatar.svg"
+                        width={37}
+                        height={37}
+                        alt=''
+                    />
+                </a>
+
                 <div
                     style={{
                         borderRadius: 100,
