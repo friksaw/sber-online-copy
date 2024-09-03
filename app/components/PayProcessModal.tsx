@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Button, Fade, keyframes, makeStyles, Modal, Slide, TextField} from "@mui/material";
+import {Button, CircularProgress, Fade, keyframes, makeStyles, Modal, Slide, TextField} from "@mui/material";
 import Box from "@mui/material/Box";
 import PayProcessBox from "@/app/components/PaySuccessBox";
 import Image from "next/image";
@@ -569,7 +569,17 @@ const PayProcessModal = ({
                                         111083
                                         </p>
                                     </div>
-                                </div> : ''
+                                </div> :
+                                    <div>
+                                        <CircularProgress
+                                            color="success"
+                                            sx={{
+                                                position: 'absolute',
+                                                top: '45%',
+                                                left: '47%',
+                                            }}
+                                        />
+                                    </div>
                                 }
 
                                 <a
