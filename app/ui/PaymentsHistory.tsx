@@ -142,7 +142,9 @@ export default function PaymentsHistory({ isPageLoaded, paymentsYesterday, sumYe
                         onClick={handleOpenCheck}
                     >
                         <ListItemAvatar sx={{alignSelf: 'start'}}>
-                            <Avatar alt="Profile Picture" src={person}/>
+                            {
+                                isPageLoaded ?
+                            <Avatar alt="Profile Picture" src={person}/> : <Skeleton variant="circular" width={40} height={40} /> }
                         </ListItemAvatar>
                         <div
                             style={{

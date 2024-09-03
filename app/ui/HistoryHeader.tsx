@@ -113,12 +113,14 @@ export default function HistoryHeader({ sumToday, depositsToday, isPageLoaded, h
                                     width: 96
                                 }}
                             >
+
                                 <Image
                                     src="/images/history/green-no-eye.svg"
                                     width={24}
                                     height={22}
                                     alt=''
                                 />
+
                                 <Image
                                     src="/images/cross.svg"
                                     width={19}
@@ -129,7 +131,8 @@ export default function HistoryHeader({ sumToday, depositsToday, isPageLoaded, h
                                     }}
                                 />
                             </div>
-
+                            {
+                                isPageLoaded ?
                             <p
                                 style={{
                                     fontSize: 12,
@@ -137,7 +140,9 @@ export default function HistoryHeader({ sumToday, depositsToday, isPageLoaded, h
                                 }}
                             >
                                 Как скрыть операцию
-                            </p>
+                            </p>: <Skeleton variant="rectangular" width={84} height={32}
+                                            style={{borderRadius: 4}}/>
+                            }
                         </div>
 
                         <div
