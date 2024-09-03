@@ -40,10 +40,10 @@ export default function Home() {
     const [isCheckOpen, setIsCheckOpen]: any = useState(0);
     const [checkData, setCheckData]: any = useState([]);
 
-    const [payPhone, setPayPhone]: any = useState('');
-    const [payResBankNum, setPayResBankNum]: any = useState('');
-    const [paySenderName, setPaySenderName]: any = useState('');
-    const [paySenderBankNum, setPaySenderBankNum]: any = useState('');
+    const [payPhone, setPayPhone]: any = useState('+7 (9800) 555 35-35');
+    const [payResBankNum, setPayResBankNum]: any = useState('9876');
+    const [paySenderName, setPaySenderName]: any = useState('3456');
+    const [paySenderBankNum, setPaySenderBankNum]: any = useState('5423');
 
 
     const [paymentsYesterday, setPaymentsYesterday]: any = useState([
@@ -325,8 +325,8 @@ export default function Home() {
     return (
         <Box
             sx={{
-                margin: '0 auto',
-                alignSelf: 'center',
+                margin: window.innerWidth < 480 ? 0 : '0 auto',
+                alignSelf: window.innerWidth < 480 ? 'start' : 'center',
             }}
         >
             <Controls

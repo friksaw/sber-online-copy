@@ -365,7 +365,7 @@ const PayProcessModal = ({
                                 height: 56,
                                 backgroundColor: '#1E1E1E',
                                 width: `calc(${pageWidth}px + 62px)`,
-                                paddingTop: 12,
+                                paddingTop:8,
                             }}
                         >
                             <a
@@ -594,7 +594,7 @@ const PayProcessModal = ({
                                     style={{
                                         backgroundColor: !isCheckLoaded ? '#1E1E1E' : '#148F2A',
                                         marginBottom: 56,
-                                        marginTop: !isCheckLoaded ? '592px' : 8,
+                                        marginTop: !isCheckLoaded ? '652px' : 8,
                                         borderRadius: 12,
                                         height: 48,
                                         width: '100%',
@@ -603,6 +603,7 @@ const PayProcessModal = ({
                                         alignItems: 'center',
                                         justifyContent: 'center',
                                         cursor: 'pointer',
+                                        color: !isCheckLoaded ? '#5F5F5F' : '#ffffff',
                                     }}
                                     onClick={handleOpenCheck}
                                 >
