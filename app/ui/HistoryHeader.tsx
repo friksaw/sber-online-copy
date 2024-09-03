@@ -234,8 +234,8 @@ export default function HistoryHeader({ sumToday, depositsToday, isPageLoaded, h
                                 height={32}
                                 alt=''
                             />
-                            <p style={{fontSize: 12, marginTop: 16}}>
-                                Выписки и справки
+                            <p style={{fontSize: 12, marginTop: 16, textWrap: 'nowrap'}}>
+                                Выписки <br/>и справки
                             </p>
                         </div>
                     </div>
