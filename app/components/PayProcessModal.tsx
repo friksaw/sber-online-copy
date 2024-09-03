@@ -295,7 +295,7 @@ const PayProcessModal = ({
 
                                             borderRadius: 12,
                                             height: 45,
-                                            width: 135,
+                                            width: 130,
                                             textAlign: 'center',
                                             display: 'flex',
                                             alignItems: 'center',
@@ -311,7 +311,7 @@ const PayProcessModal = ({
                                             borderRadius: 12,
                                             backgroundColor: '#C4C4C4',
                                             height: 45,
-                                            width: 135,
+                                            width: 130,
                                             textAlign: 'center',
                                             color: '#0E0E0E',
                                             display: 'flex',

@@ -1,10 +1,10 @@
 'use client'
 
 import * as React from "react";
-import {Avatar, List, ListItemAvatar, ListItemButton, ListItemText} from "@mui/material";
+import {Avatar, List, ListItemAvatar, ListItemButton, ListItemText, Skeleton} from "@mui/material";
 import Image from "next/image";
 
-export default function PaymentsHistory({ paymentsYesterday, sumYesterday, paymentsToday, sumToday, depositsToday, handleOpenCheck }: any) {
+export default function PaymentsHistory({ isPageLoaded, paymentsYesterday, sumYesterday, paymentsToday, sumToday, depositsToday, handleOpenCheck }: any) {
     return (
         <div>
             {
@@ -23,14 +23,18 @@ export default function PaymentsHistory({ paymentsYesterday, sumYesterday, payme
                         }}
                     >
                         <h3>Сегодня</h3>
-                        <p
-                            className='pGrey'
-                            style={{
-                                fontSize: 18,
-                            }}
-                        >
-                            {sumToday} ₽
-                        </p>
+                        {
+                            isPageLoaded ?
+                            <p
+                                className='pGrey'
+                                style={{
+                                    fontSize: 18,
+                                }}
+                            >
+                                {sumToday} ₽
+                            </p>   : <Skeleton variant="rectangular" width={100} height={24}
+                                               style={{borderRadius: 4}}/>
+                        }
                     </div>
                     <List>{paymentsToday.slice().reverse().map(({ name, desc, sum, person }: any, index: any) => (
                         <ListItemButton
@@ -56,10 +60,17 @@ export default function PaymentsHistory({ paymentsYesterday, sumYesterday, payme
                                 }}
                             >
                                 <div>
-                                    <p style={{ textWrap: 'nowrap' }}>{name}</p>
-                                    <p className="pGrey" style={{ marginTop: 4 }}>
-                                        {desc}
-                                    </p>
+                                    {
+                                        isPageLoaded ?
+                                        <p style={{ textWrap: 'nowrap' }}>{name}</p>   : <Skeleton variant="rectangular" width={320} height={24}
+                                                                                               style={{borderRadius: 4}}/>}
+                                        {
+                                            isPageLoaded ?
+                                                <p className="pGrey" style={{ marginTop: 4 }}>
+                                                    {desc}
+                                                </p>   : <Skeleton variant="rectangular" width={100} height={24}
+                                                                   style={{borderRadius: 4}}/>
+                                        }
                                 </div>
                                 <div
                                     style={{

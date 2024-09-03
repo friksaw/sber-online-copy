@@ -3,7 +3,7 @@
 import * as React from "react";
 import Image from "next/image";
 
-export default function HistoryHeader({ sumToday, depositsToday }: any) {
+export default function HistoryHeader({ sumToday, depositsToday, isPageLoaded }: any) {
     return (
         <div>
             <div

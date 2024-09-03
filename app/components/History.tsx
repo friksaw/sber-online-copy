@@ -8,9 +8,10 @@ import PaymentsHistory from "@/app/ui/PaymentsHistory";
 export default function History({ paymentsYesterday, sumYesterday, paymentsToday, sumToday, depositsToday, handleOpenCheck, isPageLoaded }: any) {
     return (
         <div>
-            <HistoryHeader sumToday={sumToday} depositsToday={depositsToday}/>
+            <HistoryHeader sumToday={sumToday} depositsToday={depositsToday} isPageLoaded={isPageLoaded}/>
             <HistoryFilters />
             <PaymentsHistory
+                isPageLoaded={isPageLoaded}
                 paymentsYesterday={paymentsYesterday}
                 sumYesterday={sumYesterday}
                 paymentsToday={paymentsToday}
