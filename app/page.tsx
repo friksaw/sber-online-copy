@@ -88,6 +88,11 @@ export default function Home() {
     const [paymentsToday, setPaymentsToday]: any = useState([])
 
     const handleOpenCheck: any = () => {
+        if (!isCheckLoaded) {
+            setTimeout(() => setIsCheckLoaded(1), 1000);
+        } else {
+            setIsCheckLoaded(0)
+        }
         setIsCheckOpen((isOpen: any) => !isOpen);
     };
     const handlePayProcessModal: any = () => {
@@ -330,6 +335,7 @@ export default function Home() {
                 changeSumYesterday={changeSumYesterday}
                 shuffleYesterdayMessages={shuffleYesterdayMessages}
                 addDeposit={addDeposit}
+
             />
 
             <div
