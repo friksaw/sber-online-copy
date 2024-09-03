@@ -53,19 +53,18 @@ export default function FastPayment({ handlePayProcessModal, isPayProcessModalOp
                     width: 72,
                     textWrap: 'nowrap',
                     marginLeft: -8,
-
                 }}>Ирина<br/>Юрьевна Е.</p>}/>
                 <FastPaymentButton text={<p style={{
                     textAlign: 'center',
                     fontSize: 12,
                     width: 72,
-                    marginLeft: -8,
+                    marginLeft: -7,
 
                 }}>Полина<br/>Петровна...</p>} />
                 <FastPaymentButton text={<p style={{
                     textAlign: 'center',
                     fontSize: 12,
-                    marginLeft: -8,
+                    marginLeft: -7,
                     width: 72,
                     textWrap: 'nowrap'
                 }}>Леша<br/>Досов</p>} picture='/images/avatars/example.jpg'/>

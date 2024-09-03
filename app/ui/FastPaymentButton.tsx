@@ -65,7 +65,8 @@ export default function FastPaymentButton({ text, picture, handlePayProcessModal
                             >
                                 <p
                                     style={{
-                                        opacity: 0.4
+                                        opacity: 0.4,
+                                        fontSize: 20,
                                     }}
                                 >
                                     ПП
