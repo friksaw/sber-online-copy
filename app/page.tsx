@@ -36,7 +36,7 @@ export default function Home() {
     const [isPayProcessModalOpen, setIsPayProcessModalOpen]: any = useState(false);
 
     const [isCheckLoaded, setIsCheckLoaded]: any = useState(0);
-    const [isPageLoaded, setIsPageLoaded]: any = useState(false);
+    const [isPageLoaded, setIsPageLoaded]: any = useState(true);
     const [isCheckOpen, setIsCheckOpen]: any = useState(0);
     const [checkData, setCheckData]: any = useState([]);
 
