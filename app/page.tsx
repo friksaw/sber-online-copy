@@ -248,7 +248,7 @@ export default function Home() {
             let newScale: any = Math.min(scaleX, scaleY);
 
             if (window.innerWidth < 480) {
-                newScale = Math.min(scaleX, scaleY);
+                newScale = Math.min(scaleX, 1);
             } else {
                 newScale = Math.min(scaleX, scaleY);
 

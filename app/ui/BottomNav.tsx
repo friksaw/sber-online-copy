@@ -14,8 +14,8 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
     return (
         <Box>
             {children}
-            <Paper
-                sx={{
+            <div
+                style={{
 
                     height: 57,
 
@@ -190,7 +190,7 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                         }}
                     />
                 </BottomNavigation>
-            </Paper>
+            </div>
         </Box>
     );
 }
