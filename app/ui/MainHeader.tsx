@@ -2,8 +2,9 @@
 
 import * as React from "react";
 import Image from "next/image";
+import {Skeleton} from "@mui/material";
 
-export default function MainHeader({ balance, handleControl }: any) {
+export default function MainHeader({ balance, handleControl, isPageLoaded }: any) {
     return (
         <div
             style={{
@@ -196,49 +197,58 @@ export default function MainHeader({ balance, handleControl }: any) {
 
                             />
                                 <div>
-                                    <p
-                                        style={{
-                                            fontSize: 18,
-                                        }}
-                                    >
-                                        {balance} ₽
-                                    </p>
-                                    <div
-                                        style={{
-                                            display: 'flex',
-                                            flexDirection: 'row',
-                                        }}
-                                    >
-                                    <p className='pGrey'>
-                                        MasterC...
-                                    </p>
-                                    <div
-                                        style={{
-                                            display: 'flex',
-                                            flexDirection: 'row',
-                                            alignItems: 'center',
-                                            margin: '0 4px'
-                                        }}
-                                    >
-                                        <Image
-                                            src="/images/lil-dot.svg"
-                                            width={4}
-                                            height={4}
-                                            alt=''
+                                    {
+                                        isPageLoaded ?
+                                        <p
+                                            style={{
+                                                fontSize: 18,
+                                            }}
+                                        >
+                                            {balance} ₽
+                                        </p> : <Skeleton variant="rectangular" width={80} height={24} style={{ borderRadius: 4, marginBottom: 4 }} />
+                                    }
+                                    {
+                                        isPageLoaded ?
+                                            <div
+                                                style={{
+                                                    display: 'flex',
+                                                    flexDirection: 'row',
+                                                }}
+                                            >
+                                                <p className='pGrey'>
+                                                    MasterC...
+                                                </p>
+                                                <div
+                                                    style={{
+                                                        display: 'flex',
+                                                        flexDirection: 'row',
+                                                        alignItems: 'center',
+                                                        margin: '0 4px'
+                                                    }}
+                                                >
+                                                    <Image
+                                                        src="/images/lil-dot.svg"
+                                                        width={4}
+                                                        height={4}
+                                                        alt=''
 
-                                        />
-                                        <Image
-                                            src="/images/lil-dot.svg"
-                                            width={4}
-                                            height={4}
-                                            alt=''
-                                        />
-                                    </div>
-                                    <p className='pGrey'>
-                                        0467
-                                    </p>
+                                                    />
+                                                    <Image
+                                                        src="/images/lil-dot.svg"
+                                                        width={4}
+                                                        height={4}
+                                                        alt=''
+                                                    />
+                                                </div>
+                                                <p className='pGrey'>
+                                                    0467
+                                                </p>
+                                            </div>
+                                            : <Skeleton variant="rectangular" width={100} height={24}
+                                                        style={{borderRadius: 4}}/>
+                                    }
+
                                 </div>
-                            </div>
                         </div>
                     </div>
 

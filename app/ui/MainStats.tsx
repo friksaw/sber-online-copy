@@ -3,8 +3,9 @@
 import * as React from "react";
 import Image from "next/image";
 import {useEffect, useState} from "react";
+import {Skeleton} from "@mui/material";
 
-export default function MainStats({ expenses, month }: any) {
+export default function MainStats({ expenses, month, isPageLoaded }: any) {
     const [transactionsPart, setTransactionsPart]: any = useState(0);
     const [eduPart, setEduPart]: any = useState(0);
 
@@ -93,9 +94,15 @@ export default function MainStats({ expenses, month }: any) {
                             alt=''
                         />
                         <div>
-                            <h3>
-                                {expenses} ₽
-                            </h3>
+                            {
+                                isPageLoaded ?
+                                    <h3>
+                                        {expenses} ₽
+                                    </h3>
+                                    : <Skeleton variant="rectangular" width={100} height={24}
+                                                style={{borderRadius: 4}}/>
+                            }
+
                             <p
                                 className='pGrey'
                                 style={{
@@ -132,10 +139,13 @@ export default function MainStats({ expenses, month }: any) {
                             >
                                 Переводы людям
                             </p>
-                            <h4>
-                                {transactionsPart} ₽
-                            </h4>
-
+                            {
+                                isPageLoaded ?
+                                <h4>
+                                    {transactionsPart} ₽
+                                </h4>  : <Skeleton variant="rectangular" width={100} height={24}
+                                                style={{borderRadius: 4}}/>
+                            }
                         </div>
                     </div>
                     <div
@@ -164,9 +174,13 @@ export default function MainStats({ expenses, month }: any) {
                             >
                                 Образование
                             </p>
+                            {
+                                isPageLoaded ?
                             <p>
                                 {eduPart} ₽
-                            </p>
+                            </p>    : <Skeleton variant="rectangular" width={100} height={24}
+                                                style={{borderRadius: 4}}/>
+                            }
                         </div>
                     </div>
                 </div>

@@ -36,6 +36,7 @@ export default function Home() {
     const [isPayProcessModalOpen, setIsPayProcessModalOpen]: any = useState(false);
 
     const [isCheckLoaded, setIsCheckLoaded]: any = useState(0);
+    const [isPageLoaded, setIsPageLoaded]: any = useState(false);
     const [isCheckOpen, setIsCheckOpen]: any = useState(0);
     const [checkData, setCheckData]: any = useState([]);
 
@@ -104,7 +105,9 @@ export default function Home() {
     };
 
     const onChangePage: any = (newPage: any) => {
+        setIsPageLoaded(false)
         setCurrentPage(newPage)
+        setTimeout(() => setIsPageLoaded(true), 1000);
     }
 
     const changeBalance: any = (newBalance: any) => {
@@ -277,6 +280,7 @@ export default function Home() {
         switch (currentPage) {
             case 0:
                 return <Main
+                    isPageLoaded={isPageLoaded}
                     balance={balance}
                     expenses={expenses}
                     handlePayProcessModal={handlePayProcessModal}
@@ -286,13 +290,14 @@ export default function Home() {
                     month={month}
                 />;
             case 1:
-                return <Capital />;
+                return <div></div>;
             case 2:
-                return <div>Assistant</div>;
+                return <div></div>;
             case 3:
-                return <Payments />;
+                return <div></div>;
             case 4:
                 return <History
+                    isPageLoaded={isPageLoaded}
                     paymentsYesterday={paymentsYesterday}
                     sumYesterday={sumYesterday}
                     paymentsToday={paymentsToday}
@@ -302,6 +307,7 @@ export default function Home() {
                 />;
             default:
                 return <Main
+                    isPageLoaded={isPageLoaded}
                     balance={balance}
                     expenses={expenses}
                     handlePayProcessModal={handlePayProcessModal}
