@@ -27,6 +27,9 @@ export default function FastPaymentButton({ text, picture, handlePayProcessModal
                                 width={80}
                                 height={80}
                                 alt=''
+                                style={{
+                                    marginTop: -4
+                                }}
                             />
                         </button>
                      :
