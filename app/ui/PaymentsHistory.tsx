@@ -91,7 +91,7 @@ export default function PaymentsHistory({ isPageLoaded, paymentsYesterday, sumYe
                                 >
                                     {
                                         isPageLoaded ?
-                                    <p style={{ textWrap: 'nowrap' }}>
+                                    <p style={{ textWrap: 'nowrap', marginTop: sum.startsWith('+') ? -22 : '' }}>
                                         {sum} ₽
                                     </p>   : <Skeleton variant="rectangular" width={60} height={24}
                                                        style={{borderRadius: 4}}/>
