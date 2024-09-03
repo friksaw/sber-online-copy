@@ -473,7 +473,8 @@ export default function Home() {
                         height: 28,
                         width: pageWidth,
                         position: 'absolute',
-                        backgroundColor: 'black'
+                        backgroundColor: 'black',
+                        zIndex: 100000000000000000000000000000000000000000000000
                     }}
                 >
                     <Image
