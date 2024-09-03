@@ -8,7 +8,7 @@ import Paper from "@mui/material/Paper";
 
 export default function History({ pageHeight, handleControl, paymentsYesterday, sumYesterday, paymentsToday, sumToday, depositsToday, handleOpenCheck, isPageLoaded }: any) {
     return (
-        <Paper className='scrollHistory' style={{maxHeight: pageHeight, overflow: 'auto', overflowX: 'hidden', backgroundColor: 'transparent', color: 'white'}}>
+        <Paper className='scrollHistory' style={{maxHeight: pageHeight - 40, overflow: 'auto', overflowX: 'hidden', backgroundColor: 'transparent', color: 'white'}}>
             <HistoryHeader handleControl={handleControl} sumToday={sumToday} depositsToday={depositsToday} isPageLoaded={isPageLoaded}/>
             <HistoryFilters />
             <PaymentsHistory
