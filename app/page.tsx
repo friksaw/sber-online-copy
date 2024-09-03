@@ -132,7 +132,7 @@ export default function Home() {
         setPayName(newName);
     };
     const changePaySenderBankName: any = (newBankName: any) => {
-        paySenderBankName(newBankName);
+        setPaySenderBankName(newBankName);
     };
     const changeMonth: any = (newMonth: any) => {
         setMonth(newMonth);
@@ -228,12 +228,13 @@ export default function Home() {
         setDepositsToday(formattedDepositsSum);
     };
 
+
     const useScreenWidth = () => {
-        const [screenWidth, setScreenWidth]: any = useState<number>(0);
+        const [screenWidth, setScreenWidth]: any = useState(0);
 
         useEffect(() => {
             const handleResize: any = () => {
-                setScreenWidth(window.innerWidth < 480 ? 363 : 363);
+                setScreenWidth(window.innerWidth < 480 ? window.innerWidth : 363);
             };
 
             handleResize(); // Initial setup on component mount
@@ -335,8 +336,9 @@ export default function Home() {
     return (
         <Box
             sx={{
-                margin: window.innerWidth < 480 ? '0 auto' : '0 auto',
-                alignSelf: window.innerWidth < 480 ? 'end' : 'center',
+                margin: useScreenWidth() < 480 ? '0 auto' : '0 auto',
+                marginTop: 0,
+                alignSelf: 'center',
                 transformOrigin: 'right'
             }}
         >
