@@ -44,7 +44,7 @@ export default function Home() {
     const [payResBankNum, setPayResBankNum]: any = useState('9876');
     const [paySenderName, setPaySenderName]: any = useState('3456');
     const [paySenderBankNum, setPaySenderBankNum]: any = useState('5423');
-    const [payMethod, setPayMethod]: any = useState('Перевод по номеру телефона');
+    const [payMethod, setPayMethod]: any = useState('Перевод клиенту Сбербанка');
 
 
     const [paymentsYesterday, setPaymentsYesterday]: any = useState([
@@ -328,9 +328,9 @@ export default function Home() {
     return (
         <Box
             sx={{
-                margin: window.innerWidth < 480 ? '0 auto' : '0 auto',
+                margin: window.innerWidth < 480 ? 0 : '0 auto',
                 alignSelf: window.innerWidth < 480 ? 'start' : 'center',
-                transformOrigin: 'top'
+                transformOrigin: 'left'
             }}
         >
             <Controls
