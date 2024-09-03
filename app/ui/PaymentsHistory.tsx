@@ -30,7 +30,7 @@ export default function PaymentsHistory({ isPageLoaded, paymentsYesterday, sumYe
                                 className='pGrey'
                                 style={{
                                     fontSize: 18,
-                                    fontWeight: 200,
+                                    color: '#5F5F5F',
                                 }}
                             >
                                 {sumToday} ₽
@@ -125,7 +125,7 @@ export default function PaymentsHistory({ isPageLoaded, paymentsYesterday, sumYe
                     className='pGrey'
                     style={{
                         fontSize: 18,
-                        fontWeight: 200,
+                        color: '#5F5F5F',
                     }}
                 >
                     {sumYesterday} ₽
