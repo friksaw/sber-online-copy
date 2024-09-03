@@ -364,7 +364,7 @@ const PayProcessModal = ({
                                 alignItems: 'center',
                                 height: 56,
                                 backgroundColor: '#1E1E1E',
-                                width: `calc(${pageWidth}px + 62px)`,
+                                width: pageWidth,
                                 paddingTop: 12,
                             }}
                         >
