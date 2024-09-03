@@ -380,7 +380,7 @@ const PayProcessModal = ({
                 <Slide direction="left" in={isCheckOpen} mountOnEnter unmountOnExit>
                     <Box
                         sx={{
-                            width: `calc(${pageWidth}px + 62px)`,
+                            width: (pageWidth === 363) ? `calc(${pageWidth}px + 62px)` : pageWidth,
                             height: '100%',
                         }}
                     >
@@ -392,7 +392,7 @@ const PayProcessModal = ({
                                 alignItems: 'center',
                                 height: 56,
                                 backgroundColor: '#1E1E1E',
-                                width: `calc(${pageWidth}px + 62px)`,
+                                width: (pageWidth === 363) ? `calc(${pageWidth}px + 62px)` : pageWidth,
                                 paddingTop:8,
                             }}
                         >
