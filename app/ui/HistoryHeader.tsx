@@ -161,9 +161,12 @@ export default function HistoryHeader({ sumToday, depositsToday, isPageLoaded, h
                                     width:  192
                                 }}
                             >
+                                {
+                                    isPageLoaded ?
                                 <p className='pGrey'>
                                     Расходы за сегодня
-                                </p>
+                                </p>: <Skeleton variant="rectangular" width={120} height={20}
+                                                style={{borderRadius: 4}}/>}
                                 <Image
                                     src="/images/history/history-arrow.svg"
                                     width={9}
