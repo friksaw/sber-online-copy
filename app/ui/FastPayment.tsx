@@ -42,7 +42,7 @@ export default function FastPayment({ handlePayProcessModal, isPayProcessModalOp
                         fontSize: 12,
                         width: 72,
                         textWrap: 'nowrap',
-                        marginLeft: -8,
+                        marginLeft: -4,
 
                     }}>Новый<br/>перевод</p>}
                     picture='new'
