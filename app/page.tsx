@@ -238,14 +238,21 @@ export default function Home() {
 // Your scaling logic
     useEffect(() => {
         const updateScale = () => {
-            const screenWidth = window.innerWidth;
-            const screenHeight = window.innerHeight;
-            const scaleX = screenWidth / pageWidth;
-            const scaleY = screenHeight / pageHeight;
+            const screenWidth: any = window.innerWidth;
+            const screenHeight: any = window.innerHeight;
+            const scaleX: any = screenWidth / pageWidth;
+            const scaleY: any = screenHeight / pageHeight;
+            let newScale: any = Math.min(scaleX, scaleY);
 
-            let newScale = screenWidth < 480 ? scaleX : Math.min(scaleX, scaleY);
+            if (window.innerWidth < 480) {
+                newScale = Math.min(scaleX, scaleY);
+            } else {
+                newScale = Math.min(scaleX, scaleY);
 
-            // Set the scale using setScale or your custom function
+            }
+
+
+            // Assuming you have a 'setScale' function defined elsewhere
             setScale(newScale);
         };
 
