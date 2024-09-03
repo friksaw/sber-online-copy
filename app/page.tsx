@@ -410,7 +410,7 @@ export default function Home() {
                         paySenderBankName={paySenderBankName}
 
                         changePayCommission={changePayCommission}
-                        payCommission={changePayCommission}
+                        payCommission={payСommission}
                     />
                     <div>{renderPage()}</div>
                 </BottomNav>
