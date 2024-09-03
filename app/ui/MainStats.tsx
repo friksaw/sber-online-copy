@@ -5,8 +5,9 @@ import Image from "next/image";
 import {useEffect, useState} from "react";
 
 export default function MainStats({ expenses, month }: any) {
-    const [transactionsPart, setTransactionsPart]: any = useState('');
-    const [eduPart, setEduPart]: any = useState('');
+    const [transactionsPart, setTransactionsPart]: any = useState(0);
+    const [eduPart, setEduPart]: any = useState(0);
+
     useEffect(() => {
         // Calculate transactionsPart whenever expenses changes
         const calculateTransactionsPart = () => {
@@ -30,7 +31,7 @@ export default function MainStats({ expenses, month }: any) {
 
         calculateTransactionsPart();
 
-        const expensesChangeListener = () => {
+        const expensesChangeListener: any = () => {
             calculateTransactionsPart();
         }
         window.addEventListener('resize', expensesChangeListener);
