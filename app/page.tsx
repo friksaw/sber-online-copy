@@ -20,7 +20,7 @@ import PayProcessModal from "@/app/components/PayProcessModal";
 
 export default function Home() {
     const [currentPage, setCurrentPage]: any = useState(0);
-    const [isControlsOpen, setIsControlsOpen]: any = useState(1);
+    const [isControlsOpen, setIsControlsOpen]: any = useState(0);
 
     const [balance, setBalance]: any = useState('4 062,00');
     const [expenses, setExpenses]: any = useState('72 048');
