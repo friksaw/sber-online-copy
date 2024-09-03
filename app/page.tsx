@@ -44,7 +44,9 @@ export default function Home() {
     const [payResBankNum, setPayResBankNum]: any = useState('9876');
     const [paySenderName, setPaySenderName]: any = useState('3456');
     const [paySenderBankNum, setPaySenderBankNum]: any = useState('5423');
-    const [payMethod, setPayMethod]: any = useState('Перевод клиенту Сбербанка');
+
+
+    const [payMethod, setPayMethod]: any = useState(0);
 
 
     const [paymentsYesterday, setPaymentsYesterday]: any = useState([

@@ -67,7 +67,7 @@ export default function FastPayment({ handlePayProcessModal, isPayProcessModalOp
                     marginLeft: -7,
                     width: 72,
                     textWrap: 'nowrap'
-                }}>Леша<br/>Досов</p>} picture='/images/avatars/example.jpg'/>
+                }}>Павел<br/>Рунов</p>} picture='/images/avatars/example.jpg'/>
                 <FastPaymentButton text={<p style={{
                     textAlign: 'center',
                     fontSize: 12,

@@ -487,7 +487,7 @@ const PayProcessModal = ({
                                             Операция
                                         </p>
                                         <p>
-                                            {payMethod}
+                                            Перевод клиенту Сбербанка
                                         </p>
                                         <p
                                             className='pGrey'
