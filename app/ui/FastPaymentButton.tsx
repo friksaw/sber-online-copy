@@ -12,26 +12,31 @@ export default function FastPaymentButton({ text, picture, handlePayProcessModal
                 flexDirection: 'column',
                 alignItems: 'center',
                 textAlign: 'center',
-                margin: '0 16px',
-                maxWidth: 68,
+                margin: '0 14px',
+                width: 72,
                 maxHeight: 115,
             }}
         >
             {
                 (picture === 'new') ?
-                        <button
-                            onClick={handlePayProcessModal}
-                        >
-                            <Image
-                                src='/images/main/newTransaction.svg'
-                                width={80}
-                                height={80}
-                                alt=''
-                                style={{
-                                    marginTop: -4
-                                }}
-                            />
-                        </button>
+                    <Avatar
+                        onClick={handlePayProcessModal}
+
+                        sx={{
+                            width: 56,
+                            height: 56
+                        }}
+                    >
+                        <Image
+                            src='/images/main/newTransaction.svg'
+                            width={67}
+                            height={67}
+                            alt=''
+                            style={{
+                            }}
+                        />
+                    </Avatar>
+
                      :
                     (!picture) ?
                         <div
@@ -52,8 +57,8 @@ export default function FastPaymentButton({ text, picture, handlePayProcessModal
                             />
                             <Avatar
                                 sx={{
-                                    width: 48,
-                                    height: 48,
+                                    width: 56,
+                                    height: 56,
                                     backgroundColor: '#383838'
                                 }}
                             >
@@ -85,8 +90,8 @@ export default function FastPaymentButton({ text, picture, handlePayProcessModal
                         >
                             <Avatar
                                 sx={{
-                                    width: 48,
-                                    height: 48
+                                    width: 56,
+                                    height: 56
                                 }}
                             >
                                 <Image
@@ -104,7 +109,10 @@ export default function FastPaymentButton({ text, picture, handlePayProcessModal
                     marginTop: 8,
                     fontSize: 12,
                     width: 52,
-                    textWrap: 'nowrap'
+                    textWrap: 'nowrap',
+                    marginLeft: -8,
+                    opacity: (picture === 'new') ? 0.4 : 1,
+                    color: '#ffffff'
                 }}
             >
                 { text }

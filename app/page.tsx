@@ -24,8 +24,8 @@ export default function Home() {
 
     const [balance, setBalance]: any = useState('4 062,00');
     const [expenses, setExpenses]: any = useState('72 048');
-    const [paySum, setPaySum]: any = useState('0');
-    const [payName, setPayName]: any = useState('');
+    const [paySum, setPaySum]: any = useState('2 000');
+    const [payName, setPayName]: any = useState('Павел Получатель Л.');
     const [month, setMonth]: any = useState('сентябре');
     const [sumYesterday, setSumYesterday]: any = useState('16 700');
     const [sumToday, setSumToday]: any = useState('0');
