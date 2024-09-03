@@ -100,9 +100,10 @@ export default function MainStats({ expenses, month, isPageLoaded }: any) {
                                         {expenses} ₽
                                     </h3>
                                     : <Skeleton variant="rectangular" width={100} height={24}
-                                                style={{borderRadius: 4}}/>
+                                                style={{borderRadius: 4, marginBottom: 4}}/>
                             }
-
+                            {
+                                isPageLoaded ?
                             <p
                                 className='pGrey'
                                 style={{
@@ -110,7 +111,9 @@ export default function MainStats({ expenses, month, isPageLoaded }: any) {
                                 }}
                             >
                                 Все расходы
-                            </p>
+                            </p>: <Skeleton variant="rectangular" width={100} height={20}
+                                            style={{borderRadius: 4, marginBottom: 4}}/>
+                            }
                         </div>
                     </div>
                     <div
@@ -131,6 +134,8 @@ export default function MainStats({ expenses, month, isPageLoaded }: any) {
                             alt=''
                         />
                         <div>
+                            {
+                                isPageLoaded ?
                             <p
                                 className='pGrey'
                                 style={{
@@ -138,7 +143,9 @@ export default function MainStats({ expenses, month, isPageLoaded }: any) {
                                 }}
                             >
                                 Переводы людям
-                            </p>
+                            </p> : <Skeleton variant="rectangular" width={100} height={20}
+                                             style={{borderRadius: 4, marginBottom: 4}}/>
+                            }
                             {
                                 isPageLoaded ?
                                 <h4>
@@ -166,6 +173,8 @@ export default function MainStats({ expenses, month, isPageLoaded }: any) {
                             alt=''
                         />
                         <div>
+                            {
+                                isPageLoaded ?
                             <p
                                 className='pGrey'
                                 style={{
@@ -173,7 +182,9 @@ export default function MainStats({ expenses, month, isPageLoaded }: any) {
                                 }}
                             >
                                 Образование
-                            </p>
+                            </p>  : <Skeleton variant="rectangular" width={100} height={20}
+                                              style={{borderRadius: 4, marginBottom: 4}}/>
+                            }
                             {
                                 isPageLoaded ?
                             <p>

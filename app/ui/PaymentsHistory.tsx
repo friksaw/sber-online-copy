@@ -3,6 +3,7 @@
 import * as React from "react";
 import {Avatar, List, ListItemAvatar, ListItemButton, ListItemText, Skeleton} from "@mui/material";
 import Image from "next/image";
+import {fontWeight} from "@mui/system";
 
 export default function PaymentsHistory({ isPageLoaded, paymentsYesterday, sumYesterday, paymentsToday, sumToday, depositsToday, handleOpenCheck }: any) {
     return (
@@ -29,6 +30,7 @@ export default function PaymentsHistory({ isPageLoaded, paymentsYesterday, sumYe
                                 className='pGrey'
                                 style={{
                                     fontSize: 18,
+                                    fontWeight: 200,
                                 }}
                             >
                                 {sumToday} ₽
@@ -123,6 +125,7 @@ export default function PaymentsHistory({ isPageLoaded, paymentsYesterday, sumYe
                     className='pGrey'
                     style={{
                         fontSize: 18,
+                        fontWeight: 200,
                     }}
                 >
                     {sumYesterday} ₽
