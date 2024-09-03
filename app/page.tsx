@@ -238,7 +238,6 @@ export default function Home() {
     const pageWidth: any = useScreenWidth();
     const pageHeight: any = 807;
 
-// Your scaling logic
     useEffect(() => {
         const updateScale = () => {
             const screenWidth: any = window.innerWidth;
@@ -248,7 +247,7 @@ export default function Home() {
             let newScale: any = Math.min(scaleX, scaleY);
 
             if (window.innerWidth < 480) {
-                newScale = Math.min(scaleX, 1);
+                newScale = screenWidth / pageWidth;
             } else {
                 newScale = Math.min(scaleX, scaleY);
 
@@ -325,8 +324,9 @@ export default function Home() {
     return (
         <Box
             sx={{
-                margin: window.innerWidth < 480 ? 0 : '0 auto',
+                margin: window.innerWidth < 480 ? '0 auto' : '0 auto',
                 alignSelf: window.innerWidth < 480 ? 'start' : 'center',
+                transformOrigin: 'top'
             }}
         >
             <Controls
