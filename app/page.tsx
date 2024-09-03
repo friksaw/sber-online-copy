@@ -57,7 +57,7 @@ export default function Home() {
             name: 'Ирина Юрьевна Е.',
             desc: 'Клиенту Сбера',
             sum: '9 000',
-            person: '/images/history/sber.svg',
+            person: '/images/avatars/sber.svg',
         },
         {
             name: 'Полина Петровна И.',
@@ -81,7 +81,7 @@ export default function Home() {
             name: 'Владимир Дмитриевич Д.',
             desc: 'Клиенту Сбера',
             sum: '500',
-            person: '/images/history/sber.svg',
+            person: '/images/avatars/example1.jpg',
         },
         {
             name: 'Полина Петровна И.',
