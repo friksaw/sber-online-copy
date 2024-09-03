@@ -99,7 +99,7 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                         }}
                     />
                     <BottomNavigationAction
-                        label="Ассистент"
+                        label={<p style={{opacity: 0.4, fontSize: 12}}>Ассистент</p>}
                         icon={
                             <Image
                                 src="/images/bottomNav/assistant.svg"
@@ -107,7 +107,7 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                                 height={27}
                                 alt=''
                                 style={{
-                                    marginTop: -4
+                                    marginTop: -4,
                                 }}
 
                             />
@@ -117,14 +117,12 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                             '&.MuiButtonBase-root': {
                                 color: 'white',
                                 fontSize: 8,
-                                opacity: 0.4,
                                 justifyContent: 'space-between',
                                 padding: '8px 0',
                                 transform: 'none',
                             },
                             '&.Mui-selected': {
                                 color: 'white',
-                                opacity: 1,
                                 transform: 'none',
                             },
                         }}

@@ -241,23 +241,25 @@ export default function Home() {
 // Your scaling logic
     useEffect(() => {
         const updateScale = () => {
-            const screenWidth = window.innerWidth;
-            const screenHeight = window.innerHeight;
+            const screenWidth: any = window.innerWidth;
+            const screenHeight: any = window.innerHeight;
+            const scaleX: any = screenWidth / pageWidth;
+            const scaleY: any = screenHeight / pageHeight;
+            let newScale: any = Math.min(scaleX, scaleY);
 
-            // Всегда масштабируем по высоте
-            const scaleY = screenHeight / pageHeight;
+            if (window.innerWidth < 480) {
+                newScale = Math.min(scaleX, 1);
+            } else {
+                newScale = Math.min(scaleX, scaleY);
 
-            // Масштабирование по ширине только если ширина экрана меньше 480px
-            const scaleX = screenWidth < 480 ? screenWidth / pageWidth : scaleY;
-
-            // Выбираем наименьший коэффициент масштабирования, чтобы контент поместился полностью
-            const newScale = Math.min(scaleX, scaleY);
-
+            }
+            // Assuming you have a 'setScale' function defined elsewhere
             setScale(newScale);
         };
 
-        updateScale();
+        updateScale(); // Initial setup on component mount
         window.addEventListener('resize', updateScale);
+
         return () => window.removeEventListener('resize', updateScale);
     }, [window.innerWidth, pageWidth, pageHeight]);
 
