@@ -22,7 +22,7 @@ export default function PaymentsHistory({ isPageLoaded, paymentsYesterday, sumYe
                             padding: '0 18px 4px 18px',
                         }}
                     >
-                        <h3>Сегодня</h3>
+                        <h3 style={{ fontSize: 18}}>Сегодня</h3>
                         {
                             isPageLoaded ?
                             <p
@@ -116,7 +116,7 @@ export default function PaymentsHistory({ isPageLoaded, paymentsYesterday, sumYe
                     padding: '0 18px 4px 18px',
                 }}
             >
-                <h3>Вчера</h3>
+                <h3 style={{ fontSize: 18}}>Вчера</h3>
                 {
                     isPageLoaded ?
                 <p
