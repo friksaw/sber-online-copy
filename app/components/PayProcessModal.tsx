@@ -364,7 +364,7 @@ const PayProcessModal = ({
                                 alignItems: 'center',
                                 height: 56,
                                 backgroundColor: '#1E1E1E',
-                                width: pageWidth,
+                                width: `calc(${pageWidth}px + 62px)`,
                                 paddingTop: 12,
                             }}
                         >
@@ -416,7 +416,7 @@ const PayProcessModal = ({
                                         backgroundColor: '#ffffff',
                                         borderRadius: 5,
                                         color: '#000000',
-                                        paddingBottom: 0
+                                        paddingBottom: 0,
                                     }}
                                 >
                                     <div
@@ -425,7 +425,7 @@ const PayProcessModal = ({
                                             display: 'flex',
                                             flexDirection: 'column',
                                             alignItems: 'center',
-                                            paddingBottom: 8
+                                            paddingBottom: 8,
                                         }}
                                     >
 
