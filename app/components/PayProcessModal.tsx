@@ -575,10 +575,10 @@ const PayProcessModal = ({
                                 <a
                                     style={{
                                         backgroundColor: !isCheckLoaded ? '#1E1E1E' : '#148F2A',
-
+                                        marginBottom: 56,
+                                        marginTop: !isCheckLoaded ? '592px' : 8,
                                         borderRadius: 12,
                                         height: 48,
-                                        margin: '8px 0 56px 0',
                                         width: '100%',
                                         textAlign: 'center',
                                         display: 'flex',
