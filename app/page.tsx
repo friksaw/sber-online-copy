@@ -238,21 +238,14 @@ export default function Home() {
 // Your scaling logic
     useEffect(() => {
         const updateScale = () => {
-            const screenWidth: any = window.innerWidth;
-            const screenHeight: any = window.innerHeight;
-            const scaleX: any = screenWidth / pageWidth;
-            const scaleY: any = screenHeight / pageHeight;
-            let newScale: any = Math.min(scaleX, scaleY);
+            const screenWidth = window.innerWidth;
+            const screenHeight = window.innerHeight;
+            const scaleX = screenWidth / pageWidth;
+            const scaleY = screenHeight / pageHeight;
 
-            if (window.innerWidth < 480) {
-                newScale = Math.min(scaleX, 1);
-            } else {
-                newScale = Math.min(scaleX, scaleY);
+            let newScale = screenWidth < 480 ? scaleX : Math.min(scaleX, scaleY);
 
-            }
-
-
-            // Assuming you have a 'setScale' function defined elsewhere
+            // Set the scale using setScale or your custom function
             setScale(newScale);
         };
 
@@ -260,7 +253,7 @@ export default function Home() {
         window.addEventListener('resize', updateScale);
 
         return () => window.removeEventListener('resize', updateScale);
-    }, [window.innerWidth]);
+    }, [window.innerWidth, pageWidth, pageHeight]);
 
     const shuffleYesterdayMessages: any = () => {
         const shuffledPayments: any = [...paymentsYesterday];

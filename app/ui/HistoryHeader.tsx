@@ -18,7 +18,6 @@ export default function HistoryHeader({ sumToday, depositsToday }: any) {
                     width={37}
                     height={37}
                     alt=''
-
                 />
                 <div
                     style={{

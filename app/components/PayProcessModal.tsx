@@ -230,6 +230,7 @@ const PayProcessModal = ({
                                 width: 306,
                                 backgroundColor: '#0E0E0E',
                                 borderRadius: 16,
+                                position: 'relative',
                             }}
 
                         >
@@ -245,7 +246,9 @@ const PayProcessModal = ({
                             </div>
                             <div
                                 style={{
-                                    marginTop: -40
+                                    marginTop: -40,
+                                    position: 'absolute',
+                                    bottom: 12,
                                 }}
                             >
                                 <h3>
@@ -349,16 +352,11 @@ const PayProcessModal = ({
                 <Slide direction="left" in={isCheckOpen} mountOnEnter unmountOnExit>
                     <Box
                         sx={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            transform: 'translate(-20%, -50%)',
-
                             width: `calc(${pageWidth}px + 60px)`,
                             height: '100%',
-                            bgcolor: 'background.paper',
-                            boxShadow: 24,
                         }}
                     >
+
                         <div
                             style={{
                                 display: 'flex',
@@ -366,6 +364,7 @@ const PayProcessModal = ({
                                 alignItems: 'center',
                                 height: 56,
                                 backgroundColor: '#1E1E1E',
+                                width: `calc(${pageWidth}px + 60px)`,
                                 paddingTop: 12,
                             }}
                         >
