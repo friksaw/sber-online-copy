@@ -38,6 +38,9 @@ const PayProcessModal = ({
 
                              changePaySenderBankName,
                              paySenderBankName,
+
+                             changePayCommission,
+                             payCommission,
                          }: any) => {
     const [isSuccessPayModalOpen, setIsSuccessPayModalOpen]: any = useState(false);
     const [expanded1, setExpanded1] = useState(false);
@@ -164,6 +167,17 @@ const PayProcessModal = ({
                         />
                         <TextField
                             id="outlined-basic"
+                            label="Комиссия"
+                            variant="outlined"
+                            value={payCommission}
+                            style={{
+                                width: '100%',
+                                marginBottom: 20,
+                            }}
+                            onChange={(event): any => changePayCommission(event?.target.value)}
+                        />
+                        <TextField
+                            id="outlined-basic"
                             label="Номер получателя"
                             variant="outlined"
                             value={payPhone}
@@ -267,6 +281,7 @@ const PayProcessModal = ({
                                     display: 'flex',
                                     flexDirection: 'row',
                                     justifyContent: 'center',
+
                                 }}
                             >
                                 <div style={gradientStyle1}></div>
@@ -562,7 +577,7 @@ const PayProcessModal = ({
                                                         Комиссия
                                                     </p>
                                                     <p>
-                                                        0,00 ₽
+                                                        {payCommission},00 ₽
                                                     </p>
                                                     <p
                                                         className='pGrey'
@@ -703,7 +718,7 @@ const PayProcessModal = ({
                                                         Комиссия
                                                     </p>
                                                     <p>
-                                                        0,00 ₽
+                                                        {changePayCommission},00 ₽
                                                     </p>
                                                     <p
                                                         className='pGrey'

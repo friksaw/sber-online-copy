@@ -46,6 +46,7 @@ export default function Home() {
     const [paySenderBankNum, setPaySenderBankNum]: any = useState('5423');
 
     const [paySenderBankName, setPaySenderBankName]: any = useState('Тинькофф Банк');
+    const [payСommission, setPayСommission]: any = useState(0);
 
 
     const [payMethod, setPayMethod]: any = useState(0);
@@ -126,6 +127,9 @@ export default function Home() {
     };
     const changePayMethod: any = (newMethod: any) => {
         setPayMethod(newMethod);
+    };
+    const changePayCommission: any = (newCommission: any) => {
+        setPayСommission(newCommission);
     };
 
     const changePayName: any = (newName: any) => {
@@ -404,6 +408,9 @@ export default function Home() {
 
                         changePaySenderBankName={changePaySenderBankName}
                         paySenderBankName={paySenderBankName}
+
+                        changePayCommission={changePayCommission}
+                        payCommission={changePayCommission}
 
                     />
                     <div>{renderPage()}</div>
