@@ -10,16 +10,16 @@ export default function MainStats({ expenses, month }: any) {
     useEffect(() => {
         // Calculate transactionsPart whenever expenses changes
         const calculateTransactionsPart = () => {
-            const parsedExpenses = Math.floor(parseFloat(expenses.replace(/\s/g, '')));
-            const newTransactionsPart = 0.7 * parsedExpenses;
-            const newEduPart = parsedExpenses - newTransactionsPart;
+            const parsedExpenses: any = Math.floor(parseFloat(expenses.replace(/\s/g, '')));
+            const newTransactionsPart: any = 0.7 * parsedExpenses;
+            const newEduPart: any = parsedExpenses - newTransactionsPart;
 
             // Преобразуем в целое число и форматируем
-            const formattedTransactionsPart = Math.floor(newTransactionsPart).toLocaleString('ru-RU', {
+            const formattedTransactionsPart: any = Math.floor(newTransactionsPart).toLocaleString('ru-RU', {
                 useGrouping: true,
                 separator: ' '
             });
-            const formattedEduPart = Math.floor(newEduPart).toLocaleString('ru-RU', {
+            const formattedEduPart: any = Math.floor(newEduPart).toLocaleString('ru-RU', {
                 useGrouping: true,
                 separator: ' '
             });
