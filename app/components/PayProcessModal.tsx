@@ -39,32 +39,38 @@ const PayProcessModal = ({
 
     const toggleExpand = () => {
         setExpanded1(!expanded1);
-        setExpanded2(!expanded2);
+        ;
+        setTimeout(() => setExpanded2(!expanded2), 200);
+
     };
 
     const gradientStyle1 = {
-        background: 'linear-gradient(45deg, #9DBB01, #1CA327, #199EA4)',
+        background: 'linear-gradient(45deg, #9DBB01 25%, #1CA327, #199EA4)',
         height: expanded1 ? '50px' : '23px',
         width: '23px',
         transform: 'rotate(-45deg)',
         transition: 'height 0.5s ease',
         borderRadius: 36,
-        marginTop: 24,
-        marginRight: -42,
+        marginTop: 64,
+        marginLeft: -42,
     };
     const gradientStyle2 = {
-        background: 'linear-gradient(45deg, #9DBB01, #1CA327, #199EA4 75%)',
+        background: 'linear-gradient(45deg, #199EA4 5%, #1CA327, #9DBB01)',
         height: expanded2 ? '80px' : 0,
+        opacity: expanded2 ? 1 : 0,
+        transformOrigin: 'top',
         width: '23px',
-        transform: 'rotate(45deg)',
+        transform: 'rotate(45deg) scaleY(-1)',
         translate: 50,
-        transition: 'height 0.5s ease',
+        transition: 'height 0.5s ease, opacity 0.2s ease',
         borderRadius: 36,
-
+        marginTop: 108,
+        marginLeft: -68
     };
 
     const handleSuccessPayModal = () => {
         setIsSuccessPayModalOpen((isSuccessPayModalOpen: any) => !isSuccessPayModalOpen);
+        toggleExpand()
         doPay()
     };
     const closeSuccessPayModal = () => {
@@ -231,14 +237,17 @@ const PayProcessModal = ({
                                 style={{
                                     display: 'flex',
                                     flexDirection: 'row',
+                                    justifyContent: 'center',
                                 }}
                             >
-
-                                <button onClick={toggleExpand}>анимация тест</button>
                                 <div style={gradientStyle1}></div>
                                 <div style={gradientStyle2}></div>
                             </div>
-                            <div>
+                            <div
+                                style={{
+                                    marginTop: -40
+                                }}
+                            >
                                 <h3>
                                     Перевод доставлен
                                 </h3>
