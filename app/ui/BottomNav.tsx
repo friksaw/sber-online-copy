@@ -26,7 +26,6 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                     maxWidth: pageWidth,
                     zIndex: 10000000000000
                 }}
-                elevation={0}
             >
                 <BottomNavigation
                     showLabels

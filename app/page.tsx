@@ -328,9 +328,9 @@ export default function Home() {
     return (
         <Box
             sx={{
-                margin: window.innerWidth < 480 ? 0 : '0 auto',
-                alignSelf: window.innerWidth < 480 ? 'start' : 'center',
-                transformOrigin: 'left'
+                margin: window.innerWidth < 480 ? '0 auto' : '0 auto',
+                alignSelf: window.innerWidth < 480 ? 'end' : 'center',
+                transformOrigin: 'right'
             }}
         >
             <Controls
