@@ -44,6 +44,7 @@ export default function Home() {
     const [payResBankNum, setPayResBankNum]: any = useState('9876');
     const [paySenderName, setPaySenderName]: any = useState('3456');
     const [paySenderBankNum, setPaySenderBankNum]: any = useState('5423');
+    const [payMethod, setPayMethod]: any = useState('Перевод по номеру телефона');
 
 
     const [paymentsYesterday, setPaymentsYesterday]: any = useState([
@@ -118,6 +119,9 @@ export default function Home() {
     };
     const changePaySum: any = (newSum: any) => {
         setPaySum(newSum);
+    };
+    const changePayMethod: any = (newMethod: any) => {
+        setPayMethod(newMethod);
     };
 
     const changePayName: any = (newName: any) => {
@@ -385,6 +389,9 @@ export default function Home() {
                         changePayResBankNum={changePayResBankNum}
                         changePaySenderName={changePaySenderName}
                         changePaySenderBankNum={changePaySenderBankNum}
+
+                        changePayMethod={changePayMethod}
+                        payMethod={payMethod}
 
                     />
                     <div>{renderPage()}</div>

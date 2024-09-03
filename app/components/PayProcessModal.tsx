@@ -32,6 +32,9 @@ const PayProcessModal = ({
                              changePaySenderBankNum,
                              changePaySenderName,
                              changePayResBankNum,
+
+                             changePayMethod,
+                             payMethod,
                          }: any) => {
     const [isSuccessPayModalOpen, setIsSuccessPayModalOpen]: any = useState(false);
     const [expanded1, setExpanded1] = useState(false);
@@ -133,6 +136,17 @@ const PayProcessModal = ({
                                 marginBottom: 20,
                             }}
                             onChange={(event): any => changePayName(event?.target.value)}
+                        />
+                        <TextField
+                            id="outlined-basic"
+                            label="Перевод клиенту Сбербанка / Перевод с карты на карту / Перевод по номеру телефона"
+                            variant="outlined"
+                            value={payMethod}
+                            style={{
+                                width: '100%',
+                                marginBottom: 20,
+                            }}
+                            onChange={(event): any => changePayMethod(event?.target.value)}
                         />
                         <TextField
                             id="outlined-basic"
@@ -473,7 +487,7 @@ const PayProcessModal = ({
                                             Операция
                                         </p>
                                         <p>
-                                            Перевод клиенту Сбербанка
+                                            {payMethod}
                                         </p>
                                         <p
                                             className='pGrey'
