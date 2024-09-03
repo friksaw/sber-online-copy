@@ -484,7 +484,7 @@ export default function Home() {
                         style={{
                         }}
                     />
-                    <p style={{fontWeight: 400, fontSize: 12, marginTop: 6, marginLeft: 20}}>{currentTime}</p>
+                    <p style={{fontWeight: 400, fontSize: 12, marginTop: 6, marginLeft: -16}}>{currentTime}</p>
                     <Image
                         src="/images/bgs/pbg1.png"
                         width={120}
