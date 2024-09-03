@@ -7,39 +7,38 @@ import {useEffect, useState} from "react";
 export default function MainStats({ expenses, month }: any) {
     const [transactionsPart, setTransactionsPart]: any = useState('');
     const [eduPart, setEduPart]: any = useState('');
-
     useEffect(() => {
         // Calculate transactionsPart whenever expenses changes
         const calculateTransactionsPart = () => {
-            const parsedExpenses: any = Math.floor(parseFloat(expenses.replace(/\s/g, '')));
-            const newTransactionsPart: any = 0.7 * parsedExpenses;
-            const newEduPart: any = parsedExpenses - newTransactionsPart;
+            const parsedExpenses = Math.floor(parseFloat(expenses.replace(/\s/g, '')));
+            const newTransactionsPart = 0.7 * parsedExpenses;
+            const newEduPart = parsedExpenses - newTransactionsPart;
 
-            const formattedTransactionsPart: any = newTransactionsPart.toLocaleString('ru-RU', {
-                useGrouping: true, // Enable thousands separator
-                separator: ' ' // Set space as the separator
+            // Преобразуем в целое число и форматируем
+            const formattedTransactionsPart = Math.floor(newTransactionsPart).toLocaleString('ru-RU', {
+                useGrouping: true,
+                separator: ' '
             });
-            const formattedEduPart: any = newEduPart.toLocaleString('ru-RU', {
-                useGrouping: true, // Enable thousands separator
-                separator: ' ' // Set space as the separator
+            const formattedEduPart = Math.floor(newEduPart).toLocaleString('ru-RU', {
+                useGrouping: true,
+                separator: ' '
             });
+
             setTransactionsPart(formattedTransactionsPart);
             setEduPart(formattedEduPart);
         };
 
-        // Initial calculation
         calculateTransactionsPart();
 
-        // Update transactionsPart when expenses changes
         const expensesChangeListener = () => {
             calculateTransactionsPart();
         }
         window.addEventListener('resize', expensesChangeListener);
 
-        // Clean up the event listener when the component unmounts
         return () => window.removeEventListener('resize', expensesChangeListener);
 
     }, [expenses]);
+
 
     return (
         <div

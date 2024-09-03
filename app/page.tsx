@@ -40,6 +40,11 @@ export default function Home() {
     const [isCheckOpen, setIsCheckOpen]: any = useState(0);
     const [checkData, setCheckData]: any = useState([]);
 
+    const [payPhone, setPayPhone]: any = useState('');
+    const [payResBankNum, setPayResBankNum]: any = useState('');
+    const [paySenderName, setPaySenderName]: any = useState('');
+    const [paySenderBankNum, setPaySenderBankNum]: any = useState('');
+
 
     const [paymentsYesterday, setPaymentsYesterday]: any = useState([
         {
@@ -116,6 +121,18 @@ export default function Home() {
     };
     const changeSumYesterday: any = (sumYesterday: any) => {
         setSumYesterday(sumYesterday);
+    };
+    const changePayPhone: any = (newPayPhone: any) => {
+        setPayPhone(newPayPhone);
+    };
+    const changePaySenderBankNum: any = (newPaySenderBankNum: any) => {
+        setPaySenderBankNum(newPaySenderBankNum);
+    };
+    const changePaySenderName: any = (newPaySenderName: any) => {
+        setPaySenderName(newPaySenderName);
+    };
+    const changePayResBankNum: any = (newPayResBankName: any) => {
+        setPayResBankNum(newPayResBankName);
     };
 
 
@@ -277,6 +294,7 @@ export default function Home() {
                     paymentsToday={paymentsToday}
                     sumToday={sumToday}
                     depositsToday={depositsToday}
+                    handleOpenCheck={handleOpenCheck}
                 />;
             default:
                 return <Main
@@ -346,6 +364,16 @@ export default function Home() {
                         isCheckOpen={isCheckOpen}
                         handleOpenCheck={handleOpenCheck}
                         checkData={checkData}
+
+                        payPhone={payPhone}
+                        payResBankNum={payResBankNum}
+                        paySenderName={paySenderName}
+                        paySenderBankNum={paySenderBankNum}
+
+                        changePayPhone={changePayPhone}
+                        changePayResBankNum={changePayResBankNum}
+                        changePaySenderName={changePaySenderName}
+                        changePaySenderBankNum={changePaySenderBankNum}
 
                     />
                     <div>{renderPage()}</div>

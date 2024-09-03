@@ -22,6 +22,16 @@ const PayProcessModal = ({
                              isCheckOpen,
                              handleOpenCheck,
                              checkData,
+
+                             payPhone,
+                             payResBankNum,
+                             paySenderName,
+                             paySenderBankNum,
+
+                             changePayPhone,
+                             changePaySenderBankNum,
+                             changePaySenderName,
+                             changePayResBankNum,
                          }: any) => {
     const [isSuccessPayModalOpen, setIsSuccessPayModalOpen]: any = useState(false);
     const [expanded1, setExpanded1] = useState(false);
@@ -109,6 +119,34 @@ const PayProcessModal = ({
                             variant="outlined"
                             value={payName}
                             onChange={(event): any => changePayName(event?.target.value)}
+                        />
+                        <TextField
+                            id="outlined-basic"
+                            label="Номер получателя"
+                            variant="outlined"
+                            value={payPhone}
+                            onChange={(event): any => changePayPhone(event?.target.value)}
+                        />
+                        <TextField
+                            id="outlined-basic"
+                            label="4 цифры отправителя"
+                            variant="outlined"
+                            value={paySenderBankNum}
+                            onChange={(event): any => changePaySenderBankNum(event?.target.value)}
+                        />
+                        <TextField
+                            id="outlined-basic"
+                            label="Кто переводит"
+                            variant="outlined"
+                            value={paySenderName}
+                            onChange={(event): any => changePaySenderName(event?.target.value)}
+                        />
+                        <TextField
+                            id="outlined-basic"
+                            label="4 цифры получателя"
+                            variant="outlined"
+                            value={payResBankNum}
+                            onChange={(event): any => changePayResBankNum(event?.target.value)}
                         />
                         <a onClick={handleSuccessPayModal} style={{color: 'black'}}>
                             перевести
@@ -295,7 +333,7 @@ const PayProcessModal = ({
                                 alignItems: 'center',
                                 height: 56,
                                 backgroundColor: '#1E1E1E',
-                                paddingTop: 8,
+                                paddingTop: 12,
                             }}
                         >
                             <a
@@ -317,7 +355,7 @@ const PayProcessModal = ({
                             <p
                                 style={{
                                     fontSize: 18,
-                                    fontWeight: 400,
+                                    fontWeight: 500,
                                     marginLeft: 28
                                 }}
                             >
@@ -340,11 +378,11 @@ const PayProcessModal = ({
                                     display: 'flex',
                                     flexDirection: 'column',
                                     padding: '24px 20px',
-                                    height: '100%',
                                     width: '100%',
                                     backgroundColor: '#ffffff',
                                     borderRadius: 5,
                                     color: '#000000',
+                                    paddingBottom: 0
                                 }}
                             >
                                 <div
@@ -406,14 +444,13 @@ const PayProcessModal = ({
                                     <p
                                         className='pGrey'
                                         style={{
-                                            marginTop: 20,
                                             fontSize: 14,
                                         }}
                                     >
                                         ФИО Получателя
                                     </p>
                                     <p>
-                                        Александр Владимирович Х.
+                                        {payName}
                                     </p>
                                     <p
                                         className='pGrey'
@@ -424,7 +461,7 @@ const PayProcessModal = ({
                                         Телефон получателя
                                     </p>
                                     <p>
-                                        +7(905) 034-24-85
+                                        {payPhone}
                                     </p>
                                     <p
                                         className='pGrey'
@@ -435,7 +472,7 @@ const PayProcessModal = ({
                                         Номер счёта получателя
                                     </p>
                                     <p>
-                                        8465
+                                        {payResBankNum}
                                     </p>
                                     <p
                                         className='pGrey'
@@ -447,7 +484,7 @@ const PayProcessModal = ({
                                         ФИО отправителя
                                     </p>
                                     <p>
-                                        Людмила Олеговна Д.
+                                        {paySenderName}
                                     </p>
                                     <p
                                         className='pGrey'
@@ -458,7 +495,7 @@ const PayProcessModal = ({
                                         Счёт отправителя
                                     </p>
                                     <p>
-                                        2820
+                                        {paySenderBankNum}
                                     </p>
                                     <p
                                         className='pGrey'
@@ -469,7 +506,7 @@ const PayProcessModal = ({
                                         Сумма перевода
                                     </p>
                                     <p>
-                                        {paySum}
+                                        {paySum} ₽
                                     </p>
                                     <p
                                         className='pGrey'

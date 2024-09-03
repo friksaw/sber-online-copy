@@ -4,7 +4,7 @@ import * as React from "react";
 import {Avatar, List, ListItemAvatar, ListItemButton, ListItemText} from "@mui/material";
 import Image from "next/image";
 
-export default function PaymentsHistory({ paymentsYesterday, sumYesterday, paymentsToday, sumToday, depositsToday }: any) {
+export default function PaymentsHistory({ paymentsYesterday, sumYesterday, paymentsToday, sumToday, depositsToday, handleOpenCheck }: any) {
     return (
         <div>
             {
@@ -38,6 +38,7 @@ export default function PaymentsHistory({ paymentsYesterday, sumYesterday, payme
                             sx={{
                                 height: 64,
                             }}
+                            onClick={handleOpenCheck}
                         >
                             <ListItemAvatar sx={{ alignSelf: 'start' }}>
                                 <Avatar alt="Profile Picture" src={person} />
@@ -117,6 +118,7 @@ export default function PaymentsHistory({ paymentsYesterday, sumYesterday, payme
                         sx={{
                             height: 64,
                         }}
+                        onClick={handleOpenCheck}
                     >
                         <ListItemAvatar sx={{alignSelf: 'start'}}>
                             <Avatar alt="Profile Picture" src={person}/>
