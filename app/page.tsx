@@ -219,7 +219,7 @@ export default function Home() {
 
         useEffect(() => {
             const handleResize: any = () => {
-                setScreenWidth(window.innerWidth < 480 ? 'calc(100vw - 66px)' : 363);
+                setScreenWidth(window.innerWidth < 480 ? 363 : 363);
             };
 
             handleResize(); // Initial setup on component mount
