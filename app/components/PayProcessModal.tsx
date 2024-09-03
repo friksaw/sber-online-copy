@@ -496,7 +496,7 @@ const PayProcessModal = ({
                                         Номер счёта получателя
                                     </p>
                                     <p>
-                                        {payResBankNum}
+                                        **** {payResBankNum}
                                     </p>
                                     <p
                                         className='pGrey'
@@ -519,7 +519,7 @@ const PayProcessModal = ({
                                         Счёт отправителя
                                     </p>
                                     <p>
-                                        {paySenderBankNum}
+                                        **** {paySenderBankNum}
                                     </p>
                                     <p
                                         className='pGrey'
@@ -583,6 +583,7 @@ const PayProcessModal = ({
                                         justifyContent: 'center',
                                         cursor: 'pointer',
                                     }}
+                                    onClick={goToHistory}
                                 >
                                     Сохранить или отправить
                                 </a>
