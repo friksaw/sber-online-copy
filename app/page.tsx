@@ -21,6 +21,7 @@ import PayProcessModal from "@/app/components/PayProcessModal";
 export default function Home() {
     const [currentPage, setCurrentPage]: any = useState(0);
     const [isControlsOpen, setIsControlsOpen]: any = useState(0);
+    const [currentTime, setCurrentTime] = useState<string>('');
 
     const [balance, setBalance]: any = useState('4 062,00');
     const [expenses, setExpenses]: any = useState('72 048');
@@ -51,7 +52,21 @@ export default function Home() {
 
     const [payMethod, setPayMethod]: any = useState(0);
 
+    useEffect(() => {
+        const updateCurrentTime = () => {
+            const date = new Date();
+            const hours = date.getHours();
+            const minutes = date.getMinutes();
+            const formattedTime = `${hours}:${minutes < 10 ? '0' : ''}${minutes}`;
+            setCurrentTime(formattedTime);
+        };
 
+        // Update current time initially and every minute
+        updateCurrentTime();
+        const intervalId = setInterval(updateCurrentTime, 60000); // Update every minute
+
+        return () => clearInterval(intervalId); // Cleanup interval on unmount
+    }, []);
     const [paymentsYesterday, setPaymentsYesterday]: any = useState([
         {
             name: 'Ирина Юрьевна Е.',
@@ -452,11 +467,32 @@ export default function Home() {
             >
                 <div
                     style={{
-                        height: 24,
+                        display: 'flex',
+                        flexDirection: 'row',
+                        justifyContent: 'space-between',
+                        height: 28,
                         width: pageWidth,
-                        backgroundColor: 'black',
+                        position: 'absolute',
+                        backgroundColor: 'black'
                     }}
                 >
+                    <Image
+                        src="/images/bgs/pbg2.png"
+                        width={124}
+                        height={36}
+                        alt=''
+                        style={{
+                        }}
+                    />
+                    <p style={{fontWeight: 400, fontSize: 12, marginTop: 6, marginLeft: 20}}>{currentTime}</p>
+                    <Image
+                        src="/images/bgs/pbg1.png"
+                        width={120}
+                        height={44}
+                        alt=''
+                        style={{
+                        }}
+                    />
                 </div>
                 <BottomNav
                     currentPage={currentPage}
