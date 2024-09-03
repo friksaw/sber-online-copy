@@ -62,13 +62,13 @@ export default function PaymentsHistory({ isPageLoaded, paymentsYesterday, sumYe
                                 <div>
                                     {
                                         isPageLoaded ?
-                                        <p style={{ textWrap: 'nowrap' }}>{name}</p>   : <Skeleton variant="rectangular" width={320} height={24}
-                                                                                               style={{borderRadius: 4}}/>}
+                                        <p style={{ textWrap: 'nowrap' }}>{name}</p>   : <Skeleton variant="rectangular" width={120} height={24}
+                                                                                               style={{borderRadius: 4, marginBottom: 4}}/>}
                                         {
                                             isPageLoaded ?
                                                 <p className="pGrey" style={{ marginTop: 4 }}>
                                                     {desc}
-                                                </p>   : <Skeleton variant="rectangular" width={100} height={24}
+                                                </p>   : <Skeleton variant="rectangular" width={100} height={20}
                                                                    style={{borderRadius: 4}}/>
                                         }
                                 </div>
@@ -82,9 +82,13 @@ export default function PaymentsHistory({ isPageLoaded, paymentsYesterday, sumYe
                                         flexDirection: 'column',
                                     }}
                                 >
+                                    {
+                                        isPageLoaded ?
                                     <p style={{ textWrap: 'nowrap' }}>
                                         {sum} ₽
-                                    </p>
+                                    </p>   : <Skeleton variant="rectangular" width={60} height={24}
+                                                       style={{borderRadius: 4}}/>
+                                    }
                                     {!sum.startsWith('+') && (
                                         <Image
                                             src="/images/history/repeat.svg"
@@ -113,6 +117,8 @@ export default function PaymentsHistory({ isPageLoaded, paymentsYesterday, sumYe
                 }}
             >
                 <h3>Вчера</h3>
+                {
+                    isPageLoaded ?
                 <p
                     className='pGrey'
                     style={{
@@ -120,7 +126,8 @@ export default function PaymentsHistory({ isPageLoaded, paymentsYesterday, sumYe
                     }}
                 >
                     {sumYesterday} ₽
-                </p>
+                </p>   : <Skeleton variant="rectangular" width={100} height={24}
+                                   style={{borderRadius: 4}}/>}
             </div>
             <List>
                 {paymentsYesterday.map(({name, desc, sum, person}: any, index: any) => (
@@ -148,8 +155,15 @@ export default function PaymentsHistory({ isPageLoaded, paymentsYesterday, sumYe
                             }}
                         >
                             <div>
-                                <p style={{textWrap: 'nowrap'}}>{name}</p>
-                                <p className='pGrey' style={{marginTop: 4}}>{desc}</p>
+                                {
+                                    isPageLoaded ?
+                                <p style={{textWrap: 'nowrap'}}>{name}</p>  : <Skeleton variant="rectangular" width={120} height={24}
+                                                                                        style={{borderRadius: 4, marginBottom: 4}}/>
+                                }
+                                {
+                                    isPageLoaded ? <p className='pGrey' style={{marginTop: 4}}>{desc}</p>  : <Skeleton variant="rectangular" width={100} height={20}
+                                                                                                                      style={{borderRadius: 4}}/>
+                                }
                             </div>
                             <div
                                 style={{
@@ -161,7 +175,13 @@ export default function PaymentsHistory({ isPageLoaded, paymentsYesterday, sumYe
                                     flexDirection: 'column',
                                 }}
                             >
-                                <p style={{textWrap: 'nowrap'}}>{sum} ₽</p>
+                                {
+                                    isPageLoaded ?
+                                <p style={{textWrap: 'nowrap'}}>{sum} ₽</p>  : <Skeleton variant="rectangular" width={60} height={24}
+                                                                                         style={{borderRadius: 4}}/>
+                                }
+                                {
+                                    isPageLoaded ?
                                 <Image
                                     src="/images/history/repeat.svg"
                                     width={32}
@@ -171,7 +191,8 @@ export default function PaymentsHistory({ isPageLoaded, paymentsYesterday, sumYe
                                         alignSelf: 'end',
                                     }}
                                     alt=''
-                                />
+                                />  : ''
+                                }
                             </div>
                         </div>
                     </ListItemButton>

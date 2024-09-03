@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Image from "next/image";
+import {Skeleton} from "@mui/material";
 
 export default function HistoryHeader({ sumToday, depositsToday, isPageLoaded }: any) {
     return (
@@ -170,6 +171,8 @@ export default function HistoryHeader({ sumToday, depositsToday, isPageLoaded }:
                                     }}
                                 />
                             </div>
+                            {
+                                isPageLoaded ?
                             <p
                                 style={{
                                     fontSize: 18,
@@ -177,6 +180,10 @@ export default function HistoryHeader({ sumToday, depositsToday, isPageLoaded }:
                             >
                                 {sumToday} ₽
                             </p>
+                                    : <Skeleton variant="rectangular" width={80} height={24}
+                                                style={{borderRadius: 4}}/>}
+                            {
+                                isPageLoaded ?
                             <div
                                 style={{
                                     display: 'flex',
@@ -200,7 +207,8 @@ export default function HistoryHeader({ sumToday, depositsToday, isPageLoaded }:
                                 >
                                     зачислений
                                 </p>
-                            </div>
+                            </div> : <Skeleton variant="rectangular" width={120} height={20}
+                                               style={{borderRadius: 4}}/>}
                         </div>
 
                         <div
