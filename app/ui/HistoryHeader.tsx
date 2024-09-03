@@ -113,14 +113,15 @@ export default function HistoryHeader({ sumToday, depositsToday, isPageLoaded, h
                                     width: 96
                                 }}
                             >
-
+                                {
+                                    isPageLoaded ?
                                 <Image
                                     src="/images/history/green-no-eye.svg"
                                     width={24}
                                     height={22}
                                     alt=''
-                                />
-
+                                /> : <Skeleton variant="circular" width={40} height={40} />
+                                }
                                 <Image
                                     src="/images/cross.svg"
                                     width={19}
@@ -128,6 +129,7 @@ export default function HistoryHeader({ sumToday, depositsToday, isPageLoaded, h
                                     alt=''
                                     style={{
                                         marginRight: 8,
+                                        alignSelf: 'start'
                                     }}
                                 />
                             </div>
