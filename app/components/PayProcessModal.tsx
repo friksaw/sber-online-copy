@@ -111,6 +111,10 @@ const PayProcessModal = ({
                             label="Сколько перевести"
                             variant="outlined"
                             value={paySum}
+                            style={{
+                                width: '100%',
+                                marginBottom: 20,
+                            }}
                             onChange={(event): any => changePaySum(event?.target.value)}
                         />
                         <TextField
@@ -118,6 +122,10 @@ const PayProcessModal = ({
                             label="Кому перевести"
                             variant="outlined"
                             value={payName}
+                            style={{
+                                width: '100%',
+                                marginBottom: 20,
+                            }}
                             onChange={(event): any => changePayName(event?.target.value)}
                         />
                         <TextField
@@ -125,6 +133,10 @@ const PayProcessModal = ({
                             label="Номер получателя"
                             variant="outlined"
                             value={payPhone}
+                            style={{
+                                width: '100%',
+                                marginBottom: 20,
+                            }}
                             onChange={(event): any => changePayPhone(event?.target.value)}
                         />
                         <TextField
@@ -132,6 +144,10 @@ const PayProcessModal = ({
                             label="4 цифры отправителя"
                             variant="outlined"
                             value={paySenderBankNum}
+                            style={{
+                                width: '100%',
+                                marginBottom: 20,
+                            }}
                             onChange={(event): any => changePaySenderBankNum(event?.target.value)}
                         />
                         <TextField
@@ -139,6 +155,10 @@ const PayProcessModal = ({
                             label="Кто переводит"
                             variant="outlined"
                             value={paySenderName}
+                            style={{
+                                width: '100%',
+                                marginBottom: 20,
+                            }}
                             onChange={(event): any => changePaySenderName(event?.target.value)}
                         />
                         <TextField
@@ -146,11 +166,15 @@ const PayProcessModal = ({
                             label="4 цифры получателя"
                             variant="outlined"
                             value={payResBankNum}
+                            style={{
+                                width: '100%',
+                                marginBottom: 20,
+                            }}
                             onChange={(event): any => changePayResBankNum(event?.target.value)}
                         />
-                        <a onClick={handleSuccessPayModal} style={{color: 'black'}}>
-                            перевести
-                        </a>
+                        <Button onClick={handleSuccessPayModal}>
+                            Перевести
+                        </Button>
                     </Box>
                 </Slide>
             </Modal>

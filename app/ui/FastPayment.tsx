@@ -37,14 +37,38 @@ export default function FastPayment({ handlePayProcessModal, isPayProcessModalOp
                     paySum={paySum}
                     changePaySum={changePaySum}
                     doPayment={doPayment}
-                    text='Новый перевод'
+                    text={<p style={{
+                        textAlign: 'center',
+                        fontSize: 12,
+                        width: 52,
+                        textWrap: 'nowrap'
+                    }}>Новый<br/>перевод</p>}
                     picture='new'
                 />
-                <FastPaymentButton text='Ирина Юрьевна Е.'/>
-                <FastPaymentButton text='Полина Петровна...'/>
-                <FastPaymentButton text='Леша Досов' picture='/images/avatars/example.jpg'/>
-                <FastPaymentButton text='Полина Петровна...'/>
-                <FastPaymentButton text='Somebody'/>
+                <FastPaymentButton text={<p style={{
+                    textAlign: 'center',
+                    fontSize: 12,
+                    width: 52,
+                    textWrap: 'nowrap'
+                }}>Ирина<br/>Юрьевна Е.</p>}/>
+                <FastPaymentButton text={<p style={{
+                    textAlign: 'center',
+                    fontSize: 12,
+                    width: 52,
+                }}>Полина<br/>Петровна...</p>} />
+                <FastPaymentButton text={<p style={{
+                    textAlign: 'center',
+                    fontSize: 12,
+                    marginLeft: -12,
+                    width: 52,
+                    textWrap: 'nowrap'
+                }}>Леша Досов</p>} picture='/images/avatars/example.jpg'/>
+                <FastPaymentButton text={<p style={{
+                    textAlign: 'center',
+                    fontSize: 12,
+                    width: 52,
+                    textWrap: 'nowrap'
+                }}>Марина</p>}/>
             </div>
 
         </div>

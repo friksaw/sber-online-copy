@@ -60,7 +60,6 @@ export default function FastPaymentButton({ text, picture, handlePayProcessModal
                                     }}
                                 >
                                     ПП
-
                                 </p>
                             </Avatar>
                         </div>
@@ -96,22 +95,17 @@ export default function FastPaymentButton({ text, picture, handlePayProcessModal
                             </Avatar>
                         </Badge>
             }
-            <p
+            <div
                 className='pGrey'
                 style={{
-                    display: '-webkit-box',
-                    WebkitLineClamp: '2',
-                    WebkitBoxOrient: 'vertical',
-                    overflow: 'hidden',
-                    textOverflow: 'ellipsis',
-
                     marginTop: 8,
                     fontSize: 12,
                     width: 52,
+                    textWrap: 'nowrap'
                 }}
             >
                 { text }
-            </p>
+            </div>
 
         </div>
     );
