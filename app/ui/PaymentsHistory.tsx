@@ -1,13 +1,16 @@
 'use client'
 
 import * as React from "react";
-import {Avatar, List, ListItemAvatar, ListItemButton, ListItemText, Skeleton} from "@mui/material";
+import {Avatar, CircularProgress, List, ListItemAvatar, ListItemButton, ListItemText, Skeleton} from "@mui/material";
 import Image from "next/image";
 import {fontWeight} from "@mui/system";
 
 export default function PaymentsHistory({ isPageLoaded, paymentsYesterday, sumYesterday, paymentsToday, sumToday, depositsToday, handleOpenCheck }: any) {
     return (
         <div>
+            {
+                isPageLoaded ?
+                    <div>
             {
                 (parseInt(sumToday) || (parseInt(depositsToday))) ?
                 <div
@@ -205,6 +208,14 @@ export default function PaymentsHistory({ isPageLoaded, paymentsYesterday, sumYe
                     </ListItemButton>
                 ))}
             </List>
+                    </div>:    <CircularProgress
+                        color="success"
+                        sx={{
+                            position: 'absolute',
+                            top: '65%',
+                            left: '45%',
+                        }}
+                    />}
         </div>
     );
 }
