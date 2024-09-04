@@ -560,11 +560,19 @@ const PayProcessModal = ({
                                             height: '100%',
                                         }}
                                     />
-                                    <p
-                                        style={{fontSize: 16, textAlign: 'left', marginLeft: 16}}
+                                    <a
+                                        style={{
+                                            cursor: 'pointer'
+                                        }}
+                                        onClick={handleOpenCheck}
                                     >
-                                        Сохранить чек
-                                    </p>
+                                        <p
+                                            style={{fontSize: 16, textAlign: 'left', marginLeft: 16}}
+                                        >
+                                            Сохранить чек
+                                        </p>
+                                    </a>
+
                                 </div>
 
                             </div>
