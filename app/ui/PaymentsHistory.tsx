@@ -92,7 +92,13 @@ export default function PaymentsHistory({ handleCheckPayModal, isPageLoaded, pay
                                 >
                                     {
                                         isPageLoaded ?
-                                    <p style={{ textWrap: 'nowrap', marginTop: sum.startsWith('+') ? -22 : '' }}>
+                                    <p
+                                        style={{
+                                            textWrap: 'nowrap',
+                                            marginTop: sum.startsWith('+') ? -22 : '',
+                                            color: sum.startsWith('+') ? '#198C2F' : ''
+                                    }}
+                                    >
                                         {sum} ₽
                                     </p>   : <Skeleton variant="rectangular" width={60} height={24}
                                                        style={{borderRadius: 4}}/>

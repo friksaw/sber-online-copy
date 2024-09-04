@@ -117,6 +117,7 @@ const PayProcessModal = ({
                 sx={{
                     display: 'flex',
                     justifyContent: 'center',
+                    paddingTop: 4,
                 }}
             >
                 <Slide direction="left" in={isOpen} mountOnEnter unmountOnExit>
@@ -262,6 +263,7 @@ const PayProcessModal = ({
                 sx={{
                     display: 'flex',
                     justifyContent: 'center',
+                    paddingTop: 4,
                 }}
             >
                 <Slide direction="left" in={isSuccessPayModalOpen} mountOnEnter unmountOnExit>
@@ -410,6 +412,7 @@ const PayProcessModal = ({
                 sx={{
                     display: 'flex',
                     justifyContent: 'center',
+                    paddingTop: 4,
                 }}
             >
                 <Slide direction="left" in={isCheckModalOpen} mountOnEnter unmountOnExit>
@@ -653,6 +656,7 @@ const PayProcessModal = ({
                 sx={{
                     display: 'flex',
                     justifyContent: 'center',
+                    paddingTop: 4,
                 }}
             >
                 <Slide direction="left" in={isCheckOpen} mountOnEnter unmountOnExit>
