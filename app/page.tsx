@@ -94,7 +94,7 @@ export default function Home() {
             payMethod: 1,
         },
         {
-            name: 'Ирина Юрьевна Е.',
+            name: 'Виталий Савин В.',
             desc: 'Клиенту Сбера',
             sum: '120',
             person: '/images/history/sber.svg',
@@ -116,28 +116,28 @@ export default function Home() {
             payMethod: 0,
         },
         {
-            name: 'Полина Петровна И.',
+            name: 'Марина Савина Л.',
             desc: 'В другой банк',
             sum: '600',
             person: '',
             payMethod: 1,
         },
         {
-            name: 'Георгий Янович П.',
+            name: 'Федор Янович П.',
             desc: 'В другой банк',
             sum: '1 220',
             person: '',
             payMethod: 1,
         },
         {
-            name: 'Ирина Юрьевна Е.',
+            name: 'Борис Мушкиновский Е.',
             desc: 'Клиенту Сбера',
             sum: '120',
             person: '/images/history/sber.svg',
             payMethod: 0,
         },
         {
-            name: 'Владимир Дмитриевич Д.',
+            name: 'Владимир Чехов Д.',
             desc: 'Клиенту Сбера',
             sum: '500',
             person: '/images/avatars/example1.jpg',
@@ -145,7 +145,7 @@ export default function Home() {
             isBadged: 1
         },
         {
-            name: 'Полина Петровна И.',
+            name: 'Анастасия Рябова Д.',
             desc: 'Клиенту Сбера',
             sum: '500',
             person: '/images/history/sber.svg',
