@@ -98,8 +98,15 @@ const PayProcessModal = ({
         setIsSuccessPayModalOpen((isSuccessPayModalOpen: any) => !isSuccessPayModalOpen);
     };
     const goToHistory = () => {
-        setIsSuccessPayModalOpen((isSuccessPayModalOpen: any) => !isSuccessPayModalOpen);
-        handleModal()
+        if (isSuccessPayModalOpen) {
+            setIsSuccessPayModalOpen((isSuccessPayModalOpen: any) => !isSuccessPayModalOpen);
+        }
+        if (isOpen) {
+            handleModal()
+        }
+        if (isCheckModalOpen) {
+            handleCheckPayModal()
+        }
         renderPage()
         onChangePage(4)
     };
