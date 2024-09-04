@@ -626,7 +626,6 @@ const PayProcessModal = ({
                                     </a>
                                 </div>
                                 <Menu
-                                    anchorEl={isCheckLangOpen}
                                     open={isCheckLangOpen}
                                     onClose={handleOpenCheckLang}
                                     anchorOrigin={{
@@ -637,7 +636,6 @@ const PayProcessModal = ({
                                         vertical: 'top',
                                         horizontal: 'center',
                                     }}
-                                    getContentAnchorEl={null}
                                     sx={{
                                         backgroundColor: 'rgb(0,0,0,0.5)',
                                         padding: '4px 18px',
