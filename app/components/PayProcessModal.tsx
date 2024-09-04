@@ -328,7 +328,7 @@ const PayProcessModal = ({
                                 textAlign: 'center',
                                 height: '100%',
                                 borderRadius: 16,
-                                marginTop: 100,
+                                marginTop: 140,
 
 
                             }}
@@ -347,7 +347,7 @@ const PayProcessModal = ({
                             <h3
                                 style={{
                                     fontSize: 28,
-                                    marginBottom: 120,
+                                    marginBottom: 140,
                                 }}
                             >
                                 {paySum} ₽
@@ -364,28 +364,28 @@ const PayProcessModal = ({
                                         display: 'flex',
                                         flexDirection: 'row',
                                         width: 172,
-                                        marginLeft: 18,
-                                        marginRight: 18,
+                                        height: '81%',
+                                        marginLeft: 32,
                                         marginBottom: 18,
-                                        height: '100%',
+
                                         backgroundColor: '#1E1E1E',
                                         borderRadius: 12,
+                                        padding: 12,
                                     }}
                                 >
                                     <Image
-                                        src="/images/payment/pCheck.svg"
-                                        width={22}
-                                        height={27}
+                                        src="/images/history/repeat.svg"
+                                        width={46}
+                                        height={30}
                                         alt=''
                                         style={{
-                                            marginBottom: 32,
+                                            height: '100%',
                                         }}
                                     />
                                     <p
-                                        style={{
-                                        }}
+                                        style={{fontSize: 16, textAlign: 'left', marginLeft: 4}}
                                     >
-                                        Сохранить чек
+                                        Повторить перевод
                                     </p>
                                 </div>
                                 <div
@@ -393,32 +393,32 @@ const PayProcessModal = ({
                                         display: 'flex',
                                         flexDirection: 'row',
                                         width: 172,
-                                        height: '100%',
-                                        marginRight: 18,
+                                        marginRight: 32,
+                                        marginLeft: 18,
                                         marginBottom: 18,
-
+                                        height: '81%',
                                         backgroundColor: '#1E1E1E',
                                         borderRadius: 12,
+                                        padding: 12,
+
                                     }}
                                 >
                                     <Image
-                                        src="/images/payment/pInfo.svg"
-                                        width={26}
-                                        height={30}
+                                        src="/images/payment/pCheck.svg"
+                                        width={32}
+                                        height={27}
                                         alt=''
                                         style={{
-                                            marginBottom: 32,
+                                            height: '100%',
                                         }}
                                     />
                                     <p
-                                        style={{
-                                            marginLeft: 32,
-
-                                        }}
+                                        style={{fontSize: 16, textAlign: 'left', marginLeft: 16}}
                                     >
-                                        Подробности операции
+                                        Сохранить чек
                                     </p>
                                 </div>
+
                             </div>
                         </div>
                         <div
@@ -436,10 +436,10 @@ const PayProcessModal = ({
                                     padding: '24px 28px',
                                 }}
                             >
-                                <p style={{ fontWeight: 400, fontSize: 16, marginBottom: 8 }}>
+                                <p style={{fontWeight: 400, fontSize: 16, marginBottom: 8, paddingTop: 28}}>
                                     Перевод зачислится в течение нескольких минут
                                 </p>
-                                <p style={{ fontWeight: 300, fontSize: 14 }} className='pGrey'>
+                                <p style={{fontWeight: 300, fontSize: 14}} className='pGrey'>
                                     В редких случаях срок зачисления увеличивается до нескольких дней
                                 </p>
                             </div>
@@ -447,7 +447,7 @@ const PayProcessModal = ({
                                 style={{
                                     borderTop: '8px solid #0E0E0E',
                                     padding: '24px 28px',
-                            }}
+                                }}
                             >
                                 <h3>
                                     Подробности
