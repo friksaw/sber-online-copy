@@ -549,6 +549,7 @@ const PayProcessModal = ({
                                         backgroundColor: '#1E1E1E',
                                         borderRadius: 12,
                                         padding: 12,
+                                        boxShadow: '-4px 4px 8px rgba(0, 0, 0, 0.2)',
                                     }}
                                 >
                                     <Image
@@ -561,7 +562,11 @@ const PayProcessModal = ({
                                         }}
                                     />
                                     <p
-                                        style={{fontSize: 16, textAlign: 'left', marginLeft: 4}}
+                                        style={{
+                                            fontSize: 16,
+                                            textAlign: 'left',
+                                            marginLeft: 4,
+                                        }}
                                     >
                                         Повторить перевод
                                     </p>
@@ -578,6 +583,7 @@ const PayProcessModal = ({
                                         backgroundColor: '#1E1E1E',
                                         borderRadius: 12,
                                         padding: 12,
+                                        boxShadow: '-4px 4px 8px rgba(0, 0, 0, 0.2)',
 
                                     }}
                                 >
@@ -619,13 +625,23 @@ const PayProcessModal = ({
                             <div
                                 style={{
                                     backgroundColor: '#121212',
-                                    padding: '24px 28px',
+                                    padding: '8px 28px',
                                 }}
                             >
-                                <p style={{fontWeight: 400, fontSize: 16, marginBottom: 8, paddingTop: 28}}>
+                                <div
+                                    style={{
+                                        height: 4,
+                                        width: 32,
+                                        borderRadius: 4,
+                                        backgroundColor: 'rgb(30, 30, 30)',
+                                        alignSelf: 'center',
+                                        margin: '0 auto',
+                                }}
+                                />
+                                <p style={{fontWeight: 400, fontSize: 16, marginBottom: 8, paddingTop: 36}}>
                                     Перевод зачислится в течение нескольких минут
                                 </p>
-                                <p style={{fontWeight: 300, fontSize: 14}} className='pGrey'>
+                                <p style={{fontWeight: 300, fontSize: 14, paddingBottom: 12}} className='pGrey'>
                                     В редких случаях срок зачисления увеличивается до нескольких дней
                                 </p>
                             </div>
@@ -648,9 +664,34 @@ const PayProcessModal = ({
                                 >
                                     Куда
                                 </p>
-                                <p>
-                                    **** {payResBankNum}
-                                </p>
+                                <div style={{display: 'flex', flexDirection: 'row'}}>
+                                    <div
+                                        style={{
+                                            display: 'flex',
+                                            flexDirection: 'row',
+                                            alignItems: 'center',
+                                            margin: '0 4px'
+                                        }}
+                                    >
+                                        <Image
+                                            src="/images/lil-dot.svg"
+                                            width={4}
+                                            height={4}
+                                            alt=''
+
+                                        />
+                                        <Image
+                                            src="/images/lil-dot.svg"
+                                            width={4}
+                                            height={4}
+                                            alt=''
+                                        />
+                                    </div>
+                                    <p style={{ marginLeft: 4 }}>
+                                        {payResBankNum}
+
+                                    </p>
+                                </div>
                                 <p
                                     className='pGrey'
                                     style={{
