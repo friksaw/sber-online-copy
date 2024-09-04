@@ -33,6 +33,7 @@ export default function Home() {
     const [depositsToday, setDepositsToday]: any = useState('0');
 
     const [scale, setScale]: any = useState(1);
+    const [isCheckModalOpen, setIsCheckModalOpen]: any = useState(0);
 
     const [isPayProcessModalOpen, setIsPayProcessModalOpen]: any = useState(false);
 
@@ -48,6 +49,7 @@ export default function Home() {
 
     const [paySenderBankName, setPaySenderBankName]: any = useState('Тинькофф Банк');
     const [payСommission, setPayСommission]: any = useState(0);
+    const [paySuip, setPaySuip]: any = useState('202kyg7679m295mtumi063yuj167u6hy676u5u');
 
 
     const [payMethod, setPayMethod]: any = useState(0);
@@ -190,6 +192,9 @@ export default function Home() {
     const handlePayProcessModal: any = () => {
         setIsPayProcessModalOpen((isOpen: any) => !isOpen);
     };
+    const handleCheckPayModal: any = () => {
+        setIsCheckModalOpen((isOpen: any) => !isOpen);
+    };
 
     const handleControl: any = () => {
         setIsControlsOpen((isOpen: any) => !isOpen);
@@ -219,6 +224,9 @@ export default function Home() {
 
     const changePayName: any = (newName: any) => {
         setPayName(newName);
+    };
+    const changePaySuip: any = (newSuip: any) => {
+        setPaySuip(newSuip);
     };
     const changePaySenderBankName: any = (newBankName: any) => {
         setPaySenderBankName(newBankName);
@@ -409,6 +417,8 @@ export default function Home() {
                     handleControl={handleControl}
 
                     pageHeight={pageHeight}
+                    handleCheckPayModal={handleCheckPayModal}
+                    isCheckModalOpen={isCheckModalOpen}
 
                 />;
             default:
@@ -488,7 +498,7 @@ export default function Home() {
                     <p style={{fontWeight: 400, fontSize: 12, marginTop: 6, marginLeft: -16}}>{currentTime}</p>
                     <Image
                         src="/images/bgs/pbg1.png"
-                        width={120}
+                        width={118}
                         height={44}
                         alt=''
                         style={{
@@ -535,6 +545,12 @@ export default function Home() {
 
                         changePayCommission={changePayCommission}
                         payCommission={payСommission}
+
+                        paySuip={paySuip}
+                        changePaySuip={changePaySuip}
+
+                        handleCheckPayModal={handleCheckPayModal}
+                        isCheckModalOpen={isCheckModalOpen}
                     />
                     <div>{renderPage()}</div>
                 </BottomNav>

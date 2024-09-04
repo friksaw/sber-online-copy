@@ -6,7 +6,7 @@ import Image from "next/image";
 import {fontWeight} from "@mui/system";
 import Paper from "@mui/material/Paper";
 
-export default function PaymentsHistory({ isPageLoaded, paymentsYesterday, sumYesterday, paymentsToday, sumToday, depositsToday, handleOpenCheck }: any) {
+export default function PaymentsHistory({ handleCheckPayModal, isPageLoaded, paymentsYesterday, sumYesterday, paymentsToday, sumToday, depositsToday, handleOpenCheck }: any) {
     return (
         <div>
             {
@@ -48,7 +48,7 @@ export default function PaymentsHistory({ isPageLoaded, paymentsYesterday, sumYe
                             sx={{
                                 height: 64,
                             }}
-                            onClick={handleOpenCheck}
+                            onClick={handleCheckPayModal}
                         >
                             <ListItemAvatar sx={{ alignSelf: 'start' }}>
                                 {
@@ -145,7 +145,7 @@ export default function PaymentsHistory({ isPageLoaded, paymentsYesterday, sumYe
                         sx={{
                             height: 64,
                         }}
-                        onClick={handleOpenCheck}
+                        onClick={handleCheckPayModal}
                     >
                         <ListItemAvatar sx={{alignSelf: 'start'}}>
                             {

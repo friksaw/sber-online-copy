@@ -41,6 +41,12 @@ const PayProcessModal = ({
 
                              changePayCommission,
                              payCommission,
+
+                             changePaySuip,
+                             paySuip,
+
+                             isCheckModalOpen,
+                             handleCheckPayModal,
                          }: any) => {
     const [isSuccessPayModalOpen, setIsSuccessPayModalOpen]: any = useState(false);
     const [expanded1, setExpanded1] = useState(false);
@@ -211,6 +217,17 @@ const PayProcessModal = ({
                         />
                         <TextField
                             id="outlined-basic"
+                            label="Суип"
+                            variant="outlined"
+                            value={paySuip}
+                            style={{
+                                width: '100%',
+                                marginBottom: 20,
+                            }}
+                            onChange={(event): any => changePaySuip(event?.target.value)}
+                        />
+                        <TextField
+                            id="outlined-basic"
                             label="4 цифры получателя"
                             variant="outlined"
                             value={payResBankNum}
@@ -245,6 +262,153 @@ const PayProcessModal = ({
                 }}
             >
                 <Slide direction="left" in={isSuccessPayModalOpen} mountOnEnter unmountOnExit>
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            transform: 'translate(-20%, -50%)',
+                            backgroundImage: 'url("/images/bgs/pay-success-bg.svg")',
+                            backgroundSize: 'cover',
+
+                            width: `calc(${pageWidth}px + 60px)`,
+                            height: '100%',
+                            bgcolor: 'background.paper',
+                            boxShadow: 24,
+                            p: 8,
+                        }}
+                    >
+                        <div
+                            style={{
+                                alignSelf: 'center',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'space-between',
+                                padding: 14,
+                                alignContent: 'center',
+                                textAlign: 'center',
+                                height: 371,
+                                width: 306,
+                                backgroundColor: '#0E0E0E',
+                                borderRadius: 16,
+                                position: 'relative',
+                            }}
+
+                        >
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    flexDirection: 'row',
+                                    justifyContent: 'center',
+
+                                }}
+                            >
+                                <div style={gradientStyle1}></div>
+                                <div style={gradientStyle2}></div>
+                            </div>
+                            <div
+                                style={{
+                                    marginTop: -40,
+                                    position: 'absolute',
+                                    bottom: 12,
+                                }}
+                            >
+                                <h3>
+                                    Перевод доставлен
+                                </h3>
+                                <h3
+                                    style={{
+                                        fontSize: 28,
+                                        marginTop: 4,
+                                    }}
+                                >
+                                    {paySum} ₽
+                                </h3>
+                                <p
+                                    style={{
+                                        fontSize: 16,
+                                        opacity: 0.4,
+                                        marginTop: 10,
+                                    }}
+                                >
+                                    Комиссия {payCommission} ₽
+                                </p>
+                                <p
+                                    style={{
+                                        fontSize: 16,
+                                        opacity: 0.4,
+                                    }}
+                                >
+                                    {payName}
+                                </p>
+                                <div
+                                    style={{
+                                        display: 'flex',
+                                        flexDirection: 'row',
+                                        marginTop: 40,
+                                        fontSize: 16,
+
+                                    }}
+                                >
+                                    <a
+                                        style={{
+
+                                            backgroundColor: '#1C1C1C',
+
+                                            borderRadius: 12,
+                                            height: 45,
+                                            width: 130,
+                                            textAlign: 'center',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            cursor: 'pointer',
+                                        }}
+                                        onClick={handleOpenCheck}
+                                    >
+                                        Чек
+                                    </a>
+                                    <a
+                                        style={{
+                                            borderRadius: 12,
+                                            backgroundColor: '#C4C4C4',
+                                            height: 45,
+                                            width: 130,
+                                            textAlign: 'center',
+                                            color: '#0E0E0E',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            marginLeft: 8,
+                                            cursor: 'pointer',
+                                        }}
+                                        onClick={goToHistory}
+                                    >
+                                        В историю
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </Box>
+                </Slide>
+            </Modal>
+
+
+            <Modal
+                aria-labelledby="transition-modal-title"
+                aria-describedby="transition-modal-description"
+                open={isCheckModalOpen}
+                onClose={handleCheckPayModal}
+                closeAfterTransition
+                slotProps={{
+                    backdrop: {
+                        timeout: 50,
+                    },
+                }}
+                sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                }}
+            >
+                <Slide direction="left" in={isCheckModalOpen} mountOnEnter unmountOnExit>
                     <Box
                         sx={{
                             display: 'flex',
@@ -626,7 +790,7 @@ const PayProcessModal = ({
                                                         СУИП
                                                     </p>
                                                     <p>
-                                                        202kyg7679m295mtumi063yuj167u6hy676u5u
+                                                        {paySuip}
                                                     </p>
                                                 </div> :
                                                 <div>
