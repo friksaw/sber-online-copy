@@ -637,10 +637,18 @@ const PayProcessModal = ({
                                         horizontal: 'center',
                                     }}
                                     sx={{
-                                        backgroundColor: 'rgb(0,0,0,0.5)',
-                                        padding: '4px 18px',
                                         width: (pageWidth === 363) ? `calc(${pageWidth}px + 62px)` : pageWidth,
                                     }}
+                                    PaperProps={{ sx: {
+                                            boxShadow: 12,
+                                            borderTopLeftRadius: 20,
+                                            borderTopRightRadius: 20,
+                                            backgroundColor: '#1E1E1E',
+                                            color: 'white',
+                                            marginBottom: -20,
+                                            width: (pageWidth === 363) ? `calc(${pageWidth}px + 62px)` : pageWidth,
+
+                                        } }}
                                 >
                                     <div
                                         style={{
@@ -658,14 +666,17 @@ const PayProcessModal = ({
                                     >Сохранить чек</h3>
                                     <MenuItem
                                         sx={{
-                                            width: (pageWidth === 363) ? `calc(${pageWidth}px + 62px)` : pageWidth,
+                                            width: (pageWidth === 363) ? pageWidth : pageWidth,
+                                            borderBottom: '1px solid rgb(30, 30, 30)',
+                                            height: 48, // Высота кнопки
                                         }}
                                     >
                                         Русский
                                     </MenuItem>
                                     <MenuItem
                                         sx={{
-                                            width: (pageWidth === 363) ? `calc(${pageWidth}px + 62px)` : pageWidth,
+                                            width: (pageWidth === 363) ? pageWidth : pageWidth,
+                                            height: 48, // Высота кнопки
                                         }}
                                     >
                                         Английский
