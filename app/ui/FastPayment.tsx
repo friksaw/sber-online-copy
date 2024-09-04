@@ -54,21 +54,21 @@ export default function FastPayment({ fastPayments, setFastPayments, handlePayPr
                     width: 72,
                     textWrap: 'nowrap',
                     marginLeft: -8,
-                }}>Ирина<br/>Юрьевна Е.</p>}/>
+                }}>Ирина<br/>Юрьевна Е.</p>} short='ИЮ'/>
                 <FastPaymentButton text={<p style={{
                     textAlign: 'center',
                     fontSize: 12,
                     width: 72,
                     marginLeft: -7,
 
-                }}>Полина<br/>Петровна...</p>} />
+                }}>Полина<br/>Петровна...</p>} short='ПП'/>
                 <FastPaymentButton text={<p style={{
                     textAlign: 'center',
                     fontSize: 12,
                     marginLeft: -7,
                     width: 72,
                     textWrap: 'nowrap'
-                }}>Павел<br/>Рунов</p>} badge/>
+                }}>Павел<br/>Рунов</p>} short='ПР' badge/>
                 <FastPaymentButton text={<p style={{
                     textAlign: 'center',
                     fontSize: 12,
