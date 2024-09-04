@@ -507,8 +507,8 @@ export default function Home() {
                     <p style={{fontWeight: 400, fontSize: 12, marginTop: 6, marginLeft: -16}}>{currentTime}</p>
                     <Image
                         src="/images/bgs/pbg1.png"
-                        width={118}
-                        height={44}
+                        width={140}
+                        height={36}
                         alt=''
                         style={{
                         }}

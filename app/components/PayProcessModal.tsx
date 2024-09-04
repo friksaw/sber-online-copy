@@ -1,5 +1,16 @@
 import React, { useState } from 'react';
-import {Button, CircularProgress, Fade, keyframes, makeStyles, Modal, Slide, TextField} from "@mui/material";
+import {
+    Button,
+    CircularProgress,
+    Fade,
+    keyframes,
+    makeStyles,
+    Menu,
+    MenuItem,
+    Modal,
+    Slide,
+    TextField
+} from "@mui/material";
 import Box from "@mui/material/Box";
 import PayProcessBox from "@/app/components/PaySuccessBox";
 import Image from "next/image";
@@ -52,8 +63,9 @@ const PayProcessModal = ({
                             scale,
                          }: any) => {
     const [isSuccessPayModalOpen, setIsSuccessPayModalOpen]: any = useState(false);
-    const [expanded1, setExpanded1] = useState(false);
-    const [expanded2, setExpanded2] = useState(false);
+    const [expanded1, setExpanded1]: any = useState(false);
+    const [expanded2, setExpanded2]: any = useState(false);
+    const [isCheckLangOpen, setIsCheckLangOpen]: any = useState(null);
 
     const toggleExpand = () => {
         setExpanded1(!expanded1);
@@ -93,6 +105,10 @@ const PayProcessModal = ({
         toggleExpand()
 
         handleCheckPayModal()
+    };
+    const handleOpenCheckLang = () => {
+        setIsCheckLangOpen((isLangOpen: any) => !isLangOpen);
+
     };
     const closeSuccessPayModal = () => {
         setIsSuccessPayModalOpen((isSuccessPayModalOpen: any) => !isSuccessPayModalOpen);
@@ -600,7 +616,7 @@ const PayProcessModal = ({
                                         style={{
                                             cursor: 'pointer'
                                         }}
-                                        onClick={handleOpenCheck}
+                                        onClick={handleOpenCheckLang}
                                     >
                                         <p
                                             style={{fontSize: 16, textAlign: 'left', marginLeft: 16}}
@@ -608,9 +624,55 @@ const PayProcessModal = ({
                                             Сохранить чек
                                         </p>
                                     </a>
-
                                 </div>
-
+                                <Menu
+                                    anchorEl={isCheckLangOpen}
+                                    open={isCheckLangOpen}
+                                    onClose={handleOpenCheckLang}
+                                    anchorOrigin={{
+                                        vertical: 'bottom',
+                                        horizontal: 'center',
+                                    }}
+                                    transformOrigin={{
+                                        vertical: 'top',
+                                        horizontal: 'center',
+                                    }}
+                                    getContentAnchorEl={null}
+                                    sx={{
+                                        backgroundColor: 'rgb(0,0,0,0.5)',
+                                        padding: '4px 18px',
+                                        width: (pageWidth === 363) ? `calc(${pageWidth}px + 62px)` : pageWidth,
+                                    }}
+                                >
+                                    <div
+                                        style={{
+                                            height: 4,
+                                            width: 32,
+                                            borderRadius: 4,
+                                            backgroundColor: 'rgb(30, 30, 30)',
+                                            alignSelf: 'center',
+                                            margin: '0 auto',
+                                        }} />
+                                    <h3
+                                        style={{
+                                            margin: 16
+                                        }}
+                                    >Сохранить чек</h3>
+                                    <MenuItem
+                                        sx={{
+                                            width: (pageWidth === 363) ? `calc(${pageWidth}px + 62px)` : pageWidth,
+                                        }}
+                                    >
+                                        Русский
+                                    </MenuItem>
+                                    <MenuItem
+                                        sx={{
+                                            width: (pageWidth === 363) ? `calc(${pageWidth}px + 62px)` : pageWidth,
+                                        }}
+                                    >
+                                        Английский
+                                    </MenuItem>
+                                </Menu>
                             </div>
                         </div>
                         <div
@@ -755,7 +817,7 @@ const PayProcessModal = ({
                             }}
                         >
                             <a
-                                onClick={handleOpenCheck}
+                                onClick={goToHistory}
                                 style={{
                                     cursor: 'pointer'
                                 }}
@@ -780,6 +842,8 @@ const PayProcessModal = ({
                                 Сохранить чек
                             </p>
                         </div>
+
+
                         <div
                             style={{
                                 display: 'flex',
@@ -1117,7 +1181,7 @@ const PayProcessModal = ({
                                     cursor: 'pointer',
                                     color: !isCheckLoaded ? '#5F5F5F' : '#ffffff',
                                 }}
-                                onClick={handleOpenCheck}
+                                onClick={goToHistory}
                             >
                                 Сохранить или отправить
                             </a>
