@@ -328,7 +328,7 @@ const PayProcessModal = ({
                                 textAlign: 'center',
                                 height: '100%',
                                 borderRadius: 16,
-                                marginTop: 140,
+                                marginTop: 120,
 
 
                             }}
@@ -347,7 +347,7 @@ const PayProcessModal = ({
                             <h3
                                 style={{
                                     fontSize: 28,
-                                    marginBottom: 140,
+                                    marginBottom: 100,
                                 }}
                             >
                                 {paySum} ₽
@@ -357,6 +357,7 @@ const PayProcessModal = ({
                                     display: 'flex',
                                     flexDirection: 'row',
                                     width: '100%',
+                                    marginBottom: -12,
                                 }}
                             >
                                 <div
