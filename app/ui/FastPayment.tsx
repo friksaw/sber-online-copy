@@ -68,7 +68,7 @@ export default function FastPayment({ fastPayments, setFastPayments, handlePayPr
                     marginLeft: -7,
                     width: 72,
                     textWrap: 'nowrap'
-                }}>Павел<br/>Рунов</p>} picture='/images/avatars/example1.jpg'/>
+                }}>Павел<br/>Рунов</p>} badge/>
                 <FastPaymentButton text={<p style={{
                     textAlign: 'center',
                     fontSize: 12,
