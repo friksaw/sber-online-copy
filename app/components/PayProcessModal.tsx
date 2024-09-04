@@ -670,6 +670,7 @@ const PayProcessModal = ({
                                             borderBottom: '1px solid rgb(30, 30, 30)',
                                             height: 48, // Высота кнопки
                                         }}
+                                        onClick={handleOpenCheck}
                                     >
                                         Русский
                                     </MenuItem>
@@ -678,6 +679,8 @@ const PayProcessModal = ({
                                             width: (pageWidth === 363) ? pageWidth : pageWidth,
                                             height: 48, // Высота кнопки
                                         }}
+                                        onClick={handleOpenCheck}
+
                                     >
                                         Английский
                                     </MenuItem>
@@ -826,7 +829,7 @@ const PayProcessModal = ({
                             }}
                         >
                             <a
-                                onClick={goToHistory}
+                                onClick={handleOpenCheck}
                                 style={{
                                     cursor: 'pointer'
                                 }}
@@ -1190,7 +1193,7 @@ const PayProcessModal = ({
                                     cursor: 'pointer',
                                     color: !isCheckLoaded ? '#5F5F5F' : '#ffffff',
                                 }}
-                                onClick={goToHistory}
+                                onClick={handleOpenCheck}
                             >
                                 Сохранить или отправить
                             </a>
