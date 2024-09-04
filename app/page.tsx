@@ -19,6 +19,7 @@ import PayProcessModal from "@/app/components/PayProcessModal";
 
 
 export default function Home() {
+
     const [currentPage, setCurrentPage]: any = useState(0);
     const [isControlsOpen, setIsControlsOpen]: any = useState(0);
     const [currentTime, setCurrentTime] = useState<string>('');
