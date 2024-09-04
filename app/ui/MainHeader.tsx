@@ -4,7 +4,7 @@ import * as React from "react";
 import Image from "next/image";
 import {Avatar, Skeleton} from "@mui/material";
 
-export default function MainHeader({ balance, handleControl, isPageLoaded }: any) {
+export default function MainHeader({ cardNum, bankNum, balance, handleControl, isPageLoaded }: any) {
     return (
         <div
             style={{
@@ -209,7 +209,7 @@ export default function MainHeader({ balance, handleControl, isPageLoaded }: any
                                     alt=''
 
                                 />
-                                <p className='pGrey' style={{marginLeft: 2, marginTop: 4}}>3962</p>
+                                <p className='pGrey' style={{marginLeft: 2, marginTop: 4}}>{cardNum}</p>
                             </div>
 
                                 <div>
@@ -258,7 +258,7 @@ export default function MainHeader({ balance, handleControl, isPageLoaded }: any
                                                     />
                                                 </div>
                                                 <p className='pGrey'>
-                                                    3181
+                                                    {bankNum}
                                                 </p>
                                             </div>
                                             : <Skeleton variant="rectangular" width={100} height={24}

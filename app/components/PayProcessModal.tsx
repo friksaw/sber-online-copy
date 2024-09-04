@@ -191,18 +191,7 @@ const PayProcessModal = ({
                         />
                         <TextField
                             id="outlined-basic"
-                            label="Перевод клиенту Сбербанка = 0 | другой 1"
-                            variant="outlined"
-                            value={payMethod}
-                            style={{
-                                width: '100%',
-                                marginBottom: 12,
-                            }}
-                            onChange={(event): any => changePayMethod(event?.target.value)}
-                        />
-                        <TextField
-                            id="outlined-basic"
-                            label="Имя другого банка"
+                            label="Имя банка (Клиенту Сбера, Альфа-Банк, Т-Банк)"
                             variant="outlined"
                             value={paySenderBankName}
                             style={{

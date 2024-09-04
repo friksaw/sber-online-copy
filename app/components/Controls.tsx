@@ -5,7 +5,7 @@ import Image from "next/image";
 import {Button, Card, FormControl, InputLabel, MenuItem, Select, Slider, TextField} from "@mui/material";
 
 
-export default function Controls({ peopleSum, changePeopleSum, isOpen, balance, changeBalance, expenses, changeExpenses, month, changeMonth, sumYesterday, changeSumYesterday, shuffleYesterdayMessages, addDeposit }: any) {
+export default function Controls({ changeCardNum, changeBankNum, cardNum, bankNum, peopleSum, changePeopleSum, isOpen, balance, changeBalance, expenses, changeExpenses, month, changeMonth, sumYesterday, changeSumYesterday, shuffleYesterdayMessages, addDeposit }: any) {
     return (
         <Card
             sx={{
@@ -77,6 +77,32 @@ export default function Controls({ peopleSum, changePeopleSum, isOpen, balance, 
                     variant="outlined"
                     value={peopleSum}
                     onChange={(event): any => changePeopleSum(event?.target.value)}
+                    sx={{
+                        width: '100%'
+                    }}
+                />
+            </div>
+            <div
+                style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    marginTop: 20
+                }}
+            >
+                <TextField
+                    id="outlined-basic"
+                    label="Номер карты"
+                    variant="outlined"
+                    value={cardNum}
+                    onChange={(event): any => changeCardNum(event?.target.value)}
+                />
+                <TextField
+                    id="outlined-basic"
+                    label="Номер счета"
+                    variant="outlined"
+                    value={bankNum}
+                    onChange={(event): any => changeBankNum(event?.target.value)}
                 />
             </div>
 

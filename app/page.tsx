@@ -36,6 +36,10 @@ export default function Home() {
     const [peopleSum, setPeopleSum]: any = useState('20 019');
     const [depositsToday, setDepositsToday]: any = useState('0');
 
+
+    const [cardNum, setCardNum]: any = useState('3962');
+    const [bankNum, setBankNum]: any = useState('3181');
+
     const [scale, setScale]: any = useState(1);
     const [isCheckModalOpen, setIsCheckModalOpen]: any = useState(0);
 
@@ -78,70 +82,59 @@ export default function Home() {
             name: 'Ирина Юрьевна Е.',
             desc: 'Альфа-Банк',
             sum: '9 000',
-            payMethod: 0,
             isBadged: 1,
         },
         {
             name: 'Полина Петровна И.',
             desc: 'Т-Банк',
             sum: '600',
-            payMethod: 1,
         },
         {
             name: 'Георгий Янович П.',
             desc: 'Альфа-Банк',
             sum: '1 220',
-            payMethod: 1,
         },
         {
             name: 'Виталий Савин В.',
             desc: 'Клиенту Сбера',
             sum: '120',
-            payMethod: 0,
         },
         {
             name: 'Владимир Дмитриевич Д.',
             desc: 'Клиенту Сбера',
             sum: '500',
-            payMethod: 0,
             isBadged: 1
         },
         {
             name: 'Полина Петровна И.',
             desc: 'Клиенту Сбера',
             sum: '500',
-            payMethod: 0,
         },
         {
             name: 'Марина Савина Л.',
             desc: 'Т-Банк',
             sum: '600',
-            payMethod: 1,
         },
         {
             name: 'Федор Янович П.',
             desc: 'Т-Банк',
             sum: '1 220',
-            payMethod: 1,
         },
         {
             name: 'Борис Мушкиновский Е.',
             desc: 'Клиенту Сбера',
             sum: '120',
-            payMethod: 0,
         },
         {
             name: 'Владимир Чехов Д.',
             desc: 'Клиенту Сбера',
             sum: '500',
-            payMethod: 0,
             isBadged: 1
         },
         {
             name: 'Анастасия Рябова Д.',
             desc: 'Клиенту Сбера',
             sum: '500',
-            payMethod: 0,
         },
     ])
 
@@ -220,6 +213,12 @@ export default function Home() {
 
     const changePayName: any = (newName: any) => {
         setPayName(newName);
+    };
+    const changeBankNum: any = (newNum: any) => {
+        setBankNum(newNum);
+    };
+    const changeCardNum: any = (newNum: any) => {
+        setCardNum(newNum);
     };
     const changePaySuip: any = (newSuip: any) => {
         setPaySuip(newSuip);
@@ -410,7 +409,8 @@ export default function Home() {
                     fastPayments={fastPayments}
                     setFastPayments={setFastPayments}
                     peopleSum={peopleSum}
-
+                    cardNum={cardNum}
+                    bankNum={bankNum}
                 />;
             case 1:
                 return <div></div>;
@@ -449,6 +449,8 @@ export default function Home() {
                     setFastPayments={setFastPayments}
 
                     peopleSum={peopleSum}
+                    cardNum={cardNum}
+                    bankNum={bankNum}
                 />;
         }
     };
@@ -482,6 +484,11 @@ export default function Home() {
 
                 peopleSum={peopleSum}
                 changePeopleSum={changePeopleSum}
+
+                changeCardNum={changeCardNum}
+                changeBankNum={changeBankNum}
+                cardNum={cardNum}
+                bankNum={bankNum}
 
             />
 
