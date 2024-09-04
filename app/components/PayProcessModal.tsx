@@ -115,7 +115,7 @@ const PayProcessModal = ({
     };
     const goToHistory = () => {
         if (isSuccessPayModalOpen) {
-            setIsSuccessPayModalOpen((isSuccessPayModalOpen: any) => !isSuccessPayModalOpen);
+            setIsSuccessPayModalOpen(false);
         }
         if (isOpen) {
             handleModal()
