@@ -720,58 +720,72 @@ const PayProcessModal = ({
                         </div>
                         <div
                             style={{
-                                height: isCheckLangOpen ? 196 : 0,
+                                height: isCheckLangOpen ? '100vh' : 0,
+                                opacity: isCheckLangOpen ? 1 : 0,
                                 width: (pageWidth === 363) ? `calc(${pageWidth}px + 62px)` : pageWidth,
-                                backgroundColor: '#1E1E1E',
-                                color: 'white',
-                                borderRadius: '20px 20px 0 0',
+                                backgroundColor: 'rgb(0,0,0,0.5)',
                                 position: 'absolute',
                                 bottom: 0,
                                 transition: 'all 0.2s ease-in-out',
-                                padding: '8px 18px',
                             }}
                         >
                             <div
                                 style={{
-                                    height: 4,
-                                    width: 32,
-                                    borderRadius: 4,
-                                    backgroundColor: '#121212',
-                                    alignSelf: 'center',
-                                    margin: '0 auto',
-                                }} />
-                            <h3
-                                style={{
-                                    margin: 16
+                                    height: isCheckLangOpen ? 196 : 0,
+                                    width: (pageWidth === 363) ? `calc(${pageWidth}px + 62px)` : pageWidth,
+                                    backgroundColor: '#1E1E1E',
+                                    color: 'white',
+                                    borderRadius: '20px 20px 0 0',
+                                    position: 'absolute',
+                                    bottom: 0,
+                                    transition: 'all 0.2s ease-in-out',
+                                    padding: '8px 18px',
                                 }}
-                            >Сохранить чек</h3>
-                            <MenuItem
-                                sx={{
-                                    width: (pageWidth === 363) ? pageWidth : pageWidth,
-                                    borderBottom: '1px solid #121212',
-                                    height: 56, // Высота кнопки
-                                }}
-                                onClick={handleOpenCheck}
                             >
-                                Русский
-                            </MenuItem>
-                            <MenuItem
-                                sx={{
-                                    width: (pageWidth === 363) ? pageWidth : pageWidth,
-                                    height: 56,
-                                    marginBottom: 2,
-                                }}
-                                onClick={handleOpenCheck}
+                                <div
+                                    onClick={handleOpenCheckLang}
+                                    style={{
+                                        height: 4,
+                                        width: 32,
+                                        borderRadius: 4,
+                                        backgroundColor: '#121212',
+                                        alignSelf: 'center',
+                                        margin: '0 auto',
+                                    }}/>
+                                <h3
+                                    onClick={handleOpenCheckLang}
+                                    style={{
+                                        margin: 16
+                                    }}
+                                >Сохранить чек</h3>
+                                <MenuItem
+                                    sx={{
+                                        width: (pageWidth === 363) ? pageWidth : pageWidth,
+                                        borderBottom: '1px solid #121212',
+                                        height: 56, // Высота кнопки
+                                    }}
+                                    onClick={handleOpenCheck}
+                                >
+                                    Русский
+                                </MenuItem>
+                                <MenuItem
+                                    sx={{
+                                        width: (pageWidth === 363) ? pageWidth : pageWidth,
+                                        height: 56,
+                                        marginBottom: 2,
+                                    }}
+                                    onClick={handleOpenCheck}
 
-                            >
-                                Английский
-                            </MenuItem>
+                                >
+                                    Английский
+                                </MenuItem>
+                            </div>
                         </div>
+
                     </Box>
 
                 </Slide>
             </Modal>
-
 
 
             <Modal
