@@ -189,13 +189,17 @@ export default function MainHeader({ balance, handleControl, isPageLoaded }: any
                                 margin: 16,
                             }}
                         >
-                            <Image
-                                src="/images/main/card.svg"
-                                width={32}
-                                height={32}
-                                alt=''
+                            <div>
+                                <Image
+                                    src="/images/main/card.svg"
+                                    width={32}
+                                    height={32}
+                                    alt=''
 
-                            />
+                                />
+                                <p className='pGrey' style={{marginLeft: 2, marginTop: 4}}>3962</p>
+                            </div>
+
                                 <div>
                                     {
                                         isPageLoaded ?
@@ -217,7 +221,7 @@ export default function MainHeader({ balance, handleControl, isPageLoaded }: any
                                                 }}
                                             >
                                                 <p className='pGrey'>
-                                                    MasterC...
+                                                    Счёт
                                                 </p>
                                                 <div
                                                     style={{
@@ -242,7 +246,7 @@ export default function MainHeader({ balance, handleControl, isPageLoaded }: any
                                                     />
                                                 </div>
                                                 <p className='pGrey'>
-                                                    0467
+                                                    3181
                                                 </p>
                                             </div>
                                             : <Skeleton variant="rectangular" width={100} height={24}
