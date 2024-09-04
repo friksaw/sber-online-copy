@@ -163,7 +163,7 @@ export default function Home() {
     useEffect(() => {
         // Function to filter payments and update fastPayments
         const filterPayments: any = () => {
-            const filteredPayments: any = paymentsYesterday.filter(payment => payment.payMethod === 0);
+            const filteredPayments: any = paymentsYesterday.filter((payment: any) => payment.payMethod === 0);
             // Ensure only the last 5 items are kept
             const limitedPayments: any = filteredPayments.slice(-5);
             setFastPayments(limitedPayments);
