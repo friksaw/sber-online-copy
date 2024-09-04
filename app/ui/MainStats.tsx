@@ -5,7 +5,7 @@ import Image from "next/image";
 import {useEffect, useState} from "react";
 import {Skeleton} from "@mui/material";
 
-export default function MainStats({ expenses, month, isPageLoaded }: any) {
+export default function MainStats({ peopleSum, expenses, month, isPageLoaded }: any) {
     const [transactionsPart, setTransactionsPart]: any = useState(0);
     const [eduPart, setEduPart]: any = useState(0);
 
@@ -149,7 +149,7 @@ export default function MainStats({ expenses, month, isPageLoaded }: any) {
                             {
                                 isPageLoaded ?
                                 <h4>
-                                    {transactionsPart} ₽
+                                    {peopleSum} ₽
                                 </h4>  : <Skeleton variant="rectangular" width={100} height={24}
                                                 style={{borderRadius: 4}}/>
                             }

@@ -31,6 +31,7 @@ export default function Home() {
     const [month, setMonth]: any = useState('сентябре');
     const [sumYesterday, setSumYesterday]: any = useState('16 700');
     const [sumToday, setSumToday]: any = useState('0');
+    const [peopleSum, setPeopleSum]: any = useState('20 019');
     const [depositsToday, setDepositsToday]: any = useState('0');
 
     const [scale, setScale]: any = useState(1);
@@ -219,6 +220,9 @@ export default function Home() {
     const changePayMethod: any = (newMethod: any) => {
         setPayMethod(newMethod);
     };
+    const changePeopleSum: any = (newSum: any) => {
+        setPeopleSum(newSum);
+    };
     const changePayCommission: any = (newCommission: any) => {
         setPayСommission(newCommission);
     };
@@ -404,6 +408,8 @@ export default function Home() {
 
                     fastPayments={fastPayments}
                     setFastPayments={setFastPayments}
+                    peopleSum={peopleSum}
+
                 />;
             case 1:
                 return <div></div>;
@@ -440,6 +446,8 @@ export default function Home() {
 
                     fastPayments={fastPayments}
                     setFastPayments={setFastPayments}
+
+                    peopleSum={peopleSum}
                 />;
         }
     };
@@ -470,6 +478,9 @@ export default function Home() {
                 changeSumYesterday={changeSumYesterday}
                 shuffleYesterdayMessages={shuffleYesterdayMessages}
                 addDeposit={addDeposit}
+
+                peopleSum={peopleSum}
+                changePeopleSum={changePeopleSum}
 
             />
 
