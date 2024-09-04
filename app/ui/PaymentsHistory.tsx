@@ -50,10 +50,10 @@ export default function PaymentsHistory({ handleCheckPayModal, isPageLoaded, pay
                             }}
                             onClick={handleCheckPayModal}
                         >
-                            <ListItemAvatar sx={{ alignSelf: 'start' }}>
+                            <ListItemAvatar sx={{alignSelf: 'start'}}>
                                 {
                                     isPageLoaded ?
-                                <Avatar alt="Profile Picture" src={bankName} />: <Skeleton variant="circular" width={40} height={40} /> }
+                                        <Avatar alt="Profile Picture" src={(desc === 'Альфа-Банк') ? '/images/banks/alfa.png' : (desc === 'Т-Банк') ? '/images/banks/t.png' : '/images/history/sber.svg'  }/> : <Skeleton variant="circular" width={40} height={40} /> }
                             </ListItemAvatar>
                             <div
                                 style={{
