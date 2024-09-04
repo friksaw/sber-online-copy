@@ -42,9 +42,9 @@ export default function PaymentsHistory({ handleCheckPayModal, isPageLoaded, pay
                                                style={{borderRadius: 4}}/>
                         }
                     </div>
-                    <List>{paymentsToday.slice().reverse().map(({ name, desc, sum, person }: any, index: any) => (
+                    <List>{paymentsToday.slice().reverse().map(({ name, desc, sum, bankName }: any, index: any) => (
                         <ListItemButton
-                            key={index + person}
+                            key={index}
                             sx={{
                                 height: 64,
                             }}
@@ -53,7 +53,7 @@ export default function PaymentsHistory({ handleCheckPayModal, isPageLoaded, pay
                             <ListItemAvatar sx={{ alignSelf: 'start' }}>
                                 {
                                     isPageLoaded ?
-                                <Avatar alt="Profile Picture" src={person} />: <Skeleton variant="circular" width={40} height={40} /> }
+                                <Avatar alt="Profile Picture" src={bankName} />: <Skeleton variant="circular" width={40} height={40} /> }
                             </ListItemAvatar>
                             <div
                                 style={{
@@ -145,9 +145,9 @@ export default function PaymentsHistory({ handleCheckPayModal, isPageLoaded, pay
                                    style={{borderRadius: 4}}/>}
             </div>
             <List>
-                {paymentsYesterday.map(({name, desc, sum, person}: any, index: any) => (
+                {paymentsYesterday.map(({name, desc, sum}: any, index: any) => (
                     <ListItemButton
-                        key={index + person}
+                        key={index}
                         sx={{
                             height: 64,
                         }}
@@ -156,7 +156,7 @@ export default function PaymentsHistory({ handleCheckPayModal, isPageLoaded, pay
                         <ListItemAvatar sx={{alignSelf: 'start'}}>
                             {
                                 isPageLoaded ?
-                            <Avatar alt="Profile Picture" src={person}/> : <Skeleton variant="circular" width={40} height={40} /> }
+                            <Avatar alt="Profile Picture" src={(desc === 'Альфа-Банк') ? '/images/banks/alfa.png' : (desc === 'Т-Банк') ? '/images/banks/t.png' : '/images/history/sber.svg'  }/> : <Skeleton variant="circular" width={40} height={40} /> }
                         </ListItemAvatar>
                         <div
                             style={{

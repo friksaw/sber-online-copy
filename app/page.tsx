@@ -75,38 +75,33 @@ export default function Home() {
     const [paymentsYesterday, setPaymentsYesterday]: any = useState([
         {
             name: 'Ирина Юрьевна Е.',
-            desc: 'Клиенту Сбера',
+            desc: 'Альфа-Банк',
             sum: '9 000',
-            person: '/images/avatars/myAvatar.svg',
             payMethod: 0,
-            isBadged: 1
+            isBadged: 1,
         },
         {
             name: 'Полина Петровна И.',
-            desc: 'В другой банк',
+            desc: 'Т-Банк',
             sum: '600',
-            person: '',
             payMethod: 1,
         },
         {
             name: 'Георгий Янович П.',
-            desc: 'В другой банк',
+            desc: 'Альфа-Банк',
             sum: '1 220',
-            person: '',
             payMethod: 1,
         },
         {
             name: 'Виталий Савин В.',
             desc: 'Клиенту Сбера',
             sum: '120',
-            person: '/images/history/sber.svg',
             payMethod: 0,
         },
         {
             name: 'Владимир Дмитриевич Д.',
             desc: 'Клиенту Сбера',
             sum: '500',
-            person: '/images/avatars/example1.jpg',
             payMethod: 0,
             isBadged: 1
         },
@@ -114,35 +109,30 @@ export default function Home() {
             name: 'Полина Петровна И.',
             desc: 'Клиенту Сбера',
             sum: '500',
-            person: '/images/history/sber.svg',
             payMethod: 0,
         },
         {
             name: 'Марина Савина Л.',
-            desc: 'В другой банк',
+            desc: 'Т-Банк',
             sum: '600',
-            person: '',
             payMethod: 1,
         },
         {
             name: 'Федор Янович П.',
-            desc: 'В другой банк',
+            desc: 'Т-Банк',
             sum: '1 220',
-            person: '',
             payMethod: 1,
         },
         {
             name: 'Борис Мушкиновский Е.',
             desc: 'Клиенту Сбера',
             sum: '120',
-            person: '/images/history/sber.svg',
             payMethod: 0,
         },
         {
             name: 'Владимир Чехов Д.',
             desc: 'Клиенту Сбера',
             sum: '500',
-            person: '/images/avatars/example1.jpg',
             payMethod: 0,
             isBadged: 1
         },
@@ -150,7 +140,6 @@ export default function Home() {
             name: 'Анастасия Рябова Д.',
             desc: 'Клиенту Сбера',
             sum: '500',
-            person: '/images/history/sber.svg',
             payMethod: 0,
         },
     ])
