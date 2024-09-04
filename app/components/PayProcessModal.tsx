@@ -47,6 +47,9 @@ const PayProcessModal = ({
 
                              isCheckModalOpen,
                              handleCheckPayModal,
+
+                             pageHeight,
+                            scale,
                          }: any) => {
     const [isSuccessPayModalOpen, setIsSuccessPayModalOpen]: any = useState(false);
     const [expanded1, setExpanded1] = useState(false);
@@ -116,18 +119,25 @@ const PayProcessModal = ({
                 }}
                 sx={{
                     display: 'flex',
+                    paddingTop: '28px',
                     justifyContent: 'center',
-                    paddingTop: 4,
+                    '.css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop': {
+                        backgroundColor: 'rgba(0, 0, 0, 0)',
+                    },
                 }}
             >
                 <Slide direction="left" in={isOpen} mountOnEnter unmountOnExit>
                     <Box
                         sx={{
-                            width: `calc(${pageWidth}px + 60px)`,
-                            height: '100%',
+                            width: (pageWidth === 363) ? `calc(${pageWidth}px + 62px)` : pageWidth,
+                            height: (pageWidth === 363) ? '100%' : pageHeight,
+                            transform: `scale(${scale})`,
+                            margin: '0 auto',
+                            alignSelf: 'center',
+
                             bgcolor: 'background.paper',
-                            boxShadow: 24,
                             p: 4,
+
                         }}
                     >
 
@@ -138,7 +148,7 @@ const PayProcessModal = ({
                             value={paySum}
                             style={{
                                 width: '100%',
-                                marginBottom: 20,
+                                marginBottom: 12,
                             }}
                             onChange={(event): any => changePaySum(event?.target.value)}
                         />
@@ -149,7 +159,7 @@ const PayProcessModal = ({
                             value={payName}
                             style={{
                                 width: '100%',
-                                marginBottom: 20,
+                                marginBottom: 12,
                             }}
                             onChange={(event): any => changePayName(event?.target.value)}
                         />
@@ -160,7 +170,7 @@ const PayProcessModal = ({
                             value={payMethod}
                             style={{
                                 width: '100%',
-                                marginBottom: 20,
+                                marginBottom: 12,
                             }}
                             onChange={(event): any => changePayMethod(event?.target.value)}
                         />
@@ -171,7 +181,7 @@ const PayProcessModal = ({
                             value={paySenderBankName}
                             style={{
                                 width: '100%',
-                                marginBottom: 20,
+                                marginBottom: 12,
                             }}
                             onChange={(event): any => changePaySenderBankName(event?.target.value)}
                         />
@@ -182,7 +192,7 @@ const PayProcessModal = ({
                             value={payCommission}
                             style={{
                                 width: '100%',
-                                marginBottom: 20,
+                                marginBottom: 12,
                             }}
                             onChange={(event): any => changePayCommission(event?.target.value)}
                         />
@@ -193,7 +203,7 @@ const PayProcessModal = ({
                             value={payPhone}
                             style={{
                                 width: '100%',
-                                marginBottom: 20,
+                                marginBottom: 12,
                             }}
                             onChange={(event): any => changePayPhone(event?.target.value)}
                         />
@@ -204,7 +214,7 @@ const PayProcessModal = ({
                             value={paySenderBankNum}
                             style={{
                                 width: '100%',
-                                marginBottom: 20,
+                                marginBottom: 12,
                             }}
                             onChange={(event): any => changePaySenderBankNum(event?.target.value)}
                         />
@@ -215,7 +225,7 @@ const PayProcessModal = ({
                             value={paySenderName}
                             style={{
                                 width: '100%',
-                                marginBottom: 20,
+                                marginBottom: 12,
                             }}
                             onChange={(event): any => changePaySenderName(event?.target.value)}
                         />
@@ -226,7 +236,7 @@ const PayProcessModal = ({
                             value={paySuip}
                             style={{
                                 width: '100%',
-                                marginBottom: 20,
+                                marginBottom: 12,
                             }}
                             onChange={(event): any => changePaySuip(event?.target.value)}
                         />
@@ -237,7 +247,7 @@ const PayProcessModal = ({
                             value={payResBankNum}
                             style={{
                                 width: '100%',
-                                marginBottom: 20,
+                                marginBottom: 12,
                             }}
                             onChange={(event): any => changePayResBankNum(event?.target.value)}
                         />
@@ -263,7 +273,11 @@ const PayProcessModal = ({
                 sx={{
                     display: 'flex',
                     justifyContent: 'center',
-                    paddingTop: 4,
+                    paddingTop: '28px',
+
+                    '.css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop': {
+                        backgroundColor: 'rgba(0, 0, 0, 0)',
+                    },
                 }}
             >
                 <Slide direction="left" in={isSuccessPayModalOpen} mountOnEnter unmountOnExit>
@@ -271,15 +285,17 @@ const PayProcessModal = ({
                     <Box
                         sx={{
                             display: 'flex',
-                            transform: 'translate(-20%, -50%)',
                             backgroundImage: 'url("/images/bgs/pay-success-bg.svg")',
                             backgroundSize: 'cover',
-
-                            width: `calc(${pageWidth}px + 60px)`,
-                            height: '100%',
                             bgcolor: 'background.paper',
-                            boxShadow: 24,
                             p: 8,
+
+                            width: (pageWidth === 363) ? `calc(${pageWidth}px + 62px)` : pageWidth,
+                            height: (pageWidth === 363) ? '100%' : pageHeight,
+                            transform: `scale(${scale})`,
+                            margin: '0 auto',
+                            alignSelf: 'center',
+
                         }}
                     >
                         <div
@@ -412,7 +428,10 @@ const PayProcessModal = ({
                 sx={{
                     display: 'flex',
                     justifyContent: 'center',
-                    paddingTop: 4,
+                    paddingTop: '28px',
+                    '.css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop': {
+                        backgroundColor: 'rgba(0, 0, 0, 0)',
+                    },
                 }}
             >
                 <Slide direction="left" in={isCheckModalOpen} mountOnEnter unmountOnExit>
@@ -423,13 +442,15 @@ const PayProcessModal = ({
                             justifyContent: 'center',
                             alignContent: 'center',
 
-                            transform: 'translate(-20%, -50%)',
                             backgroundColor: '#1E1E1E',
-
-                            width: `calc(${pageWidth}px + 60px)`,
-                            height: '100%',
                             bgcolor: '#0E0E0E',
-                            boxShadow: 24,
+
+                            width: (pageWidth === 363) ? `calc(${pageWidth}px + 62px)` : pageWidth,
+                            height: (pageWidth === 363) ? '100%' : pageHeight,
+                            transform: `scale(${scale})`,
+                            margin: '0 auto',
+                            alignSelf: 'center',
+
                         }}
                     >
                         <div
@@ -439,7 +460,7 @@ const PayProcessModal = ({
                                 alignItems: 'center',
                                 height: 56,
                                 width: (pageWidth === 363) ? `calc(${pageWidth}px + 62px)` : pageWidth,
-                                paddingTop: 40,
+                                paddingTop: 12,
                             }}
                         >
                             <a
@@ -474,7 +495,6 @@ const PayProcessModal = ({
                                 display: 'flex',
                                 flexDirection: 'column',
                                 justifyContent: 'center',
-                                padding: 14,
                                 textAlign: 'center',
                                 height: '100%',
                                 borderRadius: 16,
@@ -656,14 +676,22 @@ const PayProcessModal = ({
                 sx={{
                     display: 'flex',
                     justifyContent: 'center',
-                    paddingTop: 4,
+                    paddingTop: '28px',
+                    '.css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop': {
+                        backgroundColor: 'rgba(0, 0, 0, 0)',
+                    },
                 }}
             >
                 <Slide direction="left" in={isCheckOpen} mountOnEnter unmountOnExit>
                     <Box
                         sx={{
                             width: (pageWidth === 363) ? `calc(${pageWidth}px + 62px)` : pageWidth,
-                            height: '100%',
+
+                            height: (pageWidth === 363) ? '100%' : pageHeight,
+                            transform: `scale(${scale})`,
+                            margin: '0 auto',
+                            alignSelf: 'center',
+
                         }}
                     >
 

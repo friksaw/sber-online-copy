@@ -448,12 +448,14 @@ export default function Home() {
 
 
     return (
-        <Box
-            sx={{
+        <div
+            style={{
                 margin: useScreenWidth() < 480 ? '0 auto' : '0 auto',
                 marginTop: 0,
                 alignSelf: 'center',
-                transformOrigin: 'right'
+                transformOrigin: 'right',
+                width: pageWidth,
+                height: pageHeight,
             }}
         >
             <Controls
@@ -477,8 +479,9 @@ export default function Home() {
                     backgroundSize: 'cover',
                     width: pageWidth,
                     height: pageHeight,
-                    overflow: 'hidden',
                     transform: `scale(${scale})`,
+                    maxWidth: pageWidth,
+                    overflow: 'hidden',
                 }}
             >
                 <div
@@ -511,57 +514,69 @@ export default function Home() {
                         }}
                     />
                 </div>
+
+                <PayProcessModal
+                    isOpen={isPayProcessModalOpen}
+                    handleModal={handlePayProcessModal}
+                    paySum={paySum}
+                    changePaySum={changePaySum}
+                    payName={payName}
+                    changePayName={changePayName}
+                    doPay={doPay}
+                    pageWidth={pageWidth}
+                    renderPage={renderPage}
+                    onChangePage={onChangePage}
+
+                    isCheckLoaded={isCheckLoaded}
+                    isCheckOpen={isCheckOpen}
+                    handleOpenCheck={handleOpenCheck}
+                    checkData={checkData}
+
+                    payPhone={payPhone}
+                    payResBankNum={payResBankNum}
+                    paySenderName={paySenderName}
+                    paySenderBankNum={paySenderBankNum}
+
+                    changePayPhone={changePayPhone}
+                    changePayResBankNum={changePayResBankNum}
+                    changePaySenderName={changePaySenderName}
+                    changePaySenderBankNum={changePaySenderBankNum}
+
+                    changePayMethod={changePayMethod}
+                    payMethod={payMethod}
+
+                    changePaySenderBankName={changePaySenderBankName}
+                    paySenderBankName={paySenderBankName}
+
+                    changePayCommission={changePayCommission}
+                    payCommission={payСommission}
+
+                    paySuip={paySuip}
+                    changePaySuip={changePaySuip}
+
+                    handleCheckPayModal={handleCheckPayModal}
+                    isCheckModalOpen={isCheckModalOpen}
+
+                    pageHeight={pageHeight}
+
+                    scale={scale}
+                />
                 <BottomNav
                     currentPage={currentPage}
                     onChangePage={onChangePage}
                     pageWidth={pageWidth}
                 >
-                    <PayProcessModal
-                        isOpen={isPayProcessModalOpen}
-                        handleModal={handlePayProcessModal}
-                        paySum={paySum}
-                        changePaySum={changePaySum}
-                        payName={payName}
-                        changePayName={changePayName}
-                        doPay={doPay}
-                        pageWidth={pageWidth}
-                        renderPage={renderPage}
-                        onChangePage={onChangePage}
 
-                        isCheckLoaded={isCheckLoaded}
-                        isCheckOpen={isCheckOpen}
-                        handleOpenCheck={handleOpenCheck}
-                        checkData={checkData}
-
-                        payPhone={payPhone}
-                        payResBankNum={payResBankNum}
-                        paySenderName={paySenderName}
-                        paySenderBankNum={paySenderBankNum}
-
-                        changePayPhone={changePayPhone}
-                        changePayResBankNum={changePayResBankNum}
-                        changePaySenderName={changePaySenderName}
-                        changePaySenderBankNum={changePaySenderBankNum}
-
-                        changePayMethod={changePayMethod}
-                        payMethod={payMethod}
-
-                        changePaySenderBankName={changePaySenderBankName}
-                        paySenderBankName={paySenderBankName}
-
-                        changePayCommission={changePayCommission}
-                        payCommission={payСommission}
-
-                        paySuip={paySuip}
-                        changePaySuip={changePaySuip}
-
-                        handleCheckPayModal={handleCheckPayModal}
-                        isCheckModalOpen={isCheckModalOpen}
-                    />
-                    <div>{renderPage()}</div>
+                    <div
+                        style={{
+                            maxWidth: pageWidth
+                        }}
+                    >
+                        {renderPage()}
+                    </div>
                 </BottomNav>
             </div>
-        </Box>
+        </div>
 
     );
 }

@@ -24,7 +24,6 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                     left: 0,
                     right: 0,
                     maxWidth: pageWidth,
-                    zIndex: 10000000000000
                 }}
             >
                 <BottomNavigation
@@ -37,7 +36,7 @@ export default function BottomNav({ children, currentPage, onChangePage, pageWid
                         backgroundColor: '#1E1E1E',
                         maxWidth: pageWidth,
                         maxHeight: 57,
-                        zIndex: 10000000000000,
+                        zIndex: 1000,
                     }}
                 >
                     <BottomNavigationAction
