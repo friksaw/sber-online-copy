@@ -54,7 +54,6 @@ const PayProcessModal = ({
 
     const toggleExpand = () => {
         setExpanded1(!expanded1);
-        ;
         setTimeout(() => setExpanded2(!expanded2), 200);
 
     };
@@ -85,8 +84,12 @@ const PayProcessModal = ({
 
     const handleSuccessPayModal = () => {
         setIsSuccessPayModalOpen((isSuccessPayModalOpen: any) => !isSuccessPayModalOpen);
-        toggleExpand()
         doPay()
+    };
+    const handleCheckModal = () => {
+        toggleExpand()
+
+        handleCheckPayModal()
     };
     const closeSuccessPayModal = () => {
         setIsSuccessPayModalOpen((isSuccessPayModalOpen: any) => !isSuccessPayModalOpen);
@@ -265,8 +268,11 @@ const PayProcessModal = ({
                     <Box
                         sx={{
                             display: 'flex',
+                            justifyContent: 'center',
+                            alignContent: 'center',
+
                             transform: 'translate(-20%, -50%)',
-                            backgroundImage: 'url("/images/bgs/pay-success-bg.svg")',
+                            backgroundImage: 'url("/images/bgs/transbg.svg")',
                             backgroundSize: 'cover',
 
                             width: `calc(${pageWidth}px + 60px)`,
@@ -281,36 +287,29 @@ const PayProcessModal = ({
                                 alignSelf: 'center',
                                 display: 'flex',
                                 flexDirection: 'column',
-                                justifyContent: 'space-between',
+                                justifyContent: 'center',
+                                alignItems: 'center',
                                 padding: 14,
                                 alignContent: 'center',
                                 textAlign: 'center',
                                 height: 371,
                                 width: 306,
-                                backgroundColor: '#0E0E0E',
                                 borderRadius: 16,
                                 position: 'relative',
+
                             }}
 
                         >
-                            <div
-                                style={{
-                                    display: 'flex',
-                                    flexDirection: 'row',
-                                    justifyContent: 'center',
 
-                                }}
-                            >
-                                <div style={gradientStyle1}></div>
-                                <div style={gradientStyle2}></div>
-                            </div>
-                            <div
-                                style={{
-                                    marginTop: -40,
-                                    position: 'absolute',
-                                    bottom: 12,
-                                }}
-                            >
+                                <Image
+                                    src="/images/bgs/transcircle.svg"
+                                    width={80}
+                                    height={80}
+                                    alt=''
+                                    style={{
+                                        marginBottom: 20,
+                                    }}
+                                />
                                 <h3>
                                     Перевод доставлен
                                 </h3>
@@ -318,6 +317,7 @@ const PayProcessModal = ({
                                     style={{
                                         fontSize: 28,
                                         marginTop: 4,
+                                        marginBottom: 12,
                                     }}
                                 >
                                     {paySum} ₽
@@ -326,66 +326,10 @@ const PayProcessModal = ({
                                     style={{
                                         fontSize: 16,
                                         opacity: 0.4,
-                                        marginTop: 10,
-                                    }}
-                                >
-                                    Комиссия {payCommission} ₽
-                                </p>
-                                <p
-                                    style={{
-                                        fontSize: 16,
-                                        opacity: 0.4,
                                     }}
                                 >
                                     {payName}
                                 </p>
-                                <div
-                                    style={{
-                                        display: 'flex',
-                                        flexDirection: 'row',
-                                        marginTop: 40,
-                                        fontSize: 16,
-
-                                    }}
-                                >
-                                    <a
-                                        style={{
-
-                                            backgroundColor: '#1C1C1C',
-
-                                            borderRadius: 12,
-                                            height: 45,
-                                            width: 130,
-                                            textAlign: 'center',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            cursor: 'pointer',
-                                        }}
-                                        onClick={handleOpenCheck}
-                                    >
-                                        Чек
-                                    </a>
-                                    <a
-                                        style={{
-                                            borderRadius: 12,
-                                            backgroundColor: '#C4C4C4',
-                                            height: 45,
-                                            width: 130,
-                                            textAlign: 'center',
-                                            color: '#0E0E0E',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            marginLeft: 8,
-                                            cursor: 'pointer',
-                                        }}
-                                        onClick={goToHistory}
-                                    >
-                                        В историю
-                                    </a>
-                                </div>
-                            </div>
                         </div>
                     </Box>
                 </Slide>
@@ -396,7 +340,7 @@ const PayProcessModal = ({
                 aria-labelledby="transition-modal-title"
                 aria-describedby="transition-modal-description"
                 open={isCheckModalOpen}
-                onClose={handleCheckPayModal}
+                onClose={handleCheckModal}
                 closeAfterTransition
                 slotProps={{
                     backdrop: {
