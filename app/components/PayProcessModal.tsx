@@ -625,66 +625,7 @@ const PayProcessModal = ({
                                         </p>
                                     </a>
                                 </div>
-                                <Menu
-                                    open={isCheckLangOpen}
-                                    onClose={handleOpenCheckLang}
-                                    anchorOrigin={{
-                                        vertical: 'bottom',
-                                        horizontal: 'center',
-                                    }}
-                                    transformOrigin={{
-                                        vertical: 'top',
-                                        horizontal: 'center',
-                                    }}
-                                    sx={{
-                                        width: (pageWidth === 363) ? `calc(${pageWidth}px + 62px)` : pageWidth,
-                                    }}
-                                    PaperProps={{ sx: {
-                                            boxShadow: 12,
-                                            borderTopLeftRadius: 20,
-                                            borderTopRightRadius: 20,
-                                            backgroundColor: '#1E1E1E',
-                                            color: 'white',
-                                            marginBottom: -20,
-                                            width: (pageWidth === 363) ? `calc(${pageWidth}px + 62px)` : pageWidth,
 
-                                        } }}
-                                >
-                                    <div
-                                        style={{
-                                            height: 4,
-                                            width: 32,
-                                            borderRadius: 4,
-                                            backgroundColor: 'rgb(30, 30, 30)',
-                                            alignSelf: 'center',
-                                            margin: '0 auto',
-                                        }} />
-                                    <h3
-                                        style={{
-                                            margin: 16
-                                        }}
-                                    >Сохранить чек</h3>
-                                    <MenuItem
-                                        sx={{
-                                            width: (pageWidth === 363) ? pageWidth : pageWidth,
-                                            borderBottom: '1px solid rgb(30, 30, 30)',
-                                            height: 48, // Высота кнопки
-                                        }}
-                                        onClick={handleOpenCheck}
-                                    >
-                                        Русский
-                                    </MenuItem>
-                                    <MenuItem
-                                        sx={{
-                                            width: (pageWidth === 363) ? pageWidth : pageWidth,
-                                            height: 48, // Высота кнопки
-                                        }}
-                                        onClick={handleOpenCheck}
-
-                                    >
-                                        Английский
-                                    </MenuItem>
-                                </Menu>
                             </div>
                         </div>
                         <div
@@ -777,6 +718,74 @@ const PayProcessModal = ({
                                 </p>
                             </div>
                         </div>
+                        <Menu
+                            open={isCheckLangOpen}
+                            onClose={handleOpenCheckLang}
+                            anchorOrigin={{
+                                vertical: 'bottom',
+                                horizontal: 'center',
+                            }}
+                            transformOrigin={{
+                                vertical: 'top',
+                                horizontal: 'center',
+                            }}
+                            sx={{
+                                width: (pageWidth === 363) ? `calc(${pageWidth}px + 62px)` : pageWidth,
+                                padding: 0,
+                                margin: 0,
+                                '& .MuiMenu-paper': {
+                                    marginTop: 0, // Убираем отступ сверху
+                                    marginBottom: -20,
+
+                                },
+                            }}
+                            PaperProps={{ sx: {
+                                    padding: 0,
+                                    margin: 0,
+                                    boxShadow: 36,
+                                    borderTopLeftRadius: 20,
+                                    borderTopRightRadius: 20,
+                                    backgroundColor: '#1E1E1E',
+                                    color: 'white',
+                                    width: (pageWidth === 363) ? `calc(${pageWidth}px + 62px)` : pageWidth,
+
+                                } }}
+                        >
+                            <div
+                                style={{
+                                    height: 4,
+                                    width: 32,
+                                    borderRadius: 4,
+                                    backgroundColor: 'rgb(30, 30, 30)',
+                                    alignSelf: 'center',
+                                    margin: '0 auto',
+                                }} />
+                            <h3
+                                style={{
+                                    margin: 16
+                                }}
+                            >Сохранить чек</h3>
+                            <MenuItem
+                                sx={{
+                                    width: (pageWidth === 363) ? pageWidth : pageWidth,
+                                    borderBottom: '1px solid rgb(30, 30, 30)',
+                                    height: 48, // Высота кнопки
+                                }}
+                                onClick={handleOpenCheck}
+                            >
+                                Русский
+                            </MenuItem>
+                            <MenuItem
+                                sx={{
+                                    width: (pageWidth === 363) ? pageWidth : pageWidth,
+                                    height: 48, // Высота кнопки
+                                }}
+                                onClick={handleOpenCheck}
+
+                            >
+                                Английский
+                            </MenuItem>
+                        </Menu>
                     </Box>
 
                 </Slide>
