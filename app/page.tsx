@@ -11,6 +11,7 @@ import History from "@/app/components/History";
 import {useEffect, useState} from "react";
 import Controls from "@/app/components/Controls";
 import PayProcessModal from "@/app/components/PayProcessModal";
+import {Avatar, ListItemAvatar, Skeleton} from "@mui/material";
 
 
 
@@ -281,6 +282,16 @@ export default function Home() {
             person: payMethod ? '' : '/images/history/sber.svg',
             payMethod: payMethod,
         };
+
+        if (paySenderBankName === 'Альфа-Банк') {
+            setPayBankImg('/images/banks/alfa.png')
+        } else if (paySenderBankName === 'Т-Банк') {
+            setPayBankImg('/images/banks/t.png')
+        } else {
+            setPayBankImg('/images/history/sber.svg')
+        }
+
+
 
         // Update the state with the formatted balance
         setBalance(formattedBalance);
