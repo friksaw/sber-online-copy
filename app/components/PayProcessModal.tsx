@@ -268,6 +268,7 @@ const PayProcessModal = ({
                     <Box
                         sx={{
                             display: 'flex',
+                            flexDirection: 'column',
                             justifyContent: 'center',
                             alignContent: 'center',
 
@@ -279,7 +280,6 @@ const PayProcessModal = ({
                             height: '100%',
                             bgcolor: 'background.paper',
                             boxShadow: 24,
-                            p: 8,
                         }}
                     >
                         <div
@@ -330,6 +330,145 @@ const PayProcessModal = ({
                                 >
                                     {payName}
                                 </p>
+                        </div>
+                        <div
+                            style={{
+                                height: 497,
+                                backgroundColor: '#121212',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'space-between',
+                                padding: '24px 28px',
+                                marginBottom: -80
+                            }}
+                        >
+                            <div>
+                                <div
+                                    style={{
+                                        display: 'flex',
+                                        flexDirection: 'row',
+                                        width: '100%',
+                                        textWrap: 'nowrap',
+                                    }}
+                                >
+                                    <Image
+                                        src="/images/payment/pCheck.svg"
+                                        width={22}
+                                        height={27}
+                                        alt=''
+                                        style={{
+                                            marginBottom: 32,
+                                        }}
+                                    />
+                                    <p
+                                        style={{
+                                            marginLeft: 32,
+                                        }}
+                                    >
+                                        Сохранить чек
+                                    </p>
+                                </div>
+                                <div
+                                    style={{
+                                        display: 'flex',
+                                        flexDirection: 'row',
+                                        width: '100%',
+                                        textWrap: 'nowrap',
+                                        marginLeft: -8,
+                                    }}
+                                >
+                                    <Image
+                                        src="/images/payment/pStar.svg"
+                                        width={37}
+                                        height={32}
+                                        alt=''
+                                        style={{
+                                            marginBottom: 32,
+                                        }}
+                                    />
+                                    <p
+                                        style={{
+                                            marginLeft: 26,
+
+                                        }}
+                                    >
+                                        Создать шаблон
+                                    </p>
+                                </div>
+                                <div
+                                    style={{
+                                        display: 'flex',
+                                        flexDirection: 'row',
+                                        width: '100%',
+                                        textWrap: 'nowrap',
+                                        marginLeft: -8,
+                                    }}
+                                >
+                                    <Image
+                                        src="/images/payment/pDialog.svg"
+                                        width={39}
+                                        height={33}
+                                        alt=''
+                                        style={{
+                                            marginBottom: 32,
+                                        }}
+                                    />
+                                    <p
+                                        style={{
+                                            marginLeft: 26,
+
+                                        }}
+                                    >
+                                        Перейти в диалоги
+                                    </p>
+                                </div>
+                                <div
+                                    style={{
+                                        display: 'flex',
+                                        flexDirection: 'row',
+                                        width: '100%',
+                                        textWrap: 'nowrap',
+                                    }}
+                                >
+                                    <Image
+                                        src="/images/payment/pInfo.svg"
+                                        width={26}
+                                        height={30}
+                                        alt=''
+                                        style={{
+                                            marginBottom: 32,
+                                        }}
+                                    />
+                                    <p
+                                        style={{
+                                            marginLeft: 32,
+
+                                        }}
+                                    >
+                                        Подробности операции
+                                    </p>
+                                </div>
+
+                            </div>
+                            <a
+                                style={{
+                                    backgroundColor: '#148F2A',
+                                    marginBottom: 40,
+                                    borderRadius: 12,
+                                    height: 48,
+                                    width: '100%',
+                                    textAlign: 'center',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    cursor: 'pointer',
+                                    color: '#ffffff',
+
+                                }}
+                                onClick={handleOpenCheck}
+                            >
+                                Повторить
+                            </a>
                         </div>
                     </Box>
                 </Slide>
