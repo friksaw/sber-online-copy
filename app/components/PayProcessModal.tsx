@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {
+    Avatar,
     Button,
     CircularProgress,
     Fade,
@@ -61,6 +62,8 @@ const PayProcessModal = ({
 
                              pageHeight,
                             scale,
+
+    payBankImg,
                          }: any) => {
     const [isSuccessPayModalOpen, setIsSuccessPayModalOpen]: any = useState(false);
     const [expanded1, setExpanded1]: any = useState(false);
@@ -669,53 +672,76 @@ const PayProcessModal = ({
                                 <h3>
                                     Подробности
                                 </h3>
-                                <p
-                                    className='pGrey'
-                                    style={{
-                                        marginTop: 20,
-                                        marginBottom: 8,
-                                        fontSize: 14,
-                                    }}
-                                >
-                                    Куда
-                                </p>
-                                <div style={{display: 'flex', flexDirection: 'row'}}>
-                                    <div
-                                        style={{
-                                            display: 'flex',
-                                            flexDirection: 'row',
-                                            alignItems: 'center',
-                                            margin: '0 4px'
-                                        }}
-                                    >
-                                        <Image
-                                            src="/images/lil-dot.svg"
-                                            width={4}
-                                            height={4}
-                                            alt=''
+                                <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignContent: 'center', alignItems: 'center'}}>
+                                    <div>
+                                        <p
+                                            className='pGrey'
+                                            style={{
+                                                marginTop: 20,
+                                                marginBottom: 8,
+                                                fontSize: 14,
+                                            }}
+                                        >
+                                            Куда
+                                        </p>
+                                        <div style={{display: 'flex', flexDirection: 'row'}}>
+                                            <div
+                                                style={{
+                                                    display: 'flex',
+                                                    flexDirection: 'row',
+                                                    alignItems: 'center',
+                                                    margin: '0 4px'
+                                                }}
+                                            >
+                                                <Image
+                                                    src="/images/lil-dot.svg"
+                                                    width={4}
+                                                    height={4}
+                                                    alt=''
 
-                                        />
-                                        <Image
-                                            src="/images/lil-dot.svg"
-                                            width={4}
-                                            height={4}
-                                            alt=''
-                                        />
+                                                />
+                                                <Image
+                                                    src="/images/lil-dot.svg"
+                                                    width={4}
+                                                    height={4}
+                                                    alt=''
+                                                />
+                                            </div>
+                                            <p style={{marginLeft: 4}}>
+                                                {payResBankNum}
+
+                                            </p>
+                                        </div>
+                                        <p
+                                            className='pGrey'
+                                            style={{
+                                                fontSize: 14,
+                                                marginTop: 8,
+                                            }}
+                                        >
+                                            {paySenderBankName}
+                                        </p>
                                     </div>
-                                    <p style={{ marginLeft: 4 }}>
-                                        {payResBankNum}
+                                    <div>
+                                        <Avatar
+                                            sx={{
+                                                width: 56,
+                                                height: 56
+                                            }}
+                                        >
+                                            <Image
+                                                src={payBankImg}
+                                                width={80}
+                                                height={80}
+                                                alt=''
 
-                                    </p>
+                                            />
+                                        </Avatar>
+
+
+                                    </div>
                                 </div>
-                                <p
-                                    className='pGrey'
-                                    style={{
-                                        fontSize: 14,
-                                        marginTop: 8,
-                                    }}
-                                >
-                                    {paySenderBankName}
-                                </p>
+
                             </div>
                         </div>
                         <div

@@ -25,6 +25,7 @@ export default function Home() {
     const [currentTime, setCurrentTime] = useState<string>('');
 
     const [balance, setBalance]: any = useState('4 062,00');
+    const [payBankImg, setPayBankImg]: any = useState('/images/banks/t.png');
     const [expenses, setExpenses]: any = useState('72 048');
     const [paySum, setPaySum]: any = useState('2 000');
     const [payName, setPayName]: any = useState('Павел Получатель Л.');
@@ -571,6 +572,8 @@ export default function Home() {
                     pageHeight={pageHeight}
 
                     scale={scale}
+
+                    payBankImg={payBankImg}
                 />
                 <BottomNav
                     currentPage={currentPage}
