@@ -720,7 +720,7 @@ const PayProcessModal = ({
                         </div>
                         <div
                             style={{
-                                height: isCheckLangOpen ? 180 : 0,
+                                height: isCheckLangOpen ? 196 : 0,
                                 width: (pageWidth === 363) ? `calc(${pageWidth}px + 62px)` : pageWidth,
                                 backgroundColor: '#1E1E1E',
                                 color: 'white',
@@ -728,7 +728,7 @@ const PayProcessModal = ({
                                 position: 'absolute',
                                 bottom: 0,
                                 transition: 'all 0.2s ease-in-out',
-                                padding: '4px 18px',
+                                padding: '8px 18px',
                             }}
                         >
                             <div
@@ -748,8 +748,8 @@ const PayProcessModal = ({
                             <MenuItem
                                 sx={{
                                     width: (pageWidth === 363) ? pageWidth : pageWidth,
-                                    borderBottom: '1px solid rgb(30, 30, 30)',
-                                    height: 48, // Высота кнопки
+                                    borderBottom: '1px solid #121212',
+                                    height: 56, // Высота кнопки
                                 }}
                                 onClick={handleOpenCheck}
                             >
@@ -758,7 +758,7 @@ const PayProcessModal = ({
                             <MenuItem
                                 sx={{
                                     width: (pageWidth === 363) ? pageWidth : pageWidth,
-                                    height: 48,
+                                    height: 56,
                                     marginBottom: 2,
                                 }}
                                 onClick={handleOpenCheck}
@@ -815,7 +815,7 @@ const PayProcessModal = ({
                                 height: 56,
                                 backgroundColor: '#1E1E1E',
                                 width: (pageWidth === 363) ? `calc(${pageWidth}px + 62px)` : pageWidth,
-                                paddingTop:8,
+                                paddingTop: 4,
                             }}
                         >
                             <a
