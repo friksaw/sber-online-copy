@@ -718,45 +718,25 @@ const PayProcessModal = ({
                                 </p>
                             </div>
                         </div>
-                        <Menu
-                            open={isCheckLangOpen}
-                            onClose={handleOpenCheckLang}
-                            anchorOrigin={{
-                                vertical: 'bottom',
-                                horizontal: 'center',
-                            }}
-                            transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'center',
-                            }}
-                            sx={{
+                        <div
+                            style={{
+                                height: isCheckLangOpen ? 180 : 0,
                                 width: (pageWidth === 363) ? `calc(${pageWidth}px + 62px)` : pageWidth,
-                                padding: 0,
-                                margin: 0,
-                                '& .MuiMenu-paper': {
-                                    marginTop: 0, // Убираем отступ сверху
-                                    marginBottom: -20,
-
-                                },
+                                backgroundColor: '#1E1E1E',
+                                color: 'white',
+                                borderRadius: '20px 20px 0 0',
+                                position: 'absolute',
+                                bottom: 0,
+                                transition: 'all 0.2s ease-in-out',
+                                padding: '4px 18px',
                             }}
-                            PaperProps={{ sx: {
-                                    padding: 0,
-                                    margin: 0,
-                                    boxShadow: 36,
-                                    borderTopLeftRadius: 20,
-                                    borderTopRightRadius: 20,
-                                    backgroundColor: '#1E1E1E',
-                                    color: 'white',
-                                    width: (pageWidth === 363) ? `calc(${pageWidth}px + 62px)` : pageWidth,
-
-                                } }}
                         >
                             <div
                                 style={{
                                     height: 4,
                                     width: 32,
                                     borderRadius: 4,
-                                    backgroundColor: 'rgb(30, 30, 30)',
+                                    backgroundColor: '#121212',
                                     alignSelf: 'center',
                                     margin: '0 auto',
                                 }} />
@@ -778,14 +758,15 @@ const PayProcessModal = ({
                             <MenuItem
                                 sx={{
                                     width: (pageWidth === 363) ? pageWidth : pageWidth,
-                                    height: 48, // Высота кнопки
+                                    height: 48,
+                                    marginBottom: 2,
                                 }}
                                 onClick={handleOpenCheck}
 
                             >
                                 Английский
                             </MenuItem>
-                        </Menu>
+                        </div>
                     </Box>
 
                 </Slide>
