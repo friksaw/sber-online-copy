@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Image from "next/image";
-import {Skeleton} from "@mui/material";
+import {Avatar, Skeleton} from "@mui/material";
 
 export default function HistoryHeader({ sumToday, depositsToday, isPageLoaded, handleControl }: any) {
     return (
@@ -15,12 +15,24 @@ export default function HistoryHeader({ sumToday, depositsToday, isPageLoaded, h
                 }}
             >
                 <a onClick={handleControl}>
-                    <Image
-                        src="/images/avatars/myAvatar.svg"
-                        width={37}
-                        height={37}
-                        alt=''
-                    />
+                    <Avatar
+                        sx={{
+                            width: 36,
+                            height: 36,
+                            backgroundColor: '#383838'
+
+                        }}
+                    >
+                        <Image
+                            src="/images/avatars/no.svg"
+                            width={46}
+                            height={46}
+                            alt=''
+                            style={{
+                                marginBottom: 1
+                            }}
+                        />
+                    </Avatar>
                 </a>
 
                 <div

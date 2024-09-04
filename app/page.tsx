@@ -505,7 +505,7 @@ export default function Home() {
                         width: pageWidth,
                         position: 'absolute',
                         backgroundColor: 'black',
-                        zIndex: 100000000000000000000000000000000000000000000000
+                        zIndex: '10000000000000000000000000000000000000000000000000000000000000000000000000!important'
                     }}
                 >
                     <Image
