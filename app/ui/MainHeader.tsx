@@ -202,6 +202,7 @@ export default function MainHeader({ balance, handleControl, isPageLoaded }: any
                                         <p
                                             style={{
                                                 fontSize: 18,
+                                                textWrap: 'nowrap',
                                             }}
                                         >
                                             {balance} ₽

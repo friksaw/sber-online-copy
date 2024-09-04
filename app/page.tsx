@@ -259,15 +259,20 @@ export default function Home() {
 
         const newBalance: any = balanceNumeric - paySumNumeric;
         const newExpenses: any = expensesNumeric + paySumNumeric;
+        const newSumToday: any = paySumNumeric + sumTodayNumeric;
 
         const formattedBalance: any = newBalance.toLocaleString('ru-RU', {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2,
         });
 
-        const formattedSumToday: any = paySumNumeric.toLocaleString('ru-RU', {
-            useGrouping: true, // Enable thousands separator
-            separator: ' ' // Set space as the separator
+        const formattedSumToday: any = newSumToday.toLocaleString('ru-RU', {
+            useGrouping: true,
+            separator: ' ',
+        });
+        const formattedPaySum: any = paySumNumeric.toLocaleString('ru-RU', {
+            useGrouping: true,
+            separator: ' ',
         });
         const formattedExpensesSum: any = newExpenses.toLocaleString('ru-RU', {
             minimumFractionDigits: 2,
@@ -277,7 +282,7 @@ export default function Home() {
         const newPayment: any = {
             name: payName,
             desc: payMethod ? 'В другой банк' : 'Клиенту Сбера',
-            sum: formattedSumToday,
+            sum: formattedPaySum,
             person: payMethod ? '' : '/images/history/sber.svg',
             payMethod: payMethod,
         };
