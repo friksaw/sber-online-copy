@@ -50,7 +50,7 @@ export default function Home() {
     const [paySenderName, setPaySenderName]: any = useState('3456');
     const [paySenderBankNum, setPaySenderBankNum]: any = useState('5423');
 
-    const [paySenderBankName, setPaySenderBankName]: any = useState('Тинькофф Банк');
+    const [paySenderBankName, setPaySenderBankName]: any = useState('Т-Банк');
     const [payСommission, setPayСommission]: any = useState(0);
     const [paySuip, setPaySuip]: any = useState('202kyg7679m295mtumi063yuj167u6hy676u5u');
 
@@ -276,7 +276,7 @@ export default function Home() {
 
         const newPayment: any = {
             name: payName,
-            desc: payMethod ? 'В другой банк' : 'Клиенту Сбера',
+            desc: paySenderBankName,
             sum: formattedPaySum,
             person: payMethod ? '' : '/images/history/sber.svg',
             payMethod: payMethod,
