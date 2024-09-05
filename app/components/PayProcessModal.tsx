@@ -1109,7 +1109,7 @@ const PayProcessModal = ({
                                                         Операция
                                                     </p>
                                                     <p>
-                                                        Перевод клиенту Сбербанка
+                                                        {(paySenderBankName === 'Клиенту Сбера') ? 'Перевод клиенту Сбербанка' : paySenderBankName}
                                                     </p>
                                                     <p
                                                         className='pGrey'
