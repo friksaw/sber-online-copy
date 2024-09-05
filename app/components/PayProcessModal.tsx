@@ -185,8 +185,9 @@ const PayProcessModal = ({
                     display: 'flex',
                     paddingTop: '28px',
                     justifyContent: 'center',
+
                     '.css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop': {
-                        backgroundColor: 'rgba(0, 0, 0, 0)',
+                        backgroundColor: 'rgba(0, 0, 0, 0)!important',
                     },
                 }}
             >
@@ -341,7 +342,7 @@ const PayProcessModal = ({
                     paddingTop: '28px',
 
                     '.css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop': {
-                        backgroundColor: 'rgba(0, 0, 0, 0)',
+                        backgroundColor: 'rgba(0, 0, 0, 0)!important',
                     },
                 }}
             >
@@ -494,8 +495,9 @@ const PayProcessModal = ({
                     display: 'flex',
                     justifyContent: 'center',
                     paddingTop: '28px',
+
                     '.css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop': {
-                        backgroundColor: 'rgba(0, 0, 0, 0)',
+                        backgroundColor: 'rgba(0, 0, 0, 0)!important',
                     },
                 }}
             >
@@ -869,8 +871,9 @@ const PayProcessModal = ({
                     display: 'flex',
                     justifyContent: 'center',
                     paddingTop: '28px',
+
                     '.css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop': {
-                        backgroundColor: 'rgba(0, 0, 0, 0)',
+                        backgroundColor: 'rgba(0, 0, 0, 0)!important',
                     },
                 }}
             >
