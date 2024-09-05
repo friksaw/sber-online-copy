@@ -1370,18 +1370,6 @@ const PayProcessModal = ({
                                                             <p
                                                                 className='pGrey'
                                                                 style={{
-                                                                    fontSize: 14,
-                                                                    marginTop: 12,
-                                                                }}
-                                                            >
-                                                                СПИСАНО
-                                                            </p>
-                                                            <p>
-                                                                {paySum} ₽
-                                                            </p>
-                                                            <p
-                                                                className='pGrey'
-                                                                style={{
                                                                     marginTop: 12,
                                                                     fontSize: 14,
                                                                 }}
