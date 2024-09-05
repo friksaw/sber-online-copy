@@ -1247,7 +1247,7 @@ const PayProcessModal = ({
                                                                 Номер операции в СБП
                                                             </p>
                                                             <p>
-                                                                <p style={{textTransform: 'uppercase'}}}>
+                                                                <p style={{textTransform: 'uppercase'}}>
                                                                     {paySuip}
                                                                 </p>
                                                             </p>
