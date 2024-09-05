@@ -254,8 +254,8 @@ export default function Home() {
     function generateSuip() {
         const timestamp = Date.now().toString(36); // временная метка в base36
         const randomNum = Math.random().toString(36).substr(2, 5); // случайное число в base36
-
-        setPaySuip(uuidv4());
+        const uuid = uuidv4().replace(/-/g, '').substring(0, 19);
+        setPaySuip(uuid);
     }
 
     const changePaySuip: any = (newSuip: any) => {
