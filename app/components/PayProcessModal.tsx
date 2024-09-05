@@ -1255,7 +1255,7 @@ const PayProcessModal = ({
                                             style={{
                                                 width: '85%',
                                                 margin: '0 auto',
-                                                marginTop: '18px',
+                                                marginTop: '24px',
 
                                             }}
 
