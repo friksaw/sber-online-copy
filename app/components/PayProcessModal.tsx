@@ -83,7 +83,10 @@ const PayProcessModal = ({
                 const imgHeight = 842.28 - 28; // Высота A4 в пикселях при разрешении 72 dpi
                 const imgWidth = (canvas.width * imgHeight / canvas.height) - 28;
 
-                pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+                const x = (pdf.internal.pageSize.getWidth() - imgWidth) / 2; // Центрируем по горизонтали
+                const y = (pdf.internal.pageSize.getHeight() - imgHeight) / 2; // Центрируем по вертикали
+
+                pdf.addImage(imgData, 'PNG', x, y, imgWidth, imgHeight);
                 pdf.save('document.pdf');
             });
         }
