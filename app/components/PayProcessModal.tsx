@@ -796,7 +796,7 @@ const PayProcessModal = ({
                         <div
                             onClick={handleOpenCheckLang}
                             style={{
-                                height: isCheckLangOpen ? '100vh' : 0,
+                                height: isCheckLangOpen ? '97.2vh' : 0,
                                 opacity: isCheckLangOpen ? 1 : 0,
                                 width: (pageWidth === 363) ? `calc(${pageWidth}px + 62px)` : pageWidth,
                                 backgroundColor: 'rgb(0,0,0,0.5)',
