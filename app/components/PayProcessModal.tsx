@@ -1279,7 +1279,7 @@ const PayProcessModal = ({
                                 style={{
                                     backgroundColor: !isCheckLoaded ? '#1E1E1E' : '#148F2A',
                                     marginBottom: 56,
-                                    marginTop: !isCheckLoaded ? '652px' : 12,
+                                    marginTop: !isCheckLoaded ? '756px' : 12,
                                     borderRadius: 12,
                                     height: 48,
                                     width: '100%',
