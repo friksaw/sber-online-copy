@@ -211,9 +211,10 @@ const PayProcessModal = ({
                             label="Сколько перевести"
                             variant="outlined"
                             value={paySum}
-                            style={{
+                            sx={{
                                 width: '100%',
-                                marginBottom: 12,
+                                marginBottom: 4,
+                                height: '28px',
                             }}
                             onChange={(event): any => changePaySum(event?.target.value)}
                         />
@@ -222,9 +223,10 @@ const PayProcessModal = ({
                             label="Комиссия"
                             variant="outlined"
                             value={payCommission}
-                            style={{
+                            sx={{
                                 width: '100%',
-                                marginBottom: 12,
+                                marginBottom: 4,
+                                height: '28px',
                             }}
                             onChange={(event): any => changePayCommission(event?.target.value)}
                         />
@@ -233,9 +235,10 @@ const PayProcessModal = ({
                             label="Кто переводит"
                             variant="outlined"
                             value={paySenderName}
-                            style={{
+                            sx={{
                                 width: '100%',
-                                marginBottom: 12,
+                                marginBottom: 4,
+                                height: '28px',
                             }}
                             onChange={(event): any => changePaySenderName(event?.target.value)}
                         />
@@ -244,9 +247,10 @@ const PayProcessModal = ({
                             label="Кому перевести"
                             variant="outlined"
                             value={payName}
-                            style={{
+                            sx={{
                                 width: '100%',
-                                marginBottom: 12,
+                                marginBottom: 4,
+                                height: '28px',
                             }}
                             onChange={(event): any => changePayName(event?.target.value)}
                         />
@@ -262,19 +266,33 @@ const PayProcessModal = ({
                                 <FormControlLabel sx={{color: 'black'}} value="ВТБ" control={<Radio />} label="ВТБ" />
                                 <FormControlLabel sx={{color: 'black'}} value="Т-Банк" control={<Radio />} label="Т-Банк" />
                                 <FormControlLabel sx={{color: 'black'}} value="Альфа-Банк" control={<Radio />} label="Альфа-Банк" />
+                                <FormControlLabel sx={{color: 'black'}} value="Открытие" control={<Radio />} label="Открытие" />
                                 <FormControlLabel sx={{color: 'black'}} value="Перевод на карту другого банка" control={<Radio />} label="Перевод на карту другого банка" />
                                 <FormControlLabel sx={{color: 'black'}} value="Перевод по СБП" control={<Radio />} label="Перевод по СБП" />
                             </RadioGroup>
                         </FormControl>
+                        <TextField
+                            id="outlined-basic"
+                            label="Имя другого банкаи"
+                            variant="outlined"
+                            value={paySum}
+                            sx={{
+                                width: '100%',
+                                marginBottom: 4,
+                                height: '28px',
+                            }}
+                            onChange={(event): any => changePaySum(event?.target.value)}
+                        />
 
                         <TextField
                             id="outlined-basic"
                             label="Номер получателя"
                             variant="outlined"
                             value={payPhone}
-                            style={{
+                            sx={{
                                 width: '100%',
-                                marginBottom: 12,
+                                marginBottom: 4,
+                                height: '28px',
                             }}
                             onChange={(event): any => changePayPhone(event?.target.value)}
                         />
@@ -283,9 +301,10 @@ const PayProcessModal = ({
                             label="4 цифры отправителя"
                             variant="outlined"
                             value={paySenderBankNum}
-                            style={{
+                            sx={{
                                 width: '100%',
-                                marginBottom: 12,
+                                marginBottom: 4,
+                                height: '28px',
                             }}
                             onChange={(event): any => changePaySenderBankNum(event?.target.value)}
                         />
@@ -296,9 +315,10 @@ const PayProcessModal = ({
                                 label="Суип"
                                 variant="outlined"
                                 value={paySuip}
-                                style={{
+                                sx={{
                                     width: '100%',
-                                    marginBottom: 12,
+                                    marginBottom: 4,
+                                    height: '28px',
                                 }}
                                 onChange={(event): any => changePaySuip(event?.target.value)}
                             />
@@ -313,9 +333,10 @@ const PayProcessModal = ({
                             label="4 цифры получателя"
                             variant="outlined"
                             value={payResBankNum}
-                            style={{
+                            sx={{
                                 width: '100%',
-                                marginBottom: 12,
+                                marginBottom: 4,
+                                height: '28px',
                             }}
                             onChange={(event): any => changePayResBankNum(event?.target.value)}
                         />
