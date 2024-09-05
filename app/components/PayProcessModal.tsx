@@ -968,6 +968,7 @@ const PayProcessModal = ({
                                         style={{
                                             borderBottom: '1px dashed #707070',
                                             display: 'flex',
+                                            borderDashOffset: 8,
                                             flexDirection: 'column',
                                             alignItems: 'center',
                                             paddingBottom: 8,
@@ -1013,7 +1014,6 @@ const PayProcessModal = ({
                                     </div>
                                     <div
                                         style={{
-                                            borderBottom: '1px dashed #707070',
                                             paddingBottom: 18,
                                             marginBottom: 18,
                                         }}
