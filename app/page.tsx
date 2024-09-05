@@ -39,6 +39,7 @@ export default function Home() {
 
     const [cardNum, setCardNum]: any = useState('3962');
     const [bankNum, setBankNum]: any = useState('3181');
+    const [paySumCom, setPaySumCom]: any = useState('0');
 
     const [scale, setScale]: any = useState(1);
     const [isCheckModalOpen, setIsCheckModalOpen]: any = useState(0);
@@ -290,10 +291,12 @@ export default function Home() {
         const sumTodayNumeric: any = parseFloat(sumToday.replace(/\s/g, '').replace(',', '.'));
         const expensesNumeric: any = parseFloat(expenses.replace(/\s/g, '').replace(',', '.'));
         const paySumNumeric: any = parseFloat(paySum.replace(/\s/g, '').replace(',', '.'));
+        const payCommissionNumeric: any = parseFloat(payСommission.replace(/\s/g, '').replace(',', '.'));
 
         const newBalance: any = balanceNumeric - paySumNumeric;
         const newExpenses: any = expensesNumeric + paySumNumeric;
         const newSumToday: any = paySumNumeric + sumTodayNumeric;
+        const newPaySumCom: any = paySumNumeric + payCommissionNumeric;
 
         const formattedBalance: any = newBalance.toLocaleString('ru-RU', {
             minimumFractionDigits: 2,
@@ -308,16 +311,25 @@ export default function Home() {
             useGrouping: true,
             separator: ' ',
         });
+        const formattedCommission: any = payCommissionNumeric.toLocaleString('ru-RU', {
+            useGrouping: true,
+            separator: ' ',
+        });
         const formattedExpensesSum: any = newExpenses.toLocaleString('ru-RU', {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2,
         });
+        const formattedPaySumCom: any = newPaySumCom.toLocaleString('ru-RU', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+        });
+
 
         const newPayment: any = {
             name: payName,
             bankName: paySenderBankName,
             sum: formattedPaySum,
-            comission: payСommission,
+            comission: formattedCommission,
             resBankNum: payResBankNum,
         };
 
@@ -335,7 +347,7 @@ export default function Home() {
 
 
 
-        // Update the state with the formatted balance
+        setPaySumCom(formattedPaySumCom)
         setBalance(formattedBalance);
         setSumToday(formattedSumToday);
         setPaymentsToday((prevPayments: any) => [...prevPayments, newPayment]);
@@ -632,6 +644,8 @@ export default function Home() {
                     selectedItemIndex={selectedItemIndex}
 
                     paymentsToday={paymentsToday}
+
+                    paySumCom={paySumCom}
                 />
                 <BottomNav
                     currentPage={currentPage}

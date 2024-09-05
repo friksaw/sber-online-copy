@@ -67,6 +67,8 @@ const PayProcessModal = ({
                              generateSuip,
                              selectedItemIndex,
                              paymentsToday,
+
+                             paySumCom,
                          }: any) => {
     const [isSuccessPayModalOpen, setIsSuccessPayModalOpen]: any = useState(false);
     const [expanded1, setExpanded1]: any = useState(false);
@@ -1146,7 +1148,7 @@ const PayProcessModal = ({
                                                             Комиссия
                                                         </p>
                                                         <p>
-                                                            {payCommission},00 ₽
+                                                            {payCommission} ₽
                                                         </p>
                                                         <p
                                                             className='pGrey'
@@ -1275,7 +1277,7 @@ const PayProcessModal = ({
                                                                 Комиссия
                                                             </p>
                                                             <p>
-                                                                {payCommission},00 ₽
+                                                                {payCommission} ₽
                                                             </p>
 
                                                             <p
@@ -1353,7 +1355,7 @@ const PayProcessModal = ({
                                                                 КОМИССИЯ
                                                             </p>
                                                             <p>
-                                                                {payCommission},00 ₽
+                                                                {payCommission} ₽
                                                             </p>
                                                             <p
                                                                 className='pGrey'
@@ -1365,7 +1367,7 @@ const PayProcessModal = ({
                                                                 СПИСАНО
                                                             </p>
                                                             <p>
-                                                                {paySum} ₽
+                                                                {paySumCom} ₽
                                                             </p>
                                                             <p
                                                                 className='pGrey'
