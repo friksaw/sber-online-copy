@@ -985,15 +985,7 @@ const PayProcessModal = ({
                                             }}
                                         />
                                         {
-                                            (paySenderBankName !== 'Клиенту Сбера' || paySenderBankName !== 'Перевод по СБП' ) ?
-                                                <p
-                                                    className='pGrey'
-                                                    style={{
-                                                        fontSize: 14,
-                                                    }}
-                                                >
-                                                    Перевод по номеру карты в другой банк
-                                                </p> :
+                                            (paySenderBankName === 'Клиенту Сбера') ?
                                                 <p
                                                     className='pGrey'
                                                     style={{
@@ -1001,7 +993,24 @@ const PayProcessModal = ({
                                                     }}
                                                 >
                                                     Чек по операции
-                                                </p>
+                                                </p> :
+                                                (paySenderBankName === 'Перевод по СБП') ?
+                                                    <p
+                                                        className='pGrey'
+                                                        style={{
+                                                            fontSize: 14,
+                                                        }}
+                                                    >
+                                                        Чек по операции
+                                                    </p> :
+                                                    <p
+                                                        className='pGrey'
+                                                        style={{
+                                                            fontSize: 14,
+                                                        }}
+                                                    >
+                                                        Перевод по номеру карты в другой банк
+                                                    </p>
                                         }
                                         <p
                                             className='pGrey'
