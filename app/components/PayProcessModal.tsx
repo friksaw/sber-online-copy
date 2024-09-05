@@ -1196,7 +1196,7 @@ const PayProcessModal = ({
                                                                 Банк получателя
                                                             </p>
                                                             <p>
-                                                                Т-Банк
+                                                                РСХБ
                                                             </p>
                                                             <p
                                                                 className='pGrey'
