@@ -778,6 +778,7 @@ const PayProcessModal = ({
                             </div>
                         </div>
                         <div
+                            onClick={handleOpenCheckLang}
                             style={{
                                 height: isCheckLangOpen ? '100vh' : 0,
                                 opacity: isCheckLangOpen ? 1 : 0,
