@@ -327,7 +327,7 @@ export default function Home() {
         } else if (paySenderBankName === 'ВТБ') {
             setPayBankImg('/images/banks/vtb.png')
         } else if (paySenderBankName === 'Перевод на карту другого банка') {
-            setPayBankImg('/images/banks/cards.svg')
+            setPayBankImg('/images/banks/banks.svg')
         } else {
             setPayBankImg('/images/history/sber.svg')
         }
