@@ -319,9 +319,9 @@ export default function Home() {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2,
         });
-        const formattedPaySumCom: any = newPaySumCom.toLocaleString('ru-RU', {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2,
+        const formattedPaySumCom: any = paySumNumeric.toLocaleString('ru-RU', {
+            useGrouping: true,
+            separator: ' ',
         });
 
 

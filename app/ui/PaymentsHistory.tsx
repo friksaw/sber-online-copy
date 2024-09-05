@@ -160,7 +160,7 @@ export default function PaymentsHistory({ deleteItem, handleCheckPayModal, isPag
                         >
                             {
                                 isPageLoaded ?
-                                    <Avatar alt="Profile Picture" src={(bankName === 'Альфа-Банк') ? '/images/banks/alfa.png' : (bankName === 'Т-Банк') ? '/images/banks/t.png' : (bankName === 'ВТБ') ? '/images/banks/vtb.png' : (bankName === 'Перевод на карту другого банка') ? '/images/banks/cards.svg' : '/images/history/sber.svg'  }/> : <Skeleton variant="circular" width={40} height={40} /> }
+                                    <Avatar alt="Profile Picture" src={(bankName === 'Альфа-Банк') ? '/images/banks/alfa.png' : (bankName === 'Т-Банк') ? '/images/banks/t.png' : (bankName === 'ВТБ') ? '/images/banks/vtb.png' : ((bankName === 'Перевод на карту другого банка') || (bankName === 'РСХБ') || (bankName === 'Открытие')) ? '/images/banks/cards.svg' : '/images/history/sber.svg'  }/> : <Skeleton variant="circular" width={40} height={40} /> }
                         </ListItemAvatar>
                         <div
                             style={{
