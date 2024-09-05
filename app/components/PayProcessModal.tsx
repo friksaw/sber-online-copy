@@ -1162,6 +1162,8 @@ const PayProcessModal = ({
                                                             <p
                                                                 className='pGrey'
                                                                 style={{
+                                                                    marginTop: 20,
+
                                                                     fontSize: 14,
                                                                 }}
                                                             >
@@ -1173,6 +1175,8 @@ const PayProcessModal = ({
                                                             <p
                                                                 className='pGrey'
                                                                 style={{
+                                                                    marginTop: 20,
+
                                                                     fontSize: 14,
                                                                 }}
                                                             >
@@ -1184,6 +1188,8 @@ const PayProcessModal = ({
                                                             <p
                                                                 className='pGrey'
                                                                 style={{
+                                                                    marginTop: 20,
+
                                                                     fontSize: 14,
                                                                 }}
                                                             >
@@ -1207,6 +1213,8 @@ const PayProcessModal = ({
                                                             <p
                                                                 className='pGrey'
                                                                 style={{
+                                                                    marginTop: 20,
+
                                                                     fontSize: 14,
                                                                 }}
                                                             >
@@ -1218,6 +1226,8 @@ const PayProcessModal = ({
                                                             <p
                                                                 className='pGrey'
                                                                 style={{
+                                                                    marginTop: 20,
+
                                                                     fontSize: 14,
                                                                 }}
                                                             >
@@ -1229,6 +1239,8 @@ const PayProcessModal = ({
                                                             <p
                                                                 className='pGrey'
                                                                 style={{
+                                                                    marginTop: 20,
+
                                                                     fontSize: 14,
                                                                 }}
                                                             >
@@ -1241,6 +1253,8 @@ const PayProcessModal = ({
                                                             <p
                                                                 className='pGrey'
                                                                 style={{
+                                                                    marginTop: 20,
+
                                                                     fontSize: 14,
                                                                 }}
                                                             >
