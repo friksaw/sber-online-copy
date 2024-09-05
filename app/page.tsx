@@ -294,6 +294,8 @@ export default function Home() {
             setPayBankImg('/images/banks/alfa.png')
         } else if (paySenderBankName === 'Т-Банк') {
             setPayBankImg('/images/banks/t.png')
+        } else if (paySenderBankName === 'ВТБ') {
+            setPayBankImg('/images/banks/vtb.png')
         } else {
             setPayBankImg('/images/history/sber.svg')
         }
