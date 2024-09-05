@@ -13,6 +13,7 @@ import Controls from "@/app/components/Controls";
 import PayProcessModal from "@/app/components/PayProcessModal";
 import {Avatar, ListItemAvatar, Skeleton} from "@mui/material";
 
+import { v4 as uuidv4 } from 'uuid';
 
 
 
@@ -225,7 +226,7 @@ export default function Home() {
         const timestamp = Date.now().toString(36); // временная метка в base36
         const randomNum = Math.random().toString(36).substr(2, 5); // случайное число в base36
 
-        setPaySuip(`${timestamp}-${randomNum}`);
+        setPaySuip(uuidv4());
     }
 
     const changePaySuip: any = (newSuip: any) => {
