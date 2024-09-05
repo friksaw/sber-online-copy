@@ -909,10 +909,12 @@ const PayProcessModal = ({
                                 />
                             </a>
                             <p
+                                onClick={handleOpenCheck}
                                 style={{
                                     fontSize: 18,
                                     fontWeight: 500,
-                                    marginLeft: 28
+                                    marginLeft: 28,
+                                    cursor: 'pointer',
                                 }}
                             >
                                 Сохранить чек
