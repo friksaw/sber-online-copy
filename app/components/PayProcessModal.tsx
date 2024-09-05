@@ -764,7 +764,7 @@ const PayProcessModal = ({
                                                 marginTop: 8,
                                             }}
                                         >
-                                            {paymentsToday[1] && paymentsToday[1].name}
+                                            {paySenderBankName}
                                         </p>
                                     </div>
                                     <div>
