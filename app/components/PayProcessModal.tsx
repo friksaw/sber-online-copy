@@ -754,7 +754,6 @@ const PayProcessModal = ({
                                             </div>
                                             <p style={{marginLeft: 4}}>
                                                 0909
-
                                             </p>
                                         </div>
                                         <p
@@ -1015,7 +1014,7 @@ const PayProcessModal = ({
                                     <div
                                         style={{
                                             borderBottom: '1px dashed #707070',
-                                            paddingBottom: 30,
+                                            paddingBottom: 18,
                                             marginBottom: 18,
                                         }}
                                     >
@@ -1248,7 +1247,21 @@ const PayProcessModal = ({
                                                     </p>
                                                 </div>
                                         }
+                                        <Image
+                                            src="/images/bgs/item.svg"
+                                            width={4}
+                                            height={4}
+                                            alt=''
+                                            style={{
+                                                width: '85%',
+                                                margin: '0 auto',
+                                                marginTop: '18px',
+
+                                            }}
+
+                                        />
                                     </div>
+
                                 </div> :
                                     <div>
                                         <CircularProgress
@@ -1266,7 +1279,7 @@ const PayProcessModal = ({
                                 style={{
                                     backgroundColor: !isCheckLoaded ? '#1E1E1E' : '#148F2A',
                                     marginBottom: 56,
-                                    marginTop: !isCheckLoaded ? '652px' : 8,
+                                    marginTop: !isCheckLoaded ? '652px' : 12,
                                     borderRadius: 12,
                                     height: 48,
                                     width: '100%',
