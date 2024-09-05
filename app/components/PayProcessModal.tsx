@@ -74,13 +74,16 @@ const PayProcessModal = ({
     const [isCheckLangOpen, setIsCheckLangOpen]: any = useState(null);
     const pdfRef: any = useRef(null);
 
-    const handleSavePdf: any = () => {
+    const handleSavePdf = () => {
         if (pdfRef.current) {
-            html2canvas(pdfRef.current).then((canvas: any) => {
-                const imgData: any = canvas.toDataURL('image/png');
-                const pdf: any = new jsPDF();
+            html2canvas(pdfRef.current).then((canvas) => {
+                const imgData = canvas.toDataURL('image/png');
+                const pdf = new jsPDF('p', 'pt', 'a4'); // Создаем новый документ PDF (ориентация 'p' - портретная, размер 'a4')
 
-                pdf.addImage(imgData, 'PNG', 0, 0);
+                const imgHeight = 842.28 - 28; // Высота A4 в пикселях при разрешении 72 dpi
+                const imgWidth = (canvas.width * imgHeight / canvas.height) - 28;
+
+                pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
                 pdf.save('document.pdf');
             });
         }
