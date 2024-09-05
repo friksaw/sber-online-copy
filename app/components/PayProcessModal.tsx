@@ -270,6 +270,7 @@ const PayProcessModal = ({
                                 <FormControlLabel sx={{color: 'black'}} value="Т-Банк" control={<Radio />} label="Т-Банк" />
                                 <FormControlLabel sx={{color: 'black'}} value="Альфа-Банк" control={<Radio />} label="Альфа-Банк" />
                                 <FormControlLabel sx={{color: 'black'}} value="Открытие" control={<Radio />} label="Открытие" />
+                                <FormControlLabel sx={{color: 'black'}} value="РСХБ" control={<Radio />} label="РСХБ" />
                                 <FormControlLabel sx={{color: 'black'}} value="Перевод на карту другого банка" control={<Radio />} label="Перевод на карту другого банка" />
                                 <FormControlLabel sx={{color: 'black'}} value="Перевод по СБП" control={<Radio />} label="Перевод по СБП" />
                             </RadioGroup>
@@ -1353,6 +1354,18 @@ const PayProcessModal = ({
                                                             </p>
                                                             <p>
                                                                 {payCommission},00 ₽
+                                                            </p>
+                                                            <p
+                                                                className='pGrey'
+                                                                style={{
+                                                                    fontSize: 14,
+                                                                    marginTop: 12,
+                                                                }}
+                                                            >
+                                                                СПИСАНО
+                                                            </p>
+                                                            <p>
+                                                                {paySum} ₽
                                                             </p>
                                                             <p
                                                                 className='pGrey'
