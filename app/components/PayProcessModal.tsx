@@ -47,8 +47,6 @@ const PayProcessModal = ({
                              changePaySenderName,
                              changePayResBankNum,
 
-                             changePayMethod,
-                             payMethod,
 
                              changePaySenderBankName,
                              paySenderBankName,
@@ -1016,7 +1014,7 @@ const PayProcessModal = ({
                                         }}
                                     >
                                         {
-                                            payMethod ?
+                                            (paySenderBankName !== 'Клиенту Сбера') ?
                                                 <div>
                                                     <p
                                                         className='pGrey'
