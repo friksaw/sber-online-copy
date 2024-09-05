@@ -65,7 +65,8 @@ const PayProcessModal = ({
                              pageHeight,
                             scale,
 
-    payBankImg,
+                             payBankImg,
+                             generateSuip,
                          }: any) => {
     const [isSuccessPayModalOpen, setIsSuccessPayModalOpen]: any = useState(false);
     const [expanded1, setExpanded1]: any = useState(false);
@@ -280,17 +281,24 @@ const PayProcessModal = ({
                             onChange={(event): any => changePaySenderBankNum(event?.target.value)}
                         />
 
-                        <TextField
-                            id="outlined-basic"
-                            label="Суип"
-                            variant="outlined"
-                            value={paySuip}
-                            style={{
-                                width: '100%',
-                                marginBottom: 12,
-                            }}
-                            onChange={(event): any => changePaySuip(event?.target.value)}
-                        />
+                        <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignContent: 'center', alignItems: 'center',}}>
+                            <TextField
+                                id="outlined-basic"
+                                label="Суип"
+                                variant="outlined"
+                                value={paySuip}
+                                style={{
+                                    width: '100%',
+                                    marginBottom: 12,
+                                }}
+                                onChange={(event): any => changePaySuip(event?.target.value)}
+                            />
+                            <div>
+                                <Button onClick={generateSuip} style={{marginLeft: '12px', marginBottom: '14px'}}>Генерация</Button>
+
+                            </div>
+                        </div>
+
                         <TextField
                             id="outlined-basic"
                             label="4 цифры получателя"

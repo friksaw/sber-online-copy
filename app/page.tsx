@@ -220,6 +220,14 @@ export default function Home() {
     const changeCardNum: any = (newNum: any) => {
         setCardNum(newNum);
     };
+
+    function generateSuip() {
+        const timestamp = Date.now().toString(36); // временная метка в base36
+        const randomNum = Math.random().toString(36).substr(2, 5); // случайное число в base36
+
+        setPaySuip(`${timestamp}-${randomNum}`);
+    }
+
     const changePaySuip: any = (newSuip: any) => {
         setPaySuip(newSuip);
     };
@@ -581,6 +589,7 @@ export default function Home() {
                     scale={scale}
 
                     payBankImg={payBankImg}
+                    generateSuip={generateSuip}
                 />
                 <BottomNav
                     currentPage={currentPage}
