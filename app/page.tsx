@@ -535,13 +535,14 @@ export default function Home() {
                         style={{
                         }}
                     />
-                    <p style={{fontWeight: 400, fontSize: 12, marginTop: 6, marginLeft: -16}}>{currentTime}</p>
+                    <p style={{fontWeight: 400, fontSize: 12, marginTop: 6, marginLeft: -16, zIndex: '10000000000000000000000000000000000000000000000000000000000000000000000000!important'}}>{currentTime}</p>
                     <Image
                         src="/images/bgs/pbg1.png"
                         width={140}
                         height={36}
                         alt=''
                         style={{
+                            zIndex: '10000000000000000000000000000000000000000000000000000000000000000000000000!important'
                         }}
                     />
                 </div>
