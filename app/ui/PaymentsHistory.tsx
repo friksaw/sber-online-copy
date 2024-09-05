@@ -76,11 +76,13 @@ export default function PaymentsHistory({ deleteItem, handleCheckPayModal, isPag
                                         {bankName}
                                     </p>
                                     {
-                                        (commission && commission !== '0') ?
-                                        <p className="pGrey" style={{ marginTop: 8, marginBottom: 8 }}>
-                                            Комиссия: {commission}
-                                        </p> : ''
+                                        (commission.trim().charAt(0) !== '0') ? (
+                                            <p className="pGrey" style={{ marginTop: 8, marginBottom: 8 }}>
+                                                Комиссия: {commission}
+                                            </p>
+                                        ) : null
                                     }
+
                                 </div>
                                 <div
                                     style={{
