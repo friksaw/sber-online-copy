@@ -45,7 +45,8 @@ export default function PaymentsHistory({ deleteItem, handleCheckPayModal, isPag
                     <List>{paymentsToday.slice().reverse().map(({ name, desc, sum, bankName }: any, index: any) => (
                         <ListItemButton
                             key={index}
-                            onClick={deleteItem}
+                            onClick={handleCheckPayModal}
+
                             sx={{
                                 height: 64,
                             }}
@@ -53,8 +54,8 @@ export default function PaymentsHistory({ deleteItem, handleCheckPayModal, isPag
                             <ListItemAvatar sx={{alignSelf: 'start'}}>
                                 {
                                     isPageLoaded ?
-                                        <Avatar                             onClick={handleCheckPayModal}
-                                                                            alt="Profile Picture" src={(desc === 'Альфа-Банк') ? '/images/banks/alfa.png' : (desc === 'Т-Банк') ? '/images/banks/t.png' : (desc === 'ВТБ') ? '/images/banks/vtb.png' : '/images/history/sber.svg'  }/> : <Skeleton variant="circular" width={40} height={40} /> }
+                                        <Avatar
+                                            onClick={deleteItem}              alt="Profile Picture" src={(desc === 'Альфа-Банк') ? '/images/banks/alfa.png' : (desc === 'Т-Банк') ? '/images/banks/t.png' : (desc === 'ВТБ') ? '/images/banks/vtb.png' : '/images/history/sber.svg'  }/> : <Skeleton variant="circular" width={40} height={40} /> }
                             </ListItemAvatar>
                             <div
                                 style={{
@@ -152,9 +153,10 @@ export default function PaymentsHistory({ deleteItem, handleCheckPayModal, isPag
                         sx={{
                             height: 64,
                         }}
+                        onClick={handleCheckPayModal}
+
                     >
                         <ListItemAvatar
-                            onClick={handleCheckPayModal}
                             sx={{alignSelf: 'start'}}
                         >
                             {
