@@ -57,7 +57,7 @@ export default function Home() {
     const [paySenderBankNum, setPaySenderBankNum]: any = useState('5423');
 
     const [paySenderBankName, setPaySenderBankName]: any = useState('Клиенту Сбера');
-    const [payСommission, setPayСommission]: any = useState('0');
+    const [payCommission, setPayCommission]: any = useState('0');
     const [paySuip, setPaySuip]: any = useState('202kyg7679m295mtumi063yuj167u6hy676u5u');
 
 
@@ -240,7 +240,7 @@ export default function Home() {
         setPeopleSum(newSum);
     };
     const changePayCommission: any = (newCommission: any) => {
-        setPayСommission(newCommission);
+        setPayCommission(newCommission);
     };
 
     const changePayName: any = (newName: any) => {
@@ -291,7 +291,7 @@ export default function Home() {
         const sumTodayNumeric: any = parseFloat(sumToday.replace(/\s/g, '').replace(',', '.'));
         const expensesNumeric: any = parseFloat(expenses.replace(/\s/g, '').replace(',', '.'));
         const paySumNumeric: any = parseFloat(paySum.replace(/\s/g, '').replace(',', '.'));
-        const payCommissionNumeric: any = parseFloat(payСommission.replace(/\s/g, '').replace(',', '.'));
+        const payCommissionNumeric: any = parseFloat(payCommission.replace(/\s/g, '').replace(',', '.'));
 
         const newBalance: any = balanceNumeric - paySumNumeric;
         const newExpenses: any = expensesNumeric + paySumNumeric;
@@ -330,7 +330,7 @@ export default function Home() {
             name: payName,
             bankName: paySenderBankName,
             sum: formattedPaySum,
-            comission: formattedCommission,
+            commission: formattedCommission,
             resBankNum: payResBankNum,
         };
 
@@ -340,7 +340,7 @@ export default function Home() {
             setPayBankImg('/images/banks/t.png')
         } else if (paySenderBankName === 'ВТБ') {
             setPayBankImg('/images/banks/vtb.png')
-        } else if (paySenderBankName === 'Перевод на карту другого банка' || paySenderBankName === 'Перевод по СБП') {
+        } else if (paySenderBankName === 'Перевод на карту другого банка' || paySenderBankName === 'Перевод по СБП' || paySenderBankName === 'Открытие' || paySenderBankName === 'РСХБ') {
             setPayBankImg('/images/banks/banks.svg')
         } else {
             setPayBankImg('/images/history/sber.svg')
@@ -627,7 +627,7 @@ export default function Home() {
                     paySenderBankName={paySenderBankName}
 
                     changePayCommission={changePayCommission}
-                    payCommission={payСommission}
+                    payCommission={payCommission}
 
                     paySuip={paySuip}
                     changePaySuip={changePaySuip}

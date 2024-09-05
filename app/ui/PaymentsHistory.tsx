@@ -42,12 +42,12 @@ export default function PaymentsHistory({ deleteItem, handleCheckPayModal, isPag
                                                style={{borderRadius: 4}}/>
                         }
                     </div>
-                    <List>{paymentsToday.slice().reverse().map(({ name, bankName, sum }: any, index: any) => (
+                    <List>{paymentsToday.slice().reverse().map(({ name, bankName, sum, commission, }: any, index: any) => (
                         <ListItemButton
                             key={index}
                             onClick={() => handleCheckPayModal(index)}
                             sx={{
-                                height: 64,
+                                height: (commission !== '0') ? 84 : 64,
                             }}
                         >
                             <ListItemAvatar sx={{alignSelf: 'start'}}>
@@ -69,17 +69,18 @@ export default function PaymentsHistory({ deleteItem, handleCheckPayModal, isPag
                                 }}
                             >
                                 <div>
+                                    <p style={{ textWrap: 'nowrap' }}>
+                                        {name}
+                                    </p>
+                                    <p className="pGrey" style={{ marginTop: 4 }}>
+                                        {bankName}
+                                    </p>
                                     {
-                                        isPageLoaded ?
-                                        <p style={{ textWrap: 'nowrap' }}>{name}</p>   : <Skeleton variant="rectangular" width={120} height={24}
-                                                                                               style={{borderRadius: 4, marginBottom: 4}}/>}
-                                        {
-                                            isPageLoaded ?
-                                                <p className="pGrey" style={{ marginTop: 4 }}>
-                                                    {bankName}
-                                                </p>   : <Skeleton variant="rectangular" width={100} height={20}
-                                                                   style={{borderRadius: 4}}/>
-                                        }
+                                        (commission !== '0') ?
+                                        <p className="pGrey" style={{ marginTop: 4 }}>
+                                            Комиссия: {commission}
+                                        </p> : ''
+                                    }
                                 </div>
                                 <div
                                     style={{
