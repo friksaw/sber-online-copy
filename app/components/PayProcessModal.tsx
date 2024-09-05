@@ -3,12 +3,12 @@ import {
     Avatar,
     Button,
     CircularProgress,
-    Fade,
+    Fade, FormControl, FormControlLabel, FormLabel,
     keyframes,
     makeStyles,
     Menu,
     MenuItem,
-    Modal,
+    Modal, Radio, RadioGroup,
     Slide,
     TextField
 } from "@mui/material";
@@ -17,6 +17,7 @@ import PayProcessBox from "@/app/components/PaySuccessBox";
 import Image from "next/image";
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
+import {black} from "next/dist/lib/picocolors";
 
 
 const PayProcessModal = ({
@@ -210,28 +211,6 @@ const PayProcessModal = ({
                         />
                         <TextField
                             id="outlined-basic"
-                            label="Кому перевести"
-                            variant="outlined"
-                            value={payName}
-                            style={{
-                                width: '100%',
-                                marginBottom: 12,
-                            }}
-                            onChange={(event): any => changePayName(event?.target.value)}
-                        />
-                        <TextField
-                            id="outlined-basic"
-                            label="Имя банка (Клиенту Сбера, Альфа-Банк, Т-Банк, ВТБ)"
-                            variant="outlined"
-                            value={paySenderBankName}
-                            style={{
-                                width: '100%',
-                                marginBottom: 12,
-                            }}
-                            onChange={(event): any => changePaySenderBankName(event?.target.value)}
-                        />
-                        <TextField
-                            id="outlined-basic"
                             label="Комиссия"
                             variant="outlined"
                             value={payCommission}
@@ -241,6 +220,43 @@ const PayProcessModal = ({
                             }}
                             onChange={(event): any => changePayCommission(event?.target.value)}
                         />
+                        <TextField
+                            id="outlined-basic"
+                            label="Кто переводит"
+                            variant="outlined"
+                            value={paySenderName}
+                            style={{
+                                width: '100%',
+                                marginBottom: 12,
+                            }}
+                            onChange={(event): any => changePaySenderName(event?.target.value)}
+                        />
+                        <TextField
+                            id="outlined-basic"
+                            label="Кому перевести"
+                            variant="outlined"
+                            value={payName}
+                            style={{
+                                width: '100%',
+                                marginBottom: 12,
+                            }}
+                            onChange={(event): any => changePayName(event?.target.value)}
+                        />
+                        <FormControl component="fieldset">
+                            <RadioGroup
+                                aria-label="banks"
+                                name="banks"
+                                value={paySenderBankName}
+                                onChange={changePaySenderBankName}
+                                sx={{ flexDirection: 'column', gap: '12px', marginBottom: '20px' }}
+                            >
+                                <FormControlLabel sx={{color: 'black'}} value="Клиенту Сбера" control={<Radio />} label="Клиенту Сбера" />
+                                <FormControlLabel sx={{color: 'black'}} value="ВТБ" control={<Radio />} label="ВТБ" />
+                                <FormControlLabel sx={{color: 'black'}} value="Т-Банк" control={<Radio />} label="Т-Банк" />
+                                <FormControlLabel sx={{color: 'black'}} value="Альфа-Банк" control={<Radio />} label="Альфа-Банк" />
+                            </RadioGroup>
+                        </FormControl>
+
                         <TextField
                             id="outlined-basic"
                             label="Номер получателя"
@@ -263,17 +279,7 @@ const PayProcessModal = ({
                             }}
                             onChange={(event): any => changePaySenderBankNum(event?.target.value)}
                         />
-                        <TextField
-                            id="outlined-basic"
-                            label="Кто переводит"
-                            variant="outlined"
-                            value={paySenderName}
-                            style={{
-                                width: '100%',
-                                marginBottom: 12,
-                            }}
-                            onChange={(event): any => changePaySenderName(event?.target.value)}
-                        />
+
                         <TextField
                             id="outlined-basic"
                             label="Суип"

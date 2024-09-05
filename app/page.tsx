@@ -223,8 +223,8 @@ export default function Home() {
     const changePaySuip: any = (newSuip: any) => {
         setPaySuip(newSuip);
     };
-    const changePaySenderBankName: any = (newBankName: any) => {
-        setPaySenderBankName(newBankName);
+    const changePaySenderBankName: any = (event: any) => {
+        setPaySenderBankName((event.target as HTMLInputElement).value);
     };
     const changeMonth: any = (newMonth: any) => {
         setMonth(newMonth);
