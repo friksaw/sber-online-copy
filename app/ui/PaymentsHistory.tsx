@@ -45,7 +45,7 @@ export default function PaymentsHistory({ deleteItem, handleCheckPayModal, isPag
                     <List>{paymentsToday.slice().reverse().map(({ name, bankName, sum }: any, index: any) => (
                         <ListItemButton
                             key={index}
-                            onClick={() => handleCheckPayModal()}
+                            onClick={() => handleCheckPayModal(index)}
                             sx={{
                                 height: 64,
                             }}
@@ -54,7 +54,7 @@ export default function PaymentsHistory({ deleteItem, handleCheckPayModal, isPag
                                 {
                                     isPageLoaded ?
                                         <Avatar
-                                            onClick={deleteItem}              alt="Profile Picture" src={(bankName === 'Альфа-Банк') ? '/images/banks/alfa.png' : (bankName === 'Т-Банк') ? '/images/banks/t.png' : (bankName === 'ВТБ') ? '/images/banks/vtb.png' : '/images/history/sber.svg'  }/> : <Skeleton variant="circular" width={40} height={40} /> }
+                                            onClick={deleteItem}              alt="Profile Picture" src={(bankName === 'Альфа-Банк') ? '/images/banks/alfa.png' : (bankName === 'Т-Банк') ? '/images/banks/t.png' : (bankName === 'ВТБ') ? '/images/banks/vtb.png' : (bankName === 'Перевод на карту другого банка') ? '/images/banks/otp.png' : '/images/history/sber.svg'  }/> : <Skeleton variant="circular" width={40} height={40} /> }
                             </ListItemAvatar>
                             <div
                                 style={{
@@ -152,7 +152,7 @@ export default function PaymentsHistory({ deleteItem, handleCheckPayModal, isPag
                         sx={{
                             height: 64,
                         }}
-                        onClick={handleCheckPayModal}
+                        onClick={() => handleCheckPayModal(index)}
 
                     >
                         <ListItemAvatar
@@ -160,7 +160,7 @@ export default function PaymentsHistory({ deleteItem, handleCheckPayModal, isPag
                         >
                             {
                                 isPageLoaded ?
-                                    <Avatar alt="Profile Picture" src={(bankName === 'Альфа-Банк') ? '/images/banks/alfa.png' : (bankName === 'Т-Банк') ? '/images/banks/t.png' : (bankName === 'ВТБ') ? '/images/banks/vtb.png' : '/images/history/sber.svg'  }/> : <Skeleton variant="circular" width={40} height={40} /> }
+                                    <Avatar alt="Profile Picture" src={(bankName === 'Альфа-Банк') ? '/images/banks/alfa.png' : (bankName === 'Т-Банк') ? '/images/banks/t.png' : (bankName === 'ВТБ') ? '/images/banks/vtb.png' : (bankName === 'Перевод на карту другого банка') ? '/images/banks/cards.svg' : '/images/history/sber.svg'  }/> : <Skeleton variant="circular" width={40} height={40} /> }
                         </ListItemAvatar>
                         <div
                             style={{

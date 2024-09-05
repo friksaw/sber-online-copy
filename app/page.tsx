@@ -61,6 +61,10 @@ export default function Home() {
 
 
     const [payMethod, setPayMethod]: any = useState(0);
+    const [selectedItemIndex, setSelectedItemIndex]: any = useState(null);
+
+
+
 
     useEffect(() => {
         const updateCurrentTime = () => {
@@ -80,63 +84,84 @@ export default function Home() {
     const [paymentsYesterday, setPaymentsYesterday]: any = useState([
         {
             name: 'Ирина Юрьевна Е.',
-            bankName: 'Альфа-Банк',
+            bankName: 'Перевод на карту другого банка',
             sum: '9 000',
             isBadged: 1,
             comission: 0,
+            resBankNum: '7676',
 
         },
         {
             name: 'Полина Петровна И.',
             bankName: 'Т-Банк',
             sum: '600',
+            resBankNum: '4545',
+
         },
         {
             name: 'Георгий Янович П.',
             bankName: 'Альфа-Банк',
             sum: '1 220',
+            resBankNum: '2324',
+
         },
         {
             name: 'Виталий Савин В.',
             bankName: 'Клиенту Сбера',
             sum: '120',
+            resBankNum: '6587',
+
         },
         {
             name: 'Владимир Дмитриевич Д.',
             bankName: 'Клиенту Сбера',
             sum: '500',
-            isBadged: 1
+            isBadged: 1,
+            resBankNum: '6575',
+
         },
         {
             name: 'Полина Петровна И.',
             bankName: 'Клиенту Сбера',
             sum: '500',
+            resBankNum: '0965',
+
         },
         {
             name: 'Марина Савина Л.',
             bankName: 'ВТБ',
             sum: '600',
+            resBankNum: '2343',
+
         },
         {
             name: 'Федор Янович П.',
             bankName: 'Т-Банк',
             sum: '1 220',
+            resBankNum: '1212',
+
         },
         {
             name: 'Борис Мушкиновский Е.',
-            bankName: 'Клиенту Сбера',
+            bankName: 'Перевод на карту другого банка',
             sum: '120',
+            resBankNum: '0909',
+
         },
         {
             name: 'Владимир Чехов Д.',
             bankName: 'ВТБ',
             sum: '500',
-            isBadged: 1
+            isBadged: 1,
+            resBankNum: '0765',
+
         },
         {
             name: 'Анастасия Рябова Д.',
             bankName: 'Клиенту Сбера',
             sum: '500',
+            resBankNum: '6554',
+
         },
     ])
 
@@ -180,8 +205,11 @@ export default function Home() {
     const handlePayProcessModal: any = () => {
         setIsPayProcessModalOpen((isOpen: any) => !isOpen);
     };
-    const handleCheckPayModal: any = () => {
+    const handleCheckPayModal: any = (index: any) => {
         setIsCheckModalOpen((isOpen: any) => !isOpen);
+        console.log(index)
+        setSelectedItemIndex(index);
+
     };
 
     const handleControl: any = () => {
@@ -286,10 +314,10 @@ export default function Home() {
 
         const newPayment: any = {
             name: payName,
-            desc: paySenderBankName,
+            bankName: paySenderBankName,
             sum: formattedPaySum,
-            person: payMethod ? '' : '/images/history/sber.svg',
-            payMethod: payMethod,
+            comission: payСommission,
+            resBankNum: payResBankNum,
         };
 
         if (paySenderBankName === 'Альфа-Банк') {
@@ -298,6 +326,8 @@ export default function Home() {
             setPayBankImg('/images/banks/t.png')
         } else if (paySenderBankName === 'ВТБ') {
             setPayBankImg('/images/banks/vtb.png')
+        } else if (paySenderBankName === 'ОТП') {
+            setPayBankImg('/images/banks/cards.svg')
         } else {
             setPayBankImg('/images/history/sber.svg')
         }
@@ -342,9 +372,8 @@ export default function Home() {
 
         const newPayment: any = {
             name: 'Геннадий Ефимов Г.',
-            desc: 'Клиент Сбера',
+            bankName: 'Клиент Сбера',
             sum: '+ ' + formattedSumToday,
-            person: '/images/history/sber.svg',
         };
 
         setPaymentsToday((prevPayments: any) => [...prevPayments, newPayment]);
@@ -598,6 +627,10 @@ export default function Home() {
 
                     payBankImg={payBankImg}
                     generateSuip={generateSuip}
+
+                    selectedItemIndex={selectedItemIndex}
+
+                    paymentsToday={paymentsToday}
                 />
                 <BottomNav
                     currentPage={currentPage}

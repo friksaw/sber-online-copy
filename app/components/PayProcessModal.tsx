@@ -65,6 +65,8 @@ const PayProcessModal = ({
 
                              payBankImg,
                              generateSuip,
+                             selectedItemIndex,
+                             paymentsToday,
                          }: any) => {
     const [isSuccessPayModalOpen, setIsSuccessPayModalOpen]: any = useState(false);
     const [expanded1, setExpanded1]: any = useState(false);
@@ -260,6 +262,7 @@ const PayProcessModal = ({
                                 <FormControlLabel sx={{color: 'black'}} value="ВТБ" control={<Radio />} label="ВТБ" />
                                 <FormControlLabel sx={{color: 'black'}} value="Т-Банк" control={<Radio />} label="Т-Банк" />
                                 <FormControlLabel sx={{color: 'black'}} value="Альфа-Банк" control={<Radio />} label="Альфа-Банк" />
+                                <FormControlLabel sx={{color: 'black'}} value="Перевод на карту другого банка" control={<Radio />} label="Перевод на карту другого банка" />
                             </RadioGroup>
                         </FormControl>
 
@@ -531,7 +534,7 @@ const PayProcessModal = ({
                             <a
                                 onClick={goToHistory}
                                 style={{
-                                    cursor: 'pointer'
+                                    cursor: 'pointer',
                                 }}
                             >
                                 <Image
@@ -750,7 +753,7 @@ const PayProcessModal = ({
                                                 />
                                             </div>
                                             <p style={{marginLeft: 4}}>
-                                                {payResBankNum}
+                                                0909
 
                                             </p>
                                         </div>
@@ -761,7 +764,7 @@ const PayProcessModal = ({
                                                 marginTop: 8,
                                             }}
                                         >
-                                            {paySenderBankName}
+                                            {paymentsToday[1] && paymentsToday[1].name}
                                         </p>
                                     </div>
                                     <div>
