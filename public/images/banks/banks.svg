@@ -1,9 +1,9 @@
 <svg width="112" height="112" viewBox="0 0 112 112" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="112" height="112" fill="#158F2C"/>
-<rect x="27" y="70" width="63" height="11" rx="5" fill="#F4F4F4" stroke="#158F2C" stroke-width="2"/>
-<rect x="32" y="46" width="10" height="24" rx="3" fill="#F4F4F4" stroke="#158F2C" stroke-width="2"/>
-<rect x="75" y="46" width="10" height="24" rx="3" fill="#F4F4F4" stroke="#158F2C" stroke-width="2"/>
-<rect x="61" y="46" width="10" height="24" rx="3" fill="#F4F4F4" stroke="#158F2C" stroke-width="2"/>
-<rect x="46" y="46" width="10" height="24" rx="3" fill="#F4F4F4" stroke="#158F2C" stroke-width="2"/>
-<path d="M55.8435 20.3804C57.1581 19.5389 58.8419 19.5389 60.1565 20.3804L86.3251 37.1311C89.6909 39.2855 88.1649 44.5 84.1687 44.5H31.8313C27.8351 44.5 26.3091 39.2855 29.6749 37.1311L55.8435 20.3804Z" fill="#F4F4F4"/>
+<rect x="26" y="70" width="63" height="11" rx="5" fill="#F4F4F4" stroke="#158F2C" stroke-width="2"/>
+<rect x="31" y="46" width="10" height="24" rx="3" fill="#F4F4F4" stroke="#158F2C" stroke-width="2"/>
+<rect x="74" y="46" width="10" height="24" rx="3" fill="#F4F4F4" stroke="#158F2C" stroke-width="2"/>
+<rect x="60" y="46" width="10" height="24" rx="3" fill="#F4F4F4" stroke="#158F2C" stroke-width="2"/>
+<rect x="45" y="46" width="10" height="24" rx="3" fill="#F4F4F4" stroke="#158F2C" stroke-width="2"/>
+<path d="M54.8435 20.3804C56.1581 19.5389 57.8419 19.5389 59.1565 20.3804L85.3251 37.1311C88.6909 39.2855 87.1649 44.5 83.1687 44.5H30.8313C26.8351 44.5 25.3091 39.2855 28.6749 37.1311L54.8435 20.3804Z" fill="#F4F4F4"/>
 </svg>
