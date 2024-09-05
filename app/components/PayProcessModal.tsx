@@ -772,9 +772,13 @@ const PayProcessModal = ({
                                         >
                                             <Image
                                                 src={payBankImg}
-                                                width={80}
-                                                height={80}
+                                                width={84}
+                                                height={84}
                                                 alt=''
+                                                style={{
+                                                    scale: 1.1,
+                                                    marginTop: 2,
+                                                }}
 
                                             />
                                         </Avatar>
