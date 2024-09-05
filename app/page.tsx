@@ -307,6 +307,55 @@ export default function Home() {
         setExpenses(formattedExpensesSum);
     };
 
+    const deleteItem = (paySumToDelete, payNameToDelete, payMethodToDelete, paySenderBankNameToDelete) => {
+        // Convert paySumToDelete to numeric
+        const paySumNumericToDelete = parseFloat(paySumToDelete.replace(/\s/g, '').replace(',', '.'));
+
+        // Reverse the changes made by doPay function
+        // Retrieve current state values or use stored values from doPay if available
+        const currentBalanceNumeric = parseFloat(balance.replace(/\s/g, '').replace(',', '.'));
+        const currentSumTodayNumeric = parseFloat(sumToday.replace(/\s/g, '').replace(',', '.'));
+        const currentExpensesNumeric = parseFloat(expenses.replace(/\s/g, '').replace(',', '.'));
+        const currentPaySumNumeric = parseFloat(paySum.replace(/\s/g, '').replace(',', '.'));
+
+        // Reverse calculations
+        const newBalance = currentBalanceNumeric + paySumNumericToDelete;
+        const newExpenses = currentExpensesNumeric - paySumNumericToDelete;
+        const newSumToday = currentSumTodayNumeric - paySumNumericToDelete;
+
+        // Format the values for display
+        const formattedBalance = newBalance.toLocaleString('ru-RU', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+        });
+        const formattedSumToday = newSumToday.toLocaleString('ru-RU', {
+            useGrouping: true,
+            separator: ' ',
+        });
+        const formattedExpensesSum = newExpenses.toLocaleString('ru-RU', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+        });
+
+        // Find the payment to remove from paymentsToday state
+        const indexToRemove = paymentsToday.findIndex(pay =>
+            pay.name === payNameToDelete &&
+            pay.payMethod === payMethodToDelete &&
+            pay.desc === paySenderBankNameToDelete
+        );
+
+        // If found, remove the payment from paymentsToday state
+        if (indexToRemove !== -1) {
+            const updatedPayments = [...paymentsToday];
+            updatedPayments.splice(indexToRemove, 1);
+            setPaymentsToday(updatedPayments);
+        }
+
+        // Update the state with the reverted balance, sumToday, and expenses
+        setBalance(formattedBalance);
+        setSumToday(formattedSumToday);
+        setExpenses(formattedExpensesSum);
+    };
 
     function getRandomNumber({ min, max }: any): any {
         return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -440,6 +489,7 @@ export default function Home() {
                     pageHeight={pageHeight}
                     handleCheckPayModal={handleCheckPayModal}
                     isCheckModalOpen={isCheckModalOpen}
+                    deleteItem={deleteItem}
 
                 />;
             default:

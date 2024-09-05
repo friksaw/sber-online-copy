@@ -6,7 +6,7 @@ import Image from "next/image";
 import {fontWeight} from "@mui/system";
 import Paper from "@mui/material/Paper";
 
-export default function PaymentsHistory({ handleCheckPayModal, isPageLoaded, paymentsYesterday, sumYesterday, paymentsToday, sumToday, depositsToday, handleOpenCheck }: any) {
+export default function PaymentsHistory({ deleteItem, handleCheckPayModal, isPageLoaded, paymentsYesterday, sumYesterday, paymentsToday, sumToday, depositsToday, handleOpenCheck }: any) {
     return (
         <div>
             {
@@ -48,12 +48,12 @@ export default function PaymentsHistory({ handleCheckPayModal, isPageLoaded, pay
                             sx={{
                                 height: 64,
                             }}
-                            onClick={handleCheckPayModal}
                         >
                             <ListItemAvatar sx={{alignSelf: 'start'}}>
                                 {
                                     isPageLoaded ?
-                                        <Avatar alt="Profile Picture" src={(desc === 'Альфа-Банк') ? '/images/banks/alfa.png' : (desc === 'Т-Банк') ? '/images/banks/t.png' : (desc === 'ВТБ') ? '/images/banks/vtb.jpg' : '/images/history/sber.svg'  }/> : <Skeleton variant="circular" width={40} height={40} /> }
+                                        <Avatar                             onClick={handleCheckPayModal}
+                                                                            alt="Profile Picture" src={(desc === 'Альфа-Банк') ? '/images/banks/alfa.png' : (desc === 'Т-Банк') ? '/images/banks/t.png' : (desc === 'ВТБ') ? '/images/banks/vtb.jpg' : '/images/history/sber.svg'  }/> : <Skeleton variant="circular" width={40} height={40} /> }
                             </ListItemAvatar>
                             <div
                                 style={{
