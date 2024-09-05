@@ -92,7 +92,7 @@ export default function Home() {
         },
         {
             name: 'Ирина Юрьевна Е.',
-            bankName: 'Перевод на карту другого банка',
+            bankName: 'Перевод по СБП',
             sum: '9 000',
             isBadged: 1,
             comission: 0,
@@ -327,7 +327,7 @@ export default function Home() {
             setPayBankImg('/images/banks/t.png')
         } else if (paySenderBankName === 'ВТБ') {
             setPayBankImg('/images/banks/vtb.png')
-        } else if (paySenderBankName === 'Перевод на карту другого банка') {
+        } else if (paySenderBankName === 'Перевод на карту другого банка' || paySenderBankName === 'Перевод по СБП') {
             setPayBankImg('/images/banks/banks.svg')
         } else {
             setPayBankImg('/images/history/sber.svg')
