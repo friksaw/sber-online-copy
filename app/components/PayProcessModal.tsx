@@ -191,7 +191,7 @@ const PayProcessModal = ({
                         />
                         <TextField
                             id="outlined-basic"
-                            label="Имя банка (Клиенту Сбера, Альфа-Банк, Т-Банк)"
+                            label="Имя банка (Клиенту Сбера, Альфа-Банк, Т-Банк, ВТБ)"
                             variant="outlined"
                             value={paySenderBankName}
                             style={{

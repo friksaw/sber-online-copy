@@ -53,7 +53,7 @@ export default function PaymentsHistory({ handleCheckPayModal, isPageLoaded, pay
                             <ListItemAvatar sx={{alignSelf: 'start'}}>
                                 {
                                     isPageLoaded ?
-                                        <Avatar alt="Profile Picture" src={(desc === 'Альфа-Банк') ? '/images/banks/alfa.png' : (desc === 'Т-Банк') ? '/images/banks/t.png' : '/images/history/sber.svg'  }/> : <Skeleton variant="circular" width={40} height={40} /> }
+                                        <Avatar alt="Profile Picture" src={(desc === 'Альфа-Банк') ? '/images/banks/alfa.png' : (desc === 'Т-Банк') ? '/images/banks/t.png' : (desc === 'ВТБ') ? '/images/banks/vtb.jpg' : '/images/history/sber.svg'  }/> : <Skeleton variant="circular" width={40} height={40} /> }
                             </ListItemAvatar>
                             <div
                                 style={{
@@ -156,7 +156,7 @@ export default function PaymentsHistory({ handleCheckPayModal, isPageLoaded, pay
                         <ListItemAvatar sx={{alignSelf: 'start'}}>
                             {
                                 isPageLoaded ?
-                            <Avatar alt="Profile Picture" src={(desc === 'Альфа-Банк') ? '/images/banks/alfa.png' : (desc === 'Т-Банк') ? '/images/banks/t.png' : '/images/history/sber.svg'  }/> : <Skeleton variant="circular" width={40} height={40} /> }
+                                    <Avatar alt="Profile Picture" src={(desc === 'Альфа-Банк') ? '/images/banks/alfa.png' : (desc === 'Т-Банк') ? '/images/banks/t.png' : (desc === 'ВТБ') ? '/images/banks/vtb.jpg' : '/images/history/sber.svg'  }/> : <Skeleton variant="circular" width={40} height={40} /> }
                         </ListItemAvatar>
                         <div
                             style={{

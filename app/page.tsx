@@ -112,7 +112,7 @@ export default function Home() {
         },
         {
             name: 'Марина Савина Л.',
-            desc: 'Т-Банк',
+            desc: 'ВТБ',
             sum: '600',
         },
         {
@@ -127,7 +127,7 @@ export default function Home() {
         },
         {
             name: 'Владимир Чехов Д.',
-            desc: 'Клиенту Сбера',
+            desc: 'ВТБ',
             sum: '500',
             isBadged: 1
         },
