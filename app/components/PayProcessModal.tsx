@@ -934,7 +934,7 @@ const PayProcessModal = ({
                                             }}
                                         />
                                         {
-                                            payMethod ?
+                                            (paySenderBankName !== 'Клиенту Сбера') ?
                                                 <p
                                                     className='pGrey'
                                                     style={{
