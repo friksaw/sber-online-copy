@@ -93,7 +93,7 @@ const PayProcessModal = ({
             hour: 'numeric',
             minute: 'numeric',
             second: 'numeric',
-            timeZone: 'Europe/Moscow', // Московское время
+            timeZone: 'Europe/Moscow',
         };
         const formatter = new Intl.DateTimeFormat('ru-RU', options);
         return formatter.format(new Date());
