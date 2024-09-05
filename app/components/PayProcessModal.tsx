@@ -205,31 +205,34 @@ const PayProcessModal = ({
 
                         }}
                     >
+                        <div style={{display: 'flex', flexDirection: 'row'}}>
+                            <TextField
+                                id="outlined-basic"
+                                label="Сколько перевести"
+                                variant="outlined"
+                                value={paySum}
+                                sx={{
+                                    width: '100%',
+                                    marginBottom: 4,
+                                    height: '32px',
+                                }}
+                                onChange={(event): any => changePaySum(event?.target.value)}
+                            />
+                            <TextField
+                                id="outlined-basic"
+                                label="Комиссия"
+                                variant="outlined"
+                                value={payCommission}
+                                sx={{
+                                    width: '100%',
+                                    marginBottom: 4,
+                                    height: '32px',
+                                }}
+                                onChange={(event): any => changePayCommission(event?.target.value)}
+                            />
+                        </div>
 
-                        <TextField
-                            id="outlined-basic"
-                            label="Сколько перевести"
-                            variant="outlined"
-                            value={paySum}
-                            sx={{
-                                width: '100%',
-                                marginBottom: 4,
-                                height: '28px',
-                            }}
-                            onChange={(event): any => changePaySum(event?.target.value)}
-                        />
-                        <TextField
-                            id="outlined-basic"
-                            label="Комиссия"
-                            variant="outlined"
-                            value={payCommission}
-                            sx={{
-                                width: '100%',
-                                marginBottom: 4,
-                                height: '28px',
-                            }}
-                            onChange={(event): any => changePayCommission(event?.target.value)}
-                        />
+
                         <TextField
                             id="outlined-basic"
                             label="Кто переводит"
@@ -238,7 +241,7 @@ const PayProcessModal = ({
                             sx={{
                                 width: '100%',
                                 marginBottom: 4,
-                                height: '28px',
+                                height: '32px',
                             }}
                             onChange={(event): any => changePaySenderName(event?.target.value)}
                         />
@@ -250,7 +253,7 @@ const PayProcessModal = ({
                             sx={{
                                 width: '100%',
                                 marginBottom: 4,
-                                height: '28px',
+                                height: '32px',
                             }}
                             onChange={(event): any => changePayName(event?.target.value)}
                         />
@@ -292,22 +295,37 @@ const PayProcessModal = ({
                             sx={{
                                 width: '100%',
                                 marginBottom: 4,
-                                height: '28px',
+                                height: '32px',
                             }}
                             onChange={(event): any => changePayPhone(event?.target.value)}
                         />
-                        <TextField
-                            id="outlined-basic"
-                            label="4 цифры отправителя"
-                            variant="outlined"
-                            value={paySenderBankNum}
-                            sx={{
-                                width: '100%',
-                                marginBottom: 4,
-                                height: '28px',
-                            }}
-                            onChange={(event): any => changePaySenderBankNum(event?.target.value)}
-                        />
+                        <div style={{display: 'flex', flexDirection: 'row'}}>
+                            <TextField
+                                id="outlined-basic"
+                                label="4 цифры получателя"
+                                variant="outlined"
+                                value={payResBankNum}
+                                sx={{
+                                    width: '100%',
+                                    marginBottom: 4,
+                                    height: '32px',
+                                }}
+                                onChange={(event): any => changePayResBankNum(event?.target.value)}
+                            />
+                            <TextField
+                                id="outlined-basic"
+                                label="4 цифры отправителя"
+                                variant="outlined"
+                                value={paySenderBankNum}
+                                sx={{
+                                    width: '100%',
+                                    marginBottom: 4,
+                                    height: '32px',
+                                }}
+                                onChange={(event): any => changePaySenderBankNum(event?.target.value)}
+                            />
+                        </div>
+
 
                         <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignContent: 'center', alignItems: 'center',}}>
                             <TextField
@@ -318,7 +336,7 @@ const PayProcessModal = ({
                                 sx={{
                                     width: '100%',
                                     marginBottom: 4,
-                                    height: '28px',
+                                    height: '32px',
                                 }}
                                 onChange={(event): any => changePaySuip(event?.target.value)}
                             />
@@ -328,18 +346,7 @@ const PayProcessModal = ({
                             </div>
                         </div>
 
-                        <TextField
-                            id="outlined-basic"
-                            label="4 цифры получателя"
-                            variant="outlined"
-                            value={payResBankNum}
-                            sx={{
-                                width: '100%',
-                                marginBottom: 4,
-                                height: '28px',
-                            }}
-                            onChange={(event): any => changePayResBankNum(event?.target.value)}
-                        />
+
                         <Button onClick={handleSuccessPayModal}>
                             Перевести
                         </Button>
