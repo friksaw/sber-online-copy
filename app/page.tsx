@@ -312,8 +312,8 @@ export default function Home() {
             separator: ' ',
         });
         const formattedCommission: any = payCommissionNumeric.toLocaleString('ru-RU', {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2,
+            useGrouping: true,
+            separator: ' ',
         });
         const formattedExpensesSum: any = newExpenses.toLocaleString('ru-RU', {
             minimumFractionDigits: 2,
