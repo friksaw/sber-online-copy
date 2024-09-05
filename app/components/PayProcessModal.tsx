@@ -256,13 +256,14 @@ const PayProcessModal = ({
                                 name="banks"
                                 value={paySenderBankName}
                                 onChange={changePaySenderBankName}
-                                sx={{ flexDirection: 'column', gap: '12px', marginBottom: '20px' }}
+                                sx={{ flexDirection: 'column', marginBottom: '20px' }}
                             >
                                 <FormControlLabel sx={{color: 'black'}} value="Клиенту Сбера" control={<Radio />} label="Клиенту Сбера" />
                                 <FormControlLabel sx={{color: 'black'}} value="ВТБ" control={<Radio />} label="ВТБ" />
                                 <FormControlLabel sx={{color: 'black'}} value="Т-Банк" control={<Radio />} label="Т-Банк" />
                                 <FormControlLabel sx={{color: 'black'}} value="Альфа-Банк" control={<Radio />} label="Альфа-Банк" />
                                 <FormControlLabel sx={{color: 'black'}} value="Перевод на карту другого банка" control={<Radio />} label="Перевод на карту другого банка" />
+                                <FormControlLabel sx={{color: 'black'}} value="Перевод по СБП" control={<Radio />} label="Перевод по СБП" />
                             </RadioGroup>
                         </FormControl>
 
@@ -984,7 +985,7 @@ const PayProcessModal = ({
                                             }}
                                         />
                                         {
-                                            (paySenderBankName !== 'Клиенту Сбера') ?
+                                            (paySenderBankName !== 'Клиенту Сбера' || paySenderBankName !== 'Перевод по СБП' ) ?
                                                 <p
                                                     className='pGrey'
                                                     style={{
