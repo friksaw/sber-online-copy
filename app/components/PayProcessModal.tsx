@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useRef, useState} from 'react';
 import {
     Avatar,
     Button,
@@ -15,7 +15,8 @@ import {
 import Box from "@mui/material/Box";
 import PayProcessBox from "@/app/components/PaySuccessBox";
 import Image from "next/image";
-
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 
 
 const PayProcessModal = ({
@@ -69,6 +70,21 @@ const PayProcessModal = ({
     const [expanded1, setExpanded1]: any = useState(false);
     const [expanded2, setExpanded2]: any = useState(false);
     const [isCheckLangOpen, setIsCheckLangOpen]: any = useState(null);
+    const pdfRef: any = useRef(null);
+
+    const handleSavePdf: any = () => {
+        if (pdfRef.current) {
+            html2canvas(pdfRef.current).then((canvas: any) => {
+                const imgData: any = canvas.toDataURL('image/png');
+                const pdf: any = new jsPDF();
+
+                pdf.addImage(imgData, 'PNG', 0, 0);
+                pdf.save('document.pdf');
+            });
+        }
+    };
+
+
     const getCurrentDateTime = () => {
         const options: Intl.DateTimeFormatOptions = {
             year: 'numeric',
@@ -903,6 +919,7 @@ const PayProcessModal = ({
                             {
                                 isCheckLoaded ?
                                 <div
+                                    ref={pdfRef}
                                     style={{
                                         display: 'flex',
                                         flexDirection: 'column',
@@ -1226,7 +1243,7 @@ const PayProcessModal = ({
                                     cursor: 'pointer',
                                     color: !isCheckLoaded ? '#5F5F5F' : '#ffffff',
                                 }}
-                                onClick={handleOpenCheck}
+                                onClick={handleSavePdf}
                             >
                                 Сохранить или отправить
                             </a>
