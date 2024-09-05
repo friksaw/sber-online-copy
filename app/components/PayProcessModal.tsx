@@ -958,7 +958,7 @@ const PayProcessModal = ({
                                                 fontSize: 14,
                                             }}
                                         >
-                                            {currentDateTime}
+                                            {currentDateTime} (МСК)
                                         </p>
                                     </div>
                                     <div
