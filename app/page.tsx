@@ -82,6 +82,14 @@ export default function Home() {
         return () => clearInterval(intervalId); // Cleanup interval on unmount
     }, []);
     const [paymentsYesterday, setPaymentsYesterday]: any = useState([
+
+        {
+            name: 'Полина Петровна И.',
+            bankName: 'Т-Банк',
+            sum: '600',
+            resBankNum: '4545',
+
+        },
         {
             name: 'Ирина Юрьевна Е.',
             bankName: 'Перевод на карту другого банка',
@@ -89,13 +97,6 @@ export default function Home() {
             isBadged: 1,
             comission: 0,
             resBankNum: '7676',
-
-        },
-        {
-            name: 'Полина Петровна И.',
-            bankName: 'Т-Банк',
-            sum: '600',
-            resBankNum: '4545',
 
         },
         {
