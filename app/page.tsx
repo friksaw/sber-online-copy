@@ -21,7 +21,6 @@ import { v4 as uuidv4 } from 'uuid';
 
 
 export default function Home() {
-
     const [currentPage, setCurrentPage]: any = useState(0);
     const [isControlsOpen, setIsControlsOpen]: any = useState(0);
     const [currentTime, setCurrentTime] = useState<string>('');

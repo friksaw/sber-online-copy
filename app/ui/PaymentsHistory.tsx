@@ -151,9 +151,11 @@ export default function PaymentsHistory({ handleCheckPayModal, isPageLoaded, pay
                         sx={{
                             height: 64,
                         }}
-                        onClick={handleCheckPayModal}
                     >
-                        <ListItemAvatar sx={{alignSelf: 'start'}}>
+                        <ListItemAvatar
+                            onClick={handleCheckPayModal}
+                            sx={{alignSelf: 'start'}}
+                        >
                             {
                                 isPageLoaded ?
                                     <Avatar alt="Profile Picture" src={(desc === 'Альфа-Банк') ? '/images/banks/alfa.png' : (desc === 'Т-Банк') ? '/images/banks/t.png' : (desc === 'ВТБ') ? '/images/banks/vtb.jpg' : '/images/history/sber.svg'  }/> : <Skeleton variant="circular" width={40} height={40} /> }
