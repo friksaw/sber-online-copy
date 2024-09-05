@@ -69,7 +69,21 @@ const PayProcessModal = ({
     const [expanded1, setExpanded1]: any = useState(false);
     const [expanded2, setExpanded2]: any = useState(false);
     const [isCheckLangOpen, setIsCheckLangOpen]: any = useState(null);
+    const getCurrentDateTime = () => {
+        const options: Intl.DateTimeFormatOptions = {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric',
+            timeZone: 'Europe/Moscow', // Московское время
+        };
+        const formatter = new Intl.DateTimeFormat('ru-RU', options);
+        return formatter.format(new Date());
+    };
 
+    const currentDateTime = getCurrentDateTime();
     const toggleExpand = () => {
         setExpanded1(!expanded1);
         setTimeout(() => setExpanded2(!expanded2), 200);
@@ -944,7 +958,7 @@ const PayProcessModal = ({
                                                 fontSize: 14,
                                             }}
                                         >
-                                            26 августа 2024 15:55:14 (МСК)
+                                            {currentDateTime}
                                         </p>
                                     </div>
                                     <div
