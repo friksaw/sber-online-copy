@@ -545,10 +545,13 @@ const PayProcessModal = ({
                                 />
                             </a>
                             <p
+                                onClick={goToHistory}
+
                                 style={{
                                     fontSize: 18,
                                     fontWeight: 500,
-                                    marginLeft: 28
+                                    marginLeft: 28,
+                                    cursor: 'pointer',
                                 }}
                             >
                                 Перевод выполнен

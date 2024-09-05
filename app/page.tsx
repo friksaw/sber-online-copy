@@ -52,7 +52,7 @@ export default function Home() {
 
     const [payPhone, setPayPhone]: any = useState('+7 (9800) 555 35-35');
     const [payResBankNum, setPayResBankNum]: any = useState('9876');
-    const [paySenderName, setPaySenderName]: any = useState('3456');
+    const [paySenderName, setPaySenderName]: any = useState('Сергеев Сергеев С.');
     const [paySenderBankNum, setPaySenderBankNum]: any = useState('5423');
 
     const [paySenderBankName, setPaySenderBankName]: any = useState('Клиенту Сбера');
@@ -80,60 +80,62 @@ export default function Home() {
     const [paymentsYesterday, setPaymentsYesterday]: any = useState([
         {
             name: 'Ирина Юрьевна Е.',
-            desc: 'Альфа-Банк',
+            bankName: 'Альфа-Банк',
             sum: '9 000',
             isBadged: 1,
+            comission: 0,
+
         },
         {
             name: 'Полина Петровна И.',
-            desc: 'Т-Банк',
+            bankName: 'Т-Банк',
             sum: '600',
         },
         {
             name: 'Георгий Янович П.',
-            desc: 'Альфа-Банк',
+            bankName: 'Альфа-Банк',
             sum: '1 220',
         },
         {
             name: 'Виталий Савин В.',
-            desc: 'Клиенту Сбера',
+            bankName: 'Клиенту Сбера',
             sum: '120',
         },
         {
             name: 'Владимир Дмитриевич Д.',
-            desc: 'Клиенту Сбера',
+            bankName: 'Клиенту Сбера',
             sum: '500',
             isBadged: 1
         },
         {
             name: 'Полина Петровна И.',
-            desc: 'Клиенту Сбера',
+            bankName: 'Клиенту Сбера',
             sum: '500',
         },
         {
             name: 'Марина Савина Л.',
-            desc: 'ВТБ',
+            bankName: 'ВТБ',
             sum: '600',
         },
         {
             name: 'Федор Янович П.',
-            desc: 'Т-Банк',
+            bankName: 'Т-Банк',
             sum: '1 220',
         },
         {
             name: 'Борис Мушкиновский Е.',
-            desc: 'Клиенту Сбера',
+            bankName: 'Клиенту Сбера',
             sum: '120',
         },
         {
             name: 'Владимир Чехов Д.',
-            desc: 'ВТБ',
+            bankName: 'ВТБ',
             sum: '500',
             isBadged: 1
         },
         {
             name: 'Анастасия Рябова Д.',
-            desc: 'Клиенту Сбера',
+            bankName: 'Клиенту Сбера',
             sum: '500',
         },
     ])
@@ -503,7 +505,6 @@ export default function Home() {
                 changeBankNum={changeBankNum}
                 cardNum={cardNum}
                 bankNum={bankNum}
-
             />
 
             <div

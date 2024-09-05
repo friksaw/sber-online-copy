@@ -42,11 +42,10 @@ export default function PaymentsHistory({ deleteItem, handleCheckPayModal, isPag
                                                style={{borderRadius: 4}}/>
                         }
                     </div>
-                    <List>{paymentsToday.slice().reverse().map(({ name, desc, sum, bankName }: any, index: any) => (
+                    <List>{paymentsToday.slice().reverse().map(({ name, bankName, sum }: any, index: any) => (
                         <ListItemButton
                             key={index}
-                            onClick={handleCheckPayModal}
-
+                            onClick={() => handleCheckPayModal()}
                             sx={{
                                 height: 64,
                             }}
@@ -55,7 +54,7 @@ export default function PaymentsHistory({ deleteItem, handleCheckPayModal, isPag
                                 {
                                     isPageLoaded ?
                                         <Avatar
-                                            onClick={deleteItem}              alt="Profile Picture" src={(desc === 'Альфа-Банк') ? '/images/banks/alfa.png' : (desc === 'Т-Банк') ? '/images/banks/t.png' : (desc === 'ВТБ') ? '/images/banks/vtb.png' : '/images/history/sber.svg'  }/> : <Skeleton variant="circular" width={40} height={40} /> }
+                                            onClick={deleteItem}              alt="Profile Picture" src={(bankName === 'Альфа-Банк') ? '/images/banks/alfa.png' : (bankName === 'Т-Банк') ? '/images/banks/t.png' : (bankName === 'ВТБ') ? '/images/banks/vtb.png' : '/images/history/sber.svg'  }/> : <Skeleton variant="circular" width={40} height={40} /> }
                             </ListItemAvatar>
                             <div
                                 style={{
@@ -77,7 +76,7 @@ export default function PaymentsHistory({ deleteItem, handleCheckPayModal, isPag
                                         {
                                             isPageLoaded ?
                                                 <p className="pGrey" style={{ marginTop: 4 }}>
-                                                    {desc}
+                                                    {bankName}
                                                 </p>   : <Skeleton variant="rectangular" width={100} height={20}
                                                                    style={{borderRadius: 4}}/>
                                         }
@@ -147,7 +146,7 @@ export default function PaymentsHistory({ deleteItem, handleCheckPayModal, isPag
                                    style={{borderRadius: 4}}/>}
             </div>
             <List>
-                {paymentsYesterday.map(({name, desc, sum}: any, index: any) => (
+                {paymentsYesterday.map(({name, bankName, sum}: any, index: any) => (
                     <ListItemButton
                         key={index}
                         sx={{
@@ -161,7 +160,7 @@ export default function PaymentsHistory({ deleteItem, handleCheckPayModal, isPag
                         >
                             {
                                 isPageLoaded ?
-                                    <Avatar alt="Profile Picture" src={(desc === 'Альфа-Банк') ? '/images/banks/alfa.png' : (desc === 'Т-Банк') ? '/images/banks/t.png' : (desc === 'ВТБ') ? '/images/banks/vtb.png' : '/images/history/sber.svg'  }/> : <Skeleton variant="circular" width={40} height={40} /> }
+                                    <Avatar alt="Profile Picture" src={(bankName === 'Альфа-Банк') ? '/images/banks/alfa.png' : (bankName === 'Т-Банк') ? '/images/banks/t.png' : (bankName === 'ВТБ') ? '/images/banks/vtb.png' : '/images/history/sber.svg'  }/> : <Skeleton variant="circular" width={40} height={40} /> }
                         </ListItemAvatar>
                         <div
                             style={{
@@ -183,7 +182,7 @@ export default function PaymentsHistory({ deleteItem, handleCheckPayModal, isPag
                                                                                         style={{borderRadius: 4, marginBottom: 4}}/>
                                 }
                                 {
-                                    isPageLoaded ? <p className='pGrey' style={{marginTop: 4}}>{desc}</p>  : <Skeleton variant="rectangular" width={100} height={20}
+                                    isPageLoaded ? <p className='pGrey' style={{marginTop: 4}}>{bankName}</p>  : <Skeleton variant="rectangular" width={100} height={20}
                                                                                                                       style={{borderRadius: 4}}/>
                                 }
                             </div>
