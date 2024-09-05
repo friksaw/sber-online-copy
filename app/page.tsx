@@ -307,7 +307,7 @@ export default function Home() {
         setExpenses(formattedExpensesSum);
     };
 
-    const deleteItem = (paySumToDelete, payNameToDelete, payMethodToDelete, paySenderBankNameToDelete) => {
+    const deleteItem = () => {
         console.log(0)
     };
 
