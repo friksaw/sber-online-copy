@@ -952,49 +952,40 @@ const PayProcessModal = ({
                         >
                             {
                                 isCheckLoaded ?
-                                <div
-                                    ref={pdfRef}
-                                    style={{
-                                        display: 'flex',
-                                        flexDirection: 'column',
-                                        padding: '24px 20px',
-                                        width: '100%',
-                                        backgroundColor: '#ffffff',
-                                        borderRadius: 5,
-                                        color: '#000000',
-                                        paddingBottom: 0,
-                                    }}
-                                >
                                     <div
+                                        ref={pdfRef}
                                         style={{
-                                            borderBottom: '1px dashed #707070',
                                             display: 'flex',
                                             flexDirection: 'column',
-                                            alignItems: 'center',
-                                            paddingBottom: 8,
+                                            padding: '24px 20px',
+                                            width: '100%',
+                                            backgroundColor: '#ffffff',
+                                            borderRadius: 5,
+                                            color: '#000000',
+                                            paddingBottom: 0,
                                         }}
                                     >
-
-                                        <Image
-                                            src="/images/payment/full-sber.svg"
-                                            width={146}
-                                            height={31}
-                                            alt=''
+                                        <div
                                             style={{
-                                                marginBottom: 10
+                                                borderBottom: '1px dashed #707070',
+                                                display: 'flex',
+                                                flexDirection: 'column',
+                                                alignItems: 'center',
+                                                paddingBottom: 8,
                                             }}
-                                        />
-                                        {
-                                            (paySenderBankName === 'Клиенту Сбера') ?
-                                                <p
-                                                    className='pGrey'
-                                                    style={{
-                                                        fontSize: 14,
-                                                    }}
-                                                >
-                                                    Чек по операции
-                                                </p> :
-                                                (paySenderBankName === 'Перевод по СБП') ?
+                                        >
+
+                                            <Image
+                                                src="/images/payment/full-sber.svg"
+                                                width={146}
+                                                height={31}
+                                                alt=''
+                                                style={{
+                                                    marginBottom: 10
+                                                }}
+                                            />
+                                            {
+                                                (paySenderBankName === 'Клиенту Сбера') ?
                                                     <p
                                                         className='pGrey'
                                                         style={{
@@ -1003,275 +994,393 @@ const PayProcessModal = ({
                                                     >
                                                         Чек по операции
                                                     </p> :
-                                                    <p
-                                                        className='pGrey'
-                                                        style={{
-                                                            fontSize: 14,
-                                                        }}
-                                                    >
-                                                        Перевод по номеру карты в другой банк
-                                                    </p>
-                                        }
-                                        <p
-                                            className='pGrey'
+                                                    (paySenderBankName === 'Перевод по СБП') ?
+                                                        <p
+                                                            className='pGrey'
+                                                            style={{
+                                                                fontSize: 14,
+                                                            }}
+                                                        >
+                                                            Чек по операции
+                                                        </p> :
+                                                        <p
+                                                            className='pGrey'
+                                                            style={{
+                                                                fontSize: 14,
+                                                            }}
+                                                        >
+                                                            Перевод по номеру карты в другой банк
+                                                        </p>
+                                            }
+                                            <p
+                                                className='pGrey'
+                                                style={{
+                                                    fontSize: 14,
+                                                }}
+                                            >
+                                                {currentDateTime} (МСК)
+                                            </p>
+                                        </div>
+                                        <div
                                             style={{
-                                                fontSize: 14,
+                                                paddingBottom: 18,
+                                                marginBottom: 18,
                                             }}
                                         >
-                                            {currentDateTime} (МСК)
-                                        </p>
+                                            {
+                                                (paySenderBankName === 'Клиенту Сбера') ?
+                                                    <div>
+                                                        <p
+                                                            className='pGrey'
+                                                            style={{
+                                                                marginTop: 20,
+                                                                fontSize: 14,
+                                                            }}
+                                                        >
+                                                            Операция
+                                                        </p>
+                                                        <p>
+                                                            {(paySenderBankName === 'Клиенту Сбера') ? 'Перевод клиенту Сбербанка' : paySenderBankName}
+                                                        </p>
+                                                        <p
+                                                            className='pGrey'
+                                                            style={{
+                                                                fontSize: 14,
+                                                            }}
+                                                        >
+                                                            ФИО Получателя
+                                                        </p>
+                                                        <p>
+                                                            {payName}
+                                                        </p>
+                                                        <p
+                                                            className='pGrey'
+                                                            style={{
+                                                                fontSize: 14,
+                                                            }}
+                                                        >
+                                                            Телефон получателя
+                                                        </p>
+                                                        <p>
+                                                            {payPhone}
+                                                        </p>
+                                                        <p
+                                                            className='pGrey'
+                                                            style={{
+                                                                fontSize: 14,
+                                                            }}
+                                                        >
+                                                            Номер счёта получателя
+                                                        </p>
+                                                        <p>
+                                                            **** {payResBankNum}
+                                                        </p>
+                                                        <p
+                                                            className='pGrey'
+                                                            style={{
+                                                                marginTop: 20,
+                                                                fontSize: 14,
+                                                            }}
+                                                        >
+                                                            ФИО отправителя
+                                                        </p>
+                                                        <p>
+                                                            {paySenderName}
+                                                        </p>
+                                                        <p
+                                                            className='pGrey'
+                                                            style={{
+                                                                fontSize: 14,
+                                                            }}
+                                                        >
+                                                            Счёт отправителя
+                                                        </p>
+                                                        <p>
+                                                            **** {paySenderBankNum}
+                                                        </p>
+                                                        <p
+                                                            className='pGrey'
+                                                            style={{
+                                                                fontSize: 14,
+                                                            }}
+                                                        >
+                                                            Сумма перевода
+                                                        </p>
+                                                        <p>
+                                                            {paySum} ₽
+                                                        </p>
+                                                        <p
+                                                            className='pGrey'
+                                                            style={{
+                                                                fontSize: 14,
+                                                            }}
+                                                        >
+                                                            Комиссия
+                                                        </p>
+                                                        <p>
+                                                            {payCommission},00 ₽
+                                                        </p>
+                                                        <p
+                                                            className='pGrey'
+                                                            style={{
+                                                                marginTop: 20,
+                                                                fontSize: 14,
+                                                            }}
+                                                        >
+                                                            Номер документа
+                                                        </p>
+                                                        <p>
+                                                            8792950631
+                                                        </p>
+                                                        <p
+                                                            className='pGrey'
+                                                            style={{
+                                                                fontSize: 14,
+                                                            }}
+                                                        >
+                                                            Код авторизации
+                                                        </p>
+                                                        <p>
+                                                            111083
+                                                        </p>
+                                                    </div> :
+                                                    (paySenderBankName === 'Перевод по СБП') ?
+
+                                                        <div>
+                                                            <p
+                                                                className='pGrey'
+                                                                style={{
+                                                                    marginTop: 20,
+                                                                    fontSize: 14,
+                                                                }}
+                                                            >
+                                                                Операция
+                                                            </p>
+                                                            <p>
+                                                                {paySenderBankName}
+                                                            </p>
+                                                            <p
+                                                                className='pGrey'
+                                                                style={{
+                                                                    fontSize: 14,
+                                                                }}
+                                                            >
+                                                                ФИО получателя перевода
+                                                            </p>
+                                                            <p>
+                                                                {payName}
+                                                            </p>
+                                                            <p
+                                                                className='pGrey'
+                                                                style={{
+                                                                    fontSize: 14,
+                                                                }}
+                                                            >
+                                                                Номер телефона получателя перевода
+                                                            </p>
+                                                            <p>
+                                                                {payPhone}
+                                                            </p>
+                                                            <p
+                                                                className='pGrey'
+                                                                style={{
+                                                                    fontSize: 14,
+                                                                }}
+                                                            >
+                                                                Банк получателя
+                                                            </p>
+                                                            <p>
+                                                                Т-Банк
+                                                            </p>
+                                                            <p
+                                                                className='pGrey'
+                                                                style={{
+                                                                    marginTop: 20,
+                                                                    fontSize: 14,
+                                                                }}
+                                                            >
+                                                                ФИО отправителя
+                                                            </p>
+                                                            <p>
+                                                                {paySenderName}
+                                                            </p>
+                                                            <p
+                                                                className='pGrey'
+                                                                style={{
+                                                                    fontSize: 14,
+                                                                }}
+                                                            >
+                                                                Карта отправителя
+                                                            </p>
+                                                            <p>
+                                                                **** {paySenderBankNum}
+                                                            </p>
+                                                            <p
+                                                                className='pGrey'
+                                                                style={{
+                                                                    fontSize: 14,
+                                                                }}
+                                                            >
+                                                                Сумма перевода
+                                                            </p>
+                                                            <p>
+                                                                {paySum} ₽
+                                                            </p>
+                                                            <p
+                                                                className='pGrey'
+                                                                style={{
+                                                                    fontSize: 14,
+                                                                }}
+                                                            >
+                                                                Комиссия
+                                                            </p>
+                                                            <p>
+                                                                {payCommission},00 ₽
+                                                            </p>
+
+                                                            <p
+                                                                className='pGrey'
+                                                                style={{
+                                                                    fontSize: 14,
+                                                                }}
+                                                            >
+                                                                Номер операции в СБП
+                                                            </p>
+                                                            <p>
+                                                                <p style={{textTransform: 'uppercase'}}}>
+                                                                    {paySuip}
+                                                                </p>
+                                                            </p>
+                                                        </div> :
+                                                        <div>
+                                                        <p
+                                                                className='pGrey'
+                                                                style={{
+                                                                    marginTop: 20,
+                                                                    fontSize: 14,
+                                                                }}
+                                                            >
+                                                                КУДА
+                                                            </p>
+                                                            <p>
+                                                                **** {payResBankNum}
+                                                            </p>
+                                                            <p
+                                                                className='pGrey'
+                                                                style={{
+                                                                    fontSize: 14,
+                                                                    marginTop: 12,
+                                                                }}
+                                                            >
+                                                                В БАНК
+                                                            </p>
+                                                            <p>
+                                                                {paySenderBankName}
+                                                            </p>
+                                                            <p
+                                                                className='pGrey'
+                                                                style={{
+                                                                    fontSize: 14,
+                                                                    marginTop: 12,
+                                                                }}
+                                                            >
+                                                                СТРАНА
+                                                            </p>
+                                                            <p>
+                                                                РОССИЯ
+                                                            </p>
+                                                            <p
+                                                                className='pGrey'
+                                                                style={{
+                                                                    fontSize: 14,
+                                                                    marginTop: 12,
+                                                                }}
+                                                            >
+                                                                СКОЛЬКО
+                                                            </p>
+                                                            <p>
+                                                                {paySum} ₽
+                                                            </p>
+                                                            <p
+                                                                className='pGrey'
+                                                                style={{
+                                                                    fontSize: 14,
+                                                                    marginTop: 12,
+                                                                }}
+                                                            >
+                                                                КОМИССИЯ
+                                                            </p>
+                                                            <p>
+                                                                {payCommission},00 ₽
+                                                            </p>
+                                                            <p
+                                                                className='pGrey'
+                                                                style={{
+                                                                    fontSize: 14,
+                                                                    marginTop: 12,
+                                                                }}
+                                                            >
+                                                                СПИСАНО
+                                                            </p>
+                                                            <p>
+                                                                {paySum} ₽
+                                                            </p>
+                                                            <p
+                                                                className='pGrey'
+                                                                style={{
+                                                                    marginTop: 12,
+                                                                    fontSize: 14,
+                                                                }}
+                                                            >
+                                                                ОТ КОГО
+                                                            </p>
+                                                            <p>
+                                                                {paySenderName}
+                                                            </p>
+                                                            <p
+                                                                className='pGrey'
+                                                                style={{
+                                                                    fontSize: 14,
+                                                                    marginTop: 12,
+                                                                }}
+                                                            >
+                                                                ОТКУДА
+                                                            </p>
+                                                            <p>
+                                                                **** {paySenderBankNum}
+                                                            </p>
+
+                                                            <p
+                                                                className='pGrey'
+                                                                style={{
+                                                                    marginTop: 12,
+                                                                    fontSize: 14,
+                                                                }}
+                                                            >
+                                                                СУИП
+                                                            </p>
+                                                            <p>
+                                                                {paySuip}
+                                                            </p>
+                                                        </div>
+                                            }
+                                            <Image
+                                                src="/images/bgs/item.svg"
+                                                width={4}
+                                                height={4}
+                                                alt=''
+                                                style={{
+                                                    width: '70%',
+                                                    margin: '0 auto',
+                                                    marginTop: '8px',
+
+                                                }}
+
+                                            />
+                                        </div>
+
                                     </div>
-                                    <div
-                                        style={{
-                                            paddingBottom: 18,
-                                            marginBottom: 18,
-                                        }}
-                                    >
-                                        {
-                                            (paySenderBankName !== 'Клиенту Сбера') ?
-                                                <div>
-                                                    <p
-                                                        className='pGrey'
-                                                        style={{
-                                                            marginTop: 20,
-                                                            fontSize: 14,
-                                                        }}
-                                                    >
-                                                        КУДА
-                                                    </p>
-                                                    <p>
-                                                        **** {payResBankNum}
-                                                    </p>
-                                                    <p
-                                                        className='pGrey'
-                                                        style={{
-                                                            fontSize: 14,
-                                                            marginTop: 12,
-                                                        }}
-                                                    >
-                                                        В БАНК
-                                                    </p>
-                                                    <p>
-                                                        {paySenderBankName}
-                                                    </p>
-                                                    <p
-                                                        className='pGrey'
-                                                        style={{
-                                                            fontSize: 14,
-                                                            marginTop: 12,
-                                                        }}
-                                                    >
-                                                        СТРАНА
-                                                    </p>
-                                                    <p>
-                                                        РОССИЯ
-                                                    </p>
-                                                    <p
-                                                        className='pGrey'
-                                                        style={{
-                                                            fontSize: 14,
-                                                            marginTop: 12,
-                                                        }}
-                                                    >
-                                                        СКОЛЬКО
-                                                    </p>
-                                                    <p>
-                                                        {paySum} ₽
-                                                    </p>
-                                                    <p
-                                                        className='pGrey'
-                                                        style={{
-                                                            fontSize: 14,
-                                                            marginTop: 12,
-                                                        }}
-                                                    >
-                                                        КОМИССИЯ
-                                                    </p>
-                                                    <p>
-                                                        {payCommission},00 ₽
-                                                    </p>
-                                                    <p
-                                                        className='pGrey'
-                                                        style={{
-                                                            fontSize: 14,
-                                                            marginTop: 12,
-                                                        }}
-                                                    >
-                                                        СПИСАНО
-                                                    </p>
-                                                    <p>
-                                                        {paySum} ₽
-                                                    </p>
-                                                    <p
-                                                        className='pGrey'
-                                                        style={{
-                                                            marginTop: 12,
-                                                            fontSize: 14,
-                                                        }}
-                                                    >
-                                                        ОТ КОГО
-                                                    </p>
-                                                    <p>
-                                                        {paySenderName}
-                                                    </p>
-                                                    <p
-                                                        className='pGrey'
-                                                        style={{
-                                                            fontSize: 14,
-                                                            marginTop: 12,
-                                                        }}
-                                                    >
-                                                        ОТКУДА
-                                                    </p>
-                                                    <p>
-                                                        **** {paySenderBankNum}
-                                                    </p>
-
-                                                    <p
-                                                        className='pGrey'
-                                                        style={{
-                                                            marginTop: 12,
-                                                            fontSize: 14,
-                                                        }}
-                                                    >
-                                                        СУИП
-                                                    </p>
-                                                    <p>
-                                                        {paySuip}
-                                                    </p>
-                                                </div> :
-                                                <div>
-                                                    <p
-                                                        className='pGrey'
-                                                        style={{
-                                                            marginTop: 20,
-                                                            fontSize: 14,
-                                                        }}
-                                                    >
-                                                        Операция
-                                                    </p>
-                                                    <p>
-                                                        {(paySenderBankName === 'Клиенту Сбера') ? 'Перевод клиенту Сбербанка' : paySenderBankName}
-                                                    </p>
-                                                    <p
-                                                        className='pGrey'
-                                                        style={{
-                                                            fontSize: 14,
-                                                        }}
-                                                    >
-                                                        ФИО Получателя
-                                                    </p>
-                                                    <p>
-                                                        {payName}
-                                                    </p>
-                                                    <p
-                                                        className='pGrey'
-                                                        style={{
-                                                            fontSize: 14,
-                                                        }}
-                                                    >
-                                                        Телефон получателя
-                                                    </p>
-                                                    <p>
-                                                        {payPhone}
-                                                    </p>
-                                                    <p
-                                                        className='pGrey'
-                                                        style={{
-                                                            fontSize: 14,
-                                                        }}
-                                                    >
-                                                        Номер счёта получателя
-                                                    </p>
-                                                    <p>
-                                                        **** {payResBankNum}
-                                                    </p>
-                                                    <p
-                                                        className='pGrey'
-                                                        style={{
-                                                            marginTop: 20,
-                                                            fontSize: 14,
-                                                        }}
-                                                    >
-                                                        ФИО отправителя
-                                                    </p>
-                                                    <p>
-                                                        {paySenderName}
-                                                    </p>
-                                                    <p
-                                                        className='pGrey'
-                                                        style={{
-                                                            fontSize: 14,
-                                                        }}
-                                                    >
-                                                        Счёт отправителя
-                                                    </p>
-                                                    <p>
-                                                        **** {paySenderBankNum}
-                                                    </p>
-                                                    <p
-                                                        className='pGrey'
-                                                        style={{
-                                                            fontSize: 14,
-                                                        }}
-                                                    >
-                                                        Сумма перевода
-                                                    </p>
-                                                    <p>
-                                                        {paySum} ₽
-                                                    </p>
-                                                    <p
-                                                        className='pGrey'
-                                                        style={{
-                                                            fontSize: 14,
-                                                        }}
-                                                    >
-                                                        Комиссия
-                                                    </p>
-                                                    <p>
-                                                        {payCommission},00 ₽
-                                                    </p>
-                                                    <p
-                                                        className='pGrey'
-                                                        style={{
-                                                            marginTop: 20,
-                                                            fontSize: 14,
-                                                        }}
-                                                    >
-                                                        Номер документа
-                                                    </p>
-                                                    <p>
-                                                        8792950631
-                                                    </p>
-                                                    <p
-                                                        className='pGrey'
-                                                        style={{
-                                                            fontSize: 14,
-                                                        }}
-                                                    >
-                                                        Код авторизации
-                                                    </p>
-                                                    <p>
-                                                        111083
-                                                    </p>
-                                                </div>
-                                        }
-                                        <Image
-                                            src="/images/bgs/item.svg"
-                                            width={4}
-                                            height={4}
-                                            alt=''
-                                            style={{
-                                                width: '70%',
-                                                margin: '0 auto',
-                                                marginTop: '8px',
-
-                                            }}
-
-                                        />
-                                    </div>
-
-                                </div> :
+                                    :
                                     <div>
                                         <CircularProgress
                                             color="success"
@@ -1308,7 +1417,8 @@ const PayProcessModal = ({
                 </Slide>
             </Modal>
         </div>
-    );
+    )
+        ;
 };
 
 
