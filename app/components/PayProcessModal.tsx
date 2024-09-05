@@ -971,7 +971,6 @@ const PayProcessModal = ({
                                                 display: 'flex',
                                                 flexDirection: 'column',
                                                 alignItems: 'center',
-                                                paddingBottom: 8,
                                             }}
                                         >
 
