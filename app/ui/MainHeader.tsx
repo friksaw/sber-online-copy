@@ -274,52 +274,90 @@ export default function MainHeader({ cardNum, bankNum, balance, handleControl, i
                     <div
                         className='card'
                         style={{
-                            justifyContent: 'space-between',
                             backgroundColor: '#305474',
-                            padding: '18px 12px',
                             width: 134,
                             height: 145,
                         }}
+
                     >
+
                         <div
                             style={{
                                 display: 'flex',
-                                flexDirection: 'row',
+                                flexDirection: 'column',
+                                height: '100%',
                                 justifyContent: 'space-between',
+                                margin: 16,
                             }}
                         >
-                            <p className='pGrey'>
-                                Кредитная СберКарта
-                            </p>
-                            <Image
-                                src="/images/cross.svg"
-                                width={19}
-                                height={19}
-                                alt=''
-                                style={{
-                                    alignSelf: 'start'
-                                }}
-                            />
-                        </div>
-                        <div>
-                            <p
-                                style={{
-                                    opacity: 0.5,
-                                    fontSize: 16,
-                                    fontWeight: 300,
-                                }}
-                            >
-                                50 000 ₽
-                            </p>
-                            <p
-                                style={{
-                                    color: '#5FCD76',
-                                    textWrap: 'nowrap',
-                                    fontSize: 12
-                                }}
-                            >
-                                Узнать условия
-                            </p>
+                            <div>
+                                <Image
+                                    src="/images/main/mir.png"
+                                    width={29}
+                                    height={29}
+                                    alt=''
+                                    style={{
+                                        marginLeft: 3
+                                    }}
+                                />
+                                <p className='pGrey' style={{marginLeft: 2, marginTop: 4}}>{cardNum}</p>
+                            </div>
+
+                            <div>
+                                {
+                                    isPageLoaded ?
+                                        <p
+                                            style={{
+                                                fontSize: 18,
+                                                textWrap: 'nowrap',
+                                            }}
+                                        >
+                                            {balance} ₽
+                                        </p> : <Skeleton variant="rectangular" width={80} height={24}
+                                                         style={{borderRadius: 4, marginBottom: 4}}/>
+                                }
+                                {
+                                    isPageLoaded ?
+                                        <div
+                                            style={{
+                                                display: 'flex',
+                                                flexDirection: 'row',
+                                            }}
+                                        >
+                                            <p className='pGrey'>
+                                                Счёт
+                                            </p>
+                                            <div
+                                                style={{
+                                                    display: 'flex',
+                                                    flexDirection: 'row',
+                                                    alignItems: 'center',
+                                                    margin: '0 4px'
+                                                }}
+                                            >
+                                                <Image
+                                                    src="/images/lil-dot.svg"
+                                                    width={4}
+                                                    height={4}
+                                                    alt=''
+
+                                                />
+                                                <Image
+                                                    src="/images/lil-dot.svg"
+                                                    width={4}
+                                                    height={4}
+                                                    alt=''
+                                                />
+                                            </div>
+                                            <p className='pGrey'>
+                                                {bankNum}
+                                            </p>
+                                        </div>
+                                        : <Skeleton variant="rectangular" width={100} height={24}
+                                                    style={{borderRadius: 4}}/>
+                                }
+
+                            </div>
                         </div>
                     </div>
                 </div>
