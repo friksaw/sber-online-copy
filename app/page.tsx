@@ -366,6 +366,7 @@ export default function Home() {
         const updatedPayments = [...paymentsToday];
         updatedPayments.splice(index, 1);
         setPaymentsToday(updatedPayments);
+        setEditModalOpen((isOpen: any) => !isOpen)
     };
 
     const editItem = (index: any) => {
