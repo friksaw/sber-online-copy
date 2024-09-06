@@ -290,18 +290,33 @@ export default function MainHeader({ cardNum, bankNum, balance, handleControl, i
                                 margin: 16,
                             }}
                         >
-                            <div>
-                                <Image
-                                    src="/images/main/mir.png"
-                                    width={29}
-                                    height={29}
-                                    alt=''
-                                    style={{
-                                        marginLeft: 3
-                                    }}
-                                />
-                                <p className='pGrey' style={{marginLeft: 2, marginTop: 4}}>{cardNum}</p>
+                            <div style={{display: 'flex', flexDirection: 'row'}}>
+                                <div>
+                                    <Image
+                                        src="/images/main/mir.png"
+                                        width={29}
+                                        height={29}
+                                        alt=''
+                                        style={{
+                                            marginLeft: 3
+                                        }}
+                                    />
+                                    <p className='pGrey' style={{marginLeft: 2, marginTop: 4}}>{cardNum}</p>
+                                </div>
+                                <div>
+                                    <Image
+                                        src="/images/main/mir.png"
+                                        width={29}
+                                        height={29}
+                                        alt=''
+                                        style={{
+                                            marginLeft: 8
+                                        }}
+                                    />
+                                    <p className='pGrey' style={{marginLeft: 7, marginTop: 4}}>{cardNum}</p>
+                                </div>
                             </div>
+
 
                             <div>
                                 {
