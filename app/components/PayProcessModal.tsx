@@ -1150,7 +1150,7 @@ const PayProcessModal = ({
                                                             Комиссия
                                                         </p>
                                                         <p>
-                                                            {payCommission} ₽
+                                                            {payCommission}.00 ₽
                                                         </p>
                                                         <p
                                                             className='pGrey'
