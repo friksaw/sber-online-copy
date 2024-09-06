@@ -203,9 +203,9 @@ export default function MainHeader({ cardNum, bankNum, balance, handleControl, i
                         >
                             <div>
                                 <Image
-                                    src="/images/main/card.svg"
-                                    width={32}
-                                    height={32}
+                                    src="/images/main/mir.png"
+                                    width={28}
+                                    height={28}
                                     alt=''
 
                                 />
