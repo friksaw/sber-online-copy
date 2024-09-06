@@ -59,7 +59,7 @@ export default function Home() {
     const [paySenderBankName, setPaySenderBankName]: any = useState('Клиенту Сбера');
     const [paySbpBankName, setPaySbpBankName]: any = useState('');
     const [payCommission, setPayCommission]: any = useState('0');
-    const [paySuip, setPaySuip]: any = useState('202kyg7679m295mtumi063yuj167u6hy676u5u');
+    const [paySuip, setPaySuip]: any = useState('5861b8d1b21a42fbad7');
 
 
     const [payMethod, setPayMethod]: any = useState(0);
@@ -204,14 +204,15 @@ export default function Home() {
         }
         setIsCheckOpen((isOpen: any) => !isOpen);
     };
+
     const handlePayProcessModal: any = () => {
         setIsPayProcessModalOpen((isOpen: any) => !isOpen);
     };
+
     const handleCheckPayModal: any = (index: any) => {
         setIsCheckModalOpen((isOpen: any) => !isOpen);
         console.log(index)
         setSelectedItemIndex(index);
-
     };
 
     const handleControl: any = () => {
@@ -500,6 +501,8 @@ export default function Home() {
                     handleCheckPayModal={handleCheckPayModal}
                     isCheckModalOpen={isCheckModalOpen}
                     deleteItem={deleteItem}
+                    isControlOpen={isControlsOpen}
+
 
 
                 />;

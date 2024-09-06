@@ -6,7 +6,7 @@ import Image from "next/image";
 import {fontWeight} from "@mui/system";
 import Paper from "@mui/material/Paper";
 
-export default function PaymentsHistory({ deleteItem, handleCheckPayModal, isPageLoaded, paymentsYesterday, sumYesterday, paymentsToday, sumToday, depositsToday, handleOpenCheck }: any) {
+export default function PaymentsHistory({ isControlOpen, deleteItem, handleCheckPayModal, isPageLoaded, paymentsYesterday, sumYesterday, paymentsToday, sumToday, depositsToday, handleOpenCheck }: any) {
     return (
         <div>
             {
@@ -45,7 +45,7 @@ export default function PaymentsHistory({ deleteItem, handleCheckPayModal, isPag
                     <List>{paymentsToday.slice().reverse().map(({ name, sbpBankName, bankName, sum, commission, }: any, index: any) => (
                         <ListItemButton
                             key={index}
-                            onClick={() => handleCheckPayModal(index)}
+                            onClick={() => isControlOpen ? deleteItem() : handleCheckPayModal(index)}
                             sx={{
                                 height: (commission.toString().trim().charAt(0) !== '0') ? 88 : 64,
                             }}
@@ -54,7 +54,13 @@ export default function PaymentsHistory({ deleteItem, handleCheckPayModal, isPag
                                 {
                                     isPageLoaded ?
                                         <Avatar
-                                            onClick={deleteItem}              alt="Profile Picture" src={(bankName === 'Альфа-Банк') ? '/images/banks/alfa.png' : (bankName === 'Т-Банк') ? '/images/banks/t.png' : (bankName === 'ВТБ') ? '/images/banks/vtb.png' : ((bankName === 'Перевод на карту другого банка') || (bankName === 'РСХБ') || (bankName === 'Открытие')) ? '/images/banks/cards.svg' : '/images/history/sber.svg'  }/> : <Skeleton variant="circular" width={40} height={40} /> }
+                                            style={{zIndex: 100}}
+                                            alt="Profile Picture"
+                                            src={
+                                                (bankName === 'Альфа-Банк') ? '/images/banks/alfa.png' : (bankName === 'Т-Банк') ? '/images/banks/t.png' : (bankName === 'ВТБ') ? '/images/banks/vtb.png' : ((bankName === 'Перевод на карту другого банка') || (bankName === 'РСХБ') || (bankName === 'Открытие')) ? '/images/banks/cards.svg' : '/images/history/sber.svg'
+                                            }
+                                        /> : <Skeleton variant="circular" width={40} height={40} />
+                                }
                             </ListItemAvatar>
                             <div
                                 style={{

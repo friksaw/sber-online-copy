@@ -175,6 +175,7 @@ const PayProcessModal = ({
     return (
         <div>
             <Modal
+                disableAutoFocus={true}
                 aria-labelledby="transition-modal-title"
                 aria-describedby="transition-modal-description"
                 open={isOpen}
@@ -361,6 +362,7 @@ const PayProcessModal = ({
 
 
             <Modal
+                disableAutoFocus={true}
                 aria-labelledby="transition-modal-title"
                 aria-describedby="transition-modal-description"
                 open={isSuccessPayModalOpen}
@@ -516,6 +518,7 @@ const PayProcessModal = ({
 
 
             <Modal
+                disableAutoFocus={true}
                 aria-labelledby="transition-modal-title"
                 aria-describedby="transition-modal-description"
                 open={isCheckModalOpen}
@@ -898,6 +901,7 @@ const PayProcessModal = ({
 
 
             <Modal
+                disableAutoFocus={true}
                 aria-labelledby="transition-modal-title"
                 aria-describedby="transition-modal-description"
                 open={isCheckOpen}
