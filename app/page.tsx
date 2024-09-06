@@ -57,7 +57,7 @@ export default function Home() {
     const [paySenderBankNum, setPaySenderBankNum]: any = useState('5423');
 
     const [paySenderBankName, setPaySenderBankName]: any = useState('Клиенту Сбера');
-    const [paySbpBankName, setPaySbpBankName]: any = useState('');
+    const [paySbpBankName, setPaySbpBankName]: any = useState('Т-Банк');
     const [payCommission, setPayCommission]: any = useState('0');
     const [paySuip, setPaySuip]: any = useState('202kyg7679m295mtumi063yuj167u6hy676u5u');
 
