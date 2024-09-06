@@ -63,6 +63,7 @@ export default function Home() {
 
 
     const [payMethod, setPayMethod]: any = useState(0);
+    const [editModalOpen, setEditModalOpen]: any = useState(null);
     const [selectedItemIndex, setSelectedItemIndex]: any = useState(null);
 
 
@@ -365,11 +366,13 @@ export default function Home() {
     const deleteItem = () => {
         console.log('delete item')
     };
+    const editItem = () => {
+        setEditModalOpen((isOpen: any) => !isOpen)
+    };
 
     function getRandomNumber({ min, max }: any): any {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
-
 
 
     const addDeposit: any = () => {
@@ -502,6 +505,7 @@ export default function Home() {
                     isCheckModalOpen={isCheckModalOpen}
                     deleteItem={deleteItem}
                     isControlsOpen={isControlsOpen}
+                    editItem={editItem}
 
 
 
@@ -542,6 +546,7 @@ export default function Home() {
             }}
         >
             <Controls
+                deleteItem={deleteItem}
                 isOpen={isControlsOpen}
                 balance={balance}
                 changeBalance={changeBalance}
@@ -561,6 +566,8 @@ export default function Home() {
                 changeBankNum={changeBankNum}
                 cardNum={cardNum}
                 bankNum={bankNum}
+
+                editModalOpen={editModalOpen}
             />
 
             <div

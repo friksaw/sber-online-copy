@@ -7,10 +7,8 @@ import {fontWeight} from "@mui/system";
 import Paper from "@mui/material/Paper";
 import {useEffect} from "react";
 
-export default function PaymentsHistory({ isControlsOpen, deleteItem, handleCheckPayModal, isPageLoaded, paymentsYesterday, sumYesterday, paymentsToday, sumToday, depositsToday, handleOpenCheck }: any) {
-    useEffect(() => {
-        console.log('isControlOpen changed:', isControlsOpen);
-    }, [isControlsOpen]);
+export default function PaymentsHistory({ isControlsOpen, deleteItem, editItem, handleCheckPayModal, isPageLoaded, paymentsYesterday, sumYesterday, paymentsToday, sumToday, depositsToday, handleOpenCheck }: any) {
+
 
     return (
         <div>
@@ -50,7 +48,7 @@ export default function PaymentsHistory({ isControlsOpen, deleteItem, handleChec
                     <List>{paymentsToday.slice().reverse().map(({ name, sbpBankName, bankName, sum, commission, }: any, index: number) => (
                         <ListItemButton
                             key={index}
-                            onClick={() => isControlsOpen ? deleteItem() : handleCheckPayModal(index)}
+                            onClick={() => isControlsOpen ? editItem() : handleCheckPayModal(index)}
                             sx={{
                                 height: (commission.toString().trim().charAt(0) !== '0') ? 88 : 64,
                             }}

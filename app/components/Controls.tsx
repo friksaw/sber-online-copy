@@ -5,7 +5,7 @@ import Image from "next/image";
 import {Button, Card, FormControl, InputLabel, MenuItem, Select, Slider, TextField} from "@mui/material";
 
 
-export default function Controls({ changeCardNum, changeBankNum, cardNum, bankNum, peopleSum, changePeopleSum, isOpen, balance, changeBalance, expenses, changeExpenses, month, changeMonth, sumYesterday, changeSumYesterday, shuffleYesterdayMessages, addDeposit }: any) {
+export default function Controls({ deleteItem, editModalOpen, changeCardNum, changeBankNum, cardNum, bankNum, peopleSum, changePeopleSum, isOpen, balance, changeBalance, expenses, changeExpenses, month, changeMonth, sumYesterday, changeSumYesterday, shuffleYesterdayMessages, addDeposit }: any) {
     return (
         <Card
             sx={{
@@ -122,7 +122,14 @@ export default function Controls({ changeCardNum, changeBankNum, cardNum, bankNu
                 <Button onClick={shuffleYesterdayMessages}>
                     рандом вчера
                 </Button>
+                {
+                    editModalOpen &&
+                    <Button onClick={deleteItem}>
+                        удалить
+                    </Button>
+                }
             </div>
+
         </Card>
     );
 }
