@@ -69,6 +69,8 @@ const PayProcessModal = ({
                              paymentsToday,
 
                              paySumCom,
+                             paySbpBankName,
+                             changePaySbpBankName,
                          }: any) => {
     const [isSuccessPayModalOpen, setIsSuccessPayModalOpen]: any = useState(false);
     const [expanded1, setExpanded1]: any = useState(false);
@@ -279,15 +281,15 @@ const PayProcessModal = ({
                         </FormControl>
                         <TextField
                             id="outlined-basic"
-                            label="Имя другого банкаи"
+                            label="Имя другого банка"
                             variant="outlined"
-                            value={paySenderBankName}
+                            value={paySbpBankName}
                             sx={{
                                 width: '100%',
                                 marginBottom: 4,
                                 height: '28px',
                             }}
-                            onChange={(event): any => changePaySenderBankName(event?.target.value)}
+                            onChange={(event): any => changePaySbpBankName(event?.target.value)}
                         />
 
                         <TextField
