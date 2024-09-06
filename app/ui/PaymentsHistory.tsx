@@ -86,7 +86,7 @@ export default function PaymentsHistory({ deleteItem, handleCheckPayModal, isPag
                                 </div>
                                 <div
                                     style={{
-                                        marginTop: (commission.trim().charAt(0) !== '0') ? -20 : 0,
+                                        marginTop: (commission.trim().charAt(0) !== '0') ? -28 : 0,
                                         marginLeft: 12,
                                         width: 64,
                                         textWrap: 'nowrap',
