@@ -42,7 +42,7 @@ export default function PaymentsHistory({ deleteItem, handleCheckPayModal, isPag
                                                style={{borderRadius: 4}}/>
                         }
                     </div>
-                    <List>{paymentsToday.slice().reverse().map(({ name, bankName, sum, commission, }: any, index: any) => (
+                    <List>{paymentsToday.slice().reverse().map(({ name, sbpBankName, bankName, sum, commission, }: any, index: any) => (
                         <ListItemButton
                             key={index}
                             onClick={() => handleCheckPayModal(index)}
@@ -70,7 +70,7 @@ export default function PaymentsHistory({ deleteItem, handleCheckPayModal, isPag
                             >
                                 <div>
                                     <p style={{ textWrap: 'nowrap' }}>
-                                        {name}
+                                        {(bankName === 'Перевод по СБП') ? sbpBankName : name}
                                     </p>
                                     <p className="pGrey" style={{ marginTop: 4 }}>
                                         {bankName}

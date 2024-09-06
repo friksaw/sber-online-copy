@@ -310,21 +310,10 @@ export default function Home() {
             useGrouping: true,
             separator: ' ',
         });
-        let formattedPaySum: any = '';
-
-
-
-        if (paySbpBankName) {
-            formattedPaySum = paySumNumeric.toLocaleString('ru-RU', {
+        const formattedPaySum = paySumNumeric.toLocaleString('ru-RU', {
                 useGrouping: true,
                 separator: ' ',
             });
-        } else {
-            formattedPaySum = paySumNumeric.toLocaleString('ru-RU', {
-                useGrouping: true,
-                separator: ' ',
-            });
-        }
 
         const formattedCommission: any = payCommissionNumeric.toLocaleString('ru-RU', {
             useGrouping: true,
@@ -347,6 +336,8 @@ export default function Home() {
             sum: formattedPaySum,
             commission: formattedCommission,
             resBankNum: payResBankNum,
+            sbpBankName: paySbpBankName,
+
         };
 
         if (paySenderBankName === 'Альфа-Банк') {
@@ -405,6 +396,7 @@ export default function Home() {
             sum: '+ ' + formattedSumToday,
             commission: 0,
             resBankNum: '5436',
+            sbpBankName: paySbpBankName,
         };
 
         setPaymentsToday((prevPayments: any) => [...prevPayments, newPayment]);
@@ -508,6 +500,7 @@ export default function Home() {
                     handleCheckPayModal={handleCheckPayModal}
                     isCheckModalOpen={isCheckModalOpen}
                     deleteItem={deleteItem}
+
 
                 />;
             default:
