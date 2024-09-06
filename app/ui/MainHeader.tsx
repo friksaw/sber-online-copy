@@ -204,8 +204,8 @@ export default function MainHeader({ cardNum, bankNum, balance, handleControl, i
                             <div>
                                 <Image
                                     src="/images/main/mir.png"
-                                    width={29}
-                                    height={29}
+                                    width={28}
+                                    height={28}
                                     alt=''
                                     style={{
                                         marginLeft: 3
@@ -293,21 +293,21 @@ export default function MainHeader({ cardNum, bankNum, balance, handleControl, i
                             <div style={{display: 'flex', flexDirection: 'row'}}>
                                 <div>
                                     <Image
-                                        src="/images/main/mir.png"
-                                        width={29}
-                                        height={29}
+                                        src="/images/main/card.svg"
+                                        width={32}
+                                        height={32}
                                         alt=''
                                         style={{
                                             marginLeft: 3
                                         }}
                                     />
-                                    <p className='pGrey' style={{marginLeft: 2, marginTop: 4}}>{cardNum}</p>
+                                    <p className='pGrey' style={{marginLeft: 2, marginTop: 4}}>9098</p>
                                 </div>
                                 <div>
                                     <Image
                                         src="/images/main/mir.png"
-                                        width={29}
-                                        height={29}
+                                        width={28}
+                                        height={28}
                                         alt=''
                                         style={{
                                             marginLeft: 8
@@ -327,7 +327,7 @@ export default function MainHeader({ cardNum, bankNum, balance, handleControl, i
                                                 textWrap: 'nowrap',
                                             }}
                                         >
-                                            72 304,00 ₽
+                                            2 304,00 ₽
                                         </p> : <Skeleton variant="rectangular" width={80} height={24}
                                                          style={{borderRadius: 4, marginBottom: 4}}/>
                                 }
