@@ -363,8 +363,12 @@ export default function Home() {
         setExpenses(formattedExpensesSum);
     };
 
-    const deleteItem = () => {
-        console.log('delete item')
+    const deleteItem = ({ index }: any) => {
+        const updatedPayments = [...paymentsToday];
+        updatedPayments.splice(index, 1);
+
+        // Обновляем состояние
+        setPaymentsToday(updatedPayments);
     };
     const editItem = () => {
         setEditModalOpen((isOpen: any) => !isOpen)

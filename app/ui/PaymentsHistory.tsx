@@ -48,7 +48,7 @@ export default function PaymentsHistory({ isControlsOpen, deleteItem, editItem, 
                     <List>{paymentsToday.slice().reverse().map(({ name, sbpBankName, bankName, sum, commission, }: any, index: number) => (
                         <ListItemButton
                             key={index}
-                            onClick={() => isControlsOpen ? editItem() : handleCheckPayModal(index)}
+                            onClick={() => isControlsOpen ? editItem(index) : handleCheckPayModal(index)}
                             sx={{
                                 height: (commission.toString().trim().charAt(0) !== '0') ? 88 : 64,
                             }}
