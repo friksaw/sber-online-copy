@@ -204,10 +204,12 @@ export default function MainHeader({ cardNum, bankNum, balance, handleControl, i
                             <div>
                                 <Image
                                     src="/images/main/mir.png"
-                                    width={28}
-                                    height={28}
+                                    width={29}
+                                    height={29}
                                     alt=''
-
+                                    style={{
+                                        marginLeft: 3
+                                    }}
                                 />
                                 <p className='pGrey' style={{marginLeft: 2, marginTop: 4}}>{cardNum}</p>
                             </div>
