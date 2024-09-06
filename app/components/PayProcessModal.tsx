@@ -353,9 +353,21 @@ const PayProcessModal = ({
                         </div>
 
 
-                        <Button onClick={handleSuccessPayModal}>
-                            Перевести
-                        </Button>
+                        <div
+                            style={{
+                                display: 'flex',
+                                flexDirection: 'row',
+                                justifyContent: 'space-between',
+                            }}
+                        >
+                            <Button onClick={handleSuccessPayModal}>
+                                Перевести
+                            </Button>
+                            <Button onClick={handleModal}>
+                                Назад
+                            </Button>
+                        </div>
+
                     </Box>
                 </Slide>
             </Modal>
