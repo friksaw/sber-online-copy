@@ -625,7 +625,7 @@ const PayProcessModal = ({
                                     marginBottom: 100,
                                 }}
                             >
-                                { (paySbpBankName) ? paySum : paySum.split(/[.,]/)[0]} ₽
+                                { (paySenderBankName !== 'Перевод по СБП') ? paySum : paySum.split(/[.,]/)[0]} ₽
                             </h3>
                             <div
                                 style={{
