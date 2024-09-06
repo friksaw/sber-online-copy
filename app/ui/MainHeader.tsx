@@ -365,7 +365,7 @@ export default function MainHeader({ cardNum, bankNum, balance, handleControl, i
                                                 />
                                             </div>
                                             <p className='pGrey'>
-                                                {bankNum}
+                                                6734
                                             </p>
                                         </div>
                                         : <Skeleton variant="rectangular" width={100} height={24}
