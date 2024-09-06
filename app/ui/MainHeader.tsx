@@ -327,7 +327,7 @@ export default function MainHeader({ cardNum, bankNum, balance, handleControl, i
                                                 textWrap: 'nowrap',
                                             }}
                                         >
-                                            {balance} ₽
+                                            72 304,00 ₽
                                         </p> : <Skeleton variant="rectangular" width={80} height={24}
                                                          style={{borderRadius: 4, marginBottom: 4}}/>
                                 }
