@@ -47,7 +47,7 @@ export default function PaymentsHistory({ deleteItem, handleCheckPayModal, isPag
                             key={index}
                             onClick={() => handleCheckPayModal(index)}
                             sx={{
-                                height: (commission.trim().charAt(0) !== '0') ? 88 : 64,
+                                height: (commission.toString().trim().charAt(0) !== '0') ? 88 : 64,
                             }}
                         >
                             <ListItemAvatar sx={{alignSelf: 'start'}}>
@@ -76,7 +76,7 @@ export default function PaymentsHistory({ deleteItem, handleCheckPayModal, isPag
                                         {bankName}
                                     </p>
                                     {
-                                        (commission?.trim().charAt(0) !== '0') ? (
+                                        (commission.toString().trim().charAt(0) !== '0') ? (
                                             <p className="pGrey" style={{ marginTop: 8, marginBottom: 8 }}>
                                                 Комиссия: {commission} ₽
                                             </p>
@@ -86,7 +86,7 @@ export default function PaymentsHistory({ deleteItem, handleCheckPayModal, isPag
                                 </div>
                                 <div
                                     style={{
-                                        marginTop: (commission?.trim().charAt(0) !== '0') ? -28 : 0,
+                                        marginTop: (commission.toString().trim().charAt(0) !== '0') ? -28 : 0,
                                         marginLeft: 12,
                                         width: 64,
                                         textWrap: 'nowrap',
