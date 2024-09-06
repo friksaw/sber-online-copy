@@ -47,7 +47,7 @@ export default function PaymentsHistory({ deleteItem, handleCheckPayModal, isPag
                             key={index}
                             onClick={() => handleCheckPayModal(index)}
                             sx={{
-                                height: (commission && commission !== '0') ? 88 : 64,
+                                height: (commission.trim().charAt(0) !== '0') ? 88 : 64,
                             }}
                         >
                             <ListItemAvatar sx={{alignSelf: 'start'}}>
@@ -86,6 +86,7 @@ export default function PaymentsHistory({ deleteItem, handleCheckPayModal, isPag
                                 </div>
                                 <div
                                     style={{
+                                        marginTop: (commission.trim().charAt(0) !== '0') ? -20 : 0,
                                         marginLeft: 12,
                                         width: 64,
                                         textWrap: 'nowrap',
@@ -94,8 +95,6 @@ export default function PaymentsHistory({ deleteItem, handleCheckPayModal, isPag
                                         flexDirection: 'column',
                                     }}
                                 >
-                                    {
-                                        isPageLoaded ?
                                     <p
                                         style={{
                                             textWrap: 'nowrap',
@@ -104,9 +103,7 @@ export default function PaymentsHistory({ deleteItem, handleCheckPayModal, isPag
                                     }}
                                     >
                                         {sum} ₽
-                                    </p>   : <Skeleton variant="rectangular" width={60} height={24}
-                                                       style={{borderRadius: 4}}/>
-                                    }
+                                    </p>
                                     {!sum.startsWith('+') && (
                                         <Image
                                             src="/images/history/repeat.svg"
