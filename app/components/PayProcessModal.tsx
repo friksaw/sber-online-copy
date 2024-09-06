@@ -1150,7 +1150,7 @@ const PayProcessModal = ({
                                                             Комиссия
                                                         </p>
                                                         <p>
-                                                            {payCommission}.00 ₽
+                                                            {payCommission} ₽
                                                         </p>
                                                         <p
                                                             className='pGrey'
@@ -1266,7 +1266,7 @@ const PayProcessModal = ({
                                                                 Сумма перевода
                                                             </p>
                                                             <p>
-                                                                {paySum} ₽
+                                                                {paySum.replace(/\s/g, '')} ₽
                                                             </p>
                                                             <p
                                                                 className='pGrey'
@@ -1279,7 +1279,7 @@ const PayProcessModal = ({
                                                                 Комиссия
                                                             </p>
                                                             <p>
-                                                                {payCommission} ₽
+                                                                {payCommission.replace(/\s/g, '')}.00 ₽
                                                             </p>
 
                                                             <p
