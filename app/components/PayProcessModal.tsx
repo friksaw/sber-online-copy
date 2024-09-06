@@ -576,8 +576,8 @@ const PayProcessModal = ({
                             >
                                 <Image
                                     src="/images/payment/check-arrow.svg"
-                                    width={15}
-                                    height={21}
+                                    width={11}
+                                    height={20}
                                     alt=''
                                     style={{
                                         marginLeft: 12,

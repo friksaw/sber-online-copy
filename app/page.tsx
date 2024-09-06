@@ -212,7 +212,8 @@ export default function Home() {
 
     const handleCheckPayModal: any = (index: any) => {
         setIsCheckModalOpen((isOpen: any) => !isOpen);
-        setSelectedItemIndex(index);
+        console.log(index)
+        setSelectedItemIndex(index)
     };
 
     const handleControl: any = () => {
