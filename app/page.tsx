@@ -212,7 +212,6 @@ export default function Home() {
 
     const handleCheckPayModal: any = (index: any) => {
         setIsCheckModalOpen((isOpen: any) => !isOpen);
-        console.log(index)
         setSelectedItemIndex(index);
     };
 
@@ -368,7 +367,9 @@ export default function Home() {
         updatedPayments.splice(index, 1);
         setPaymentsToday(updatedPayments);
     };
-    const editItem = () => {
+
+    const editItem = (index: any) => {
+        setSelectedItemIndex(index)
         setEditModalOpen((isOpen: any) => !isOpen)
     };
 
@@ -570,6 +571,8 @@ export default function Home() {
                 bankNum={bankNum}
 
                 editModalOpen={editModalOpen}
+
+                setSelectedItemIndex={setSelectedItemIndex}
             />
 
             <div
