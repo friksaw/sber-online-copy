@@ -1431,7 +1431,7 @@ const PayProcessModal = ({
                                             sx={{
                                                 position: 'absolute',
                                                 top: '45%',
-                                                left: '50%',
+                                                left: '46%',
                                             }}
                                         />
                                     </div>
