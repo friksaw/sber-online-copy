@@ -8,7 +8,9 @@ import Paper from "@mui/material/Paper";
 import {useEffect} from "react";
 
 export default function PaymentsHistory({ isControlsOpen, deleteItem, editItem, handleCheckPayModal, isPageLoaded, paymentsYesterday, sumYesterday, paymentsToday, sumToday, depositsToday, handleOpenCheck }: any) {
-
+    const onClickItem = ({index}: any) => {
+        isControlsOpen ? editItem({ index: index }) : handleCheckPayModal(index)
+    }
 
     return (
         <div>
@@ -48,7 +50,7 @@ export default function PaymentsHistory({ isControlsOpen, deleteItem, editItem, 
                     <List>{paymentsToday.slice().reverse().map(({ name, sbpBankName, bankName, sum, commission, }: any, index: number) => (
                         <ListItemButton
                             key={index}
-                            onClick={() => isControlsOpen ? editItem(index) : handleCheckPayModal(index)}
+                            onClick={() => onClickItem({ index: index })}
                             sx={{
                                 height: (commission.toString().trim().charAt(0) !== '0') ? 88 : 64,
                             }}

@@ -124,7 +124,7 @@ export default function Controls({ deleteItem, editModalOpen, changeCardNum, cha
                 </Button>
                 {
                     editModalOpen &&
-                    <Button onClick={deleteItem}>
+                    <Button onClick={() => deleteItem({ index: selected })}>
                         удалить
                     </Button>
                 }

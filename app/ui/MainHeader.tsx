@@ -3,8 +3,19 @@
 import * as React from "react";
 import Image from "next/image";
 import {Avatar, Skeleton} from "@mui/material";
+import {useState} from "react";
 
 export default function MainHeader({ cardNum, bankNum, balance, handleControl, isPageLoaded }: any) {
+    const [randomNumber1, setRandomNumber1]: any = useState(2345);
+    const [randomNumber2, setRandomNumber2]: any = useState(6544);
+    const [randomNumber3, setRandomNumber3]: any = useState(2345);
+
+    const generateRandomNumber = () => {
+        setRandomNumber1(Math.floor(Math.random() * 9000) + 1000);
+        setRandomNumber2(Math.floor(Math.random() * 9000) + 1000);
+        setRandomNumber3(Math.floor(Math.random() * 9000) + 1000);
+    };
+
     return (
         <div
             style={{
@@ -290,8 +301,15 @@ export default function MainHeader({ cardNum, bankNum, balance, handleControl, i
                                 margin: 16,
                             }}
                         >
-                            <div style={{display: 'flex', flexDirection: 'row'}}>
-                                <div>
+                            <div
+                                style={{display: 'flex', flexDirection: 'row'}}
+                                onClick={generateRandomNumber}
+                            >
+                                <div
+                                    style={{
+                                        cursor: 'pointer',
+                                    }}
+                                >
                                     <Image
                                         src="/images/main/card.svg"
                                         width={32}
@@ -301,9 +319,13 @@ export default function MainHeader({ cardNum, bankNum, balance, handleControl, i
                                             marginLeft: 3
                                         }}
                                     />
-                                    <p className='pGrey' style={{marginLeft: 5, marginTop: 4}}>9098</p>
+                                    <p className='pGrey' style={{marginLeft: 5, marginTop: 4}}>{randomNumber1}</p>
                                 </div>
-                                <div>
+                                <div
+                                    style={{
+                                        cursor: 'pointer',
+                                    }}
+                                >
                                     <Image
                                         src="/images/main/mir.png"
                                         width={28}
@@ -313,7 +335,7 @@ export default function MainHeader({ cardNum, bankNum, balance, handleControl, i
                                             marginLeft: 8
                                         }}
                                     />
-                                    <p className='pGrey' style={{marginLeft: 9, marginTop: 4}}>0187</p>
+                                    <p className='pGrey' style={{marginLeft: 9, marginTop: 4}}>{randomNumber2}</p>
                                 </div>
                             </div>
 
@@ -337,7 +359,9 @@ export default function MainHeader({ cardNum, bankNum, balance, handleControl, i
                                             style={{
                                                 display: 'flex',
                                                 flexDirection: 'row',
+                                                cursor: 'pointer',
                                             }}
+                                            onClick={generateRandomNumber}
                                         >
                                             <p className='pGrey'>
                                                 Счёт
@@ -364,8 +388,8 @@ export default function MainHeader({ cardNum, bankNum, balance, handleControl, i
                                                     alt=''
                                                 />
                                             </div>
-                                            <p className='pGrey'>
-                                                6734
+                                            <p className='pGrey' >
+                                                {randomNumber3}
                                             </p>
                                         </div>
                                         : <Skeleton variant="rectangular" width={100} height={24}

@@ -366,8 +366,6 @@ export default function Home() {
     const deleteItem = ({ index }: any) => {
         const updatedPayments = [...paymentsToday];
         updatedPayments.splice(index, 1);
-
-        // Обновляем состояние
         setPaymentsToday(updatedPayments);
     };
     const editItem = () => {
