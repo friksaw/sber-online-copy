@@ -311,10 +311,22 @@ export default function Home() {
             useGrouping: true,
             separator: ' ',
         });
-        const formattedPaySum: any = paySumNumeric.toLocaleString('ru-RU', {
-            useGrouping: true,
-            separator: ' ',
-        });
+        let formattedPaySum: any = '';
+
+
+
+        if (paySbpBankName) {
+            formattedPaySum = paySumNumeric.toLocaleString('ru-RU', {
+                useGrouping: true,
+                separator: ' ',
+            });
+        } else {
+            formattedPaySum = paySumNumeric.toLocaleString('ru-RU', {
+                useGrouping: true,
+                separator: ' ',
+            });
+        }
+
         const formattedCommission: any = payCommissionNumeric.toLocaleString('ru-RU', {
             useGrouping: true,
             separator: ' ',

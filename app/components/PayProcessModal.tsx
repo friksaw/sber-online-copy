@@ -625,7 +625,7 @@ const PayProcessModal = ({
                                     marginBottom: 100,
                                 }}
                             >
-                                {paySum} ₽
+                                { (paySbpBankName) ? paySum : paySum.split(/[.,]/)[0]} ₽
                             </h3>
                             <div
                                 style={{
@@ -1433,7 +1433,7 @@ const PayProcessModal = ({
                                             sx={{
                                                 position: 'absolute',
                                                 top: '45%',
-                                                left: '48%',
+                                                left: '49%',
                                             }}
                                         />
                                     </div>
