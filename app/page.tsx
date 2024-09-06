@@ -363,7 +363,7 @@ export default function Home() {
     };
 
     const deleteItem = () => {
-        console.log(0)
+        console.log('delete item')
     };
 
     function getRandomNumber({ min, max }: any): any {
@@ -501,7 +501,7 @@ export default function Home() {
                     handleCheckPayModal={handleCheckPayModal}
                     isCheckModalOpen={isCheckModalOpen}
                     deleteItem={deleteItem}
-                    isControlOpen={isControlsOpen}
+                    isControlsOpen={isControlsOpen}
 
 
 

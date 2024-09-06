@@ -5,8 +5,13 @@ import {Avatar, CircularProgress, List, ListItemAvatar, ListItemButton, ListItem
 import Image from "next/image";
 import {fontWeight} from "@mui/system";
 import Paper from "@mui/material/Paper";
+import {useEffect} from "react";
 
-export default function PaymentsHistory({ isControlOpen, deleteItem, handleCheckPayModal, isPageLoaded, paymentsYesterday, sumYesterday, paymentsToday, sumToday, depositsToday, handleOpenCheck }: any) {
+export default function PaymentsHistory({ isControlsOpen, deleteItem, handleCheckPayModal, isPageLoaded, paymentsYesterday, sumYesterday, paymentsToday, sumToday, depositsToday, handleOpenCheck }: any) {
+    useEffect(() => {
+        console.log('isControlOpen changed:', isControlsOpen);
+    }, [isControlsOpen]);
+
     return (
         <div>
             {
@@ -42,10 +47,10 @@ export default function PaymentsHistory({ isControlOpen, deleteItem, handleCheck
                                                style={{borderRadius: 4}}/>
                         }
                     </div>
-                    <List>{paymentsToday.slice().reverse().map(({ name, sbpBankName, bankName, sum, commission, }: any, index: any) => (
+                    <List>{paymentsToday.slice().reverse().map(({ name, sbpBankName, bankName, sum, commission, }: any, index: number) => (
                         <ListItemButton
                             key={index}
-                            onClick={() => isControlOpen ? deleteItem() : handleCheckPayModal(index)}
+                            onClick={() => isControlsOpen ? deleteItem() : handleCheckPayModal(index)}
                             sx={{
                                 height: (commission.toString().trim().charAt(0) !== '0') ? 88 : 64,
                             }}
