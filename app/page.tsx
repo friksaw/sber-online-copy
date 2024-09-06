@@ -99,7 +99,6 @@ export default function Home() {
             isBadged: 1,
             comission: 0,
             resBankNum: '7676',
-
         },
         {
             name: 'Георгий Янович П.',
@@ -404,6 +403,8 @@ export default function Home() {
             name: 'Геннадий Ефимов Г.',
             bankName: 'Клиент Сбера',
             sum: '+ ' + formattedSumToday,
+            commission: 0,
+            resBankNum: '5436',
         };
 
         setPaymentsToday((prevPayments: any) => [...prevPayments, newPayment]);
