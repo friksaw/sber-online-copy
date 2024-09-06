@@ -301,7 +301,7 @@ export default function MainHeader({ cardNum, bankNum, balance, handleControl, i
                                             marginLeft: 3
                                         }}
                                     />
-                                    <p className='pGrey' style={{marginLeft: 2, marginTop: 4}}>9098</p>
+                                    <p className='pGrey' style={{marginLeft: 5, marginTop: 4}}>9098</p>
                                 </div>
                                 <div>
                                     <Image
@@ -313,7 +313,7 @@ export default function MainHeader({ cardNum, bankNum, balance, handleControl, i
                                             marginLeft: 8
                                         }}
                                     />
-                                    <p className='pGrey' style={{marginLeft: 7, marginTop: 4}}>0187</p>
+                                    <p className='pGrey' style={{marginLeft: 9, marginTop: 4}}>0187</p>
                                 </div>
                             </div>
 
