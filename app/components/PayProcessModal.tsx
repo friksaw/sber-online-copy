@@ -281,13 +281,13 @@ const PayProcessModal = ({
                             id="outlined-basic"
                             label="Имя другого банкаи"
                             variant="outlined"
-                            value={paySum}
+                            value={paySenderBankName}
                             sx={{
                                 width: '100%',
                                 marginBottom: 4,
                                 height: '28px',
                             }}
-                            onChange={(event): any => changePaySum(event?.target.value)}
+                            onChange={(event): any => changePaySenderBankName(event?.target.value)}
                         />
 
                         <TextField
