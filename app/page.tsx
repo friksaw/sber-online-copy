@@ -329,7 +329,15 @@ export default function Home() {
             sum: formattedPaySum,
             commission: formattedCommission,
             resBankNum: payResBankNum,
+
             sbpBankName: paySbpBankName,
+            suip: paySuip,
+            senderBankNum: paySenderBankNum,
+            senderName: paySenderName,
+            paySumCom: paySumCom,
+            phone: payPhone,
+
+
 
         };
 

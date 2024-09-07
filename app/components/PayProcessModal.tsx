@@ -1053,7 +1053,7 @@ const PayProcessModal = ({
                                                 }}
                                             />
                                             {
-                                                (paySenderBankName === 'Клиенту Сбера') ?
+                                                (paymentsToday[paymentsToday.length - selectedItemIndex - 1]?.bankName === 'Клиенту Сбера') ?
                                                     <p
                                                         className='pGrey'
                                                         style={{
@@ -1096,7 +1096,7 @@ const PayProcessModal = ({
                                             }}
                                         >
                                             {
-                                                (paySenderBankName === 'Клиенту Сбера') ?
+                                                (paymentsToday[paymentsToday.length - selectedItemIndex - 1]?.bankName === 'Клиенту Сбера') ?
                                                     <div>
                                                         <p
                                                             className='pGrey'
@@ -1108,7 +1108,7 @@ const PayProcessModal = ({
                                                             Операция
                                                         </p>
                                                         <p>
-                                                            {(paySenderBankName === 'Клиенту Сбера') ? 'Перевод клиенту Сбербанка' : paySenderBankName}
+                                                            {(paymentsToday[paymentsToday.length - selectedItemIndex - 1]?.bankName === 'Клиенту Сбера') ? 'Перевод клиенту Сбербанка' : paymentsToday[paymentsToday.length - selectedItemIndex - 1]?.bankName}
                                                         </p>
                                                         <p
                                                             className='pGrey'
@@ -1119,7 +1119,7 @@ const PayProcessModal = ({
                                                             ФИО Получателя
                                                         </p>
                                                         <p>
-                                                            {payName}
+                                                            {paymentsToday[paymentsToday.length - selectedItemIndex - 1]?.name}
                                                         </p>
                                                         <p
                                                             className='pGrey'
@@ -1130,7 +1130,7 @@ const PayProcessModal = ({
                                                             Телефон получателя
                                                         </p>
                                                         <p>
-                                                            {payPhone}
+                                                            {paymentsToday[paymentsToday.length - selectedItemIndex - 1]?.phone}
                                                         </p>
                                                         <p
                                                             className='pGrey'
@@ -1141,7 +1141,7 @@ const PayProcessModal = ({
                                                             Номер счёта получателя
                                                         </p>
                                                         <p>
-                                                            **** {payResBankNum}
+                                                            **** {paymentsToday[paymentsToday.length - selectedItemIndex - 1]?.resBankNum}
                                                         </p>
                                                         <p
                                                             className='pGrey'
@@ -1153,7 +1153,7 @@ const PayProcessModal = ({
                                                             ФИО отправителя
                                                         </p>
                                                         <p>
-                                                            {paySenderName}
+                                                            {paymentsToday[paymentsToday.length - selectedItemIndex - 1]?.senderName}
                                                         </p>
                                                         <p
                                                             className='pGrey'
@@ -1164,7 +1164,7 @@ const PayProcessModal = ({
                                                             Счёт отправителя
                                                         </p>
                                                         <p>
-                                                            **** {paySenderBankNum}
+                                                            **** {paymentsToday[paymentsToday.length - selectedItemIndex - 1]?.senderBankNum}
                                                         </p>
                                                         <p
                                                             className='pGrey'
@@ -1175,7 +1175,7 @@ const PayProcessModal = ({
                                                             Сумма перевода
                                                         </p>
                                                         <p>
-                                                            {paySum} ₽
+                                                            {paymentsToday[paymentsToday.length - selectedItemIndex - 1]?.sum} ₽
                                                         </p>
                                                         <p
                                                             className='pGrey'
@@ -1186,7 +1186,7 @@ const PayProcessModal = ({
                                                             Комиссия
                                                         </p>
                                                         <p>
-                                                            {payCommission} ₽
+                                                            {paymentsToday[paymentsToday.length - selectedItemIndex - 1]?.commission} ₽
                                                         </p>
                                                         <p
                                                             className='pGrey'
@@ -1212,7 +1212,7 @@ const PayProcessModal = ({
                                                             111083
                                                         </p>
                                                     </div> :
-                                                    (paySenderBankName === 'Перевод по СБП') ?
+                                                    (paymentsToday[paymentsToday.length - selectedItemIndex - 1]?.bankName === 'Перевод по СБП') ?
 
                                                         <div>
                                                             <p
@@ -1225,7 +1225,7 @@ const PayProcessModal = ({
                                                                 Операция
                                                             </p>
                                                             <p>
-                                                                {paySenderBankName}
+                                                                {paymentsToday[paymentsToday.length - selectedItemIndex - 1]?.bankName}
                                                             </p>
                                                             <p
                                                                 className='pGrey'
@@ -1238,7 +1238,7 @@ const PayProcessModal = ({
                                                                 ФИО получателя перевода
                                                             </p>
                                                             <p>
-                                                                {payName}
+                                                                {paymentsToday[paymentsToday.length - selectedItemIndex - 1]?.name}
                                                             </p>
                                                             <p
                                                                 className='pGrey'
@@ -1251,7 +1251,7 @@ const PayProcessModal = ({
                                                                 Номер телефона получателя
                                                             </p>
                                                             <p>
-                                                                {payPhone}
+                                                                {paymentsToday[paymentsToday.length - selectedItemIndex - 1]?.phone}
                                                             </p>
                                                             <p
                                                                 className='pGrey'
@@ -1264,7 +1264,7 @@ const PayProcessModal = ({
                                                                 Банк получателя
                                                             </p>
                                                             <p>
-                                                                {paySbpBankName}
+                                                                {paymentsToday[paymentsToday.length - selectedItemIndex - 1]?.bankName}
                                                             </p>
                                                             <p
                                                                 className='pGrey'
@@ -1276,7 +1276,7 @@ const PayProcessModal = ({
                                                                 ФИО отправителя
                                                             </p>
                                                             <p>
-                                                                {paySenderName}
+                                                                {paymentsToday[paymentsToday.length - selectedItemIndex - 1]?.name}
                                                             </p>
                                                             <p
                                                                 className='pGrey'
@@ -1289,7 +1289,7 @@ const PayProcessModal = ({
                                                                 Карта отправителя
                                                             </p>
                                                             <p>
-                                                                **** {paySenderBankNum}
+                                                                **** {paymentsToday[paymentsToday.length - selectedItemIndex - 1]?.senderBankNum}
                                                             </p>
                                                             <p
                                                                 className='pGrey'
@@ -1302,7 +1302,7 @@ const PayProcessModal = ({
                                                                 Сумма перевода
                                                             </p>
                                                             <p>
-                                                                {paySum.replace(/\s/g, '')} ₽
+                                                                {paymentsToday[paymentsToday.length - selectedItemIndex - 1]?.sum.replace(/\s/g, '')} ₽
                                                             </p>
                                                             <p
                                                                 className='pGrey'
@@ -1315,7 +1315,7 @@ const PayProcessModal = ({
                                                                 Комиссия
                                                             </p>
                                                             <p>
-                                                                {payCommission.replace(/\s/g, '')}.00 ₽
+                                                                {paymentsToday[paymentsToday.length - selectedItemIndex - 1]?.commission.replace(/\s/g, '')}.00 ₽
                                                             </p>
 
                                                             <p
@@ -1330,7 +1330,7 @@ const PayProcessModal = ({
                                                             </p>
                                                             <p>
                                                                 <p style={{textTransform: 'uppercase'}}>
-                                                                    {paySuip}
+                                                                    {paymentsToday[paymentsToday.length - selectedItemIndex - 1]?.suip}
                                                                 </p>
                                                             </p>
                                                         </div> :
@@ -1345,7 +1345,7 @@ const PayProcessModal = ({
                                                                 КУДА
                                                             </p>
                                                             <p>
-                                                                **** {payResBankNum}
+                                                                **** {paymentsToday[paymentsToday.length - selectedItemIndex - 1]?.resBankNum}
                                                             </p>
                                                             <p
                                                                 className='pGrey'
@@ -1357,7 +1357,7 @@ const PayProcessModal = ({
                                                                 В БАНК
                                                             </p>
                                                             <p>
-                                                                {paySenderBankName}
+                                                                {paymentsToday[paymentsToday.length - selectedItemIndex - 1]?.bankName}
                                                             </p>
                                                             <p
                                                                 className='pGrey'
@@ -1381,7 +1381,7 @@ const PayProcessModal = ({
                                                                 СКОЛЬКО
                                                             </p>
                                                             <p>
-                                                                {paySum} ₽
+                                                                {paymentsToday[paymentsToday.length - selectedItemIndex - 1]?.sum} ₽
                                                             </p>
                                                             <p
                                                                 className='pGrey'
@@ -1393,7 +1393,7 @@ const PayProcessModal = ({
                                                                 КОМИССИЯ
                                                             </p>
                                                             <p>
-                                                                {payCommission} ₽
+                                                                {paymentsToday[paymentsToday.length - selectedItemIndex - 1]?.commission} ₽
                                                             </p>
                                                             <p
                                                                 className='pGrey'
@@ -1405,7 +1405,7 @@ const PayProcessModal = ({
                                                                 СПИСАНО
                                                             </p>
                                                             <p>
-                                                                {paySumCom} ₽
+                                                                {paymentsToday[paymentsToday.length - selectedItemIndex - 1]?.paySumCom} ₽
                                                             </p>
                                                             <p
                                                                 className='pGrey'
@@ -1417,7 +1417,7 @@ const PayProcessModal = ({
                                                                 ОТ КОГО
                                                             </p>
                                                             <p>
-                                                                {paySenderName}
+                                                                {paymentsToday[paymentsToday.length - selectedItemIndex - 1]?.senderName}
                                                             </p>
                                                             <p
                                                                 className='pGrey'
@@ -1429,7 +1429,7 @@ const PayProcessModal = ({
                                                                 ОТКУДА
                                                             </p>
                                                             <p>
-                                                                **** {paySenderBankNum}
+                                                                **** {paymentsToday[paymentsToday.length - selectedItemIndex - 1]?.senderBankNum}
                                                             </p>
 
                                                             <p
@@ -1442,7 +1442,7 @@ const PayProcessModal = ({
                                                                 СУИП
                                                             </p>
                                                             <p>
-                                                                {paySuip}
+                                                                {paymentsToday[paymentsToday.length - selectedItemIndex - 1]?.suip}
                                                             </p>
                                                         </div>
                                             }
