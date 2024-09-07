@@ -1,11 +1,11 @@
 'use client'
 
 import * as React from "react";
+import {useState} from "react";
 import Image from "next/image";
 import {Avatar, Skeleton} from "@mui/material";
-import {useState} from "react";
 
-export default function MainHeader({ cardNum, bankNum, balance, handleControl, isPageLoaded }: any) {
+export default function MainHeader({cardNum, bankNum, balance, handleControl, isPageLoaded}: any) {
     const [randomNumber1, setRandomNumber1]: any = useState(2345);
     const [randomNumber2, setRandomNumber2]: any = useState(6544);
     const [randomNumber3, setRandomNumber3]: any = useState(2345);
@@ -135,8 +135,6 @@ export default function MainHeader({ cardNum, bankNum, balance, handleControl, i
             </div>
 
 
-
-
             <div
                 style={{
                     display: 'flex',
@@ -225,9 +223,9 @@ export default function MainHeader({ cardNum, bankNum, balance, handleControl, i
                                 <p className='pGrey' style={{marginLeft: 2, marginTop: 4}}>{cardNum}</p>
                             </div>
 
-                                <div>
-                                    {
-                                        isPageLoaded ?
+                            <div>
+                                {
+                                    isPageLoaded ?
                                         <p
                                             style={{
                                                 fontSize: 18,
@@ -235,50 +233,51 @@ export default function MainHeader({ cardNum, bankNum, balance, handleControl, i
                                             }}
                                         >
                                             {balance} ₽
-                                        </p> : <Skeleton variant="rectangular" width={80} height={24} style={{ borderRadius: 4, marginBottom: 4 }} />
-                                    }
-                                    {
-                                        isPageLoaded ?
+                                        </p> : <Skeleton variant="rectangular" width={80} height={24}
+                                                         style={{borderRadius: 4, marginBottom: 4}}/>
+                                }
+                                {
+                                    isPageLoaded ?
+                                        <div
+                                            style={{
+                                                display: 'flex',
+                                                flexDirection: 'row',
+                                            }}
+                                        >
+                                            <p className='pGrey'>
+                                                Счёт
+                                            </p>
                                             <div
                                                 style={{
                                                     display: 'flex',
                                                     flexDirection: 'row',
+                                                    alignItems: 'center',
+                                                    margin: '0 4px'
                                                 }}
                                             >
-                                                <p className='pGrey'>
-                                                    Счёт
-                                                </p>
-                                                <div
-                                                    style={{
-                                                        display: 'flex',
-                                                        flexDirection: 'row',
-                                                        alignItems: 'center',
-                                                        margin: '0 4px'
-                                                    }}
-                                                >
-                                                    <Image
-                                                        src="/images/lil-dot.svg"
-                                                        width={4}
-                                                        height={4}
-                                                        alt=''
+                                                <Image
+                                                    src="/images/lil-dot.svg"
+                                                    width={4}
+                                                    height={4}
+                                                    alt=''
 
-                                                    />
-                                                    <Image
-                                                        src="/images/lil-dot.svg"
-                                                        width={4}
-                                                        height={4}
-                                                        alt=''
-                                                    />
-                                                </div>
-                                                <p className='pGrey'>
-                                                    {bankNum}
-                                                </p>
+                                                />
+                                                <Image
+                                                    src="/images/lil-dot.svg"
+                                                    width={4}
+                                                    height={4}
+                                                    alt=''
+                                                />
                                             </div>
-                                            : <Skeleton variant="rectangular" width={100} height={24}
-                                                        style={{borderRadius: 4}}/>
-                                    }
+                                            <p className='pGrey'>
+                                                {bankNum}
+                                            </p>
+                                        </div>
+                                        : <Skeleton variant="rectangular" width={100} height={24}
+                                                    style={{borderRadius: 4}}/>
+                                }
 
-                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -388,7 +387,7 @@ export default function MainHeader({ cardNum, bankNum, balance, handleControl, i
                                                     alt=''
                                                 />
                                             </div>
-                                            <p className='pGrey' >
+                                            <p className='pGrey'>
                                                 {randomNumber3}
                                             </p>
                                         </div>

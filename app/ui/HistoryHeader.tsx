@@ -4,7 +4,7 @@ import * as React from "react";
 import Image from "next/image";
 import {Avatar, Skeleton} from "@mui/material";
 
-export default function HistoryHeader({ sumToday, depositsToday, isPageLoaded, handleControl }: any) {
+export default function HistoryHeader({sumToday, depositsToday, isPageLoaded, handleControl}: any) {
     return (
         <div>
             <div
@@ -96,8 +96,7 @@ export default function HistoryHeader({ sumToday, depositsToday, isPageLoaded, h
                     </div>
                 </div>
                 <div
-                    style={{
-                    }}
+                    style={{}}
                 >
                     <div
                         style={{
@@ -127,12 +126,12 @@ export default function HistoryHeader({ sumToday, depositsToday, isPageLoaded, h
                             >
                                 {
                                     isPageLoaded ?
-                                <Image
-                                    src="/images/history/green-no-eye.svg"
-                                    width={24}
-                                    height={22}
-                                    alt=''
-                                /> : <Skeleton variant="circular" width={40} height={40} />
+                                        <Image
+                                            src="/images/history/green-no-eye.svg"
+                                            width={24}
+                                            height={22}
+                                            alt=''
+                                        /> : <Skeleton variant="circular" width={40} height={40}/>
                                 }
                                 <Image
                                     src="/images/cross.svg"
@@ -147,15 +146,15 @@ export default function HistoryHeader({ sumToday, depositsToday, isPageLoaded, h
                             </div>
                             {
                                 isPageLoaded ?
-                            <p
-                                style={{
-                                    fontSize: 12,
-                                    marginTop: 16
-                                }}
-                            >
-                                Как скрыть операцию
-                            </p>: <Skeleton variant="rectangular" width={84} height={32}
-                                            style={{borderRadius: 4}}/>
+                                    <p
+                                        style={{
+                                            fontSize: 12,
+                                            marginTop: 16
+                                        }}
+                                    >
+                                        Как скрыть операцию
+                                    </p> : <Skeleton variant="rectangular" width={84} height={32}
+                                                     style={{borderRadius: 4}}/>
                             }
                         </div>
 
@@ -177,15 +176,15 @@ export default function HistoryHeader({ sumToday, depositsToday, isPageLoaded, h
                                     display: 'flex',
                                     flexDirection: 'row',
                                     justifyContent: 'space-between',
-                                    width:  192
+                                    width: 192
                                 }}
                             >
                                 {
                                     isPageLoaded ?
-                                <p className='pGrey'>
-                                    Расходы за сегодня
-                                </p>: <Skeleton variant="rectangular" width={120} height={20}
-                                                style={{borderRadius: 4}}/>}
+                                        <p className='pGrey'>
+                                            Расходы за сегодня
+                                        </p> : <Skeleton variant="rectangular" width={120} height={20}
+                                                         style={{borderRadius: 4}}/>}
                                 <Image
                                     src="/images/history/history-arrow.svg"
                                     width={9}
@@ -198,42 +197,42 @@ export default function HistoryHeader({ sumToday, depositsToday, isPageLoaded, h
                             </div>
                             {
                                 isPageLoaded ?
-                            <p
-                                style={{
-                                    fontSize: 18,
-                                }}
-                            >
-                                {sumToday} ₽
-                            </p>
+                                    <p
+                                        style={{
+                                            fontSize: 18,
+                                        }}
+                                    >
+                                        {sumToday} ₽
+                                    </p>
                                     : <Skeleton variant="rectangular" width={80} height={24}
                                                 style={{borderRadius: 4}}/>}
                             {
                                 isPageLoaded ?
-                            <div
-                                style={{
-                                    display: 'flex',
-                                    flexDirection: 'row',
-                                    marginTop: 16,
-                                }}
-                            >
-                                <p
-                                    style={{
-                                        color: '#1C8A31',
-                                        fontSize: 12,
-                                    }}
-                                >
-                                    + {depositsToday} ₽
-                                </p>
-                                <p
-                                    style={{
-                                        marginLeft: 4,
-                                        fontSize: 12,
-                                    }}
-                                >
-                                    зачислений
-                                </p>
-                            </div> : <Skeleton variant="rectangular" width={120} height={20}
-                                               style={{borderRadius: 4}}/>}
+                                    <div
+                                        style={{
+                                            display: 'flex',
+                                            flexDirection: 'row',
+                                            marginTop: 16,
+                                        }}
+                                    >
+                                        <p
+                                            style={{
+                                                color: '#1C8A31',
+                                                fontSize: 12,
+                                            }}
+                                        >
+                                            + {depositsToday} ₽
+                                        </p>
+                                        <p
+                                            style={{
+                                                marginLeft: 4,
+                                                fontSize: 12,
+                                            }}
+                                        >
+                                            зачислений
+                                        </p>
+                                    </div> : <Skeleton variant="rectangular" width={120} height={20}
+                                                       style={{borderRadius: 4}}/>}
                         </div>
 
                         <div

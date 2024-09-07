@@ -3,21 +3,13 @@
 import Image from "next/image";
 import BottomNav from "@/app/ui/BottomNav";
 import * as React from "react";
-import Box from "@mui/material/Box";
-import Main from "@/app/components/Main";
-import Capital from "@/app/components/Capital";
-import Payments from "@/app/components/Payments";
-import History from "@/app/components/History";
 import {useEffect, useState} from "react";
+import Main from "@/app/components/Main";
+import History from "@/app/components/History";
 import Controls from "@/app/components/Controls";
 import PayProcessModal from "@/app/components/PayProcessModal";
-import {Avatar, ListItemAvatar, Skeleton} from "@mui/material";
 
-import { v4 as uuidv4 } from 'uuid';
-
-
-
-
+import {v4 as uuidv4} from 'uuid';
 
 
 export default function Home() {
@@ -64,8 +56,6 @@ export default function Home() {
     const [payMethod, setPayMethod]: any = useState(0);
     const [editModalOpen, setEditModalOpen]: any = useState(null);
     const [selectedItemIndex, setSelectedItemIndex]: any = useState(0);
-
-
 
 
     useEffect(() => {
@@ -171,8 +161,6 @@ export default function Home() {
     const [paymentsToday, setPaymentsToday]: any = useState([]);
 
 
-
-
     const [fastPayments, setFastPayments]: any = useState([]);
 
     useEffect(() => {
@@ -187,13 +175,6 @@ export default function Home() {
         // Call filterPayments whenever paymentsYesterday changes
         filterPayments();
     }, [paymentsYesterday, paymentsToday]);
-
-
-
-
-
-
-
 
 
     const handleOpenCheck: any = () => {
@@ -324,9 +305,9 @@ export default function Home() {
             separator: ' ',
         });
         const formattedPaySum = paySumNumeric.toLocaleString('ru-RU', {
-                useGrouping: true,
-                separator: ' ',
-            });
+            useGrouping: true,
+            separator: ' ',
+        });
 
         const formattedCommission: any = payCommissionNumeric.toLocaleString('ru-RU', {
             useGrouping: true,
@@ -342,7 +323,6 @@ export default function Home() {
         });
 
 
-
         const newPayment: any = {
             name: payName,
             bankName: paySenderBankName,
@@ -352,9 +332,6 @@ export default function Home() {
             sbpBankName: paySbpBankName,
 
         };
-
-
-
 
 
         setPaySumCom(formattedPaySumCom)
@@ -378,13 +355,13 @@ export default function Home() {
         setEditModalOpen((isOpen: any) => !isOpen)
     };
 
-    function getRandomNumber({ min, max }: any): any {
+    function getRandomNumber({min, max}: any): any {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
 
     const addDeposit: any = () => {
-        const randomSum: any = getRandomNumber({ min: 500, max: 20000 });
+        const randomSum: any = getRandomNumber({min: 500, max: 20000});
         const newSumToday: any = Math.floor(randomSum);
 
         // Convert to integers for calculation
@@ -516,7 +493,6 @@ export default function Home() {
                     editItem={editItem}
 
 
-
                 />;
             default:
                 return <Main
@@ -538,8 +514,6 @@ export default function Home() {
                 />;
         }
     };
-
-
 
 
     return (
@@ -608,10 +582,15 @@ export default function Home() {
                         width={132}
                         height={36}
                         alt=''
-                        style={{
-                        }}
+                        style={{}}
                     />
-                    <p style={{fontWeight: 400, fontSize: 12, marginTop: 6, marginLeft: -16, zIndex: '10000000000000000000000000000000000000000000000000000000000000000000000000!important'}}>{currentTime}</p>
+                    <p style={{
+                        fontWeight: 400,
+                        fontSize: 12,
+                        marginTop: 6,
+                        marginLeft: -16,
+                        zIndex: '10000000000000000000000000000000000000000000000000000000000000000000000000!important'
+                    }}>{currentTime}</p>
                     <Image
                         src="/images/bgs/pbg1.png"
                         width={140}

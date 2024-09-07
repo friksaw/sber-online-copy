@@ -1,11 +1,11 @@
 'use client'
 
 import * as React from "react";
-import Image from "next/image";
 import {useEffect, useState} from "react";
+import Image from "next/image";
 import {Skeleton} from "@mui/material";
 
-export default function MainStats({ peopleSum, expenses, month, isPageLoaded }: any) {
+export default function MainStats({peopleSum, expenses, month, isPageLoaded}: any) {
     const [transactionsPart, setTransactionsPart]: any = useState(0);
     const [eduPart, setEduPart]: any = useState(0);
 
@@ -44,9 +44,7 @@ export default function MainStats({ peopleSum, expenses, month, isPageLoaded }: 
 
     return (
         <div
-            style={{
-
-            }}
+            style={{}}
         >
             <div
                 style={{
@@ -104,15 +102,15 @@ export default function MainStats({ peopleSum, expenses, month, isPageLoaded }: 
                             }
                             {
                                 isPageLoaded ?
-                            <p
-                                className='pGrey'
-                                style={{
-                                    marginTop: 8,
-                                }}
-                            >
-                                Все расходы
-                            </p>: <Skeleton variant="rectangular" width={100} height={20}
-                                            style={{borderRadius: 4, marginBottom: 4}}/>
+                                    <p
+                                        className='pGrey'
+                                        style={{
+                                            marginTop: 8,
+                                        }}
+                                    >
+                                        Все расходы
+                                    </p> : <Skeleton variant="rectangular" width={100} height={20}
+                                                     style={{borderRadius: 4, marginBottom: 4}}/>
                             }
                         </div>
                     </div>
@@ -136,22 +134,22 @@ export default function MainStats({ peopleSum, expenses, month, isPageLoaded }: 
                         <div>
                             {
                                 isPageLoaded ?
-                            <p
-                                className='pGrey'
-                                style={{
-                                    marginBottom: 8,
-                                }}
-                            >
-                                Переводы людям
-                            </p> : <Skeleton variant="rectangular" width={100} height={20}
-                                             style={{borderRadius: 4, marginBottom: 4}}/>
+                                    <p
+                                        className='pGrey'
+                                        style={{
+                                            marginBottom: 8,
+                                        }}
+                                    >
+                                        Переводы людям
+                                    </p> : <Skeleton variant="rectangular" width={100} height={20}
+                                                     style={{borderRadius: 4, marginBottom: 4}}/>
                             }
                             {
                                 isPageLoaded ?
-                                <h4>
-                                    {peopleSum} ₽
-                                </h4>  : <Skeleton variant="rectangular" width={100} height={24}
-                                                style={{borderRadius: 4}}/>
+                                    <h4>
+                                        {peopleSum} ₽
+                                    </h4> : <Skeleton variant="rectangular" width={100} height={24}
+                                                      style={{borderRadius: 4}}/>
                             }
                         </div>
                     </div>
@@ -175,22 +173,22 @@ export default function MainStats({ peopleSum, expenses, month, isPageLoaded }: 
                         <div>
                             {
                                 isPageLoaded ?
-                            <p
-                                className='pGrey'
-                                style={{
-                                    marginBottom: 8,
-                                }}
-                            >
-                                Образование
-                            </p>  : <Skeleton variant="rectangular" width={100} height={20}
-                                              style={{borderRadius: 4, marginBottom: 4}}/>
+                                    <p
+                                        className='pGrey'
+                                        style={{
+                                            marginBottom: 8,
+                                        }}
+                                    >
+                                        Образование
+                                    </p> : <Skeleton variant="rectangular" width={100} height={20}
+                                                     style={{borderRadius: 4, marginBottom: 4}}/>
                             }
                             {
                                 isPageLoaded ?
-                            <p>
-                                {eduPart} ₽
-                            </p>    : <Skeleton variant="rectangular" width={100} height={24}
-                                                style={{borderRadius: 4}}/>
+                                    <p>
+                                        {eduPart} ₽
+                                    </p> : <Skeleton variant="rectangular" width={100} height={24}
+                                                     style={{borderRadius: 4}}/>
                             }
                         </div>
                     </div>

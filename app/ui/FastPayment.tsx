@@ -1,11 +1,17 @@
 'use client'
 
 import * as React from "react";
-import Image from "next/image";
-import {Avatar} from "@mui/material";
 import FastPaymentButton from "@/app/ui/FastPaymentButton";
 
-export default function FastPayment({ fastPayments, setFastPayments, handlePayProcessModal, isPayProcessModalOpen, paySum, changePaySum, doPayment }: any) {
+export default function FastPayment({
+                                        fastPayments,
+                                        setFastPayments,
+                                        handlePayProcessModal,
+                                        isPayProcessModalOpen,
+                                        paySum,
+                                        changePaySum,
+                                        doPayment
+                                    }: any) {
     return (
         <div>
             <div
