@@ -3,21 +3,19 @@ import {
     Avatar,
     Button,
     CircularProgress,
-    Fade, FormControl, FormControlLabel, FormLabel,
-    keyframes,
-    makeStyles,
-    Menu,
+    FormControl,
+    FormControlLabel,
     MenuItem,
-    Modal, Radio, RadioGroup,
+    Modal,
+    Radio,
+    RadioGroup,
     Slide,
     TextField
 } from "@mui/material";
 import Box from "@mui/material/Box";
-import PayProcessBox from "@/app/components/PaySuccessBox";
 import Image from "next/image";
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
-import {black} from "next/dist/lib/picocolors";
 
 
 const PayProcessModal = ({
@@ -61,7 +59,7 @@ const PayProcessModal = ({
                              handleCheckPayModal,
 
                              pageHeight,
-                            scale,
+                             scale,
 
                              payBankImg,
                              generateSuip,
@@ -269,16 +267,22 @@ const PayProcessModal = ({
                                 name="banks"
                                 value={paySenderBankName}
                                 onChange={changePaySenderBankName}
-                                sx={{ flexDirection: 'column', marginBottom: '20px' }}
+                                sx={{flexDirection: 'column', marginBottom: '20px'}}
                             >
-                                <FormControlLabel sx={{color: 'black'}} value="Клиенту Сбера" control={<Radio />} label="Клиенту Сбера" />
-                                <FormControlLabel sx={{color: 'black'}} value="ВТБ" control={<Radio />} label="ВТБ" />
-                                <FormControlLabel sx={{color: 'black'}} value="Т-Банк" control={<Radio />} label="Т-Банк" />
-                                <FormControlLabel sx={{color: 'black'}} value="Альфа-Банк" control={<Radio />} label="Альфа-Банк" />
-                                <FormControlLabel sx={{color: 'black'}} value="Открытие" control={<Radio />} label="Открытие" />
-                                <FormControlLabel sx={{color: 'black'}} value="РСХБ" control={<Radio />} label="РСХБ" />
-                                <FormControlLabel sx={{color: 'black'}} value="Перевод на карту другого банка" control={<Radio />} label="Перевод на карту другого банка" />
-                                <FormControlLabel sx={{color: 'black'}} value="Перевод по СБП" control={<Radio />} label="Перевод по СБП" />
+                                <FormControlLabel sx={{color: 'black'}} value="Клиенту Сбера" control={<Radio/>}
+                                                  label="Клиенту Сбера"/>
+                                <FormControlLabel sx={{color: 'black'}} value="ВТБ" control={<Radio/>} label="ВТБ"/>
+                                <FormControlLabel sx={{color: 'black'}} value="Т-Банк" control={<Radio/>}
+                                                  label="Т-Банк"/>
+                                <FormControlLabel sx={{color: 'black'}} value="Альфа-Банк" control={<Radio/>}
+                                                  label="Альфа-Банк"/>
+                                <FormControlLabel sx={{color: 'black'}} value="Открытие" control={<Radio/>}
+                                                  label="Открытие"/>
+                                <FormControlLabel sx={{color: 'black'}} value="РСХБ" control={<Radio/>} label="РСХБ"/>
+                                <FormControlLabel sx={{color: 'black'}} value="Перевод на карту другого банка"
+                                                  control={<Radio/>} label="Перевод на карту другого банка"/>
+                                <FormControlLabel sx={{color: 'black'}} value="Перевод по СБП" control={<Radio/>}
+                                                  label="Перевод по СБП"/>
                             </RadioGroup>
                         </FormControl>
                         <TextField
@@ -334,7 +338,13 @@ const PayProcessModal = ({
                         </div>
 
 
-                        <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignContent: 'center', alignItems: 'center',}}>
+                        <div style={{
+                            display: 'flex',
+                            flexDirection: 'row',
+                            justifyContent: 'space-between',
+                            alignContent: 'center',
+                            alignItems: 'center',
+                        }}>
                             <TextField
                                 id="outlined-basic"
                                 label="Суип"
@@ -348,7 +358,8 @@ const PayProcessModal = ({
                                 onChange={(event): any => changePaySuip(event?.target.value)}
                             />
                             <div>
-                                <Button onClick={generateSuip} style={{marginLeft: '12px', marginBottom: '14px'}}>Генерация</Button>
+                                <Button onClick={generateSuip}
+                                        style={{marginLeft: '12px', marginBottom: '14px'}}>Генерация</Button>
 
                             </div>
                         </div>
@@ -641,7 +652,7 @@ const PayProcessModal = ({
                                     marginBottom: 100,
                                 }}
                             >
-                                { (paySenderBankName !== 'Перевод по СБП') ? paySum : paySum.split(/[.,]/)[0]} ₽
+                                {(paySenderBankName !== 'Перевод по СБП') ? paySum : paySum.split(/[.,]/)[0]} ₽
                             </h3>
                             <div
                                 style={{
@@ -749,7 +760,7 @@ const PayProcessModal = ({
                                         backgroundColor: 'rgb(30, 30, 30)',
                                         alignSelf: 'center',
                                         margin: '0 auto',
-                                }}
+                                    }}
                                 />
                                 <p style={{fontWeight: 400, fontSize: 16, marginBottom: 8, paddingTop: 36}}>
                                     Перевод зачислится в течение нескольких минут
@@ -767,7 +778,13 @@ const PayProcessModal = ({
                                 <h3>
                                     Подробности
                                 </h3>
-                                <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignContent: 'center', alignItems: 'center'}}>
+                                <div style={{
+                                    display: 'flex',
+                                    flexDirection: 'row',
+                                    justifyContent: 'space-between',
+                                    alignContent: 'center',
+                                    alignItems: 'center'
+                                }}>
                                     <div>
                                         <p
                                             className='pGrey'
@@ -1316,7 +1333,7 @@ const PayProcessModal = ({
                                                             </p>
                                                         </div> :
                                                         <div>
-                                                        <p
+                                                            <p
                                                                 className='pGrey'
                                                                 style={{
                                                                     marginTop: 20,

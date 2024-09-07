@@ -1,11 +1,31 @@
 'use client'
 
 import * as React from "react";
-import Image from "next/image";
-import {Button, Card, FormControl, InputLabel, MenuItem, Select, Slider, TextField} from "@mui/material";
+import {Button, Card, TextField} from "@mui/material";
 
 
-export default function Controls({ selectedItemIndex, deleteItem, editModalOpen, changeCardNum, changeBankNum, cardNum, bankNum, peopleSum, changePeopleSum, isOpen, balance, changeBalance, expenses, changeExpenses, month, changeMonth, sumYesterday, changeSumYesterday, shuffleYesterdayMessages, addDeposit }: any) {
+export default function Controls({
+                                     selectedItemIndex,
+                                     deleteItem,
+                                     editModalOpen,
+                                     changeCardNum,
+                                     changeBankNum,
+                                     cardNum,
+                                     bankNum,
+                                     peopleSum,
+                                     changePeopleSum,
+                                     isOpen,
+                                     balance,
+                                     changeBalance,
+                                     expenses,
+                                     changeExpenses,
+                                     month,
+                                     changeMonth,
+                                     sumYesterday,
+                                     changeSumYesterday,
+                                     shuffleYesterdayMessages,
+                                     addDeposit
+                                 }: any) {
     return (
         <Card
             sx={{
@@ -105,7 +125,6 @@ export default function Controls({ selectedItemIndex, deleteItem, editModalOpen,
                     onChange={(event): any => changeBankNum(event?.target.value)}
                 />
             </div>
-
 
 
             <div

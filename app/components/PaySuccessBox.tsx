@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
-import {Button, Fade, makeStyles, Modal, Slide, TextField} from "@mui/material";
+import React from 'react';
 import Box from "@mui/material/Box";
 
 
-
-const PayProcessBox = ({ payToName, paySum }: any) => {
+const PayProcessBox = ({payToName, paySum}: any) => {
 
     return (
         <Box sx={{
@@ -32,16 +30,15 @@ const PayProcessBox = ({ payToName, paySum }: any) => {
                     Перевод выполнен
                 </h3>
                 <h3>
-                    { paySum }
+                    {paySum}
                 </h3>
                 <p>
-                    { payToName }
+                    {payToName}
                 </p>
             </div>
         </Box>
     );
 };
-
 
 
 export default PayProcessBox;

@@ -1,15 +1,31 @@
 'use client'
 
 import * as React from "react";
-import Image from "next/image";
 import MainHeader from "@/app/ui/MainHeader";
 import FastPayment from "@/app/ui/FastPayment";
 import MainStats from "@/app/ui/MainStats";
 
-export default function Main({ cardNum, bankNum, peopleSum, fastPayments, setFastPayments, balance, expenses, handlePayProcessModal, isPayProcessModalOpen, paySum, changePaySum, doPayment, handleControl, month, isPageLoaded }: any) {
+export default function Main({
+                                 cardNum,
+                                 bankNum,
+                                 peopleSum,
+                                 fastPayments,
+                                 setFastPayments,
+                                 balance,
+                                 expenses,
+                                 handlePayProcessModal,
+                                 isPayProcessModalOpen,
+                                 paySum,
+                                 changePaySum,
+                                 doPayment,
+                                 handleControl,
+                                 month,
+                                 isPageLoaded
+                             }: any) {
     return (
         <div>
-            <MainHeader cardNum={cardNum} bankNum={bankNum} balance={balance} handleControl={handleControl} isPageLoaded={isPageLoaded} />
+            <MainHeader cardNum={cardNum} bankNum={bankNum} balance={balance} handleControl={handleControl}
+                        isPageLoaded={isPageLoaded}/>
             <FastPayment
                 handlePayProcessModal={handlePayProcessModal}
                 isPayProcessModalOpen={isPayProcessModalOpen}
