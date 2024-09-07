@@ -49,7 +49,6 @@ export default function Home() {
     const [isCheckLoaded, setIsCheckLoaded]: any = useState(0);
     const [isPageLoaded, setIsPageLoaded]: any = useState(true);
     const [isCheckOpen, setIsCheckOpen]: any = useState(0);
-    const [checkData, setCheckData]: any = useState([]);
 
     const [payPhone, setPayPhone]: any = useState('+7 (9800) 555 35-35');
     const [payResBankNum, setPayResBankNum]: any = useState('9876');
@@ -635,7 +634,6 @@ export default function Home() {
                     isCheckLoaded={isCheckLoaded}
                     isCheckOpen={isCheckOpen}
                     handleOpenCheck={handleOpenCheck}
-                    checkData={checkData}
 
                     payPhone={payPhone}
                     payResBankNum={payResBankNum}

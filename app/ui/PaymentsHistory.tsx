@@ -115,8 +115,9 @@ export default function PaymentsHistory({ isControlsOpen, deleteItem, editItem, 
                                     <p
                                         style={{
                                             textWrap: 'nowrap',
-                                            marginTop: sum.startsWith('+') ? -22 : '',
-                                            color: sum.startsWith('+') ? '#198C2F' : ''
+                                            marginTop: sum.startsWith('+') ? -24 : '',
+                                            color: sum.startsWith('+') ? '#198C2F' : '',
+                                            fontSize: 14,
                                     }}
                                     >
                                         {sum} ₽
@@ -215,7 +216,7 @@ export default function PaymentsHistory({ isControlsOpen, deleteItem, editItem, 
                             >
                                 {
                                     isPageLoaded ?
-                                <p style={{textWrap: 'nowrap'}}>{sum} ₽</p>  : <Skeleton variant="rectangular" width={60} height={24}
+                                <p style={{textWrap: 'nowrap', fontSize: 14,}}>{sum} ₽</p>  : <Skeleton variant="rectangular" width={60} height={24}
                                                                                          style={{borderRadius: 4}}/>
                                 }
                                 {
