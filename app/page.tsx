@@ -168,33 +168,7 @@ export default function Home() {
     ])
 
 
-    const [paymentsToday, setPaymentsToday]: any = useState([
-        {
-            name: 'Георгий Арчиков Р.',
-            bankName: 'Т-Банк',
-            sum: '5 567',
-            commission: '30',
-            resBankNum: '6754',
-            sbpBankName: '',
-        },
-        {
-            name: 'Николай Ефимов Р.',
-            bankName: 'Альфа-Банк',
-            sum: '5 00',
-            commission: '30',
-            resBankNum: '6754',
-            sbpBankName: '',
-        },
-        {
-            name: 'Анна Чирикова Р.',
-            bankName: 'Перевод на карту другого банка',
-            sum: '1 500',
-            commission: '30',
-            resBankNum: '6754',
-            sbpBankName: '',
-        },
-
-    ]);
+    const [paymentsToday, setPaymentsToday]: any = useState([]);
 
 
 
