@@ -803,7 +803,7 @@ const PayProcessModal = ({
                                                 />
                                             </div>
                                             <p style={{marginLeft: 4}}>
-                                                0909
+                                                {paymentsToday[paymentsToday.length - selectedItemIndex - 1]?.resBankNum}
                                             </p>
                                         </div>
                                         <p
@@ -813,7 +813,7 @@ const PayProcessModal = ({
                                                 marginTop: 8,
                                             }}
                                         >
-                                            {paymentsToday[paymentsToday.length - selectedItemIndex - 1] && paymentsToday[paymentsToday.length - selectedItemIndex - 1].bankName}
+                                            {paymentsToday[paymentsToday.length - selectedItemIndex - 1]?.bankName}
                                         </p>
                                     </div>
                                     <div>
@@ -824,7 +824,7 @@ const PayProcessModal = ({
                                             }}
                                         >
                                             <Image
-                                                src={getBankImg(paymentsToday[paymentsToday.length - selectedItemIndex - 1] && paymentsToday[paymentsToday.length - selectedItemIndex - 1].bankName)}
+                                                src={getBankImg(paymentsToday[paymentsToday.length - selectedItemIndex - 1]?.bankName)}
                                                 width={84}
                                                 height={84}
                                                 alt=''
