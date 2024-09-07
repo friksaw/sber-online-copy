@@ -70,16 +70,16 @@ export default function Home() {
 
     useEffect(() => {
         const updateCurrentTime = () => {
-            const date = new Date();
-            const hours = date.getHours();
-            const minutes = date.getMinutes();
-            const formattedTime = `${hours}:${minutes < 10 ? '0' : ''}${minutes}`;
+            const date: any = new Date();
+            const hours: any = date.getHours();
+            const minutes: any = date.getMinutes();
+            const formattedTime: any = `${hours}:${minutes < 10 ? '0' : ''}${minutes}`;
             setCurrentTime(formattedTime);
         };
 
         // Update current time initially and every minute
         updateCurrentTime();
-        const intervalId = setInterval(updateCurrentTime, 60000); // Update every minute
+        const intervalId: any = setInterval(updateCurrentTime, 60000); // Update every minute
 
         return () => clearInterval(intervalId); // Cleanup interval on unmount
     }, []);
@@ -168,7 +168,33 @@ export default function Home() {
     ])
 
 
-    const [paymentsToday, setPaymentsToday]: any = useState([]);
+    const [paymentsToday, setPaymentsToday]: any = useState([
+        {
+            name: 'Георгий Арчиков Р.',
+            bankName: 'Т-Банк',
+            sum: '5 567',
+            commission: '30',
+            resBankNum: '6754',
+            sbpBankName: '',
+        },
+        {
+            name: 'Николай Ефимов Р.',
+            bankName: 'Альфа-Банк',
+            sum: '5 00',
+            commission: '30',
+            resBankNum: '6754',
+            sbpBankName: '',
+        },
+        {
+            name: 'Анна Чирикова Р.',
+            bankName: 'Перевод на карту другого банка',
+            sum: '1 500',
+            commission: '30',
+            resBankNum: '6754',
+            sbpBankName: '',
+        },
+
+    ]);
 
 
 
@@ -211,7 +237,6 @@ export default function Home() {
 
     const handleCheckPayModal: any = (index: any) => {
         setIsCheckModalOpen((isOpen: any) => !isOpen);
-        console.log(index)
         setSelectedItemIndex(index)
     };
 
@@ -362,14 +387,16 @@ export default function Home() {
         setExpenses(formattedExpensesSum);
     };
 
-    const deleteItem = ({ index }: any) => {
+    const deleteItem = (index: number) => {
         const updatedPayments = [...paymentsToday];
-        updatedPayments.splice(index, 1);
+        updatedPayments.splice(paymentsToday.length - index - 1, 1);
         setPaymentsToday(updatedPayments);
-        setEditModalOpen((isOpen: any) => !isOpen)
+        setEditModalOpen(false); // Закрываем модальное окно
     };
 
     const editItem = (index: any) => {
+        console.log(index)
+
         setSelectedItemIndex(index)
         setEditModalOpen((isOpen: any) => !isOpen)
     };
@@ -573,7 +600,7 @@ export default function Home() {
 
                 editModalOpen={editModalOpen}
 
-                setSelectedItemIndex={setSelectedItemIndex}
+                selectedItemIndex={selectedItemIndex}
             />
 
             <div

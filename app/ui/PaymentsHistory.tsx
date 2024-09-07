@@ -10,7 +10,7 @@ import {useEffect} from "react";
 export default function PaymentsHistory({ isControlsOpen, deleteItem, editItem, handleCheckPayModal, isPageLoaded, paymentsYesterday, sumYesterday, paymentsToday, sumToday, depositsToday, handleOpenCheck }: any) {
 
 
-    const onClickItem = ({index}: any) => {
+    const onClickItem = (index: any) => {
         if (isControlsOpen) {
             editItem(index)
         } else {
