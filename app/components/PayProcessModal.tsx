@@ -71,6 +71,7 @@ const PayProcessModal = ({
                              paySumCom,
                              paySbpBankName,
                              changePaySbpBankName,
+                             getBankImg,
                          }: any) => {
     const [isSuccessPayModalOpen, setIsSuccessPayModalOpen]: any = useState(false);
     const [expanded1, setExpanded1]: any = useState(false);
@@ -812,7 +813,7 @@ const PayProcessModal = ({
                                                 marginTop: 8,
                                             }}
                                         >
-                                            {paySenderBankName}
+                                            {paymentsToday[paymentsToday.length - selectedItemIndex - 1] && paymentsToday[paymentsToday.length - selectedItemIndex - 1].bankName}
                                         </p>
                                     </div>
                                     <div>
@@ -823,7 +824,7 @@ const PayProcessModal = ({
                                             }}
                                         >
                                             <Image
-                                                src={payBankImg}
+                                                src={getBankImg(paymentsToday[paymentsToday.length - selectedItemIndex - 1] && paymentsToday[paymentsToday.length - selectedItemIndex - 1].bankName)}
                                                 width={84}
                                                 height={84}
                                                 alt=''

@@ -63,7 +63,7 @@ export default function Home() {
 
     const [payMethod, setPayMethod]: any = useState(0);
     const [editModalOpen, setEditModalOpen]: any = useState(null);
-    const [selectedItemIndex, setSelectedItemIndex]: any = useState(null);
+    const [selectedItemIndex, setSelectedItemIndex]: any = useState(0);
 
 
 
@@ -287,6 +287,19 @@ export default function Home() {
     const changePayResBankNum: any = (newPayResBankName: any) => {
         setPayResBankNum(newPayResBankName);
     };
+    const getBankImg: any = (bankName: any) => {
+        if (bankName === 'Альфа-Банк') {
+            return '/images/banks/alfa.png'
+        } else if (bankName === 'Т-Банк') {
+            return '/images/banks/t.png'
+        } else if (bankName === 'ВТБ') {
+            return '/images/banks/vtb.png'
+        } else if (bankName === 'Перевод на карту другого банка' || bankName === 'Перевод по СБП' || paySenderBankName === 'Открытие' || paySenderBankName === 'РСХБ') {
+            return '/images/banks/banks.svg'
+        } else {
+            return '/images/history/sber.svg'
+        }
+    };
 
 
     const doPay = () => {
@@ -340,17 +353,7 @@ export default function Home() {
 
         };
 
-        if (paySenderBankName === 'Альфа-Банк') {
-            setPayBankImg('/images/banks/alfa.png')
-        } else if (paySenderBankName === 'Т-Банк') {
-            setPayBankImg('/images/banks/t.png')
-        } else if (paySenderBankName === 'ВТБ') {
-            setPayBankImg('/images/banks/vtb.png')
-        } else if (paySenderBankName === 'Перевод на карту другого банка' || paySenderBankName === 'Перевод по СБП' || paySenderBankName === 'Открытие' || paySenderBankName === 'РСХБ') {
-            setPayBankImg('/images/banks/banks.svg')
-        } else {
-            setPayBankImg('/images/history/sber.svg')
-        }
+
 
 
 
@@ -676,6 +679,8 @@ export default function Home() {
 
                     changePaySbpBankName={changePaySbpBankName}
                     paySbpBankName={paySbpBankName}
+
+                    getBankImg={getBankImg}
                 />
                 <BottomNav
                     currentPage={currentPage}
