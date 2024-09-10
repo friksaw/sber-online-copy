@@ -79,22 +79,23 @@ const PayProcessModal = ({
 
     const handleSavePdf = () => {
         if (pdfRef.current) {
-            html2canvas(pdfRef.current).then((canvas) => {
+            html2canvas(pdfRef.current, {
+                scale: 3 // Увеличиваем разрешение до 300 dpi
+            }).then((canvas) => {
                 const imgData = canvas.toDataURL('image/png');
-                const pdf = new jsPDF('p', 'pt', 'a4'); // Создаем новый документ PDF (ориентация 'p' - портретная, размер 'a4')
+                const pdf = new jsPDF('p', 'pt', 'a4');
 
                 const imgHeight = 842.28 - 28; // Высота A4 в пикселях при разрешении 72 dpi
                 const imgWidth = (canvas.width * imgHeight / canvas.height) - 28;
 
-                const x = (pdf.internal.pageSize.getWidth() - imgWidth) / 2; // Центрируем по горизонтали
-                const y = (pdf.internal.pageSize.getHeight() - imgHeight) / 2; // Центрируем по вертикали
+                const x = (pdf.internal.pageSize.getWidth() - imgWidth) / 2;
+                const y = (pdf.internal.pageSize.getHeight() - imgHeight) / 2;
 
                 pdf.addImage(imgData, 'PNG', x, y, imgWidth, imgHeight);
                 pdf.save('document.pdf');
             });
         }
     };
-
 
     const getCurrentDateTime = () => {
         const options: Intl.DateTimeFormatOptions = {
@@ -1084,6 +1085,7 @@ const PayProcessModal = ({
                                                 className='pGrey'
                                                 style={{
                                                     fontSize: 14,
+                                                    marginBottom: 8
                                                 }}
                                             >
                                                 {currentDateTime} (МСК)
