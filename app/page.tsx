@@ -282,7 +282,19 @@ export default function Home() {
         }
     };
 
-
+    const getCurrentDateTime = () => {
+        const options: Intl.DateTimeFormatOptions = {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric',
+            timeZone: 'Europe/Moscow',
+        };
+        const formatter = new Intl.DateTimeFormat('ru-RU', options);
+        return formatter.format(new Date());
+    };
     const doPay = () => {
         const balanceNumeric: any = parseFloat(balance.replace(/\s/g, '').replace(',', '.'));
         const sumTodayNumeric: any = parseFloat(sumToday.replace(/\s/g, '').replace(',', '.'));
@@ -322,7 +334,7 @@ export default function Home() {
             maximumFractionDigits: 0,
         });
 
-
+        const currentDateTime = getCurrentDateTime()
         const newPayment: any = {
             name: payName,
             bankName: paySenderBankName,
@@ -336,7 +348,7 @@ export default function Home() {
             senderName: paySenderName,
             paySumCom: paySumCom,
             phone: payPhone,
-
+            payDate: currentDateTime,
 
 
         };

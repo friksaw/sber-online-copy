@@ -97,21 +97,8 @@ const PayProcessModal = ({
         }
     };
 
-    const getCurrentDateTime = () => {
-        const options: Intl.DateTimeFormatOptions = {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-            hour: 'numeric',
-            minute: 'numeric',
-            second: 'numeric',
-            timeZone: 'Europe/Moscow',
-        };
-        const formatter = new Intl.DateTimeFormat('ru-RU', options);
-        return formatter.format(new Date());
-    };
 
-    const currentDateTime = getCurrentDateTime();
+
     const toggleExpand = () => {
         setExpanded1(!expanded1);
         setTimeout(() => setExpanded2(!expanded2), 200);
@@ -1088,7 +1075,7 @@ const PayProcessModal = ({
                                                     marginBottom: 8
                                                 }}
                                             >
-                                                {currentDateTime} (МСК)
+                                                {paymentsToday[paymentsToday.length - selectedItemIndex - 1]?.payDate} (МСК)
                                             </p>
                                         </div>
                                         <div
